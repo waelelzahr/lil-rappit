@@ -10,7 +10,7 @@
       "kind": "soft",
       "episode": "wedding",
       "slot": "2026-10-23T18:00:00+03:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1561318136521695293",
       "run_id": "39117491946",
@@ -50,6 +50,6 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1561333248796270686",
+  "discord_last": "1561376904387367013",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00"
 }
