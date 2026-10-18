@@ -1,7 +1,16 @@
-[13:14:19] episode: dealership - The Dealership
-[13:14:41] script: Lil Rappit gives away a full briefcase of cash for a bag of carrots and doesn't even get to keep the sports car.
-[13:14:57] image ok (gemini-nano-banana-2.1) -> frame1.png
-[13:16:30] video ok -> clip1.mp4 (92s)
-[13:16:49] image ok (gemini-nano-banana-2.1) -> frame2.png
-[13:18:42] video ok -> clip2.mp4 (112s)
-[13:19:26] built 2026-10-18-reel (reel)
+[13:28:10] episode: dealership - The Dealership
+[13:28:33] script: Lil Rappit traded an entire briefcase full of cash for a single bag of carrots, completely abandoning his demand for the luxury sports car.
+[13:28:46] image ok (gemini-nano-banana-2.1) -> opponent.png
+[13:29:02] image ok (gemini-nano-banana-2.1) -> frame1.png
+[13:29:03] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
+[13:29:54] video ok -> shot1.mp4 (6s, 51s)
+[13:30:11] image ok (gemini-nano-banana-2.1) -> frame2.png
+[13:30:12] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
+[13:31:04] video ok -> shot2.mp4 (6s, 51s)
+[13:31:27] image ok (gemini-nano-banana-2.1) -> frame3.png
+[13:31:27] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
+[13:32:19] video ok -> shot3.mp4 (6s, 51s)
+[13:32:33] image ok (gemini-nano-banana-2.1) -> frame4.png
+[13:32:34] Veo rejected 1080p/4s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 4 seconds.', 'status': 'INVALID_ARGUMENT'}}
+[13:33:16] video ok -> shot4.mp4 (4s, 41s)
+[13:34:14] built 2026-10-18-reel (reel)
