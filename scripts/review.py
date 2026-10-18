@@ -89,18 +89,31 @@ def main():
         text = (m.get("content") or "").strip()
         ref = (m.get("message_reference") or {}).get("message_id")
         try:
-            if ref in msg_to_item:
+            if ref in msg_to_item and text.lower().strip(" !.") in ("post now", "now", "post it now"):
+                item_id = msg_to_item[ref]
+                from datetime import datetime
+                from rappit.common import TZ
+                state["items"][item_id]["slot"] = datetime.now(TZ).isoformat()
+                if state["items"][item_id]["status"] == "pending":
+                    state["items"][item_id]["status"] = "approved"
+                discord.send_text("🚀 Posting this now…", reply_to=state["items"][item_id]["message_id"])
+            elif ref in msg_to_item:
                 item_id = msg_to_item[ref]
                 action, note = classify(text)
                 if action == "approve":
                     approve(state, item_id)
                 else:
                     redo(state, item_id, note)
+            elif text.lower() == "token updated":
+                state.pop("ig_token_warned", None)
+                state.pop("ig_token_seen", None)
+                discord.send_text("👍 Thanks, I'll remind you again in 50 days.")
             elif text.lower() in ("status", "queue", "list"):
                 status(state)
             elif text:
                 discord.send_text("To change a draft, **reply** to it with your note "
-                                  "(long-press → Reply). Type `status` to see the queue.")
+                                  "(long-press → Reply), or reply `post now` to publish it right away. "
+                                  "Type `status` to see the queue.")
         except Exception as e:
             log(f"message {m['id']} failed: {e}\n{traceback.format_exc()}")
             discord.send_text(f"⚠️ Something failed: {e}")

@@ -96,7 +96,7 @@ def text_json(prompt: str, prefer_pro: bool = False) -> dict:
 
 
 def image(prompt: str, out: Path, extra_images: list | None = None,
-          style: str | None = None, with_rappit: bool = True) -> Path:
+          style: str | None = None, with_rappit: bool = True, aspect: str = "9:16") -> Path:
     """Generate a 9:16 image. extra_images: list of Path or (label, Path) tuples."""
     parts = []
     if with_rappit:
@@ -108,7 +108,7 @@ def image(prompt: str, out: Path, extra_images: list | None = None,
         parts.append(types.Part.from_bytes(data=p.read_bytes(), mime_type=mime_of(p)))
     parts.append(
         (f"Lil Rappit: {LOOK}\n\n" if with_rappit else "")
-        + f"Create this image. {prompt}\n\n{style or STYLE}"
+        + f"Create this image. {prompt}\n\n{(style or STYLE).replace('9:16', aspect)}"
     )
     last_err = None
     for model in (CFG["models"]["image"], CFG["models"]["image_fallback"]):
@@ -118,7 +118,7 @@ def image(prompt: str, out: Path, extra_images: list | None = None,
                 contents=parts,
                 config=types.GenerateContentConfig(
                     response_modalities=["IMAGE"],
-                    image_config=types.ImageConfig(aspect_ratio="9:16"),
+                    image_config=types.ImageConfig(aspect_ratio=aspect),
                 ),
             )
             for part in resp.candidates[0].content.parts:

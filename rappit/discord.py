@@ -74,6 +74,15 @@ def send_item(item_id: str, kind: str, path: Path, caption: str, title: str = ""
     return msg["id"]
 
 
+def send_file(path: Path, text: str = "", reply_to: str | None = None) -> dict:
+    body = {"content": text[:2000]}
+    if reply_to:
+        body["message_reference"] = {"message_id": reply_to, "fail_if_not_exists": False}
+    with open(path, "rb") as f:
+        return _req("POST", f"/channels/{_ch()}/messages",
+                    data={"payload_json": json.dumps(body)}, files={"files[0]": (path.name, f)})
+
+
 def send_text(text: str, reply_to: str | None = None):
     body = {"content": text[:2000]}
     if reply_to:

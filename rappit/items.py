@@ -69,11 +69,11 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
         media = gen.image(
             "Police booking mugshot photo: Lil Rappit stands in front of a height chart, "
             "holding a black placard that reads LIL RAPPIT, trying to look tough but "
-            f"clutching a carrot. Fits the story '{ep['title']}'." + n, d / "mugshot.png")
+            f"clutching a carrot. Fits the story '{ep['title']}'." + n, d / "mugshot.png", aspect="4:5")
     else:
         idea = SOFT_IDEAS[soft_idx % len(SOFT_IDEAS)]
         media = gen.image(f"Lil Rappit {idea}. Soft, warm, wholesome mood." + n,
-                          d / "soft.png")
+                          d / "soft.png", aspect="4:5")
 
     try:
         cap = caption_for(kind, ep, note, deal)
