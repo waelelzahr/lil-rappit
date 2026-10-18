@@ -4,7 +4,7 @@ Weekly comedy content for Lil Rappit, generated with the Gemini API and approved
 
 **Every Sunday 09:00 (Beirut)** the *Weekly drafts* workflow:
 1. picks a random unused episode from `episodes.yaml`
-2. generates a 16 s reel (two 8 s Veo 3.1 Fast clips, stitched), a mugshot photo and a soft-side photo, using `refs/` + `character.md` for consistency
+2. writes a 4-shot script and generates a ~22 s dark cinematic reel (four Veo 3.1 Fast shots, stitched), a mugshot photo and a soft-side photo, using `refs/` + `character.md` for consistency
 3. posts each draft in your private Discord channel with ✅ / 🔁 reactions
 
 **Every 30 minutes (08:00–24:00)** the *Review replies* workflow checks Discord:

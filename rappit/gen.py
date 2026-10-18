@@ -35,6 +35,13 @@ STYLE = (
     "9:16 composition, the character centered and fully in frame. Family-safe "
     "comedy. No subtitles, no captions, no watermarks, no smoking."
 )
+NOIR = (
+    "Dark cinematic crime-drama look, like a classic mafia film: low-key chiaroscuro "
+    "lighting, deep shadows, warm amber practical lamps, haze in the air, anamorphic "
+    "lens, very shallow depth of field, subtle film grain, slow deliberate camera moves, "
+    "vertical 9:16. Photoreal 3D characters. Family-safe. No subtitles, no captions, "
+    "no watermarks, no smoking, no weapons."
+)
 
 
 def mime_of(path: Path) -> str:
@@ -88,14 +95,20 @@ def text_json(prompt: str, prefer_pro: bool = False) -> dict:
     raise last_err
 
 
-def image(prompt: str, out: Path, extra_images: list[Path] | None = None) -> Path:
-    """Generate a 9:16 image of Lil Rappit, guided by the reference images."""
-    parts = _ref_parts()
-    for p in extra_images or []:
+def image(prompt: str, out: Path, extra_images: list | None = None,
+          style: str | None = None, with_rappit: bool = True) -> Path:
+    """Generate a 9:16 image. extra_images: list of Path or (label, Path) tuples."""
+    parts = []
+    if with_rappit:
+        parts.append("REFERENCE - Lil Rappit (keep his look exactly):")
+        parts += _ref_parts()
+    for item in extra_images or []:
+        label, p = item if isinstance(item, tuple) else ("Additional reference", item)
+        parts.append(f"REFERENCE - {label}:")
         parts.append(types.Part.from_bytes(data=p.read_bytes(), mime_type=mime_of(p)))
     parts.append(
-        "The reference images show the character Lil Rappit. Keep his look exactly "
-        f"the same. {LOOK}\n\nScene: {prompt}\n\n{STYLE}"
+        (f"Lil Rappit: {LOOK}\n\n" if with_rappit else "")
+        + f"Create this image. {prompt}\n\n{style or STYLE}"
     )
     last_err = None
     for model in (CFG["models"]["image"], CFG["models"]["image_fallback"]):
@@ -120,20 +133,31 @@ def image(prompt: str, out: Path, extra_images: list[Path] | None = None) -> Pat
     raise last_err
 
 
-def video(prompt: str, start_frame: Path, out: Path) -> Path:
+def video(prompt: str, start_frame: Path, out: Path, seconds: int | None = None,
+          style: str | None = None, rappit: bool = True) -> Path:
     """Image-to-video with Veo, starting from start_frame."""
     v = CFG["video"]
-    op = client().models.generate_videos(
-        model=CFG["models"]["video"],
-        prompt=f"{LOOK}\n\n{prompt}\n\n{STYLE}",
-        image=types.Image(image_bytes=start_frame.read_bytes(), mime_type=mime_of(start_frame)),
-        config=types.GenerateVideosConfig(
-            aspect_ratio=v["aspect_ratio"],
-            resolution=v["resolution"],
-            duration_seconds=v["clip_seconds"],
-            number_of_videos=1,
-        ),
-    )
+    seconds = seconds or v["clip_seconds"]
+    full = (f"{LOOK}\n\n" if rappit else "") + f"{prompt}\n\n{style or STYLE}"
+    last_err = None
+    for res in dict.fromkeys([v["resolution"], "720p"]):  # some lengths only allow 720p
+        try:
+            op = client().models.generate_videos(
+                model=CFG["models"]["video"],
+                prompt=full,
+                image=types.Image(image_bytes=start_frame.read_bytes(),
+                                  mime_type=mime_of(start_frame)),
+                config=types.GenerateVideosConfig(
+                    aspect_ratio=v["aspect_ratio"], resolution=res,
+                    duration_seconds=seconds, number_of_videos=1,
+                ),
+            )
+            break
+        except Exception as e:
+            last_err = e
+            log(f"Veo rejected {res}/{seconds}s: {e}")
+    else:
+        raise last_err
     t0 = time.time()
     while not op.done:
         if time.time() - t0 > 900:
@@ -147,7 +171,7 @@ def video(prompt: str, start_frame: Path, out: Path) -> Path:
         raise RuntimeError("Veo returned no video (possibly blocked by safety filters)")
     client().files.download(file=vids[0].video)
     vids[0].video.save(str(out))
-    log(f"video ok -> {out.name} ({time.time() - t0:.0f}s)")
+    log(f"video ok -> {out.name} ({seconds}s, {time.time() - t0:.0f}s)")
     return out
 
 
@@ -160,14 +184,20 @@ def last_frame(video_path: Path, out: Path) -> Path:
     return out
 
 
-def stitch(a: Path, b: Path, out: Path) -> Path:
-    a, b = _ensure_audio(a), _ensure_audio(b)
+def stitch(clips, out: Path, b: Path | None = None) -> Path:
+    """Concatenate clips (list of paths) into one 1080x1920 video."""
+    if b is not None:  # old signature stitch(a, b, out)
+        clips, out = [clips, out], b
+    clips = [_ensure_audio(c) for c in clips]
+    inputs, chains, labels = [], [], ""
+    for i, c in enumerate(clips):
+        inputs += ["-i", str(c)]
+        chains.append(f"[{i}:v]scale=1080:1920:force_original_aspect_ratio=increase,"
+                      f"crop=1080:1920,setsar=1,fps=24[v{i}];[{i}:a]aresample=48000[a{i}]")
+        labels += f"[v{i}][a{i}]"
+    fc = ";".join(chains) + f";{labels}concat=n={len(clips)}:v=1:a=1[v][a]"
     subprocess.run(
-        ["ffmpeg", "-loglevel", "error", "-y", "-i", str(a), "-i", str(b),
-         "-filter_complex",
-         "[0:v]scale=1080:1920,setsar=1,fps=24[v0];[1:v]scale=1080:1920,setsar=1,fps=24[v1];"
-         "[0:a]aresample=48000[a0];[1:a]aresample=48000[a1];"
-         "[v0][a0][v1][a1]concat=n=2:v=1:a=1[v][a]",
+        ["ffmpeg", "-loglevel", "error", "-y", *inputs, "-filter_complex", fc,
          "-map", "[v]", "-map", "[a]", "-c:v", "libx264", "-preset", "medium",
          "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k",
          "-movflags", "+faststart", str(out)],

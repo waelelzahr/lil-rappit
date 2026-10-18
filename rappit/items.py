@@ -1,4 +1,5 @@
 """Builds the three weekly items: reel, mugshot photo, soft-side photo."""
+import json
 from pathlib import Path
 
 from . import gen, writer
@@ -21,7 +22,7 @@ def _note(note: str | None) -> str:
 def caption_for(kind: str, ep: dict, note: str | None, deal: str | None = None) -> dict:
     tags = CFG["hashtags"]
     what = {
-        "reel": f"a 16-second comedy reel '{ep['title']}': Lil Rappit demands {ep['demand']}, "
+        "reel": f"a short dark cinematic mafia-parody reel '{ep['title']}': Lil Rappit demands {ep['demand']}, "
                 f"then gets offered carrots and accepts this: {deal or ep['bad_deal']}",
         "mugshot": f"a photo: Lil Rappit's police mugshot after the episode '{ep['title']}'",
         "soft": "a photo showing Lil Rappit's secret soft side with carrots",
@@ -46,17 +47,24 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
     if kind == "reel":
         script = writer.write_script(ep, note)
         deal = script.get("deal")
-        (d / "script.json").write_text(__import__("json").dumps(script, indent=2), encoding="utf-8")
-        s1, s2 = script["shot1"], script["shot2"]
-        f1 = gen.image(f"Setting: {ep['setting']}. Other character: {ep['opponent']}. "
-                       f"{s1['frame']}", d / "frame1.png")
-        c1 = gen.video(writer.shot_prompt(ep, s1), f1, d / "clip1.mp4")
-        last = gen.last_frame(c1, d / "clip1_last.png")
-        f2 = gen.image(f"Same location, lighting and other character as in the LAST reference "
-                       f"image. Close-up shot. {s2['frame']}", d / "frame2.png",
-                       extra_images=[last])
-        c2 = gen.video(writer.shot_prompt(ep, s2, soft=True), f2, d / "clip2.mp4")
-        media = gen.stitch(c1, c2, d / "reel.mp4")
+        (d / "script.json").write_text(json.dumps(script, indent=2), encoding="utf-8")
+        opp = gen.image(
+            f"Character reference portrait of {script.get('opponent_look', ep['opponent'])}. "
+            "Full body and face clearly visible, neutral pose, plain dark backdrop.",
+            d / "opponent.png", style=gen.NOIR, with_rappit=False)
+        OPP = ("The other character - must look exactly like this", opp)
+        frames, clips = [], []
+        for i, (name, secs, _) in enumerate(writer.SHOTS):
+            shot = script["shots"][i]
+            extra = [OPP]
+            if frames:
+                extra.append(("Same location, set and lighting as this earlier shot", frames[0]))
+            f = gen.image(f"Setting: {ep['setting']}. Shot {i + 1} ({name}): {shot['frame']}" + n,
+                          d / f"frame{i + 1}.png", extra_images=extra, style=gen.NOIR)
+            frames.append(f)
+            clips.append(gen.video(writer.shot_prompt(ep, script, i), f,
+                                   d / f"shot{i + 1}.mp4", seconds=secs, style=gen.NOIR))
+        media = gen.stitch(clips, d / "reel.mp4")
     elif kind == "mugshot":
         media = gen.image(
             "Police booking mugshot photo: Lil Rappit stands in front of a height chart, "

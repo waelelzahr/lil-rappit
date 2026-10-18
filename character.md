@@ -21,12 +21,15 @@ Reference images: `refs/turnaround.png` (front / 3-4 / side / back),
 - Catchphrase when melting: "...okay but it's the organic kind?"
 - Recurring villain: Weasel — sly, smirking, knows his weakness
 
-## Episode format (16 s = two 8 s clips)
-1. **Tough (0–8 s):** Rappit in control, menacing, one hard line.
-2. **Carrot (8–16 s):** a bag of carrots appears; he melts and accepts
-   something ridiculous.
+## Episode format (~22 s = four shots, dark mafia-movie tone)
+1. **The Demand (6 s):** slow push-in on Rappit; he states his demand slowly and clearly.
+2. **The Counter (6 s):** reverse shot on the other character; they slide a bag of carrots
+   over and say the terrible deal out loud.
+3. **The Melt (6 s):** extreme close-up; his tough face melts; squeaky acceptance.
+4. **The Payoff (4 s):** wide shot showing the terrible deal physically.
 
 ## Style
-- Cinematic, photoreal, shallow depth of field, 9:16 vertical, 1080p
-- Comedy timing: hold a beat of silence before the melt
-- No rap. No smoking. Mild, family-safe crime parody only.
+- Dark, cinematic crime drama played completely straight until the melt
+- Low-key lighting, shadows, haze, slow camera moves, shot/reverse-shot
+- Voice: very slow, deep, raspy Brooklyn mob-boss voice; squeaky and sweet when he melts
+- No rap. No smoking. No weapons. Family-safe crime parody only.
