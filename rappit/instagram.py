@@ -1,8 +1,7 @@
 """Instagram publishing via the Instagram API with Instagram Login.
 
-Reels are uploaded directly (resumable upload, no public URL needed).
-Photos must be JPEG at a public URL, so we briefly host them as a Discord
-attachment (the CDN link is public) and hand that URL to Instagram.
+Instagram fetches media from a public URL, so we briefly host an Instagram-ready
+copy as a Discord attachment (the CDN link is public) and hand that URL over.
 """
 import os
 import subprocess
@@ -58,14 +57,26 @@ def _publish(container_id: str) -> dict:
     return {"id": media_id, "url": info.get("permalink", "")}
 
 
-def post_reel(video: Path, caption: str) -> dict:
+def to_reel_upload(video: Path, max_bytes: int = 9_300_000) -> Path:
+    """1080x1920 H.264 copy sized to fit Discord's 10 MB limit (used as public URL host)."""
+    dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                                "-of", "csv=p=0", str(video)],
+                               capture_output=True, text=True, check=True).stdout.strip())
+    kbps = int(min(8000, max(1500, max_bytes * 8 / dur / 1000 - 160)))
+    out = video.with_name(video.stem + "_ig.mp4")
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(video),
+                    "-vf", "scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920",
+                    "-c:v", "libx264", "-preset", "slow", "-b:v", f"{kbps}k",
+                    "-maxrate", f"{kbps}k", "-bufsize", f"{kbps * 2}k", "-pix_fmt", "yuv420p",
+                    "-r", "30", "-c:a", "aac", "-b:a", "128k", "-ar", "48000",
+                    "-movflags", "+faststart", str(out)], check=True)
+    return out
+
+
+def post_reel(video_url: str, caption: str) -> dict:
     c = _check(requests.post(f"{GRAPH}/{_uid()}/media", data={
-        "media_type": "REELS", "upload_type": "resumable", "caption": caption,
-        "share_to_feed": "true", "access_token": _tok()}, timeout=60))
-    data = video.read_bytes()
-    up = requests.post(c["uri"], data=data, timeout=600, headers={
-        "Authorization": f"OAuth {_tok()}", "offset": "0", "file_size": str(len(data))})
-    _check(up)
+        "media_type": "REELS", "video_url": video_url, "caption": caption,
+        "share_to_feed": "true", "access_token": _tok()}, timeout=120))
     _wait_ready(c["id"])
     return _publish(c["id"])
 

@@ -15,13 +15,14 @@ MAX_ATTEMPTS = 3
 
 def post_item(it: dict) -> str:
     path = media.fetch(it["run_id"], it["relpath"])
+    # Host an Instagram-ready copy on Discord's public CDN so Instagram can fetch it.
+    ready = instagram.to_reel_upload(path) if it["kind"] == "reel" else instagram.to_feed_jpeg(path)
+    msg = discord.send_file(ready, "📤 Uploading to Instagram…", reply_to=it.get("message_id"))
+    url = msg["attachments"][0]["url"]
     if it["kind"] == "reel":
-        res = instagram.post_reel(path, it["caption"])
+        res = instagram.post_reel(url, it["caption"])
     else:
-        jpg = instagram.to_feed_jpeg(path)
-        # Host the JPEG briefly on Discord's public CDN so Instagram can fetch it.
-        msg = discord.send_file(jpg, "📤 Uploading to Instagram…", reply_to=it.get("message_id"))
-        res = instagram.post_photo(msg["attachments"][0]["url"], it["caption"])
+        res = instagram.post_photo(url, it["caption"])
     return res["url"]
 
 
