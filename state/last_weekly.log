@@ -1,3 +1,7 @@
-[13:00:26] episode: wedding - The Objection
-[13:00:43] image ok (gemini-nano-banana-2.1) -> soft.png
-[13:00:51] built 2026-10-18-soft (soft)
+[13:02:04] episode: lamborghini - The Dealership
+[13:02:19] image ok (gemini-nano-banana-2.1) -> frame1.png
+[13:03:42] video ok -> clip1.mp4 (82s)
+[13:05:17] video ok -> clip2.mp4 (92s)
+[13:06:08] built 2026-10-18-reel (reel)
+[13:06:44] image ok (gemini-nano-banana-2.1) -> mugshot.png
+[13:06:53] built 2026-10-18-mugshot (mugshot)

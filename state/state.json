@@ -1,7 +1,8 @@
 {
   "used_episodes": [
     "getaway",
-    "wedding"
+    "wedding",
+    "lamborghini"
   ],
   "items": {
     "2026-10-18-soft": {
@@ -16,6 +17,32 @@
       "caption": "Cold on the block, soft for the crop.\nDon’t tell the crew I folded. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
       "title": "Lil Rappit Got Caught Lacking With Carrots",
       "soft_idx": 2
+    },
+    "2026-10-18-reel": {
+      "kind": "reel",
+      "episode": "lamborghini",
+      "slot": "2026-10-19T18:00:00+03:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1561319552288297010",
+      "run_id": "39117614389",
+      "relpath": "2026-10-18-reel/reel.mp4",
+      "caption": "Came for the horsepower, left with the real bag.\nBusiness is business. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
+      "title": "The Car Salesman Found My Only Weakness",
+      "soft_idx": 3
+    },
+    "2026-10-18-mugshot": {
+      "kind": "mugshot",
+      "episode": "lamborghini",
+      "slot": "2026-10-21T18:00:00+03:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1561319655447068682",
+      "run_id": "39117614389",
+      "relpath": "2026-10-18-mugshot/mugshot.png",
+      "caption": "Got caught slipping on the lot.\nTell the warden I need my carrots crisp. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
+      "title": "Lil Rappit BUSTED: The Dealership Mugshot",
+      "soft_idx": 3
     }
   },
   "tg_offset": 0
