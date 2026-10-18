@@ -3,7 +3,12 @@ name: Weekly drafts
 on:
   schedule:
     - cron: "0 6 * * 0"   # Sunday 09:00 Beirut
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Only these items (comma list: reel,mugshot,soft). Empty = all."
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -21,6 +26,7 @@ jobs:
       DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
       DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
       OUT_DIR: ${{ github.workspace }}/out
+      ONLY: ${{ inputs.only }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -29,7 +35,11 @@ jobs:
           cache: pip
       - run: which ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg)
       - run: pip install -r requirements.txt
-      - run: python scripts/weekly.py
+      - name: Run weekly
+        shell: bash
+        run: |
+          set -o pipefail
+          python scripts/weekly.py 2>&1 | tee state/last_weekly.log
       - name: Keep media for posting
         if: always()
         uses: actions/upload-artifact@v4
@@ -43,5 +53,5 @@ jobs:
         run: |
           git config user.name "rappit-bot"
           git config user.email "rappit-bot@users.noreply.github.com"
-          git add state/state.json
+          git add state/
           git diff --cached --quiet || (git commit -m "state: weekly drafts" && git push)

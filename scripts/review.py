@@ -3,6 +3,7 @@
 🔁 (or replying with a note) regenerates it.
 Typing "status" in the channel lists this week's items."""
 import os
+import traceback
 import sys
 from pathlib import Path
 
@@ -74,7 +75,7 @@ def main():
             elif discord.reacted(it["message_id"], discord.REDO):
                 redo(state, item_id, None)
         except Exception as e:
-            log(f"{item_id} failed: {e}")
+            log(f"{item_id} failed: {e}\n{traceback.format_exc()}")
             discord.send_text(f"⚠️ Something failed on `{item_id}`: {e}")
         save_state(state)
 
@@ -101,7 +102,7 @@ def main():
                 discord.send_text("To change a draft, **reply** to it with your note "
                                   "(long-press → Reply). Type `status` to see the queue.")
         except Exception as e:
-            log(f"message {m['id']} failed: {e}")
+            log(f"message {m['id']} failed: {e}\n{traceback.format_exc()}")
             discord.send_text(f"⚠️ Something failed: {e}")
         save_state(state)
         msg_to_item = {it.get("message_id"): k for k, it in state["items"].items()}

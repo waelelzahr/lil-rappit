@@ -67,12 +67,22 @@ def _ref_parts():
 
 
 def text_json(prompt: str) -> dict:
-    resp = client().models.generate_content(
-        model=CFG["models"]["text"],
-        contents=prompt,
-        config=types.GenerateContentConfig(response_mime_type="application/json"),
-    )
-    return json.loads(resp.text)
+    last_err = None
+    for model in [CFG["models"]["text"], *CFG["models"].get("text_fallbacks", [])]:
+        try:
+            resp = client().models.generate_content(
+                model=model,
+                contents=prompt,
+                config=types.GenerateContentConfig(response_mime_type="application/json"),
+            )
+            data = json.loads(resp.text)
+            if isinstance(data, list):
+                data = data[0]
+            return data
+        except Exception as e:
+            last_err = e
+            log(f"text model {model} failed: {e}")
+    raise last_err
 
 
 def image(prompt: str, out: Path, extra_images: list[Path] | None = None) -> Path:

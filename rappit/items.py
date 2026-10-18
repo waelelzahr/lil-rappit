@@ -65,6 +65,11 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
         media = gen.image(f"Lil Rappit {idea}. Soft, warm, wholesome mood." + n,
                           d / "soft.png")
 
-    cap = caption_for(kind, ep, note)
+    try:
+        cap = caption_for(kind, ep, note)
+    except Exception as e:
+        log(f"caption failed, using fallback: {e}")
+        cap = {"caption": f"Lil Rappit in: {ep['title']} 🥕\n\n{CFG['hashtags']}",
+               "title": f"Lil Rappit: {ep['title']}"}
     log(f"built {item_id} ({kind})")
     return {"file": str(media), **cap}

@@ -1,6 +1,7 @@
 """Sunday job: pick an unused episode, generate the week's 3 items, post the drafts to Discord."""
 import os
 import random
+import traceback
 import sys
 from datetime import datetime
 from pathlib import Path
@@ -25,7 +26,8 @@ def main():
 
     discord.send_text(f"🐰 **New week, new episode: {ep['title']}**\nDrafts incoming…")
     errors = []
-    for kind in ("reel", "mugshot", "soft"):
+    only = [k.strip() for k in os.environ.get("ONLY", "").split(",") if k.strip()]
+    for kind in only or ("reel", "mugshot", "soft"):
         item_id = f"{week}-{kind}"
         try:
             built = items.build(item_id, kind, ep, soft_idx=soft_idx)
@@ -42,8 +44,8 @@ def main():
                 "caption": built["caption"], "title": built["title"], "soft_idx": soft_idx,
             }
         except Exception as e:
-            log(f"FAILED {item_id}: {e}")
-            errors.append(f"{kind}: {e}")
+            log(f"FAILED {item_id}: {e}\n{traceback.format_exc()}")
+            errors.append(f"{kind}: {str(e)[:300]}")
         save_state(state)
 
     if errors:

@@ -1,6 +1,7 @@
 # Models (Gemini API). Change here if Google renames a model.
 models:
-  text: gemini-2.5-flash             # captions and prompt writing
+  text: gemini-flash-latest          # captions and prompt writing
+  text_fallbacks: [gemini-2.5-flash, gemini-3-flash-preview, gemini-2.0-flash]
   image: gemini-nano-banana-2.1       # start frames and photo posts
   image_fallback: gemini-3.1-flash-image-preview
   video: veo-3.1-fast-generate-preview
