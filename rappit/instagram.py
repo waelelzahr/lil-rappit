@@ -11,7 +11,7 @@ from pathlib import Path
 
 import requests
 
-GRAPH = "https://graph.instagram.com"
+GRAPH = "https://graph.instagram.com/v23.0"
 
 
 def _tok():
@@ -89,7 +89,7 @@ def post_photo(image_url: str, caption: str) -> dict:
 def refresh_token() -> str | None:
     """Extend the long-lived token (valid 60 days). Returns new token or None."""
     try:
-        r = _check(requests.get(f"{GRAPH}/refresh_access_token",
+        r = _check(requests.get("https://graph.instagram.com/refresh_access_token",
                                 params={"grant_type": "ig_refresh_token", "access_token": _tok()},
                                 timeout=60))
         return r.get("access_token")
