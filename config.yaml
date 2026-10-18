@@ -1,0 +1,23 @@
+# Models (Gemini API). Change here if Google renames a model.
+models:
+  text: gemini-2.5-flash             # captions and prompt writing
+  image: gemini-nano-banana-2.1       # start frames and photo posts
+  image_fallback: gemini-3.1-flash-image-preview
+  video: veo-3.1-fast-generate-preview
+
+video:
+  resolution: 1080p
+  aspect_ratio: "9:16"
+  clip_seconds: 8                     # two clips stitched = 16 s reel
+
+# Weekly plan (Beirut time). Day names in English.
+schedule:
+  reel: Monday 18:00
+  mugshot: Wednesday 18:00
+  soft: Friday 18:00
+
+# Safety caps
+limits:
+  max_redos_per_item: 3
+
+hashtags: "#lilrappit #funnyanimals #comedy #aicomedy #shorts"

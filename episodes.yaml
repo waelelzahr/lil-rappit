@@ -1,0 +1,232 @@
+# Episode bank. Each Sunday the pipeline picks a random unused episode.
+# tough  = clip 1 (0-8 s): Rappit in control, menacing.
+# carrot = clip 2 (8-16 s): carrots appear, he melts and takes a terrible deal.
+# Lines in quotes are spoken. Keep each line short (8 s per clip).
+
+- id: interrogation
+  title: The Interrogation
+  setting: dim police interrogation room, single hanging lamp, metal table
+  tough: >
+    Two detectives lean in. Rappit sits back, arms crossed, chewing a carrot
+    like a cigar. He lowers his sunglasses slowly and says in a deep gravelly
+    voice: "I ain't sayin' nothin'."
+  carrot: >
+    A detective silently slides a bag of fresh carrots across the table.
+    Rappit's ears droop, his voice goes high and sweet: "...okay I did it.
+    I did all of it. Is it the organic kind?"
+
+- id: lamborghini
+  title: The Dealership
+  setting: shiny luxury car showroom, a gleaming orange sports car
+  tough: >
+    Rappit leans on the sports car, slaps a briefcase of cash on the hood and
+    growls: "I want this one. Today."
+  carrot: >
+    The sly Weasel salesman holds up a single carrot. Rappit melts, then is
+    seen happily pushing a rusty shopping cart out of the showroom. High
+    sweet voice: "Best deal of my life."
+
+- id: mafia-meeting
+  title: The Sit-Down
+  setting: smoky backroom of an old Italian restaurant, round table, candles
+  tough: >
+    Rappit sits at the head of the table, gold chain glinting, and slams his
+    paw down: "Nobody touches my territory. Nobody."
+  carrot: >
+    Weasel places three carrots on the table. Rappit's sunglasses slide down,
+    eyes sparkling. Sweet squeaky voice: "...the whole city? Sure, take it."
+
+- id: salary
+  title: The Negotiation
+  setting: glass corporate boardroom, city skyline behind
+  tough: >
+    Rappit puts his feet on the boardroom table: "One million. A month.
+    Non-negotiable."
+  carrot: >
+    The CEO slides over one tiny baby carrot. Rappit gasps, hugs it to his
+    chest. High sweet voice: "Where do I sign?"
+
+- id: boxing
+  title: The Big Fight
+  setting: boxing ring under bright lights, roaring crowd
+  tough: >
+    Rappit in red boxing gloves towers over a dazed opponent, shouting:
+    "Get up! I ain't done with you!"
+  carrot: >
+    The referee holds up a carrot outside the ropes. Rappit instantly drops
+    flat on the canvas, still smiling, and squeaks: "I'm out. Ding ding."
+
+- id: wedding
+  title: The Objection
+  setting: elegant outdoor wedding, flower arch, guests in rows
+  tough: >
+    Rappit stands up in the back row, removes his sunglasses and announces:
+    "I object. This wedding is over."
+  carrot: >
+    The bride offers him a slice of carrot cake. Rappit melts and is now
+    carrying the ring pillow down the aisle, beaming: "Congratulations,
+    you two."
+
+- id: hostage
+  title: The Standoff
+  setting: night street, police cars with flashing lights, SWAT team
+  tough: >
+    Rappit stands defiant on a rooftop edge with a megaphone: "You'll never
+    take me alive!"
+  carrot: >
+    Below, the negotiator gently rattles a bag of carrots. Rappit is
+    immediately downstairs with his paws up, sweet voice: "Do I get the
+    whole bag?"
+
+- id: bank-vault
+  title: The Heist
+  setting: high-tech bank vault, laser grid, stacks of gold bars
+  tough: >
+    Rappit cracks his knuckles in front of the vault door: "Tonight, we take
+    everything."
+  carrot: >
+    Inside the open vault there is one carrot on a velvet pillow next to the
+    gold. Rappit walks out holding only the carrot, ignoring the gold.
+    Sweet voice: "Mission accomplished."
+
+- id: tax-audit
+  title: The Audit
+  setting: drab government tax office, piles of paperwork
+  tough: >
+    Rappit glares at the tax auditor across the desk: "I don't pay taxes.
+    Taxes pay me."
+  carrot: >
+    The auditor pulls a carrot from a drawer. Rappit melts and is now
+    stamping forms enthusiastically. High voice: "Audit me again tomorrow?"
+
+- id: protection
+  title: The Collection
+  setting: small cozy bakery, display cases full of pastries
+  tough: >
+    Rappit leans over the counter at the nervous baker: "Nice bakery.
+    Shame if somethin' happened to it."
+  carrot: >
+    The baker offers a carrot muffin. Rappit melts and is now wearing an
+    apron, sweeping the floor happily. Sweet voice: "Same time next week,
+    boss?"
+
+- id: court
+  title: The Trial
+  setting: wooden courtroom, judge at the bench, jury box
+  tough: >
+    Rappit stands confidently beside his lawyer and points at the jury:
+    "You got nothin' on me."
+  carrot: >
+    The prosecutor holds up a carrot as evidence. Rappit gasps and squeaks:
+    "Guilty! So guilty! Can I keep the evidence?"
+
+- id: getaway
+  title: The Getaway
+  setting: night highway, Rappit driving a black muscle car, sirens behind
+  tough: >
+    Rappit grips the wheel, sunglasses on at night: "Hold on. Nobody
+    catches Lil Rappit."
+  carrot: >
+    A roadside stand appears with a sign FREE CARROTS. Rappit screeches to a
+    stop, police lights fill the frame, and he waves happily: "Worth it."
+
+- id: poker
+  title: High Stakes
+  setting: underground poker table, green felt, smoky light
+  tough: >
+    Rappit pushes all his chips forward with a cold stare: "All in."
+  carrot: >
+    Weasel tosses in one carrot. Rappit immediately folds his royal flush
+    face up and grabs the carrot. Sweet voice: "You win, buddy."
+
+- id: prison-break
+  title: The Breakout
+  setting: prison cell at night, Rappit with a spoon next to a tunnel
+  tough: >
+    Rappit finishes digging a tunnel and whispers to his cellmate:
+    "Tonight. We're outta here."
+  carrot: >
+    The guard walks by and drops a carrot through the bars. Rappit
+    immediately fills the tunnel back in. Sweet voice: "Actually, I like it
+    here."
+
+- id: rival-gang
+  title: The Turf War
+  setting: empty warehouse, rival gang of tough raccoons facing Rappit
+  tough: >
+    Rappit steps forward ahead of his crew: "This is our block. Walk away."
+  carrot: >
+    The raccoon boss opens a crate full of carrots. Rappit drops his
+    sunglasses and switches sides, standing with the raccoons. Sweet voice:
+    "I always liked you guys."
+
+- id: job-interview
+  title: The Interview
+  setting: bright modern startup office, bean bags, a nervous HR manager
+  tough: >
+    Rappit sits across from HR, chain swinging: "I don't do interviews.
+    You work for me now."
+  carrot: >
+    HR offers a carrot. Rappit melts and is now an intern carrying a tall
+    stack of coffee cups. Sweet voice: "Unpaid internship? Love it."
+
+- id: airport
+  title: Customs
+  setting: airport customs desk, x-ray machine, suitcase open
+  tough: >
+    The customs officer opens Rappit's suitcase. Rappit stares him down:
+    "Close it. Now. You didn't see nothin'."
+  carrot: >
+    The officer finds a carrot hidden in a sock and holds it up. Rappit
+    melts and squeaks: "I'll go quietly... can I bring it with me?"
+
+- id: landlord
+  title: The Landlord
+  setting: small apartment hallway, landlord at the door with a clipboard
+  tough: >
+    Rappit blocks the doorway: "Rent? I don't pay rent. The building pays
+    me."
+  carrot: >
+    The landlord shows a single carrot. Rappit melts and hands over a wad
+    of cash and his gold chain. Sweet voice: "Keep the change."
+
+- id: car-wash
+  title: The Car Wash
+  setting: sunny car wash, Rappit's black muscle car covered in soap
+  tough: >
+    Rappit points at the attendant: "If there's one scratch on my ride,
+    you're done."
+  carrot: >
+    The attendant offers a carrot smoothie. Rappit melts and is now washing
+    other people's cars with a big sponge. Sweet voice: "Who's next?"
+
+- id: chess
+  title: Checkmate
+  setting: park chess table, autumn leaves, old tortoise opponent
+  tough: >
+    Rappit moves his queen with a menacing glare: "Your move, old man. Make
+    it your last."
+  carrot: >
+    The tortoise places a carrot on the board. Rappit knocks over his own
+    king and squeaks: "I resign. Great game."
+
+- id: gym
+  title: Leg Day
+  setting: hardcore gym, heavy barbells, mirrors
+  tough: >
+    Rappit loads plates onto a barbell and growls at a big bodybuilder:
+    "This is my bench. Move."
+  carrot: >
+    The bodybuilder holds up a carrot protein bar. Rappit melts and is now
+    spotting the bodybuilder, cheering in a sweet voice: "You got this,
+    king!"
+
+- id: parking
+  title: The Parking Spot
+  setting: busy city street, one empty parking space, Rappit's car idling
+  tough: >
+    Rappit rolls down his window at a driver about to take the spot:
+    "Don't even think about it."
+  carrot: >
+    The other driver waves a carrot. Rappit drives away and the driver
+    parks. Rappit calls back sweetly: "Enjoy the spot!"
