@@ -1,4 +1,4 @@
-"""Sunday job: pick an unused episode, generate the week's 3 items, send to Telegram."""
+"""Sunday job: pick an unused episode, generate the week's 3 items, email the drafts."""
 import os
 import random
 import sys
@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from rappit import items, telegram  # noqa: E402
+from rappit import items, mailer  # noqa: E402
 from rappit.common import CFG, EPISODES, OUT, TZ, load_state, log, next_slot, save_state  # noqa: E402
 
 
@@ -29,13 +29,13 @@ def main():
         try:
             built = items.build(item_id, kind, ep, soft_idx=soft_idx)
             path = Path(built["file"])
-            msg_id = telegram.send_item(
-                item_id, kind, path,
-                f"[{kind.upper()} · {ep['title']} · posts {CFG['schedule'][kind]}]\n\n"
-                f"{built['caption']}")
+            slot = next_slot(CFG["schedule"][kind])
+            mailer.send_item(item_id, kind, path,
+                             f"Episode: {ep['title']}\nPosts: {CFG['schedule'][kind]}\n\n"
+                             f"{built['caption']}", title=ep["title"])
             state["items"][item_id] = {
-                "kind": kind, "episode": ep["id"], "slot": next_slot(CFG["schedule"][kind]),
-                "status": "pending", "message_id": msg_id, "redos": 0,
+                "kind": kind, "episode": ep["id"], "slot": slot,
+                "status": "pending", "redos": 0,
                 "run_id": os.environ.get("GITHUB_RUN_ID"),
                 "relpath": str(path.relative_to(OUT)),
                 "caption": built["caption"], "title": built["title"], "soft_idx": soft_idx,
@@ -46,11 +46,10 @@ def main():
         save_state(state)
 
     if errors:
-        telegram.send_text("⚠️ Some drafts failed this week:\n" + "\n".join(errors)
-                           + "\n\nRe-run the Weekly workflow on GitHub to try again.")
+        mailer.send_text("Some drafts failed this week:\n\n" + "\n".join(errors)
+                         + "\n\nRe-run the Weekly drafts workflow on GitHub to try again.",
+                         subject="[Rappit] ⚠️ Draft generation problem")
         sys.exit(1)
-    telegram.send_text(f"🐰 This week: “{ep['title']}”. Tap Approve or Redo on each draft. "
-                       "To redo with changes, reply to a draft with your note.")
 
 
 if __name__ == "__main__":
