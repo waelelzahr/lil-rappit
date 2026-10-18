@@ -1,7 +1,22 @@
 {
   "used_episodes": [
-    "getaway"
+    "getaway",
+    "wedding"
   ],
-  "items": {},
+  "items": {
+    "2026-10-18-soft": {
+      "kind": "soft",
+      "episode": "wedding",
+      "slot": "2026-10-23T18:00:00+03:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1561318136521695293",
+      "run_id": "39117491946",
+      "relpath": "2026-10-18-soft/soft.png",
+      "caption": "Cold on the block, soft for the crop.\nDon’t tell the crew I folded. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
+      "title": "Lil Rappit Got Caught Lacking With Carrots",
+      "soft_idx": 2
+    }
+  },
   "tg_offset": 0
 }
