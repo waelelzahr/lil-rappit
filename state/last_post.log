@@ -1,0 +1,15 @@
+[13:59:43] post 2026-10-18-reel failed: Instagram POST https://graph.instagram.com/17841465549527728/media -> 400: {'message': 'The parameter video_url is required', 'type': 'IGApiException', 'code': 100, 'fbtrace_id': 'Ag6WciKRKwUCY1osqrdWkXL'}
+Traceback (most recent call last):
+  File "/home/runner/work/lil-rappit/lil-rappit/scripts/post.py", line 38, in main
+    url = post_item(it)
+          ^^^^^^^^^^^^^
+  File "/home/runner/work/lil-rappit/lil-rappit/scripts/post.py", line 19, in post_item
+    res = instagram.post_reel(path, it["caption"])
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/instagram.py", line 62, in post_reel
+    c = _check(requests.post(f"{GRAPH}/{_uid()}/media", data={
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/instagram.py", line 31, in _check
+    raise RuntimeError(f"Instagram {r.request.method} {r.url.split('?')[0]} -> "
+RuntimeError: Instagram POST https://graph.instagram.com/17841465549527728/media -> 400: {'message': 'The parameter video_url is required', 'type': 'IGApiException', 'code': 100, 'fbtrace_id': 'Ag6WciKRKwUCY1osqrdWkXL'}
+

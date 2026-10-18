@@ -22,21 +22,22 @@
     "2026-10-18-reel": {
       "kind": "reel",
       "episode": "dealership",
-      "slot": "2026-10-19T18:00:00+03:00",
-      "status": "pending",
+      "slot": "2026-10-18T13:59:40.764376+03:00",
+      "status": "approved",
       "redos": 0,
       "message_id": "1561326649511776398",
       "run_id": "39119325274",
       "relpath": "2026-10-18-reel/reel.mp4",
       "caption": "Came for the sports car.\nLeft with the real bag. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
       "title": "Lil Rappit Closes The Worst Deal In Mafia History",
-      "soft_idx": 4
+      "soft_idx": 4,
+      "attempts": 1
     },
     "2026-10-18-mugshot": {
       "kind": "mugshot",
       "episode": "lamborghini",
       "slot": "2026-10-21T18:00:00+03:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1561319655447068682",
       "run_id": "39117614389",
@@ -46,5 +47,7 @@
       "soft_idx": 3
     }
   },
-  "tg_offset": 0
+  "tg_offset": 0,
+  "discord_last": "1561332936303976489",
+  "ig_token_seen": "2026-10-18T13:59:41.240847+03:00"
 }
