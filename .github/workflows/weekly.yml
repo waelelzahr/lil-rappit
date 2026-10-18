@@ -9,6 +9,10 @@ on:
         description: "Only these items (comma list: reel,mugshot,soft). Empty = all."
         required: false
         default: ""
+      episode:
+        description: "Force an episode id from episodes.yaml (optional)"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -27,6 +31,7 @@ jobs:
       DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
       OUT_DIR: ${{ github.workspace }}/out
       ONLY: ${{ inputs.only }}
+      EPISODE: ${{ inputs.episode }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

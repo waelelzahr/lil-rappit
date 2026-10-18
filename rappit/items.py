@@ -1,7 +1,7 @@
 """Builds the three weekly items: reel, mugshot photo, soft-side photo."""
 from pathlib import Path
 
-from . import gen
+from . import gen, writer
 from .common import CFG, OUT, log
 
 SOFT_IDEAS = (
@@ -18,10 +18,11 @@ def _note(note: str | None) -> str:
     return f"\nDirector's note for this version: {note}" if note else ""
 
 
-def caption_for(kind: str, ep: dict, note: str | None) -> dict:
+def caption_for(kind: str, ep: dict, note: str | None, deal: str | None = None) -> dict:
     tags = CFG["hashtags"]
     what = {
-        "reel": f"a 16-second comedy reel: {ep['tough']} THEN {ep['carrot']}",
+        "reel": f"a 16-second comedy reel '{ep['title']}': Lil Rappit demands {ep['demand']}, "
+                f"then gets offered carrots and accepts this: {deal or ep['bad_deal']}",
         "mugshot": f"a photo: Lil Rappit's police mugshot after the episode '{ep['title']}'",
         "soft": "a photo showing Lil Rappit's secret soft side with carrots",
     }[kind]
@@ -41,19 +42,20 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
     d.mkdir(parents=True, exist_ok=True)
     n = _note(note)
 
+    deal = None
     if kind == "reel":
-        f1 = gen.image(
-            f"Setting: {ep['setting']}. Opening shot, Lil Rappit looking tough and "
-            f"in control. {ep['tough'].split(':')[0]}" + n, d / "frame1.png")
-        c1 = gen.video(
-            f"Setting: {ep['setting']}. {ep['tough']} Lil Rappit speaks in a deep, slow, "
-            "gravelly gangster voice. Comedic, cinematic." + n, f1, d / "clip1.mp4")
-        f2 = gen.last_frame(c1, d / "frame2.png")
-        c2 = gen.video(
-            f"Continue directly from this frame, same scene and lighting. {ep['carrot']} "
-            "When he sees the carrots his ears droop and his voice turns high, sweet and "
-            "squeaky. Hold a short silent beat before he melts. Comedic timing." + n,
-            f2, d / "clip2.mp4")
+        script = writer.write_script(ep, note)
+        deal = script.get("deal")
+        (d / "script.json").write_text(__import__("json").dumps(script, indent=2), encoding="utf-8")
+        s1, s2 = script["shot1"], script["shot2"]
+        f1 = gen.image(f"Setting: {ep['setting']}. Other character: {ep['opponent']}. "
+                       f"{s1['frame']}", d / "frame1.png")
+        c1 = gen.video(writer.shot_prompt(ep, s1), f1, d / "clip1.mp4")
+        last = gen.last_frame(c1, d / "clip1_last.png")
+        f2 = gen.image(f"Same location, lighting and other character as in the LAST reference "
+                       f"image. Close-up shot. {s2['frame']}", d / "frame2.png",
+                       extra_images=[last])
+        c2 = gen.video(writer.shot_prompt(ep, s2, soft=True), f2, d / "clip2.mp4")
         media = gen.stitch(c1, c2, d / "reel.mp4")
     elif kind == "mugshot":
         media = gen.image(
@@ -66,7 +68,7 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
                           d / "soft.png")
 
     try:
-        cap = caption_for(kind, ep, note)
+        cap = caption_for(kind, ep, note, deal)
     except Exception as e:
         log(f"caption failed, using fallback: {e}")
         cap = {"caption": f"Lil Rappit in: {ep['title']} 🥕\n\n{CFG['hashtags']}",

@@ -66,9 +66,12 @@ def _ref_parts():
     ]
 
 
-def text_json(prompt: str) -> dict:
+def text_json(prompt: str, prefer_pro: bool = False) -> dict:
     last_err = None
-    for model in [CFG["models"]["text"], *CFG["models"].get("text_fallbacks", [])]:
+    models = [CFG["models"]["text"], *CFG["models"].get("text_fallbacks", [])]
+    if prefer_pro:
+        models = [*CFG["models"].get("text_pro", []), *models]
+    for model in models:
         try:
             resp = client().models.generate_content(
                 model=model,

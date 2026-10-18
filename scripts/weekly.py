@@ -18,8 +18,10 @@ def main():
     if not unused:  # bank exhausted: start over
         state["used_episodes"] = []
         unused = list(EPISODES)
-    ep = random.choice(unused)
-    state["used_episodes"].append(ep["id"])
+    forced = os.environ.get("EPISODE", "").strip()
+    ep = next((e for e in EPISODES if e["id"] == forced), None) or random.choice(unused)
+    if ep["id"] not in state["used_episodes"]:
+        state["used_episodes"].append(ep["id"])
     week = datetime.now(TZ).strftime("%Y-%m-%d")
     soft_idx = len(state["used_episodes"])
     log(f"episode: {ep['id']} - {ep['title']}")
