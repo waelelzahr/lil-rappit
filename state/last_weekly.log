@@ -1,7 +1,7 @@
-[13:02:04] episode: lamborghini - The Dealership
-[13:02:19] image ok (gemini-nano-banana-2.1) -> frame1.png
-[13:03:42] video ok -> clip1.mp4 (82s)
-[13:05:17] video ok -> clip2.mp4 (92s)
-[13:06:08] built 2026-10-18-reel (reel)
-[13:06:44] image ok (gemini-nano-banana-2.1) -> mugshot.png
-[13:06:53] built 2026-10-18-mugshot (mugshot)
+[13:14:19] episode: dealership - The Dealership
+[13:14:41] script: Lil Rappit gives away a full briefcase of cash for a bag of carrots and doesn't even get to keep the sports car.
+[13:14:57] image ok (gemini-nano-banana-2.1) -> frame1.png
+[13:16:30] video ok -> clip1.mp4 (92s)
+[13:16:49] image ok (gemini-nano-banana-2.1) -> frame2.png
+[13:18:42] video ok -> clip2.mp4 (112s)
+[13:19:26] built 2026-10-18-reel (reel)

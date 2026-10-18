@@ -2,7 +2,8 @@
   "used_episodes": [
     "getaway",
     "wedding",
-    "lamborghini"
+    "lamborghini",
+    "dealership"
   ],
   "items": {
     "2026-10-18-soft": {
@@ -20,16 +21,16 @@
     },
     "2026-10-18-reel": {
       "kind": "reel",
-      "episode": "lamborghini",
+      "episode": "dealership",
       "slot": "2026-10-19T18:00:00+03:00",
       "status": "pending",
       "redos": 0,
-      "message_id": "1561319552288297010",
-      "run_id": "39117614389",
+      "message_id": "1561322890891235498",
+      "run_id": "39118405873",
       "relpath": "2026-10-18-reel/reel.mp4",
-      "caption": "Came for the horsepower, left with the real bag.\nBusiness is business. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
-      "title": "The Car Salesman Found My Only Weakness",
-      "soft_idx": 3
+      "caption": "Walked in for the whip, left with the real bag. 🥕\nBusiness is business.\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
+      "title": "Lil Rappit Makes the Worst Dealership Deal Ever",
+      "soft_idx": 4
     },
     "2026-10-18-mugshot": {
       "kind": "mugshot",
