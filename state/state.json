@@ -23,7 +23,7 @@
       "kind": "reel",
       "episode": "dealership",
       "slot": "2026-10-18T13:59:40.764376+03:00",
-      "status": "approved",
+      "status": "posted",
       "redos": 0,
       "message_id": "1561326649511776398",
       "run_id": "39119325274",
@@ -31,7 +31,9 @@
       "caption": "Came for the sports car.\nLeft with the real bag. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
       "title": "Lil Rappit Closes The Worst Deal In Mafia History",
       "soft_idx": 4,
-      "attempts": 0
+      "attempts": 0,
+      "posted_at": "2026-10-18T14:02:19.902291+03:00",
+      "instagram": "https://www.instagram.com/reel/DeoiAMEjiGg/"
     },
     "2026-10-18-mugshot": {
       "kind": "mugshot",
@@ -48,6 +50,6 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1561332951130705920",
+  "discord_last": "1561333248796270686",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00"
 }
