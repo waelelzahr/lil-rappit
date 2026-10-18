@@ -1,16 +1,17 @@
 # Lil Rappit pipeline
 
-Weekly comedy content for Lil Rappit, generated with the Gemini API and approved by email.
+Weekly comedy content for Lil Rappit, generated with the Gemini API and approved in Discord.
 
 **Every Sunday 09:00 (Beirut)** the *Weekly drafts* workflow:
 1. picks a random unused episode from `episodes.yaml`
 2. generates a 16 s reel (two 8 s Veo 3.1 Fast clips, stitched), a mugshot photo and a soft-side photo, using `refs/` + `character.md` for consistency
-3. emails each draft to you
+3. posts each draft in your private Discord channel with ✅ / 🔁 reactions
 
-**Every hour (08:00–23:00)** the *Review replies* workflow reads your email replies:
-- **OK** → approved, queued for its posting slot (see `config.yaml`)
-- **REDO** → regenerated (max 3 per item)
-- Any other text → regenerated using your note, e.g. "make the cop a crocodile"
+**Every 30 minutes (08:00–24:00)** the *Review replies* workflow checks Discord:
+- tap ✅ → approved, queued for its posting slot (see `config.yaml`)
+- tap 🔁 → regenerated (max 3 per item)
+- reply to a draft with a note → regenerated using it, e.g. "make the cop a crocodile"
+- type `status` → shows the queue
 
 Posting to Instagram Reels and YouTube Shorts is added in a later step.
 
@@ -18,8 +19,8 @@ Posting to Instagram Reels and YouTube Shorts is added in a later step.
 | Name | What |
 |---|---|
 | `GEMINI_API_KEY` | Google AI Studio key (paid tier) |
-| `EMAIL_ADDRESS` | your Gmail address (drafts are sent to and from it) |
-| `EMAIL_APP_PASSWORD` | Gmail app password (Google Account → Security → App passwords) |
+| `DISCORD_BOT_TOKEN` | Discord Developer Portal → your app → Bot → Reset Token |
+| `DISCORD_CHANNEL_ID` | right-click your channel → Copy Channel ID (Developer Mode on) |
 
 ## Editing
 - New gags: add entries to `episodes.yaml`

@@ -41,3 +41,19 @@ def next_slot(spec: str, now: datetime | None = None) -> str:
     if when <= now:
         when += timedelta(days=7)
     return when.isoformat()
+
+
+APPROVE_WORDS = {"ok", "okay", "approve", "approved", "yes", "y", "go", "post", "👍", "✅", "good"}
+
+
+def classify(text: str) -> tuple[str, str | None]:
+    """-> ('approve', None) | ('redo', note or None)"""
+    t = text.strip()
+    first = t.split()[0].lower().strip(".!,:") if t else ""
+    if first in APPROVE_WORDS and len(t.split()) <= 3:
+        return "approve", None
+    if first == "redo" and len(t.split()) == 1:
+        return "redo", None
+    if first == "redo":
+        return "redo", t[4:].strip(" :-") or None
+    return "redo", t or None

@@ -1,4 +1,4 @@
-"""Sunday job: pick an unused episode, generate the week's 3 items, email the drafts."""
+"""Sunday job: pick an unused episode, generate the week's 3 items, post the drafts to Discord."""
 import os
 import random
 import sys
@@ -7,7 +7,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from rappit import items, mailer  # noqa: E402
+from rappit import discord, items  # noqa: E402
 from rappit.common import CFG, EPISODES, OUT, TZ, load_state, log, next_slot, save_state  # noqa: E402
 
 
@@ -23,6 +23,7 @@ def main():
     soft_idx = len(state["used_episodes"])
     log(f"episode: {ep['id']} - {ep['title']}")
 
+    discord.send_text(f"🐰 **New week, new episode: {ep['title']}**\nDrafts incoming…")
     errors = []
     for kind in ("reel", "mugshot", "soft"):
         item_id = f"{week}-{kind}"
@@ -30,12 +31,12 @@ def main():
             built = items.build(item_id, kind, ep, soft_idx=soft_idx)
             path = Path(built["file"])
             slot = next_slot(CFG["schedule"][kind])
-            mailer.send_item(item_id, kind, path,
-                             f"Episode: {ep['title']}\nPosts: {CFG['schedule'][kind]}\n\n"
-                             f"{built['caption']}", title=ep["title"])
+            msg_id = discord.send_item(item_id, kind, path,
+                                       f"Posts: {CFG['schedule'][kind]}\n\n{built['caption']}",
+                                       title=ep["title"])
             state["items"][item_id] = {
                 "kind": kind, "episode": ep["id"], "slot": slot,
-                "status": "pending", "redos": 0,
+                "status": "pending", "redos": 0, "message_id": msg_id,
                 "run_id": os.environ.get("GITHUB_RUN_ID"),
                 "relpath": str(path.relative_to(OUT)),
                 "caption": built["caption"], "title": built["title"], "soft_idx": soft_idx,
@@ -46,9 +47,8 @@ def main():
         save_state(state)
 
     if errors:
-        mailer.send_text("Some drafts failed this week:\n\n" + "\n".join(errors)
-                         + "\n\nRe-run the Weekly drafts workflow on GitHub to try again.",
-                         subject="[Rappit] ⚠️ Draft generation problem")
+        discord.send_text("⚠️ Some drafts failed:\n" + "\n".join(errors)
+                          + "\nRe-run the *Weekly drafts* workflow on GitHub to try again.")
         sys.exit(1)
 
 

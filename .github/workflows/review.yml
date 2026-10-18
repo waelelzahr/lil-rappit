@@ -2,7 +2,7 @@ name: Review replies
 
 on:
   schedule:
-    - cron: "0 5-20 * * *"   # hourly, 08:00-23:00 Beirut
+    - cron: "*/30 5-20 * * *"   # every 30 min, 08:00-23:59 Beirut
   workflow_dispatch: {}
 
 permissions:
@@ -18,8 +18,8 @@ jobs:
     timeout-minutes: 60
     env:
       GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      EMAIL_ADDRESS: ${{ secrets.EMAIL_ADDRESS }}
-      EMAIL_APP_PASSWORD: ${{ secrets.EMAIL_APP_PASSWORD }}
+      DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+      DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
       OUT_DIR: ${{ github.workspace }}/out
     steps:
       - uses: actions/checkout@v4
