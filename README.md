@@ -13,7 +13,7 @@ Weekly comedy content for Lil Rappit, generated with the Gemini API and approved
 - reply to a draft with a note → regenerated using it, e.g. "make the cop a crocodile"
 - type `status` → shows the queue
 
-Posting to Instagram Reels and YouTube Shorts is added in a later step.
+**Google's daily Veo limit** (10 videos/day on Tier 1) is tracked: a reel (4 videos) only starts if it can finish, reel 2 is made on Wednesday, and anything that doesn't fit waits in a queue until after Google's daily reset (~10:05 Beirut). Type `status` in Discord to see the queue and how many videos are left today.
 
 ## Secrets (repo Settings → Secrets and variables → Actions)
 | Name | What |

@@ -11,6 +11,7 @@ video:
   resolution: 1080p
   aspect_ratio: "9:16"
   clip_seconds: 8
+  daily_limit: 10    # Veo requests/day on your Gemini API tier
   negative_prompt: >-
     bright flat lighting, cartoon, 2D animation, low detail, washed out colors,
     fast chaotic camera movement, shaky cam, jump cuts, subtitles, text, watermark,
@@ -20,11 +21,12 @@ images:
   size: 2K          # start frames and photos (falls back to default if unsupported)
 
 # Weekly plan (Beirut time). Each reel gets its own episode; the mugshot
-# follows the first reel's episode. Add/remove lines to change the week.
+# follows the first reel's episode. `make` delays generation (spreads Veo's
+# 10-videos-a-day limit); otherwise items are made on Sunday.
 plan:
   - {id: reel, kind: reel, at: Monday 18:00}
   - {id: mugshot, kind: mugshot, at: Wednesday 18:00}
-  - {id: reel2, kind: reel, at: Thursday 18:00}
+  - {id: reel2, kind: reel, at: Thursday 18:00, make: Wednesday 10:15}
   - {id: soft, kind: soft, at: Saturday 18:00}
 
 # Safety caps

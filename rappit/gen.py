@@ -8,6 +8,7 @@ from pathlib import Path
 from google import genai
 from google.genai import types
 
+from . import quota
 from .common import CFG, ROOT, log
 
 _client = None
@@ -176,10 +177,14 @@ def video(prompt: str, start_frame: Path, out: Path, seconds: int | None = None,
             )
             break
         except Exception as e:
+            if "RESOURCE_EXHAUSTED" in str(e) or "429" in str(e):
+                quota.exhausted()
+                raise quota.QuotaExceeded(f"Google's daily Veo limit reached: {e}") from e
             last_err = e
             log(f"Veo rejected {res}/{seconds}s: {e}")
     else:
         raise last_err
+    quota.used()
     t0 = time.time()
     while not op.done:
         if time.time() - t0 > 900:

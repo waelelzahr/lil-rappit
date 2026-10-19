@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-from . import captions, gen, writer
+from . import captions, gen, quota, writer
 from .common import CFG, OUT, log
 
 SOFT_IDEAS = (
@@ -45,6 +45,7 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
 
     deal = None
     if kind == "reel":
+        quota.need(len(writer.SHOTS))  # never start a reel we can't finish today
         script = writer.write_script(ep, note)
         deal = script.get("deal")
         (d / "script.json").write_text(json.dumps(script, indent=2), encoding="utf-8")

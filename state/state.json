@@ -76,9 +76,22 @@
       "caption": "Told the feds zero taxes.\nThen they pulled out the orange. Put the whole building on my tab. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
       "title": "Mafia Rabbit Refuses Taxes Until Carrots Enter The Room",
       "soft_idx": 6
+    },
+    "test-2026-10-19-reel": {
+      "kind": "reel",
+      "episode": "poker-car",
+      "slot": "2026-10-26T18:00:00+03:00",
+      "status": "queued",
+      "not_before": "2026-10-20T10:05:00+03:00",
+      "redos": 0,
+      "soft_idx": 0
     }
   },
   "tg_offset": 0,
   "discord_last": "1561687735322943508",
-  "ig_token_seen": "2026-10-18T13:59:41.240847+03:00"
+  "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
+  "veo_usage": {
+    "date": "2026-10-19",
+    "count": 10
+  }
 }

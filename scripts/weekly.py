@@ -8,8 +8,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from rappit import discord, items  # noqa: E402
-from rappit.common import CFG, EPISODES, OUT, TZ, load_state, log, next_slot, save_state  # noqa: E402
+from rappit import discord, pipeline, quota  # noqa: E402
+from rappit.common import CFG, EPISODES, TZ, load_state, log, next_slot, save_state  # noqa: E402
 
 
 def pick_episode(state: dict, forced: str = "") -> dict:
@@ -27,6 +27,7 @@ def pick_episode(state: dict, forced: str = "") -> dict:
 
 def main():
     state = load_state()
+    quota.bind(state)
     week = datetime.now(TZ).strftime("%Y-%m-%d")
     only = [k.strip() for k in os.environ.get("ONLY", "").split(",") if k.strip()]
     forced = os.environ.get("EPISODE", "").strip()
@@ -47,18 +48,14 @@ def main():
     for p in plan:
         item_id = f"{os.environ.get('ITEM_PREFIX', '')}{week}-{p['id']}"
         ep = eps.get(p["id"], first_ep)
+        slot = next_slot(p["at"])
         try:
-            built = items.build(item_id, p["kind"], ep, soft_idx=soft_idx)
-            path = Path(built["file"])
-            msg_id = discord.send_item(item_id, p["kind"], path,
-                                       f"Posts: {p['at']}\n\n{built['caption']}", title=ep["title"])
-            state["items"][item_id] = {
-                "kind": p["kind"], "episode": ep["id"], "slot": next_slot(p["at"]),
-                "status": "pending", "redos": 0, "message_id": msg_id,
-                "run_id": os.environ.get("GITHUB_RUN_ID"),
-                "relpath": str(path.relative_to(OUT)),
-                "caption": built["caption"], "title": built["title"], "soft_idx": soft_idx,
-            }
+            if p.get("make") and not only:  # made later in the week (Veo daily limit)
+                pipeline.queue(state, item_id, p["kind"], ep, slot, soft_idx,
+                               datetime.fromisoformat(next_slot(p["make"])), "scheduled")
+                discord.send_text(f"🗓️ **{ep['title']}** ({p['id']}) will be made {p['make']}.")
+            else:
+                pipeline.make(state, item_id, p["kind"], ep, slot, soft_idx, p["at"])
         except Exception as e:
             log(f"FAILED {item_id}: {e}\n{traceback.format_exc()}")
             errors.append(f"{p['id']}: {str(e)[:300]}")
