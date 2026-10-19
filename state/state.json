@@ -55,7 +55,7 @@
       "kind": "reel",
       "episode": "poker-car",
       "slot": "2026-10-19T18:00:00+03:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1561687385694015580",
       "run_id": "39237391788",
@@ -68,7 +68,7 @@
       "kind": "reel",
       "episode": "tax-audit",
       "slot": "2026-10-22T18:00:00+03:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1561687735322943508",
       "run_id": "39237391788",
@@ -88,7 +88,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1561687735322943508",
+  "discord_last": "1561753081308250133",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-10-19",
