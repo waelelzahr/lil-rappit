@@ -1,8 +1,7 @@
 name: Weekly drafts
 
+# Triggered Sundays 09:00 Beirut by cron-job.org via workflow_dispatch.
 on:
-  schedule:
-    - cron: "0 6 * * 0"   # Sunday 09:00 Beirut
   workflow_dispatch:
     inputs:
       only:

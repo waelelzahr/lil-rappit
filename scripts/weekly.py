@@ -32,6 +32,10 @@ def main():
     only = [k.strip() for k in os.environ.get("ONLY", "").split(",") if k.strip()]
     forced = os.environ.get("EPISODE", "").strip()
     plan = [p for p in CFG["plan"] if not only or p["id"] in only]
+    prefix = os.environ.get("ITEM_PREFIX", "")
+    if not only and not prefix and any(k.startswith(week) for k in state["items"]):
+        log(f"drafts for {week} already exist; not making them twice")
+        return
 
     # One episode per reel; photos follow the first reel's episode.
     eps = {}
