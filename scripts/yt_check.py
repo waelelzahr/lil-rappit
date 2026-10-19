@@ -21,7 +21,7 @@ try:
         msg = (f"📺 YouTube is connected to **{ch['snippet']['title']}** "
                f"(https://youtube.com/channel/{ch['id']})")
 except Exception as e:
-    msg = f"⚠️ YouTube check failed: {str(e)[:400]}"
+    msg = f"⚠️ YouTube check failed: {' '.join(str(e).split())[:400]}"
     traceback.print_exc()
 print(f"::notice::{msg}")
 try:
