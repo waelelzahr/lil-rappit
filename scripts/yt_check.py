@@ -19,5 +19,5 @@ else:
     msg = (f"📺 YouTube is connected to **{ch['snippet']['title']}** "
            f"(https://youtube.com/channel/{ch['id']}), "
            f"{ch['statistics'].get('subscriberCount', '?')} subscribers.")
-print(msg)
+print(f"::notice::{msg}")
 discord.send_text(msg)
