@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 
-from . import gen, writer
+from . import captions, gen, writer
 from .common import CFG, OUT, log
 
 SOFT_IDEAS = (
@@ -64,7 +64,9 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
             frames.append(f)
             clips.append(gen.video(writer.shot_prompt(ep, script, i), f,
                                    d / f"shot{i + 1}.mp4", seconds=secs, style=gen.NOIR))
-        media = gen.stitch(clips, d / "reel.mp4")
+        raw = gen.stitch(clips, d / "reel_raw.mp4")
+        lines = [dl.get("line", "") for sh in script["shots"] for dl in sh.get("dialogue", [])]
+        media = captions.apply(raw, d / "reel.mp4", script.get("hook"), lines)
     elif kind == "mugshot":
         media = gen.image(
             "Police booking mugshot photo: Lil Rappit stands in front of a height chart, "

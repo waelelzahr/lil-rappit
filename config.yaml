@@ -12,11 +12,13 @@ video:
   aspect_ratio: "9:16"
   clip_seconds: 8                     # two clips stitched = 16 s reel
 
-# Weekly plan (Beirut time). Day names in English.
-schedule:
-  reel: Monday 18:00
-  mugshot: Wednesday 18:00
-  soft: Friday 18:00
+# Weekly plan (Beirut time). Each reel gets its own episode; the mugshot
+# follows the first reel's episode. Add/remove lines to change the week.
+plan:
+  - {id: reel, kind: reel, at: Monday 18:00}
+  - {id: mugshot, kind: mugshot, at: Wednesday 18:00}
+  - {id: reel2, kind: reel, at: Thursday 18:00}
+  - {id: soft, kind: soft, at: Saturday 18:00}
 
 # Safety caps
 limits:

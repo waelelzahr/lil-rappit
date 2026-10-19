@@ -1,8 +1,8 @@
-"""Sunday job: pick an unused episode, generate the week's 3 items, post the drafts to Discord."""
+"""Sunday job: build the week's plan (see config.yaml `plan`), post drafts to Discord."""
 import os
 import random
-import traceback
 import sys
+import traceback
 from datetime import datetime
 from pathlib import Path
 
@@ -12,34 +12,48 @@ from rappit import discord, items  # noqa: E402
 from rappit.common import CFG, EPISODES, OUT, TZ, load_state, log, next_slot, save_state  # noqa: E402
 
 
-def main():
-    state = load_state()
-    unused = [e for e in EPISODES if e["id"] not in state["used_episodes"]]
-    if not unused:  # bank exhausted: start over
-        state["used_episodes"] = []
-        unused = list(EPISODES)
-    forced = os.environ.get("EPISODE", "").strip()
-    ep = next((e for e in EPISODES if e["id"] == forced), None) or random.choice(unused)
+def pick_episode(state: dict, forced: str = "") -> dict:
+    ep = next((e for e in EPISODES if e["id"] == forced), None)
+    if not ep:
+        unused = [e for e in EPISODES if e["id"] not in state["used_episodes"]]
+        if not unused:  # bank exhausted: start over
+            state["used_episodes"] = []
+            unused = list(EPISODES)
+        ep = random.choice(unused)
     if ep["id"] not in state["used_episodes"]:
         state["used_episodes"].append(ep["id"])
-    week = datetime.now(TZ).strftime("%Y-%m-%d")
-    soft_idx = len(state["used_episodes"])
-    log(f"episode: {ep['id']} - {ep['title']}")
+    return ep
 
-    discord.send_text(f"🐰 **New week, new episode: {ep['title']}**\nDrafts incoming…")
-    errors = []
+
+def main():
+    state = load_state()
+    week = datetime.now(TZ).strftime("%Y-%m-%d")
     only = [k.strip() for k in os.environ.get("ONLY", "").split(",") if k.strip()]
-    for kind in only or ("reel", "mugshot", "soft"):
-        item_id = f"{week}-{kind}"
+    forced = os.environ.get("EPISODE", "").strip()
+    plan = [p for p in CFG["plan"] if not only or p["id"] in only or p["kind"] in only]
+
+    # One episode per reel; photos follow the first reel's episode.
+    eps = {}
+    for p in plan:
+        if p["kind"] == "reel":
+            eps[p["id"]] = pick_episode(state, forced if not eps else "")
+    first_ep = next(iter(eps.values()), None) or pick_episode(state, forced)
+    titles = ", ".join(f"“{e['title']}”" for e in eps.values()) or f"“{first_ep['title']}”"
+    log(f"episodes: {titles}")
+    discord.send_text(f"🐰 **New week: {titles}**\nDrafts incoming…")
+
+    errors = []
+    soft_idx = len(state["used_episodes"])
+    for p in plan:
+        item_id = f"{week}-{p['id']}"
+        ep = eps.get(p["id"], first_ep)
         try:
-            built = items.build(item_id, kind, ep, soft_idx=soft_idx)
+            built = items.build(item_id, p["kind"], ep, soft_idx=soft_idx)
             path = Path(built["file"])
-            slot = next_slot(CFG["schedule"][kind])
-            msg_id = discord.send_item(item_id, kind, path,
-                                       f"Posts: {CFG['schedule'][kind]}\n\n{built['caption']}",
-                                       title=ep["title"])
+            msg_id = discord.send_item(item_id, p["kind"], path,
+                                       f"Posts: {p['at']}\n\n{built['caption']}", title=ep["title"])
             state["items"][item_id] = {
-                "kind": kind, "episode": ep["id"], "slot": slot,
+                "kind": p["kind"], "episode": ep["id"], "slot": next_slot(p["at"]),
                 "status": "pending", "redos": 0, "message_id": msg_id,
                 "run_id": os.environ.get("GITHUB_RUN_ID"),
                 "relpath": str(path.relative_to(OUT)),
@@ -47,7 +61,7 @@ def main():
             }
         except Exception as e:
             log(f"FAILED {item_id}: {e}\n{traceback.format_exc()}")
-            errors.append(f"{kind}: {str(e)[:300]}")
+            errors.append(f"{p['id']}: {str(e)[:300]}")
         save_state(state)
 
     if errors:
