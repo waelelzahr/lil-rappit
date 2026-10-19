@@ -63,4 +63,7 @@ jobs:
           git config user.name "rappit-bot"
           git config user.email "rappit-bot@users.noreply.github.com"
           git add state/
-          git diff --cached --quiet || (git commit -m "state: weekly drafts" && git push)
+          git diff --cached --quiet && exit 0
+          git commit -m "state: weekly drafts"
+          for i in 1 2 3; do git push && exit 0; git pull --rebase -q; done
+          exit 1
