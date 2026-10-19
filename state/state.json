@@ -3,7 +3,9 @@
     "getaway",
     "wedding",
     "lamborghini",
-    "dealership"
+    "dealership",
+    "poker-car",
+    "tax-audit"
   ],
   "items": {
     "2026-10-18-soft": {
@@ -48,6 +50,32 @@
       "caption": "Got caught slipping on the lot.\nTell the warden I need my carrots crisp. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
       "title": "Lil Rappit BUSTED: The Dealership Mugshot",
       "soft_idx": 3
+    },
+    "2026-10-19-reel": {
+      "kind": "reel",
+      "episode": "poker-car",
+      "slot": "2026-10-19T18:00:00+03:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1561684669081329664",
+      "run_id": "39235314795",
+      "relpath": "2026-10-19-reel/reel.mp4",
+      "caption": "Horsepower is temporary.\nVitamin A is forever. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
+      "title": "Lil Rappit Makes an Offer He Can't Refuse",
+      "soft_idx": 6
+    },
+    "2026-10-19-reel2": {
+      "kind": "reel",
+      "episode": "tax-audit",
+      "slot": "2026-10-22T18:00:00+03:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1561686537165471856",
+      "run_id": "39235314795",
+      "relpath": "2026-10-19-reel2/reel.mp4",
+      "caption": "Told the feds zero taxes.\nThen they pulled out the orange. Put the whole building on my tab. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
+      "title": "Mafia Rabbit Refuses Taxes Until Carrots Enter The Room",
+      "soft_idx": 6
     }
   },
   "tg_offset": 0,

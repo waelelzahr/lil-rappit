@@ -1,16 +1,34 @@
-[13:28:10] episode: dealership - The Dealership
-[13:28:33] script: Lil Rappit traded an entire briefcase full of cash for a single bag of carrots, completely abandoning his demand for the luxury sports car.
-[13:28:46] image ok (gemini-nano-banana-2.1) -> opponent.png
-[13:29:02] image ok (gemini-nano-banana-2.1) -> frame1.png
-[13:29:03] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[13:29:54] video ok -> shot1.mp4 (6s, 51s)
-[13:30:11] image ok (gemini-nano-banana-2.1) -> frame2.png
-[13:30:12] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[13:31:04] video ok -> shot2.mp4 (6s, 51s)
-[13:31:27] image ok (gemini-nano-banana-2.1) -> frame3.png
-[13:31:27] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[13:32:19] video ok -> shot3.mp4 (6s, 51s)
-[13:32:33] image ok (gemini-nano-banana-2.1) -> frame4.png
-[13:32:34] Veo rejected 1080p/4s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 4 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[13:33:16] video ok -> shot4.mp4 (4s, 41s)
-[13:34:14] built 2026-10-18-reel (reel)
+[13:09:29] episodes: “Pink Slips”, “The Audit”
+[13:10:32] script: Lil Rappit happily hands over the keys to his own muscle car before the street race even begins in exchange for a bag of carrots.
+[13:10:47] image ok (gemini-nano-banana-2.1) -> opponent.png
+[13:11:01] image ok (gemini-nano-banana-2.1) -> frame1.png
+[13:11:02] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
+[13:11:53] video ok -> shot1.mp4 (6s, 51s)
+[13:12:06] image ok (gemini-nano-banana-2.1) -> frame2.png
+[13:12:06] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
+[13:12:58] video ok -> shot2.mp4 (6s, 51s)
+[13:13:19] image ok (gemini-nano-banana-2.1) -> frame3.png
+[13:13:19] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
+[13:14:10] video ok -> shot3.mp4 (6s, 51s)
+[13:14:28] image ok (gemini-nano-banana-2.1) -> frame4.png
+[13:14:28] Veo rejected 1080p/4s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 4 seconds.', 'status': 'INVALID_ARGUMENT'}}
+[13:15:09] video ok -> shot4.mp4 (4s, 41s)
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[13:16:00] captions skipped: open() got an unexpected keyword argument 'metadata_errors'
+[13:16:48] built 2026-10-19-reel (reel)
+[13:17:41] script: Lil Rappit volunteers to pay the taxes for everyone in the entire building just to get a bag of carrots.
+[13:17:55] image ok (gemini-nano-banana-2.1) -> opponent.png
+[13:18:06] image ok (gemini-nano-banana-2.1) -> frame1.png
+[13:18:07] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
+[13:18:58] video ok -> shot1.mp4 (6s, 51s)
+[13:19:10] image ok (gemini-nano-banana-2.1) -> frame2.png
+[13:19:10] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
+[13:20:02] video ok -> shot2.mp4 (6s, 51s)
+[13:20:25] image ok (gemini-nano-banana-2.1) -> frame3.png
+[13:20:25] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
+[13:21:37] video ok -> shot3.mp4 (6s, 71s)
+[13:21:53] image ok (gemini-nano-banana-2.1) -> frame4.png
+[13:21:54] Veo rejected 1080p/4s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 4 seconds.', 'status': 'INVALID_ARGUMENT'}}
+[13:22:55] video ok -> shot4.mp4 (4s, 61s)
+[13:23:36] captions skipped: open() got an unexpected keyword argument 'metadata_errors'
+[13:24:22] built 2026-10-19-reel2 (reel)
