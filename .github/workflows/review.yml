@@ -1,8 +1,8 @@
 name: Review and post
 
+# Triggered every 30 min (08:00-23:30 Beirut) by cron-job.org via workflow_dispatch.
+# GitHub's own scheduler was too unreliable.
 on:
-  schedule:
-    - cron: "*/30 5-20 * * *"   # every 30 min, 08:00-23:59 Beirut
   workflow_dispatch: {}
 
 permissions:
