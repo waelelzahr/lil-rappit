@@ -52,9 +52,14 @@ def _wrap(text: str, width: int = 18) -> str:
 
 def transcribe(video: Path, hint: str) -> list[dict]:
     """Word timestamps via faster-whisper (CPU). Returns [{start, end, word}]."""
+    import numpy as np
     from faster_whisper import WhisperModel
+    # Decode audio with ffmpeg ourselves (avoids PyAV version issues).
+    pcm = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(video), "-f", "s16le",
+                          "-ac", "1", "-ar", "16000", "-"], capture_output=True, check=True).stdout
+    audio = np.frombuffer(pcm, np.int16).astype(np.float32) / 32768.0
     model = WhisperModel("small.en", device="cpu", compute_type="int8")
-    segments, _ = model.transcribe(str(video), word_timestamps=True, vad_filter=True,
+    segments, _ = model.transcribe(audio, word_timestamps=True, vad_filter=True,
                                    initial_prompt=hint[:800], language="en")
     words = []
     for seg in segments:

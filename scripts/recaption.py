@@ -1,0 +1,36 @@
+"""Re-apply hook + captions to existing reel drafts (no regeneration cost).
+Usage: ITEMS=2026-10-19-reel,2026-10-19-reel2 python scripts/recaption.py"""
+import json
+import os
+import shutil
+import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+from rappit import captions, discord, media  # noqa: E402
+from rappit.common import EPISODES, OUT, load_state, log, save_state  # noqa: E402
+
+EP = {e["id"]: e for e in EPISODES}
+
+
+def main():
+    state = load_state()
+    for item_id in [i.strip() for i in os.environ["ITEMS"].split(",") if i.strip()]:
+        it = state["items"][item_id]
+        folder = str(Path(it["relpath"]).parent)
+        raw = media.fetch(it["run_id"], f"{folder}/reel_raw.mp4")
+        script = json.loads(media.fetch(it["run_id"], f"{folder}/script.json").read_text())
+        d = OUT / f"{folder}-cap"
+        d.mkdir(parents=True, exist_ok=True)
+        shutil.copy(raw, d / "reel_raw.mp4")
+        lines = [dl.get("line", "") for sh in script["shots"] for dl in sh.get("dialogue", [])]
+        out = captions.apply(d / "reel_raw.mp4", d / "reel.mp4", script.get("hook"), lines)
+        it["message_id"] = discord.send_item(item_id, "reel", out, it["caption"],
+                                             title=EP[it["episode"]]["title"])
+        it.update(run_id=os.environ.get("GITHUB_RUN_ID"), relpath=str(out.relative_to(OUT)))
+        save_state(state)
+        log(f"recaptioned {item_id}")
+
+
+if __name__ == "__main__":
+    main()

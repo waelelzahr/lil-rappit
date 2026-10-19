@@ -30,7 +30,7 @@ def main():
     week = datetime.now(TZ).strftime("%Y-%m-%d")
     only = [k.strip() for k in os.environ.get("ONLY", "").split(",") if k.strip()]
     forced = os.environ.get("EPISODE", "").strip()
-    plan = [p for p in CFG["plan"] if not only or p["id"] in only or p["kind"] in only]
+    plan = [p for p in CFG["plan"] if not only or p["id"] in only]
 
     # One episode per reel; photos follow the first reel's episode.
     eps = {}
