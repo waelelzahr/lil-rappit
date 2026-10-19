@@ -25,9 +25,15 @@ def main():
         shutil.copy(raw, d / "reel_raw.mp4")
         lines = [dl.get("line", "") for sh in script["shots"] for dl in sh.get("dialogue", [])]
         out = captions.apply(d / "reel_raw.mp4", d / "reel.mp4", script.get("hook"), lines)
+        was_approved = it["status"] == "approved" or (
+            it["status"] == "pending" and discord.reacted(it["message_id"], discord.APPROVE))
         it["message_id"] = discord.send_item(item_id, "reel", out, it["caption"],
                                              title=EP[it["episode"]]["title"])
         it.update(run_id=os.environ.get("GITHUB_RUN_ID"), relpath=str(out.relative_to(OUT)))
+        if was_approved:  # carry the approval over to the captioned version
+            it["status"] = "approved"
+            discord.send_text("✅ Your approval carries over to this captioned version.",
+                              reply_to=it["message_id"])
         save_state(state)
         log(f"recaptioned {item_id}")
 
