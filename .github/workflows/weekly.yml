@@ -13,6 +13,10 @@ on:
         description: "Force an episode id from episodes.yaml (optional)"
         required: false
         default: ""
+      prefix:
+        description: "Item id prefix for test runs (e.g. test-), keeps real drafts untouched"
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -32,6 +36,7 @@ jobs:
       OUT_DIR: ${{ github.workspace }}/out
       ONLY: ${{ inputs.only }}
       EPISODE: ${{ inputs.episode }}
+      ITEM_PREFIX: ${{ inputs.prefix }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

@@ -25,24 +25,37 @@ straight and dark until the melt.
 Tone: classic crime drama. Low-key lighting, shadows, smoke-free haze, slow camera moves,
 long silences, tension. Shot/reverse-shot between Rappit and the other character.
 
-SHOT 1 "THE DEMAND" (6 s): starts MID-TENSION with no establishing pause: Rappit's first word
-lands within the first second. Slow push-in on Rappit, medium close-up, the other character's
-shoulder blurred in the foreground. Rappit states his demand clearly and SLOWLY, max 10
-words, {VOICE_TOUGH}. Nobody else speaks.
+SHOT 1 "THE DEMAND" (6 s) - pure dread, the most cinematic shot of the film:
+  camera: very slow dolly-in from darkness toward Rappit, slightly LOW ANGLE so he looms,
+          85mm lens, the other character's shoulder out of focus in the foreground.
+  lighting: ONE hard motivated light that fits the setting (hanging lamp, desk lamp,
+          light through window blinds, a neon sign); half his face in deep shadow; sunglasses
+          catch a glint; thin rim light on his fur; haze drifting through the beam.
+  performance: he starts mid-tension (first word within the first second), barely moves,
+          a slow menacing head tilt, a long stare. He states his demand clearly and SLOWLY,
+          max 10 words, {VOICE_TOUGH}. Nobody else speaks.
+  sound: a low cello drone, a ticking clock, the room otherwise silent.
 
-SHOT 2 "THE COUNTER" (6 s): reverse shot on the other character, medium close-up over
-Rappit's shoulder. They look nervous, swallow, then a slow sly smile. They slowly slide a
-brown paper bag overflowing with fresh orange carrots across the table toward Rappit and say
-the terrible deal OUT LOUD so it is unmistakable, max 14 words. Rappit does not speak.
+SHOT 2 "THE COUNTER" (6 s) - the tension snaps:
+  camera: reverse shot, medium close-up on the other character over Rappit's blurred shoulder,
+          locked off, then a slow push-in as the bag slides.
+  lighting: same light source, sweat glistening on the other character's face, shadows under the eyes.
+  performance: nervous swallow, then a slow sly smile. They slowly slide a brown paper bag
+          overflowing with fresh orange carrots across the table and say the terrible deal OUT
+          LOUD so it is unmistakable, max 14 words. Rappit does not speak.
+  sound: the drone swells; the paper bag scraping on the table is loud; the music cuts out
+          right after the line.
 
 SHOT 3 "THE MELT" (6 s): extreme close-up on Rappit's face, still dead serious. One beat of
 silence. Then his face transforms in exaggerated physical comedy: sunglasses slowly slide
 down his nose, eyes go huge and sparkly, ears shoot up then flop, nose twitches, lower lip
 trembles. He accepts in a {VOICE_SOFT}, max 8 words, funny.
+  sound: total silence for the beat, then a soft heavenly "aaah" choir swell as he melts.
 
 SHOT 4 "THE PAYOFF" (4 s): wide two-shot showing the terrible deal physically and clearly
 (e.g. he pushes the briefcase of cash across, hands over the keys, signs the paper) while
 hugging the carrot bag; the other character looks smug. No dialogue, or max 4 words.
+  sound: a playful pizzicato sting that ends the film.
 
 Constraints for the video model: same location in every shot, the same two characters,
 simple clear actions, no text on screen, family-friendly, no smoking, no weapons.
@@ -61,7 +74,11 @@ Return JSON:
  "opponent_look": "detailed visual description of the other character (species, clothes, colors, face) so they look identical in every shot",
  "shots": [
    {"frame": "the opening still of this shot: framing, who is visible, props, lighting",
-    "action": "what happens during the shot, beat by beat, including camera movement",
+    "camera": "lens, angle and exact camera movement",
+    "lighting": "light sources, shadows, haze, color",
+    "performance": "facial expressions, body language and timing, beat by beat",
+    "sound": "music, ambience and sound effects",
+    "action": "what happens during the shot, beat by beat",
     "dialogue": [{"speaker": "Rappit or the other character's name", "voice": "voice description", "line": "..."}]}
    ... exactly 4 shots in order ...
  ],
@@ -90,8 +107,12 @@ def shot_prompt(ep: dict, script: dict, idx: int) -> str:
     return (
         f"Shot: {name}. Setting: {ep['setting']}.\n"
         f"Other character (looks exactly like this): {script.get('opponent_look', ep['opponent'])}.\n"
+        f"Camera: {shot.get('camera', '')}\n"
+        f"Lighting: {shot.get('lighting', '')}\n"
+        f"Performance: {shot.get('performance', '')}\n"
         f"Action: {shot['action']}\n"
+        f"Sound design: {shot.get('sound', '')}\n"
         + ("Dialogue, spoken with lip sync:\n" + "\n".join(lines) + "\n" if lines
            else "No dialogue in this shot.\n")
-        + "Only the listed lines are spoken. Tense, low cinematic score under the scene."
+        + "Only the listed lines are spoken. Realistic, grounded acting; nothing rushed."
     )

@@ -59,7 +59,9 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
             extra = [OPP]
             if frames:
                 extra.append(("Same location, set and lighting as this earlier shot", frames[0]))
-            f = gen.image(f"Setting: {ep['setting']}. Shot {i + 1} ({name}): {shot['frame']}" + n,
+            f = gen.image(gen.FILM_STILL + f"Setting: {ep['setting']}. Shot {i + 1} ({name}): "
+                          f"{shot['frame']} Camera: {shot.get('camera', '')}. "
+                          f"Lighting: {shot.get('lighting', '')}." + n,
                           d / f"frame{i + 1}.png", extra_images=extra, style=gen.NOIR)
             frames.append(f)
             clips.append(gen.video(writer.shot_prompt(ep, script, i), f,

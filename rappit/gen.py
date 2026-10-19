@@ -35,6 +35,13 @@ STYLE = (
     "9:16 composition, the character centered and fully in frame. Family-safe "
     "comedy. No subtitles, no captions, no watermarks, no smoking."
 )
+FILM_STILL = (
+    "A single frame from a high-budget crime film, shot on 35mm anamorphic: dramatic "
+    "low-key lighting with one hard motivated key light, deep black shadows, rim light "
+    "separating the subject from the background, atmospheric haze catching the light, "
+    "rich warm amber and teal tones, shallow depth of field with creamy bokeh, subtle film "
+    "grain, deliberate composition with strong negative space. "
+)
 NOIR = (
     "Dark cinematic crime-drama look, like a classic mafia film: low-key chiaroscuro "
     "lighting, deep shadows, warm amber practical lamps, haze in the air, anamorphic "
@@ -95,6 +102,16 @@ def text_json(prompt: str, prefer_pro: bool = False) -> dict:
     raise last_err
 
 
+_NO_SIZE: set[str] = set()  # models that rejected image_size
+
+
+def _image_config(aspect: str, model: str):
+    size = CFG.get("images", {}).get("size")
+    if size and model not in _NO_SIZE:
+        return types.ImageConfig(aspect_ratio=aspect, image_size=size)
+    return types.ImageConfig(aspect_ratio=aspect)
+
+
 def image(prompt: str, out: Path, extra_images: list | None = None,
           style: str | None = None, with_rappit: bool = True, aspect: str = "9:16") -> Path:
     """Generate a 9:16 image. extra_images: list of Path or (label, Path) tuples."""
@@ -118,7 +135,7 @@ def image(prompt: str, out: Path, extra_images: list | None = None,
                 contents=parts,
                 config=types.GenerateContentConfig(
                     response_modalities=["IMAGE"],
-                    image_config=types.ImageConfig(aspect_ratio=aspect),
+                    image_config=_image_config(aspect, model),
                 ),
             )
             for part in resp.candidates[0].content.parts:
@@ -127,7 +144,11 @@ def image(prompt: str, out: Path, extra_images: list | None = None,
                     log(f"image ok ({model}) -> {out.name}")
                     return out
             last_err = RuntimeError(f"{model} returned no image")
-        except Exception as e:  # try fallback model
+        except Exception as e:  # retry without size, then try fallback model
+            if "size" in str(e).lower() and model not in _NO_SIZE:
+                _NO_SIZE.add(model)
+                log(f"{model} rejected image_size; retrying at default size")
+                return image(prompt, out, extra_images, style, with_rappit, aspect)
             last_err = e
             log(f"image model {model} failed: {e}")
     raise last_err
@@ -150,6 +171,7 @@ def video(prompt: str, start_frame: Path, out: Path, seconds: int | None = None,
                 config=types.GenerateVideosConfig(
                     aspect_ratio=v["aspect_ratio"], resolution=res,
                     duration_seconds=seconds, number_of_videos=1,
+                    negative_prompt=v.get("negative_prompt") or None,
                 ),
             )
             break

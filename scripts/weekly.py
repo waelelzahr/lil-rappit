@@ -45,7 +45,7 @@ def main():
     errors = []
     soft_idx = len(state["used_episodes"])
     for p in plan:
-        item_id = f"{week}-{p['id']}"
+        item_id = f"{os.environ.get('ITEM_PREFIX', '')}{week}-{p['id']}"
         ep = eps.get(p["id"], first_ep)
         try:
             built = items.build(item_id, p["kind"], ep, soft_idx=soft_idx)

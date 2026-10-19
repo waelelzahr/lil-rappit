@@ -10,7 +10,14 @@ models:
 video:
   resolution: 1080p
   aspect_ratio: "9:16"
-  clip_seconds: 8                     # two clips stitched = 16 s reel
+  clip_seconds: 8
+  negative_prompt: >-
+    bright flat lighting, cartoon, 2D animation, low detail, washed out colors,
+    fast chaotic camera movement, shaky cam, jump cuts, subtitles, text, watermark,
+    extra characters, deformed face, extra limbs, smoking, weapons
+
+images:
+  size: 2K          # start frames and photos (falls back to default if unsupported)
 
 # Weekly plan (Beirut time). Each reel gets its own episode; the mugshot
 # follows the first reel's episode. Add/remove lines to change the week.
