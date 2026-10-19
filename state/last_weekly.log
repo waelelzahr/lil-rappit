@@ -1,34 +1,65 @@
-[13:09:29] episodes: “Pink Slips”, “The Audit”
-[13:10:32] script: Lil Rappit happily hands over the keys to his own muscle car before the street race even begins in exchange for a bag of carrots.
-[13:10:47] image ok (gemini-nano-banana-2.1) -> opponent.png
-[13:11:01] image ok (gemini-nano-banana-2.1) -> frame1.png
-[13:11:02] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[13:11:53] video ok -> shot1.mp4 (6s, 51s)
-[13:12:06] image ok (gemini-nano-banana-2.1) -> frame2.png
-[13:12:06] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[13:12:58] video ok -> shot2.mp4 (6s, 51s)
-[13:13:19] image ok (gemini-nano-banana-2.1) -> frame3.png
-[13:13:19] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[13:14:10] video ok -> shot3.mp4 (6s, 51s)
-[13:14:28] image ok (gemini-nano-banana-2.1) -> frame4.png
-[13:14:28] Veo rejected 1080p/4s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 4 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[13:15:09] video ok -> shot4.mp4 (4s, 41s)
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-[13:16:00] captions skipped: open() got an unexpected keyword argument 'metadata_errors'
-[13:16:48] built 2026-10-19-reel (reel)
-[13:17:41] script: Lil Rappit volunteers to pay the taxes for everyone in the entire building just to get a bag of carrots.
-[13:17:55] image ok (gemini-nano-banana-2.1) -> opponent.png
-[13:18:06] image ok (gemini-nano-banana-2.1) -> frame1.png
-[13:18:07] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[13:18:58] video ok -> shot1.mp4 (6s, 51s)
-[13:19:10] image ok (gemini-nano-banana-2.1) -> frame2.png
-[13:19:10] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[13:20:02] video ok -> shot2.mp4 (6s, 51s)
-[13:20:25] image ok (gemini-nano-banana-2.1) -> frame3.png
-[13:20:25] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[13:21:37] video ok -> shot3.mp4 (6s, 71s)
-[13:21:53] image ok (gemini-nano-banana-2.1) -> frame4.png
-[13:21:54] Veo rejected 1080p/4s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 4 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[13:22:55] video ok -> shot4.mp4 (4s, 61s)
-[13:23:36] captions skipped: open() got an unexpected keyword argument 'metadata_errors'
-[13:24:22] built 2026-10-19-reel2 (reel)
+[13:47:46] episodes: “Pink Slips”
+[13:48:11] script: Lil Rappit handed over the keys to his own race car before the race even started, just to get a paper bag full of carrots.
+[13:48:31] image ok (gemini-nano-banana-2.1) -> opponent.png
+[13:48:50] image ok (gemini-nano-banana-2.1) -> frame1.png
+[13:48:50] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
+[13:49:42] video ok -> shot1.mp4 (6s, 51s)
+[13:49:57] image ok (gemini-nano-banana-2.1) -> frame2.png
+[13:49:57] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
+[13:50:49] video ok -> shot2.mp4 (6s, 51s)
+[13:51:02] image ok (gemini-nano-banana-2.1) -> frame3.png
+[13:51:02] Veo rejected 1080p/6s: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ', 'status': 'RESOURCE_EXHAUSTED'}}
+[13:51:03] Veo rejected 720p/6s: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ', 'status': 'RESOURCE_EXHAUSTED'}}
+[13:51:03] FAILED test-2026-10-19-reel: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ', 'status': 'RESOURCE_EXHAUSTED'}}
+Traceback (most recent call last):
+  File "/home/runner/work/lil-rappit/lil-rappit/scripts/weekly.py", line 51, in main
+    built = items.build(item_id, p["kind"], ep, soft_idx=soft_idx)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/items.py", line 67, in build
+    clips.append(gen.video(writer.shot_prompt(ep, script, i), f,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/gen.py", line 182, in video
+    raise last_err
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/gen.py", line 166, in video
+    op = client().models.generate_videos(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/models.py", line 6833, in generate_videos
+    return self._generate_videos(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/models.py", line 6000, in _generate_videos
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_api_client.py", line 1839, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_api_client.py", line 1632, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/tenacity/__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_api_client.py", line 1609, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/errors.py", line 173, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/errors.py", line 202, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 429 RESOURCE_EXHAUSTED. {'error': {'code': 429, 'message': 'You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. ', 'status': 'RESOURCE_EXHAUSTED'}}
+
