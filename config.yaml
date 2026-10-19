@@ -23,3 +23,6 @@ limits:
   max_redos_per_item: 3
 
 hashtags: "#lilrappit #funnyanimals #comedy #aicomedy #shorts"
+
+youtube:
+  privacy: private   # switch to public once Google approves the API audit
