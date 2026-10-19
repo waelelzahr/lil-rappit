@@ -55,14 +55,17 @@
       "kind": "reel",
       "episode": "poker-car",
       "slot": "2026-10-19T18:00:00+03:00",
-      "status": "approved",
+      "status": "posted",
       "redos": 0,
       "message_id": "1561687385694015580",
       "run_id": "39237391788",
       "relpath": "2026-10-19-reel-cap/reel.mp4",
       "caption": "Horsepower is temporary.\nVitamin A is forever. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
       "title": "Lil Rappit Makes an Offer He Can't Refuse",
-      "soft_idx": 6
+      "soft_idx": 6,
+      "instagram": "https://www.instagram.com/reel/DeriYbekzrL/",
+      "youtube": "https://youtube.com/shorts/ixPrI0fH1x0 (private until the YouTube API audit is approved)",
+      "posted_at": "2026-10-19T18:02:26.127535+03:00"
     },
     "2026-10-19-reel2": {
       "kind": "reel",
@@ -88,7 +91,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1561753081308250133",
+  "discord_last": "1561753085192315021",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-10-19",
