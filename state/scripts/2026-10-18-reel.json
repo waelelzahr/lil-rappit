@@ -1,0 +1,50 @@
+{
+  "opponent_look": "Anthropomorphic weasel with sleek brown fur, a white underbelly, and a sharp pointy snout. He wears a shiny, cheap silver suit with a thin black tie. He has narrow, sly eyes and slicked-back fur on his head.",
+  "shots": [
+    {
+      "frame": "Vertical framing. Medium close-up on Lil Rappit (a rabbit wearing a bucket hat, sunglasses, orange puffer jacket, and thick gold chain) sitting at a sleek glass desk. The showroom is dark with low-key dramatic lighting, shadows, and a smoke-free haze. The weasel's shiny silver-suited shoulder is blurred in the foreground. A glossy orange sports car sits in the deep background.",
+      "action": "Slow push-in on Rappit. He stares dead ahead with an intimidating, motionless glare. He slowly lifts his paw and slaps a metal briefcase of cash onto the glass desk, letting the tense silence hang.",
+      "dialogue": [
+        {
+          "speaker": "Lil Rappit",
+          "voice": "Very slow, deliberate, deep, raspy, quiet and menacing with a Brooklyn accent, leaving long pauses between words",
+          "line": "Half price. Keys today. Capisce?"
+        }
+      ]
+    },
+    {
+      "frame": "Vertical framing. Reverse shot, medium close-up on the Weasel Salesman over Lil Rappit's orange-puffer-clad shoulder. The weasel sits behind the glass desk in the dark, moody showroom.",
+      "action": "The weasel looks incredibly nervous and swallows hard. He glances down, then a slow, sly smile spreads across his snout. He slowly slides a crumpled brown paper bag, overflowing with bright orange, leafy fresh carrots, across the glass table toward Rappit.",
+      "dialogue": [
+        {
+          "speaker": "Weasel Salesman",
+          "voice": "Smooth, sly, and overtly confident",
+          "line": "Leave the cash. Take the carrots. You get no car."
+        }
+      ]
+    },
+    {
+      "frame": "Vertical framing. Extreme close-up on Lil Rappit's face, completely submerged in dark shadows, looking dead serious and tough.",
+      "action": "One beat of utter silence. Suddenly, Rappit's sunglasses slowly slide down his nose, revealing huge, sparkly, teary eyes. His ears shoot straight up, then flop down happily. His little nose twitches rapidly, and his lower lip trembles with overwhelming joy.",
+      "dialogue": [
+        {
+          "speaker": "Lil Rappit",
+          "voice": "Suddenly high-pitched, squeaky, sweet, and baby-like",
+          "line": "Oh boy, yummy crunchy carrots! Deal!"
+        }
+      ]
+    },
+    {
+      "frame": "Vertical framing. Wide two-shot showing the length of the glass desk between them, with the sleek orange sports car parked directly behind the weasel under a dramatic spotlight.",
+      "action": "Lil Rappit eagerly shoves the entire heavy briefcase of cash across the glass desk to the weasel while tightly hugging the paper bag of carrots to his chest. The weasel rests his paws on the briefcase, smiling smugly.",
+      "dialogue": [
+        {
+          "speaker": "Weasel Salesman",
+          "voice": "Smug and slick",
+          "line": "Pleasure doing business."
+        }
+      ]
+    }
+  ],
+  "deal": "Lil Rappit traded an entire briefcase full of cash for a single bag of carrots, completely abandoning his demand for the luxury sports car."
+}
