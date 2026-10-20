@@ -5,7 +5,8 @@
     "lamborghini",
     "dealership",
     "poker-car",
-    "tax-audit"
+    "tax-audit",
+    "salary"
   ],
   "items": {
     "2026-10-18-soft": {
@@ -109,7 +110,7 @@
     },
     "test3-2026-10-21-reel": {
       "kind": "reel",
-      "episode": "poker-car",
+      "episode": "salary",
       "slot": "2026-10-27T18:00:00+03:00",
       "status": "queued",
       "not_before": "2026-10-21T10:15:00+03:00",

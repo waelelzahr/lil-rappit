@@ -82,6 +82,14 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
             clips.append(gen.video(writer.shot_prompt(ep, script, i), f,
                                    d / f"shot{i + 1}.mp4", seconds=secs, style=gen.NOIR))
         idx, start, length = writer.COLD_OPEN
+        try:  # start the reel on his squeaky "Carrots?" so the sound itself is the hook
+            words = captions.transcribe(clips[idx], "Carrots?")
+            hit = next((w for w in words if writer.COLD_OPEN_WORD in w["word"].lower()), None)
+            if hit:
+                start, length = max(0.0, hit["start"] - 0.15), max(1.2, hit["end"] - hit["start"] + 0.5)
+                log(f"cold open on '{hit['word']}' at {start:.2f}s for {length:.2f}s")
+        except Exception as e:
+            log(f"cold open word search failed, using default cut: {e}")
         try:
             cold = gen.cut(clips[idx], start, length, d / "cold_open.mp4")
             clips = [cold, *clips]

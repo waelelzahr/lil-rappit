@@ -13,9 +13,11 @@ SHOTS = [
     ("THE MELT", 6, "soft"),
     ("THE PAYOFF", 4, "soft"),
 ]
-# The reel opens with a 1 s flash of the melt (cut from shot 3) before shot 1: a cold open
-# that makes scrollers ask "how does this guy end up like THAT?".
-COLD_OPEN = (2, 4.2, 1.2)  # (shot index, start second, length)
+# The reel opens with a flash of the melt (cut from shot 3) before shot 1: a cold open that
+# makes scrollers ask "how does this guy end up like THAT?". It is cut around his squeaky
+# "Carrots?" (found with word timestamps); these are the fallback (shot, start, length).
+COLD_OPEN = (2, 4.2, 1.2)
+COLD_OPEN_WORD = "carrot"
 
 RULES = f"""
 You are directing a short mafia-movie parody for Instagram Reels / YouTube Shorts, in exactly
@@ -50,8 +52,10 @@ SHOT 3 "THE MELT" (6 s): extreme close-up on Rappit, dead serious for half a sec
   HUGE over-the-top cartoon melt: sunglasses slide down his nose, eyes go enormous and sparkly
   and teary, ears shoot straight up then flop, nose twitches fast, cheeks blush, lower lip
   trembles, paws clasp under his chin. The face must be at its most extreme from about
-  second 3.5 to second 5.5. He accepts by saying the terrible deal himself so it is unmistakable,
-  in a {VOICE_SOFT}, max 8 words, funny (e.g. "okay... the car is yours").
+  second 3.5 to second 5.5. At about second 3.5, at the peak of the melt, he squeaks
+  "Carrots?" and then accepts by saying the terrible deal himself so it is unmistakable,
+  in a {VOICE_SOFT}, max 9 words in total, and the line MUST start with the word "Carrots?"
+  (e.g. "Carrots? ...okay, the car is yours").
   sound: a heavenly "aaah" choir swell and a sparkle chime.
 
 SHOT 4 "THE PAYOFF" (4 s): wide two-shot showing the terrible deal physically and clearly
