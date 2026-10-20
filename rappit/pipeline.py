@@ -35,11 +35,30 @@ def make(state: dict, item_id: str, kind: str, ep: dict, slot: str, soft_idx: in
     path = Path(built["file"])
     msg_id = discord.send_item(item_id, kind, path, f"Posts: {label_when}\n\n{built['caption']}",
                                title=ep["title"])
+    send_script(built, msg_id)
     state["items"][item_id] = {
         "kind": kind, "episode": ep["id"], "slot": slot, "status": "pending", "redos": 0,
         "message_id": msg_id, "run_id": os.environ.get("GITHUB_RUN_ID"),
         "relpath": str(path.relative_to(OUT)), "caption": built["caption"],
         "title": built["title"], "soft_idx": soft_idx}
+
+
+def send_script(built: dict, msg_id: str) -> None:
+    """Post the reel's script as a reply under its draft (never fatal)."""
+    text = built.get("script_text")
+    if not text:
+        return
+    try:
+        chunk = ""
+        for line in text.split("\n"):
+            if len(chunk) + len(line) > 1900:
+                discord.send_text(chunk, reply_to=msg_id)
+                chunk = ""
+            chunk += line + "\n"
+        if chunk.strip():
+            discord.send_text(chunk, reply_to=msg_id)
+    except Exception as e:
+        log(f"could not post script: {e}")
 
 
 def run_queued(state: dict, save) -> None:

@@ -61,6 +61,7 @@ def redo(state: dict, item_id: str, note: str | None, from_queue: bool = False):
     path = Path(built["file"])
     it["message_id"] = discord.send_item(item_id, it["kind"], path,
                                          built["caption"], title=ep["title"], version=version)
+    pipeline.send_script(built, it["message_id"])
     it.update(run_id=os.environ.get("GITHUB_RUN_ID"), relpath=str(path.relative_to(OUT)),
               caption=built["caption"], title=built["title"])
 

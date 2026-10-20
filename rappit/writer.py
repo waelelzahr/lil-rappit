@@ -116,3 +116,36 @@ def shot_prompt(ep: dict, script: dict, idx: int) -> str:
            else "No dialogue in this shot.\n")
         + "Only the listed lines are spoken. Realistic, grounded acting; nothing rushed."
     )
+
+
+def readable(script: dict, title: str = "") -> str:
+    """The script as plain Markdown, for Discord and the repo."""
+    out = [f"# {title}" if title else "# Script",
+           f"**Hook:** {script.get('hook', '')}",
+           f"**Deal:** {script.get('deal', '')}",
+           f"**Opponent:** {script.get('opponent_look', '')}", ""]
+    for i, (name, secs, _) in enumerate(SHOTS):
+        sh = script["shots"][i]
+        out.append(f"## Shot {i + 1} · {name} ({secs}s)")
+        for key in ("frame", "camera", "lighting", "action", "performance", "sound"):
+            if sh.get(key):
+                out.append(f"- *{key.capitalize()}:* {sh[key]}")
+        for d in sh.get("dialogue", []):
+            if d.get("line", "").strip():
+                out.append(f"> **{d.get('speaker', '')}:** \"{d['line'].strip()}\"")
+        out.append("")
+    return "\n".join(out)
+
+
+def dialogue_only(script: dict) -> str:
+    """Short version for Discord: hook, lines per shot, deal."""
+    out = [f"📜 **Script** · hook: *{script.get('hook', '')}*"]
+    for i, (name, secs, _) in enumerate(SHOTS):
+        sh = script["shots"][i]
+        lines = [f"> **{d.get('speaker', '')}:** {d['line'].strip()}"
+                 for d in sh.get("dialogue", []) if d.get("line", "").strip()]
+        what = (sh.get("action") or "").strip()
+        out.append(f"**{i + 1}. {name}** ({secs}s): {what[:220]}")
+        out += lines or ["> *(no dialogue)*"]
+    out.append(f"🥕 **Deal:** {script.get('deal', '')}")
+    return "\n".join(out)

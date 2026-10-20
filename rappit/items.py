@@ -3,7 +3,7 @@ import json
 from pathlib import Path
 
 from . import captions, gen, quota, writer
-from .common import CFG, OUT, log
+from .common import CFG, OUT, ROOT, log
 
 SOFT_IDEAS = (
     "secretly tending a tiny carrot garden at sunrise, watering can in paw",
@@ -49,6 +49,10 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
         script = writer.write_script(ep, note)
         deal = script.get("deal")
         (d / "script.json").write_text(json.dumps(script, indent=2), encoding="utf-8")
+        keep = ROOT / "state" / "scripts"  # committed with state, so scripts are readable in the repo
+        keep.mkdir(parents=True, exist_ok=True)
+        (keep / f"{item_id}.json").write_text(json.dumps(script, indent=2, ensure_ascii=False), encoding="utf-8")
+        (keep / f"{item_id}.md").write_text(writer.readable(script, ep["title"]), encoding="utf-8")
         opp = gen.image(
             f"Character reference portrait of {script.get('opponent_look', ep['opponent'])}. "
             "Full body and face clearly visible, neutral pose, plain dark backdrop.",
@@ -87,4 +91,7 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
         cap = {"caption": f"Lil Rappit in: {ep['title']} 🥕\n\n{CFG['hashtags']}",
                "title": f"Lil Rappit: {ep['title']}"}
     log(f"built {item_id} ({kind})")
-    return {"file": str(media), **cap}
+    res = {"file": str(media), **cap}
+    if kind == "reel":
+        res["script_text"] = writer.dialogue_only(script)
+    return res
