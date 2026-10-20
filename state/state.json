@@ -106,6 +106,16 @@
       "title": "POV: Your car negotiation skills are terrible",
       "soft_idx": 6,
       "tease": "New episode every Monday & Thursday 🥕"
+    },
+    "test3-2026-10-21-reel": {
+      "kind": "reel",
+      "episode": "poker-car",
+      "slot": "2026-10-27T18:00:00+03:00",
+      "status": "queued",
+      "not_before": "2026-10-21T10:15:00+03:00",
+      "redos": 0,
+      "soft_idx": 0,
+      "tease": "New episode every Monday & Thursday 🥕"
     }
   },
   "tg_offset": 0,

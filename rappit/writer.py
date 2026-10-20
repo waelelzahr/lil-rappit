@@ -37,18 +37,21 @@ SHOT 1 "THE DEMAND" (4 s): Rappit is ALREADY TALKING in the very first frame - n
   {VOICE_TOUGH} but without long pauses (it must fit in 4 seconds). Nobody else speaks.
   sound: low tense drone, one heavy bass hit on his last word.
 
-SHOT 2 "THE COUNTER" (6 s): reverse shot on the other character. In the first second they
-  slap/slide a brown paper bag overflowing with fresh orange carrots onto the table and the
-  camera does a sudden CRASH ZOOM onto the carrots with a dramatic music sting (like a soap-opera
-  reveal). Then a sly smile and they say the terrible deal OUT LOUD so it is unmistakable, max
-  12 words. Rappit does not speak.
-  sound: dramatic "dun dun DUN" sting on the zoom, paper bag crinkle, music cuts after the line.
+SHOT 2 "THE COUNTER" (6 s): reverse shot, medium close-up on the other character over
+  Rappit's blurred shoulder, a slow push-in. The other character says NOTHING - no dialogue at
+  all. Slowly, hesitantly, they slide a brown paper bag overflowing with fresh orange carrots
+  across the table toward Rappit while their eyes keep switching between Rappit's face and the
+  floor: ashamed, embarrassed, not sure this ridiculous move will work. Awkward pause, a nervous
+  swallow, a tiny unsure glance up at him.
+  sound: the music drops out completely; only the paper bag scraping slowly across the table and
+  a nervous gulp in an awkward silence.
 
 SHOT 3 "THE MELT" (6 s): extreme close-up on Rappit, dead serious for half a second, then a
   HUGE over-the-top cartoon melt: sunglasses slide down his nose, eyes go enormous and sparkly
   and teary, ears shoot straight up then flop, nose twitches fast, cheeks blush, lower lip
   trembles, paws clasp under his chin. The face must be at its most extreme from about
-  second 3.5 to second 5.5. He accepts in a {VOICE_SOFT}, max 6 words, funny.
+  second 3.5 to second 5.5. He accepts by saying the terrible deal himself so it is unmistakable,
+  in a {VOICE_SOFT}, max 8 words, funny (e.g. "okay... the car is yours").
   sound: a heavenly "aaah" choir swell and a sparkle chime.
 
 SHOT 4 "THE PAYOFF" (4 s): wide two-shot showing the terrible deal physically and clearly
@@ -100,7 +103,7 @@ def shot_prompt(ep: dict, script: dict, idx: int) -> str:
     name, _, rappit_voice = SHOTS[idx]
     shot = script["shots"][idx]
     lines = []
-    for d in shot.get("dialogue", []):
+    for d in ([] if idx == 1 else shot.get("dialogue", [])):  # shot 2 is silent by design
         who = d.get("speaker", "")
         voice = d.get("voice") or ""
         if who.lower().startswith(("rappit", "lil rappit")):
