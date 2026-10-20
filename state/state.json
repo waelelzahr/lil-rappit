@@ -84,17 +84,21 @@
       "kind": "reel",
       "episode": "poker-car",
       "slot": "2026-10-26T18:00:00+03:00",
-      "status": "queued",
-      "not_before": "2026-10-20T10:05:00+03:00",
+      "status": "pending",
       "redos": 0,
+      "message_id": "1562007217123889182",
+      "run_id": "39386940410",
+      "relpath": "test-2026-10-19-reel/reel.mp4",
+      "caption": "I came to take his pink slip.\nLeft him my keys for the orange gold. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
+      "title": "Pink Slips: Lil Rappit Traded His Car for Carrots",
       "soft_idx": 0
     }
   },
   "tg_offset": 0,
-  "discord_last": "1561786332403998731",
+  "discord_last": "1562007217123889182",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
-    "date": "2026-10-19",
-    "count": 10
+    "date": "2026-10-20",
+    "count": 4
   }
 }
