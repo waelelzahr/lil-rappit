@@ -1,62 +1,62 @@
 {
-  "opponent_look": "A sleek, bright green iguana racing driver with a cocky, arrogant smirk. He wears a fitted black leather jacket with twin red racing stripes down the sleeves, a silver belt buckle, and has a swept-back scaly crest on his head.",
+  "opponent_look": "A sleek green racing lizard wearing a black leather jacket with red racing stripes. He stands upright, has a cocky, arrogant smirk, yellow reptilian eyes, and an overall slick, confident posture.",
   "shots": [
     {
-      "frame": "Close-up, slightly low angle on Lil Rappit in his orange puffer jacket, bucket hat, sunglasses, and gold chain. The iguana's leather-clad shoulder is blurred in the foreground. Background shows hazy midnight asphalt and muscle car grills.",
-      "camera": "85mm lens. A quick, punchy push-in directly onto Rappit's face.",
-      "lighting": "Hard, intense motivated lighting from glaring car headlights slicing through thick street haze. Half of Rappit's face is in deep, stark shadow; his sunglasses sharply glint in the light.",
-      "performance": "Rappit is completely deadpan and intimidating, not moving a muscle except for his mouth. He exudes absolute, chilling confidence.",
-      "sound": "Low, tense synthesizer drone that drops into one heavy, vibrating bass hit exactly on his final word.",
-      "action": "Rappit speaks instantly on the very first frame without hesitation or blinking, asserting his dominance.",
+      "frame": "Close-up of Lil Rappit in his orange puffer, bucket hat, gold chain, and sunglasses. The lizard's black leather shoulder is blurred in the foreground. Midnight street race setting, muscle car grilles visible in the background.",
+      "camera": "85mm lens, slightly low angle. A quick, punchy push-in directly onto Rappit's face.",
+      "lighting": "One hard motivated light from a car headlight behind him; half his face is in deep shadow, sharp glint on his sunglasses, hazy night air.",
+      "performance": "Rappit starts talking in the very first frame. Deadpan, no blinking, head tilted slightly down to look imposing and serious.",
+      "sound": "Low tense drone, one heavy bass hit exactly on his last word.",
+      "action": "Rappit smoothly and quickly issues his ultimate terms for the race without any hesitation.",
       "dialogue": [
         {
-          "speaker": "Lil Rappit",
-          "voice": "Deep, raspy, quiet and menacing with a Brooklyn mafia accent.",
-          "line": "When I win, I take your ride."
+          "speaker": "Rappit",
+          "voice": "Deep, raspy, quiet, deliberate, menacing Brooklyn mafia accent.",
+          "line": "If I win, I take your car."
         }
       ]
     },
     {
-      "frame": "Reverse over-the-shoulder shot favoring the green iguana. He stands in front of the illuminated hood of his muscle car.",
-      "camera": "Starts as a medium shot, then a sudden, violent CRASH ZOOM right onto the paper bag of carrots as it hits the car hood.",
-      "lighting": "Headlight beams cross behind the iguana, illuminating the haze and highlighting the bright, vibrant orange of the fresh carrots.",
-      "performance": "The iguana smirks confidently. He slaps the bag down with a dramatic, practiced flair, locking eyes with Rappit.",
-      "sound": "A dramatic, soap-opera style 'dun dun DUN' sting triggers on the crash zoom. Loud paper crinkle. Music cuts to total silence after his line.",
-      "action": "At second 1, the iguana slams a brown paper bag overflowing with bright orange carrots onto the car hood. The camera crash-zooms on it. He smiles slyly and states his counter-offer.",
+      "frame": "Reverse shot over Rappit's blurred orange shoulder. The lizard stands confidently in front of a sleek muscle car hood.",
+      "camera": "Sudden CRASH ZOOM onto a brown paper bag overflowing with fresh orange carrots that suddenly drops onto the car hood.",
+      "lighting": "Hard headlight illumination cutting through the haze, casting long dramatic shadows. High contrast.",
+      "performance": "The lizard drops the bag fast, flashes a sly, arrogant smile, knowing he has totally won.",
+      "sound": "Dramatic 'dun dun DUN' sting perfectly timed with the crash zoom, loud paper bag crinkle, music cuts to dead silence right after his line.",
+      "action": "The lizard slides the bag of carrots onto the hood, waits a split second for the dramatic zoom, then delivers his counter-offer.",
       "dialogue": [
         {
-          "speaker": "Iguana",
-          "voice": "Smooth, cocky, and utterly arrogant.",
-          "line": "Skip the race. Give me your keys for these carrots."
+          "speaker": "Lizard",
+          "voice": "Smooth, cocky, fast, supreme confidence.",
+          "line": "Take these, and give me your keys right now."
         }
       ]
     },
     {
-      "frame": "Extreme close-up on Lil Rappit's face, filling the entire frame.",
-      "camera": "Static extreme close-up to perfectly capture the facial transformation without distraction.",
-      "lighting": "The harsh headlight shadowing vanishes, replaced by a soft, glowing, magical, even light.",
-      "performance": "Dead serious for 0.5s. Then, a massive, exaggerated melt: sunglasses slide down his nose, his eyes become enormous, sparkly, and teary. His ears shoot straight up then instantly flop down. His nose twitches frantically, cheeks blush bright pink, his lower lip trembles. His paws clasp together under his chin. The expression hits its absolute maximum adorable extreme between seconds 3.5 and 5.5.",
-      "sound": "A heavenly 'aaah' choir swell perfectly synced with a magical sparkle chime.",
-      "action": "Rappit completely loses his gangster persona. He melts into a puddle of absolute joy at the sight of the carrots, entirely ignoring the terrible terms of the deal.",
+      "frame": "Extreme close-up on Rappit's face, filling the frame. Headlight rim-light on his bucket hat.",
+      "camera": "Static extreme close-up to capture every micro-expression of the facial transformation.",
+      "lighting": "The harsh shadows suddenly soften, and a magical warm glowing light seems to reflect off his face from the carrots below.",
+      "performance": "Dead serious for half a second. Then a huge over-the-top cartoon melt: sunglasses slide down his nose, eyes go enormous, sparkly and teary. Ears shoot straight up then flop. Nose twitches fast, cheeks blush bright red, lower lip trembles, paws clasp tightly under his chin. The face is at its most extreme and adorable from second 3.5 to 5.5.",
+      "sound": "A heavenly 'aaah' choir swell and a magical sparkle chime.",
+      "action": "Rappit instantly loses all his tough-guy composure, completely mesmerized and overwhelmed by the beautiful carrots.",
       "dialogue": [
         {
-          "speaker": "Lil Rappit",
-          "voice": "Suddenly high-pitched, squeaky, sweet, and baby-like.",
-          "line": "Ooh! Yes, take my keys!"
+          "speaker": "Rappit",
+          "voice": "High-pitched, squeaky, sweet, baby-like.",
+          "line": "Okay mister, here you go!"
         }
       ]
     },
     {
-      "frame": "Wide two-shot of the cars' hoods. Rappit is happily hugging the bag of carrots to his chest. The iguana stands opposite him.",
-      "camera": "Starts wide, then smoothly pushes in to end on a tight close-up of Rappit's blissed-out, melted face, setting up a perfect visual loop back to shot 1.",
-      "lighting": "Back to the realistic street racing lighting: harsh headlights, strong shadows, and midnight haze.",
-      "performance": "Rappit is completely lost in carrot euphoria, eyes closed in pure bliss. The iguana looks incredibly smug, shaking his head in disbelief at his easy victory.",
-      "sound": "A light, playful, comedic pizzicato string sting.",
-      "action": "Rappit happily tosses his own car keys across the hood to the iguana while tightly clutching the bag of carrots. The iguana snatches the keys, and the camera pushes in on Rappit's completely oblivious, happy face.",
+      "frame": "Wide two-shot showing both characters standing between the two idling muscle cars.",
+      "camera": "Starts wide to show the exact exchange, then a fast push-in back to a close-up of Rappit's melted, blissed-out face to loop seamlessly.",
+      "lighting": "Cinematic street race lighting, bright headlights cutting through thick midnight fog.",
+      "performance": "The lizard looks extremely smug, pocketing the keys. Rappit is completely blissed out, eyes closed in ecstasy, hugging the heavy bag of carrots tight against his puffer jacket.",
+      "sound": "A playful pizzicato string sting.",
+      "action": "Rappit happily and willingly hands his own car keys over to the lizard before the race even starts, hugging his carrots in pure joy.",
       "dialogue": []
     }
   ],
-  "relatable": "Trading in your car at a dealership and getting scammed by a terrible lowball offer because they offered you a free coffee.",
-  "deal": "He willingly hands over the keys to his muscle car before the race even begins, entirely forfeiting, just to get a bag of carrots.",
-  "hook": "POV: TRADING MY CAR AT THE DEALERSHIP"
+  "relatable": "Getting completely scammed at the car dealership because they offered free floor mats.",
+  "deal": "He willingly hands over his own car keys before the street race even starts just for a bag of carrots.",
+  "hook": "POV: THE DEALERSHIP OFFERS FREE MATS"
 }
