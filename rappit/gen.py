@@ -46,7 +46,7 @@ FILM_STILL = (
 NOIR = (
     "Dark cinematic crime-drama look, like a classic mafia film: low-key chiaroscuro "
     "lighting, deep shadows, warm amber practical lamps, haze in the air, anamorphic "
-    "lens, very shallow depth of field, subtle film grain, slow deliberate camera moves, "
+    "lens, very shallow depth of field, subtle film grain, punchy motivated camera moves, "
     "vertical 9:16. Photoreal 3D characters. Family-safe. No subtitles, no captions, "
     "no watermarks, no smoking, no weapons."
 )
@@ -208,6 +208,15 @@ def last_frame(video_path: Path, out: Path) -> Path:
          "-frames:v", "1", "-update", "1", str(out)],
         check=True,
     )
+    return out
+
+
+def cut(clip: Path, start: float, length: float, out: Path) -> Path:
+    """A short piece of a clip (re-encoded so it joins cleanly)."""
+    clip = _ensure_audio(clip)
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", f"{start}", "-t", f"{length}",
+                    "-i", str(clip), "-c:v", "libx264", "-preset", "medium", "-crf", "18",
+                    "-pix_fmt", "yuv420p", "-c:a", "aac", "-b:a", "160k", str(out)], check=True)
     return out
 
 

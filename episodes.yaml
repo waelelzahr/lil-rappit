@@ -3,10 +3,12 @@
 #   Shot 1 (8 s): tough negotiation, Rappit in control.
 #   Shot 2 (8 s): close-up; a bag of carrots slides in; his face melts;
 #                 he accepts the terrible deal, said out loud and shown.
+# relatable: true = mirrors an everyday situation (picked first; more shareable).
 # Fields: setting, opponent, demand (what tough Rappit wants),
 #         bad_deal (what he ends up accepting for the carrots).
 
 - id: dealership
+  relatable: true
   title: The Dealership
   setting: glossy luxury car showroom, an orange sports car behind a glass desk
   opponent: a smug weasel car salesman in a shiny suit
@@ -28,6 +30,7 @@
   bad_deal: he hands over his entire territory map and his gold chain
 
 - id: salary
+  relatable: true
   title: The Negotiation
   setting: glass corporate boardroom, city skyline at dusk
   opponent: a nervous penguin CEO
@@ -42,6 +45,7 @@
   bad_deal: he agrees to lose the fight on purpose and lies down on the canvas
 
 - id: landlord
+  relatable: true
   title: The Landlord
   setting: small apartment doorway, landlord in the hallway with a clipboard
   opponent: a grumpy goat landlord
@@ -56,6 +60,7 @@
   bad_deal: he folds his winning royal flush and pushes all his chips to the raccoon
 
 - id: tax-audit
+  relatable: true
   title: The Audit
   setting: drab government tax office, towers of paperwork
   opponent: a strict owl tax auditor with tiny glasses
@@ -84,6 +89,7 @@
   bad_deal: he hands over his own car keys before the race even starts
 
 - id: job-interview
+  relatable: true
   title: The Interview
   setting: bright startup office, bean bags, a nervous HR manager across a desk
   opponent: a jittery squirrel HR manager
@@ -91,6 +97,7 @@
   bad_deal: he accepts an unpaid internship making coffee for everyone
 
 - id: airport
+  relatable: true
   title: Customs
   setting: airport customs desk, x-ray machine, an open suitcase
   opponent: a stern beagle customs officer
@@ -105,6 +112,7 @@
   bad_deal: he knocks over his own king and gives the tortoise his sunglasses
 
 - id: gym
+  relatable: true
   title: The Bench
   setting: hardcore gym, heavy barbells, mirrors
   opponent: a huge gorilla bodybuilder
@@ -112,6 +120,7 @@
   bad_deal: he becomes the gorilla's personal assistant, carrying his towel and water
 
 - id: car-wash
+  relatable: true
   title: The Car Wash
   setting: sunny car wash, Rappit's black muscle car covered in foam
   opponent: a slick otter car wash owner
@@ -119,6 +128,7 @@
   bad_deal: he signs over his muscle car to the car wash
 
 - id: bank
+  relatable: true
   title: The Loan
   setting: marble bank office, a manager behind a big wooden desk
   opponent: a pompous pig bank manager
@@ -133,6 +143,7 @@
   bad_deal: he hands over his block and joins the raccoon gang as the newest member
 
 - id: parking
+  relatable: true
   title: The Parking Spot
   setting: busy city street, one empty parking space between two cars
   opponent: a pushy flamingo driver leaning out of a tiny car

@@ -8,9 +8,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from rappit import captions, discord, media  # noqa: E402
-from rappit.common import EPISODES, OUT, load_state, log, save_state  # noqa: E402
-
-EP = {e["id"]: e for e in EPISODES}
+from rappit.common import OUT, episode, load_state, log, save_state  # noqa: E402
 
 
 def main():
@@ -28,7 +26,7 @@ def main():
         was_approved = it["status"] == "approved" or (
             it["status"] == "pending" and discord.reacted(it["message_id"], discord.APPROVE))
         it["message_id"] = discord.send_item(item_id, "reel", out, it["caption"],
-                                             title=EP[it["episode"]]["title"])
+                                             title=episode(state, it["episode"])["title"])
         it.update(run_id=os.environ.get("GITHUB_RUN_ID"), relpath=str(out.relative_to(OUT)))
         if was_approved:  # carry the approval over to the captioned version
             it["status"] = "approved"

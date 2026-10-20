@@ -19,20 +19,28 @@ def _note(note: str | None) -> str:
     return f"\nDirector's note for this version: {note}" if note else ""
 
 
-def caption_for(kind: str, ep: dict, note: str | None, deal: str | None = None) -> dict:
+def caption_for(kind: str, ep: dict, note: str | None, deal: str | None = None,
+                relatable: str | None = None) -> dict:
     tags = CFG["hashtags"]
     what = {
-        "reel": f"a short dark cinematic mafia-parody reel '{ep['title']}': Lil Rappit demands {ep['demand']}, "
-                f"then gets offered carrots and accepts this: {deal or ep['bad_deal']}",
+        "reel": f"a short mafia-parody reel '{ep['title']}': Lil Rappit demands {ep['demand']}, "
+                f"then gets offered carrots and accepts this: {deal or ep['bad_deal']}. "
+                f"Everyday situation it parodies: {relatable or 'a negotiation gone wrong'}",
         "mugshot": f"a photo: Lil Rappit's police mugshot after the episode '{ep['title']}'",
         "soft": "a photo showing Lil Rappit's secret soft side with carrots",
     }[kind]
     data = gen.text_json(
         "You write social captions for Lil Rappit, a tough gangster rabbit whose only "
-        "weakness is carrots. Write for Instagram Reels and YouTube Shorts.\n"
+        "weakness is carrots. Write for Instagram Reels and YouTube Shorts. The goal is shares "
+        "and comments from people who do not follow the account yet.\n"
         f"Post: {what}\n"
-        "Return JSON with keys: caption (max 2 short lines, punchy, 1-2 emojis, no "
-        "hashtags), title (YouTube Shorts title, max 70 chars, no hashtags)."
+        "Return JSON with keys:\n"
+        " caption: line 1 = relatable meme framing people want to send to a friend "
+        "('Me when...', 'Tag the friend who...', 'POV: ...'), with plain searchable words like "
+        "'funny rabbit', 'negotiation', 'salary'; 1-2 emojis. Line 2 = a short question that "
+        "invites a comment answer, ideally 'What should Rappit negotiate next?' or a variant. "
+        "No hashtags.\n"
+        " title: YouTube Shorts title, max 70 chars, relatable and searchable, no hashtags."
         + _note(note)
     )
     return {"caption": f"{data['caption'].strip()}\n\n{tags}", "title": data["title"].strip()}
@@ -44,10 +52,12 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
     n = _note(note)
 
     deal = None
+    relatable = None
     if kind == "reel":
         quota.need(len(writer.SHOTS))  # never start a reel we can't finish today
         script = writer.write_script(ep, note)
         deal = script.get("deal")
+        relatable = script.get("relatable")
         (d / "script.json").write_text(json.dumps(script, indent=2), encoding="utf-8")
         keep = ROOT / "state" / "scripts"  # committed with state, so scripts are readable in the repo
         keep.mkdir(parents=True, exist_ok=True)
@@ -71,6 +81,12 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
             frames.append(f)
             clips.append(gen.video(writer.shot_prompt(ep, script, i), f,
                                    d / f"shot{i + 1}.mp4", seconds=secs, style=gen.NOIR))
+        idx, start, length = writer.COLD_OPEN
+        try:
+            cold = gen.cut(clips[idx], start, length, d / "cold_open.mp4")
+            clips = [cold, *clips]
+        except Exception as e:  # never lose a finished reel over the teaser
+            log(f"cold open failed, skipping: {e}")
         raw = gen.stitch(clips, d / "reel_raw.mp4")
         lines = [dl.get("line", "") for sh in script["shots"] for dl in sh.get("dialogue", [])]
         media = captions.apply(raw, d / "reel.mp4", script.get("hook"), lines)
@@ -85,7 +101,7 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
                           d / "soft.png", aspect="4:5")
 
     try:
-        cap = caption_for(kind, ep, note, deal)
+        cap = caption_for(kind, ep, note, deal, relatable)
     except Exception as e:
         log(f"caption failed, using fallback: {e}")
         cap = {"caption": f"Lil Rappit in: {ep['title']} 🥕\n\n{CFG['hashtags']}",

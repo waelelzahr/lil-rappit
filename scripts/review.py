@@ -10,10 +10,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from rappit import discord, items, pipeline, quota  # noqa: E402
-from rappit.common import CFG, EPISODES, OUT, TZ, classify, load_state, log, save_state  # noqa: E402
-
-EP_BY_ID = {e["id"]: e for e in EPISODES}
+from rappit import discord, gen, items, pipeline, quota  # noqa: E402
+from rappit.common import CFG, OUT, TZ, all_episodes, classify, episode, load_state, log, save_state  # noqa: E402
 
 
 def approve(state: dict, item_id: str):
@@ -43,7 +41,7 @@ def redo(state: dict, item_id: str, note: str | None, from_queue: bool = False):
     if it.get("redo_queued") and not from_queue:
         return  # already waiting for Google's daily reset
     version = it["redos"] + 2
-    ep = EP_BY_ID[it["episode"]]
+    ep = episode(state, it["episode"])
     if not from_queue:
         discord.send_text("🔁 On it, regenerating…" + (f"\n> {note}" if note else ""),
                           reply_to=it["message_id"])
@@ -58,12 +56,36 @@ def redo(state: dict, item_id: str, note: str | None, from_queue: bool = False):
         return
     it.pop("redo_queued", None)
     it["redos"] += 1
+    if it.get("tease"):
+        cap, _, tags = built["caption"].rpartition("\n\n")
+        built["caption"] = f"{cap}\n{it['tease']}\n\n{tags}" if cap else built["caption"]
     path = Path(built["file"])
     it["message_id"] = discord.send_item(item_id, it["kind"], path,
                                          built["caption"], title=ep["title"], version=version)
     pipeline.send_script(built, it["message_id"])
     it.update(run_id=os.environ.get("GITHUB_RUN_ID"), relpath=str(path.relative_to(OUT)),
               caption=built["caption"], title=built["title"])
+
+
+def add_idea(state: dict, idea: str, reply_to: str):
+    """Turn a viewer's suggestion into an episode that the next weekly run picks first."""
+    ep = gen.text_json(
+        "Lil Rappit is a tough gangster rabbit who always loses negotiations the moment someone "
+        "offers him carrots. Turn this viewer suggestion into an episode.\n"
+        f"Suggestion: {idea}\n"
+        "Return JSON with keys: id (short kebab-case), title (2-4 words), setting (vivid, one "
+        "location), opponent (an animal character with a look), demand (what tough Rappit "
+        "wants, concrete), bad_deal (the terrible thing he accepts for the carrots, concrete and "
+        "visual). Family-friendly, no weapons.")
+    ep["id"] = "idea-" + str(ep.get("id", "x"))[:30]
+    if any(e["id"] == ep["id"] for e in all_episodes(state)):
+        ep["id"] += f"-{len(state.get('custom_episodes', []))}"
+    ep["relatable"] = True
+    ep["from_idea"] = idea
+    state.setdefault("custom_episodes", []).append(ep)
+    state.setdefault("idea_queue", []).append(ep["id"])
+    discord.send_text(f"💡 Added **{ep['title']}**: {ep['demand']} → {ep['bad_deal']}\n"
+                      "It will be one of next week's reels.", reply_to=reply_to)
 
 
 def status(state: dict):
@@ -139,12 +161,18 @@ def main():
                 state.pop("ig_token_warned", None)
                 state.pop("ig_token_seen", None)
                 discord.send_text("👍 Thanks, I'll remind you again in 50 days.")
+            elif text.lower().startswith("idea"):
+                idea = text[4:].strip(" :-")
+                if idea:
+                    add_idea(state, idea, m["id"])
+                else:
+                    discord.send_text("Write it like: `idea Rappit tries to get a refund at IKEA`")
             elif text.lower() in ("status", "queue", "list"):
                 status(state)
             elif text:
                 discord.send_text("To change a draft, **reply** to it with your note "
                                   "(long-press → Reply), or reply `post now` to publish it right away. "
-                                  "Type `status` to see the queue.")
+                                  "Type `status` to see the queue, or `idea ...` to add an episode idea.")
         except Exception as e:
             log(f"message {m['id']} failed: {e}\n{traceback.format_exc()}")
             discord.send_text(f"⚠️ Something failed: {e}")

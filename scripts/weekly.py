@@ -9,17 +9,21 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from rappit import discord, pipeline, quota  # noqa: E402
-from rappit.common import CFG, EPISODES, TZ, load_state, log, next_slot, save_state  # noqa: E402
+from rappit.common import CFG, TZ, all_episodes, load_state, log, next_slot, save_state  # noqa: E402
 
 
 def pick_episode(state: dict, forced: str = "") -> dict:
-    ep = next((e for e in EPISODES if e["id"] == forced), None)
+    """Forced id > viewer ideas > unused relatable episodes > any unused episode."""
+    eps = all_episodes(state)
+    ep = next((e for e in eps if e["id"] == forced), None)
+    if not ep and state.get("idea_queue"):
+        ep = next((e for e in eps if e["id"] == state["idea_queue"].pop(0)), None)
     if not ep:
-        unused = [e for e in EPISODES if e["id"] not in state["used_episodes"]]
+        unused = [e for e in eps if e["id"] not in state["used_episodes"]]
         if not unused:  # bank exhausted: start over
             state["used_episodes"] = []
-            unused = list(EPISODES)
-        ep = random.choice(unused)
+            unused = list(eps)
+        ep = random.choice([e for e in unused if e.get("relatable")] or unused)
     if ep["id"] not in state["used_episodes"]:
         state["used_episodes"].append(ep["id"])
     return ep
@@ -49,17 +53,26 @@ def main():
 
     errors = []
     soft_idx = len(state["used_episodes"])
+    reel_plan = [p for p in plan if p["kind"] == "reel"]
     for p in plan:
         item_id = f"{os.environ.get('ITEM_PREFIX', '')}{week}-{p['id']}"
         ep = eps.get(p["id"], first_ep)
         slot = next_slot(p["at"])
+        tease = ""
+        if p["kind"] == "reel":  # give people a reason to follow
+            later = reel_plan[reel_plan.index(p) + 1:]
+            if later:
+                day = later[0]["at"].split()[0]
+                tease = f"Next episode {day}: “{eps[later[0]['id']]['title']}” 🥕 Follow so you don't miss it."
+            else:
+                tease = "New episode every Monday & Thursday 🥕"
         try:
             if p.get("make") and not only:  # made later in the week (Veo daily limit)
                 pipeline.queue(state, item_id, p["kind"], ep, slot, soft_idx,
-                               datetime.fromisoformat(next_slot(p["make"])), "scheduled")
+                               datetime.fromisoformat(next_slot(p["make"])), "scheduled", tease)
                 discord.send_text(f"🗓️ **{ep['title']}** ({p['id']}) will be made {p['make']}.")
             else:
-                pipeline.make(state, item_id, p["kind"], ep, slot, soft_idx, p["at"])
+                pipeline.make(state, item_id, p["kind"], ep, slot, soft_idx, p["at"], tease)
         except Exception as e:
             log(f"FAILED {item_id}: {e}\n{traceback.format_exc()}")
             errors.append(f"{p['id']}: {str(e)[:300]}")

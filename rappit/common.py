@@ -26,6 +26,15 @@ def load_state() -> dict:
     return {"used_episodes": [], "items": {}, "tg_offset": 0}
 
 
+def all_episodes(state: dict) -> list[dict]:
+    """The episode bank plus episodes made from viewer ideas (`idea ...` in Discord)."""
+    return EPISODES + state.get("custom_episodes", [])
+
+
+def episode(state: dict, ep_id: str) -> dict:
+    return next(e for e in all_episodes(state) if e["id"] == ep_id)
+
+
 def save_state(state: dict):
     STATE_FILE.parent.mkdir(parents=True, exist_ok=True)
     STATE_FILE.write_text(json.dumps(state, indent=2, ensure_ascii=False), encoding="utf-8")
