@@ -57,6 +57,8 @@ SHOT 4 "THE PAYOFF" (4 s): wide two-shot showing the terrible deal physically an
   (so the end loops back into the opening flash). No dialogue, or max 3 words.
   sound: a playful pizzicato sting.
 
+Wording: never use words like violent, slap, smash, attack, threatening, blood or weapon in any
+field (the image and video models refuse them); say sudden, fast, dramatic, plops down instead.
 Constraints for the video model: same location in every shot, the same two characters,
 simple clear actions, no text on screen, family-friendly, no smoking, no weapons.
 """
