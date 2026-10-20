@@ -1,0 +1,51 @@
+{
+  "opponent_look": "An anthropomorphic owl tax auditor with strict, sharp features, wearing a drab gray tweed vest, white button-up shirt, and a dark maroon tie. He has tiny wire-rimmed half-moon glasses perched on his beak, and his feathers are mottled brown and white. He maintains a rigid, bureaucratic posture.",
+  "shots": [
+    {
+      "frame": "Medium close-up on Lil Rappit (gangster rabbit in sunglasses, bucket hat, orange puffer, gold chain) sitting at a desk. Out-of-focus owl shoulder in the foreground. Moody, low-key lighting with cinematic haze. Towers of drab paperwork surround them.",
+      "action": "Starts mid-tension. Slow camera push-in on Rappit as he casually and deliberately pushes a stack of tax forms off the desk into the unseen trash. He stares dead ahead, unblinking.",
+      "dialogue": [
+        {
+          "speaker": "Lil Rappit",
+          "voice": "Deep, raspy, quiet, very slow and menacing Brooklyn mafia godfather accent.",
+          "line": "I pay zero taxes. Forever."
+        }
+      ]
+    },
+    {
+      "frame": "Reverse shot, medium close-up on the Owl auditor, framed over Lil Rappit's bright orange puffer shoulder. The Owl sits behind a desk completely covered in tall stacks of tax documents.",
+      "action": "The Owl swallows nervously, adjusting his tiny glasses, before his beak curls into a slow, sly smile. He slowly slides a crumpled brown paper bag overflowing with bright, fresh orange carrots across the table toward Rappit.",
+      "dialogue": [
+        {
+          "speaker": "Owl Auditor",
+          "voice": "Nasally, precise, bureaucratic, but gaining confidence.",
+          "line": "Or... you pay the entire building's taxes this year."
+        }
+      ]
+    },
+    {
+      "frame": "Extreme close-up on Lil Rappit's face, completely shadowed by his bucket hat. He looks intimidating, dead serious, and completely unmoved.",
+      "action": "One beat of dead silence. Suddenly, his sunglasses slide down his twitching nose. His eyes become massive and sparkly, his ears shoot straight up then flop down playfully, and his lower lip trembles in pure joy.",
+      "dialogue": [
+        {
+          "speaker": "Lil Rappit",
+          "voice": "High-pitched, squeaky, impossibly sweet and baby-like.",
+          "line": "Ooh! Yummy crunchies for me? Deal!"
+        }
+      ]
+    },
+    {
+      "frame": "Wide two-shot of the drab, shadowy tax office, capturing both the Owl and Lil Rappit at the desk, surrounded by massive towers of paperwork.",
+      "action": "Lil Rappit happily bear-hugs the giant bag of carrots with one arm while rapidly and cheerfully signing a massive, six-foot-tall tower of tax forms with his other paw. The Owl sits back, folding his wings, looking incredibly smug.",
+      "dialogue": [
+        {
+          "speaker": "Lil Rappit",
+          "voice": "High-pitched, squeaky, breathless excitement.",
+          "line": "So many forms! Yay!"
+        }
+      ]
+    }
+  ],
+  "deal": "Lil Rappit volunteers to pay the taxes for everyone in the entire building just to get a bag of carrots.",
+  "hook": "NOBODY OUT-NEGOTIATES LIL RAPPIT"
+}

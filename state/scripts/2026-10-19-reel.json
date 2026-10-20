@@ -1,0 +1,51 @@
+{
+  "opponent_look": "A scaly, emerald-green bipedal racing lizard with striking yellow reptilian eyes, wearing a fitted, unzipped black leather motorcycle jacket over a plain white t-shirt.",
+  "shots": [
+    {
+      "frame": "Medium close-up on Lil Rappit wearing a bucket hat, sunglasses, thick orange puffer jacket, and a gold chain. The blurred shoulder of a black leather jacket is in the foreground. Harsh, low-key car headlights cut through the dark midnight street behind him.",
+      "action": "Starts mid-tension. The camera slowly pushes in on Rappit's stoic face. He begins speaking immediately with agonizing slowness, projecting intense, unblinking mafia intimidation.",
+      "dialogue": [
+        {
+          "speaker": "Lil Rappit",
+          "voice": "Very slow, deliberate, deep, raspy, quiet and menacing with a Brooklyn accent, long pauses.",
+          "line": "You lose... I take your ride."
+        }
+      ]
+    },
+    {
+      "frame": "Medium close-up on the green racing lizard over Rappit's blurred orange puffer shoulder. A muscle car hood acts as a table between them under dramatic shadows.",
+      "action": "The lizard looks nervous and swallows hard. Then, a slow, sly smile forms. He smoothly slides a brown paper bag overflowing with bright, fresh orange carrots across the car hood directly toward Rappit.",
+      "dialogue": [
+        {
+          "speaker": "Racing Lizard",
+          "voice": "Cocky, smooth, confident.",
+          "line": "Or, I take your keys right now, and you get these beautiful carrots."
+        }
+      ]
+    },
+    {
+      "frame": "Extreme close-up on Lil Rappit's stoic, heavily shadowed, sunglasses-clad face.",
+      "action": "One beat of utter dead silence. Suddenly, Rappit's sunglasses slide down his nose. His eyes become huge and sparkly, his ears shoot straight up then flop adorably, his nose twitches rapidly, and his lower lip trembles with pure joy.",
+      "dialogue": [
+        {
+          "speaker": "Lil Rappit",
+          "voice": "Suddenly high-pitched, squeaky, sweet, and baby-like.",
+          "line": "Oh my goodness, yes! Here!"
+        }
+      ]
+    },
+    {
+      "frame": "Wide two-shot showing both characters in profile at the starting line between two idling muscle cars.",
+      "action": "Lil Rappit joyfully drops his own car keys into the lizard's hand while squeezing the giant bag of carrots in a tight, loving bear hug. The lizard smirks smugly and pockets the keys.",
+      "dialogue": [
+        {
+          "speaker": "Racing Lizard",
+          "voice": "Smug and amused.",
+          "line": "Easiest race ever."
+        }
+      ]
+    }
+  ],
+  "deal": "Lil Rappit happily hands over the keys to his own muscle car before the street race even begins in exchange for a bag of carrots.",
+  "hook": "RAPPIT NEVER LOSES A RACE"
+}
