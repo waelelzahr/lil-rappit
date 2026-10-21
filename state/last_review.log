@@ -1,18 +1,1 @@
-[10:31:41] script: Rappit officially signs a contract to work for the company for free for the next ten years just to keep a bag of carrots.
-[10:32:01] image ok (gemini-nano-banana-2.1) -> opponent.png
-[10:32:24] image ok (gemini-nano-banana-2.1) -> frame1.png
-[10:32:25] Veo rejected 1080p/4s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 4 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[10:33:06] video ok -> shot1.mp4 (4s, 41s)
-[10:33:41] image ok (gemini-nano-banana-2.1) -> frame2.png
-[10:33:42] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[10:34:43] video ok -> shot2.mp4 (6s, 61s)
-[10:35:03] image ok (gemini-nano-banana-2.1) -> frame3.png
-[10:35:04] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[10:36:06] video ok -> shot3.mp4 (6s, 61s)
-[10:36:28] image ok (gemini-nano-banana-2.1) -> frame4.png
-[10:36:29] Veo rejected 1080p/4s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 4 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[10:37:10] video ok -> shot4.mp4 (4s, 41s)
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-[0;93m2026-10-21 07:37:15.905883690 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
-[10:38:15] captions: 16 words
-[10:39:11] built test3-2026-10-21-reel (reel)
+[11:01:23] approved test3-2026-10-21-reel

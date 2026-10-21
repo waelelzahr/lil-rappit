@@ -112,7 +112,7 @@
       "kind": "reel",
       "episode": "salary",
       "slot": "2026-10-27T18:00:00+03:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1562369756386820186",
       "run_id": "39562442842",
@@ -124,7 +124,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1562369762476949650",
+  "discord_last": "1562375238707183668",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-10-21",
