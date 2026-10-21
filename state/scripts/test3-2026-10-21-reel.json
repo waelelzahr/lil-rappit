@@ -1,0 +1,56 @@
+{
+  "opponent_look": "A short, plump Emperor penguin wearing a tailored navy-blue pinstripe business suit, crisp white collar, and a red power tie. He has a sleek black head with bright yellow ear patches, a white belly, and small black flippers extending awkwardly from the suit sleeves. His natural face looks highly anxious with wide, unblinking eyes.",
+  "shots": [
+    {
+      "frame": "Close-up of Lil Rappit with his furry feet propped up on the polished boardroom table, wearing a bucket hat, sunglasses, orange puffer, and gold chain. The penguin's navy suit shoulder is heavily blurred in the foreground. Glass windows behind Rappit show a glowing city skyline at dusk.",
+      "camera": "85mm lens, slightly low angle. A quick, punchy push-in directly onto Rappit's face.",
+      "lighting": "One hard, motivated warm orange dusk light from the windows hitting the right side of Rappit's face, casting deep dramatic shadows on the left. A sharp glint catches the corner of his sunglasses. Light atmospheric haze fills the room.",
+      "performance": "Already talking in the very first frame. Deadpan expression, completely unmoving except for his jaw. He exudes absolute authority, staring straight through his opponent without blinking.",
+      "sound": "A low, tense synth drone, ending with a heavy, cinematic bass hit exactly on his final word.",
+      "action": "Rappit dictates his unyielding terms instantly, displaying total dominance in the negotiation without breaking eye contact.",
+      "dialogue": [
+        {
+          "speaker": "Lil Rappit",
+          "voice": "Slow, deliberate, deep, raspy, quiet and menacing Brooklyn mafia accent.",
+          "line": "One million a month, or I walk."
+        }
+      ]
+    },
+    {
+      "frame": "Medium close-up of the penguin CEO sitting at the boardroom table. Rappit's orange puffer shoulder is blurred in the foreground. A sleek table reflecting the city lights sits between them.",
+      "camera": "A slow, creeping push-in on the penguin.",
+      "lighting": "Cool interior office lighting mixed with dusk backlight, making the penguin look pale. Long shadows stretch across the polished table.",
+      "performance": "Deeply embarrassed and sweating. His eyes dart rapidly between the table and Rappit's face. A visible, heavy gulp in his throat. He pauses awkwardly, entirely unsure of himself, before giving a tiny, terrified upward glance.",
+      "sound": "The tense drone abruptly cuts out to total silence. Only the rough sound of heavy paper scraping on polished wood, followed by a loud, nervous gulp.",
+      "action": "The penguin slowly, hesitantly slides a brown paper bag overflowing with bright, fresh orange carrots across the table toward Rappit, freezing at the end of the motion.",
+      "dialogue": []
+    },
+    {
+      "frame": "Extreme close-up on Lil Rappit's face. Shadows still heavy, sunglasses firmly in place.",
+      "camera": "Static macro shot capturing every micro-expression.",
+      "lighting": "The hard shadow instantly softens and fills with a warm, glowing rim light the moment the melt happens, making his fur look fluffy, bright, and angelic.",
+      "performance": "Dead serious for half a second. Then, a huge cartoon melt: his sunglasses suddenly slide down his nose, his eyes become enormous, teary, and sparkly. His ears shoot straight up, then flop down completely. His nose twitches furiously, cheeks flush bright pink, his lower lip trembles, and his paws clasp tightly under his chin in pure adoration. This extreme expression holds at its peak from second 3.5 to 5.5.",
+      "sound": "A sudden, heavenly 'aaah' choir swell, accompanied by a magical sparkle chime.",
+      "action": "His tough mobster persona instantly evaporates into pure, adorable joy. At 3.5 seconds, peaking in his emotional melt, he completely breaks character and eagerly accepts the terrible terms.",
+      "dialogue": [
+        {
+          "speaker": "Lil Rappit",
+          "voice": "Suddenly high-pitched, squeaky, sweet, and baby-like.",
+          "line": "Carrots? ...okay, I will work free for ten years."
+        }
+      ]
+    },
+    {
+      "frame": "Wide two-shot of the glass boardroom. Rappit is on the left, the penguin on the right. Legal contracts and the paper bag are on the table.",
+      "camera": "Starts wide, then quickly pushes in on Rappit's blissed-out, melting face, ending in a close-up that loops perfectly back into the fast opening shot.",
+      "lighting": "Bright, even, and slightly warmer, reflecting the resolved tension in the room.",
+      "performance": "The penguin stands tall, adjusting his red tie with a highly smug, triumphant smile. Rappit is utterly lost in euphoria, nuzzling the carrot bag with his eyes closed in bliss while blindly scribbling his signature.",
+      "sound": "A playful, light pizzicato string sting.",
+      "action": "Rappit excitedly signs the decade-long unpaid contract with one paw while desperately hugging the bag of carrots with the other. The camera zooms in on his euphoric face to close the video.",
+      "dialogue": []
+    }
+  ],
+  "relatable": "Asking your boss for a massive raise but instantly caving for a tiny, insignificant perk.",
+  "deal": "Rappit officially signs a contract to work for the company for free for the next ten years just to keep a bag of carrots.",
+  "hook": "ME WHEN JOBS OFFER FREE OFFICE SNACKS"
+}

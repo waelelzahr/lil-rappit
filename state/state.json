@@ -112,18 +112,22 @@
       "kind": "reel",
       "episode": "salary",
       "slot": "2026-10-27T18:00:00+03:00",
-      "status": "queued",
-      "not_before": "2026-10-21T10:15:00+03:00",
+      "status": "pending",
       "redos": 0,
+      "message_id": "1562369756386820186",
+      "run_id": "39562442842",
+      "relpath": "test3-2026-10-21-reel/reel.mp4",
+      "caption": "POV: You demand a massive salary raise but fold for free snacks (funny rabbit negotiation) 🥕💼\nWhat should Rappit negotiate next?\nNew episode every Monday & Thursday 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "Asking for a huge raise but caving for snacks",
       "soft_idx": 0,
       "tease": "New episode every Monday & Thursday 🥕"
     }
   },
   "tg_offset": 0,
-  "discord_last": "1562035729637318659",
+  "discord_last": "1562369762476949650",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
-    "date": "2026-10-20",
-    "count": 9
+    "date": "2026-10-21",
+    "count": 4
   }
 }
