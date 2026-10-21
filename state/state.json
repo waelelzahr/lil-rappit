@@ -43,14 +43,16 @@
       "kind": "mugshot",
       "episode": "lamborghini",
       "slot": "2026-10-21T18:00:00+03:00",
-      "status": "approved",
+      "status": "posted",
       "redos": 0,
       "message_id": "1561319655447068682",
       "run_id": "39117614389",
       "relpath": "2026-10-18-mugshot/mugshot.png",
       "caption": "Got caught slipping on the lot.\nTell the warden I need my carrots crisp. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
       "title": "Lil Rappit BUSTED: The Dealership Mugshot",
-      "soft_idx": 3
+      "soft_idx": 3,
+      "instagram": "https://www.instagram.com/p/DewrqdCGwPE/",
+      "posted_at": "2026-10-21T18:01:28.955200+03:00"
     },
     "2026-10-19-reel": {
       "kind": "reel",
