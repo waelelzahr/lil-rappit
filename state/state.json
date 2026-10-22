@@ -74,14 +74,17 @@
       "kind": "reel",
       "episode": "tax-audit",
       "slot": "2026-10-22T18:00:00+03:00",
-      "status": "approved",
+      "status": "posted",
       "redos": 0,
       "message_id": "1561687735322943508",
       "run_id": "39237391788",
       "relpath": "2026-10-19-reel2-cap/reel.mp4",
       "caption": "Told the feds zero taxes.\nThen they pulled out the orange. Put the whole building on my tab. 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy #shorts",
       "title": "Mafia Rabbit Refuses Taxes Until Carrots Enter The Room",
-      "soft_idx": 6
+      "soft_idx": 6,
+      "instagram": "https://www.instagram.com/reel/DezRIXfjloV/",
+      "youtube": "https://youtube.com/shorts/HvJgfHtN5Cc (private until the YouTube API audit is approved)",
+      "posted_at": "2026-10-22T18:06:11.242190+03:00"
     },
     "test-2026-10-19-reel": {
       "kind": "reel",
