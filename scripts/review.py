@@ -47,7 +47,7 @@ def redo(state: dict, item_id: str, note: str | None, from_queue: bool = False):
                           reply_to=it["message_id"])
     try:
         built = items.build(f"{item_id}-v{version}", it["kind"], ep, note=note,
-                            soft_idx=it.get("soft_idx", 0) + it["redos"] + 1)
+                            soft_idx=it.get("soft_idx", 0) + it["redos"] + 1, no=it.get("no"))
     except quota.QuotaExceeded:
         reset = quota.next_reset()
         it["redo_queued"] = {"note": note, "not_before": reset.isoformat()}

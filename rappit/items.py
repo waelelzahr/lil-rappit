@@ -46,7 +46,8 @@ def caption_for(kind: str, ep: dict, note: str | None, deal: str | None = None,
     return {"caption": f"{data['caption'].strip()}\n\n{tags}", "title": data["title"].strip()}
 
 
-def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: int = 0) -> dict:
+def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: int = 0,
+          no: int | None = None) -> dict:
     d = OUT / item_id
     d.mkdir(parents=True, exist_ok=True)
     n = _note(note)
@@ -55,7 +56,7 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
     relatable = None
     if kind == "reel":
         quota.need(len(writer.SHOTS))  # never start a reel we can't finish today
-        script = writer.write_script(ep, note)
+        script = writer.write_script(ep, note, no)
         deal = script.get("deal")
         relatable = script.get("relatable")
         (d / "script.json").write_text(json.dumps(script, indent=2), encoding="utf-8")
@@ -97,7 +98,8 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
             log(f"cold open failed, skipping: {e}")
         raw = gen.stitch(clips, d / "reel_raw.mp4")
         lines = [dl.get("line", "") for sh in script["shots"] for dl in sh.get("dialogue", [])]
-        media = captions.apply(raw, d / "reel.mp4", script.get("hook"), lines)
+        media = captions.apply(raw, d / "reel.mp4", script.get("hook"), lines,
+                               sub=writer.HOOK_SUB, label=f"Day {no}" if no else None)
     elif kind == "mugshot":
         media = gen.image(
             "Police booking mugshot photo: Lil Rappit stands in front of a height chart, "

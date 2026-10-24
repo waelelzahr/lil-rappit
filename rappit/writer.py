@@ -18,11 +18,41 @@ SHOTS = [
 COLD_OPEN = (2, 2.4, 1.4)
 COLD_OPEN_WORD = "carrot"
 
+CATCHPHRASE = "Rappit don't do discounts."
+HOOK_SUB = "Wait for his face"
+# The bait shrinks / gets sillier every episode (escalation keeps the joke fresh).
+BAITS = [
+    "a brown paper bag overflowing with fresh orange carrots",
+    "one single tiny baby carrot on a big silver plate",
+    "a slice of carrot cake on a fancy dessert plate",
+    "a small framed photo of a carrot",
+    "a carrot-scented candle, lit",
+    "a child's crayon drawing of a carrot on a napkin",
+    "a gift card with a carrot printed on it",
+    "a single carrot stick in a cocktail glass",
+]
+# Every 5th episode breaks the pattern.
+TWISTS = [
+    "TWIST: the carrot is obviously PLASTIC (the other character squeezes it and it squeaks) - "
+    "Rappit sees it is fake and STILL melts and accepts",
+    "TWIST: the paper bag is EMPTY - the other character just pretends there are carrots in it "
+    "and Rappit still melts and accepts",
+]
+
+
+def flavor(no: int | None) -> tuple[str, str]:
+    """(bait description, twist instruction or '') for episode number `no`."""
+    n = no or 1
+    if n % 5 == 4:
+        twist = TWISTS[(n // 5) % len(TWISTS)]
+        return ("a single orange carrot" if "PLASTIC" in twist else "an empty brown paper bag"), twist
+    return BAITS[(n - 4) % len(BAITS)], ""  # episode 5 = baby carrot, then sillier
+
 RULES = f"""
 You are directing a short mafia-movie parody for Instagram Reels / YouTube Shorts, in exactly
 3 shots (about 15 seconds in total). Star: Lil Rappit, a gangster rabbit (sunglasses, bucket hat, orange puffer, gold
 chain) who is dead serious and intimidating. His ONE weakness is carrots.
-The joke: a tense negotiation, then a bag of carrots appears, his tough face melts, and he
+The joke: a tense negotiation, then carrot bait appears, his tough face melts, and he
 happily accepts a TERRIBLE deal. Played completely straight until the melt.
 
 IT MUST BE FAST. Viewers decide in under 2 seconds whether to keep watching. Think crime-film
@@ -30,21 +60,24 @@ LOOK (hard light, shadows, haze, shot/reverse-shot) with meme PACING: no slow bu
 silent establishing moments, every second something happens. Big, readable, exaggerated faces.
 The situation should mirror an everyday thing people relate to (asking for a raise, a landlord,
 a car salesman, a gym membership) so viewers send it to friends.
+The terrible deal must be absurdly SPECIFIC: take the premise's bad deal and add one ridiculous
+concrete detail (e.g. "the house, the car, AND grandma's soup recipe").
+The bait this episode is: <<BAIT>>. <<TWIST>>
 
 SHOT 1 "THE DEMAND" (4 s): Rappit is ALREADY TALKING in the very first frame - no pause,
   no walk-in. Close-up, slightly LOW ANGLE, 85mm, the other character's shoulder blurred in the
   foreground, a quick punchy push-in (not a slow dolly). ONE hard motivated light that fits the
-  setting; half his face in shadow; sunglasses glint. He states his demand clearly, max 8 words,
-  {VOICE_TOUGH} but without long pauses (it must fit in 4 seconds). Nobody else speaks.
+  setting; half his face in shadow; sunglasses glint. His line ALWAYS starts with his catchphrase
+  "{CATCHPHRASE}" and then states his demand clearly in max 5 more words, {VOICE_TOUGH} but
+  without long pauses (it must fit in 4 seconds). Nobody else speaks.
   sound: low tense drone, one heavy bass hit on his last word.
 
 SHOT 2 "THE COUNTER" (4 s): reverse shot, medium close-up on the other character over
   Rappit's blurred shoulder, a slow push-in. The other character says NOTHING - no dialogue at
-  all. Hesitantly, they slide a brown paper bag overflowing with fresh orange carrots
-  across the table toward Rappit while their eyes keep switching between Rappit's face and the
+  all. Hesitantly, they slide <<BAIT>> across the table toward Rappit while their eyes keep switching between Rappit's face and the
   floor: ashamed, embarrassed, not sure this ridiculous move will work. Awkward pause, a nervous
   swallow, a tiny unsure glance up at him.
-  sound: the music drops out completely; only the paper bag scraping slowly across the table and
+  sound: the music drops out completely; only the bait scraping slowly across the table and
   a nervous gulp in an awkward silence.
 
 SHOT 3 "THE MELT" (6 s): extreme close-up on Rappit, dead serious for half a second, then a
@@ -54,9 +87,10 @@ SHOT 3 "THE MELT" (6 s): extreme close-up on Rappit, dead serious for half a sec
   he squeaks "Carrots?" and then accepts by saying the terrible deal himself so it is
   unmistakable, in a {VOICE_SOFT}, max 9 words in total, and the line MUST start with the word
   "Carrots?" (e.g. "Carrots? ...okay, the car is yours").
-  In the last 2 seconds he DOES the deal on screen without looking away from the carrots (slides
-  the keys / cash / signed paper across with one paw while hugging the bag with the other), and
-  the shot ENDS on his blissed-out melted face so the reel loops back into the opening flash.
+  In the last 2 seconds he DOES the deal on screen while clutching the bait (slides the keys /
+  cash / signed paper across with one paw) as the camera pulls back to a two-shot, and the other
+  character slowly turns and looks straight into the camera in stunned disbelief that it
+  actually worked (like a mockumentary sitcom glance).
   sound: a heavenly "aaah" choir swell, a sparkle chime, a playful pizzicato sting at the end.
 
 Wording: never use words like violent, slap, smash, attack, threatening, blood or weapon in any
@@ -66,9 +100,10 @@ simple clear actions, no text on screen, family-friendly, no smoking, no weapons
 """
 
 
-def write_script(ep: dict, note: str | None = None) -> dict:
+def write_script(ep: dict, note: str | None = None, no: int | None = None) -> dict:
+    bait, twist = flavor(no)
     prompt = (
-        RULES
+        RULES.replace("<<BAIT>>", bait).replace("<<TWIST>>", twist)
         + f"\nPremise: \"{ep['title']}\"\nSetting: {ep['setting']}\nOther character: {ep['opponent']}\n"
         + f"Rappit's demand: {ep['demand']}\nThe terrible deal he accepts: {ep['bad_deal']}\n"
         + (f"\nDirector's note (must follow): {note}\n" if note else "")
@@ -88,7 +123,7 @@ Return JSON:
  ],
  "relatable": "the everyday situation this parodies, e.g. asking your boss for a raise",
  "deal": "one sentence summary of the terrible deal, for the caption",
- "hook": "4-9 word on-screen hook shown in the first 3 seconds. It is shown over a 1-second flash of Rappit's melted face, so it must make that face relatable and shareable, meme style ('POV:' / 'Me when...'). Examples: 'ME WHEN HR SAYS PIZZA PARTY', 'POV: YOUR LANDLORD BROUGHT SNACKS', 'ME AT THE DEALERSHIP WHEN THEY OFFER FREE FLOOR MATS'"
+ "hook": "3-6 word on-screen hook shown in the first 3 seconds over Rappit's melted face while he squeaks 'Carrots?'. It must build him up as fearsome so the picture ironically contradicts it. Examples: 'THE MOST FEARED NEGOTIATOR IN TOWN', 'HE HAS NEVER LOST A DEAL', 'THE MAFIA FEARS THIS RABBIT', 'NOBODY OUT-NEGOTIATES HIM'. Vary it every episode."
 }"""
     )
     script = gen.text_json(prompt, prefer_pro=True)

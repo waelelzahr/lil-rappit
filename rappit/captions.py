@@ -20,6 +20,7 @@ ScaledBorderAndShadow: yes
 Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
 Style: Cap,{FONT},80,&H00FFFFFF,&H00FFFFFF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,7,2,2,80,80,560,1
 Style: Hook,{FONT},84,&H00FFFFFF,&H00FFFFFF,&H00000000,&H96000000,1,0,0,0,100,100,0,0,3,18,0,8,90,90,250,1
+Style: Label,{FONT},50,&H00000000,&H00000000,&H0000D7FF,&H0000D7FF,1,0,0,0,100,100,2,0,3,12,0,8,90,90,140,1
 
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
@@ -84,11 +85,20 @@ def chunk(words: list[dict], max_words: int = 3, max_gap: float = 0.6) -> list[d
              "text": " ".join(x["word"] for x in c)} for c in out]
 
 
-def apply(video: Path, out: Path, hook: str | None, script_lines: list[str]) -> Path:
+def apply(video: Path, out: Path, hook: str | None, script_lines: list[str],
+          sub: str | None = None, label: str | None = None) -> Path:
+    """hook: big text for the first seconds; sub: smaller yellow line under it (e.g. WAIT FOR
+    HIS FACE); label: small yellow tag above it (e.g. DAY 5)."""
     events = []
     if hook:
+        text = _wrap(_esc(hook).upper())
+        if sub:
+            text += f"\\N{{\\fs60\\c&H00D7FF&}}{_esc(sub).upper()}"
         events.append(f"Dialogue: 1,{_t(0)},{_t(HOOK_SECONDS)},Hook,,0,0,0,,"
-                      f"{{\\fad(120,300)}}{_wrap(_esc(hook).upper())}")
+                      f"{{\\fad(120,300)}}{text}")
+    if label:
+        events.append(f"Dialogue: 2,{_t(0)},{_t(HOOK_SECONDS)},Label,,0,0,0,,"
+                      f"{{\\fad(120,300)}}{_esc(label).upper()}")
     try:
         words = transcribe(video, " ".join(script_lines))
         for c in chunk(words):

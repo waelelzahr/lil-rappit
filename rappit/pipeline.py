@@ -22,9 +22,16 @@ def queue(state: dict, item_id: str, kind: str, ep: dict, slot: str, soft_idx: i
 def make(state: dict, item_id: str, kind: str, ep: dict, slot: str, soft_idx: int,
          label_when: str, tease: str = "") -> None:
     """Build + send a draft. On QuotaExceeded, queue it for after Google's reset."""
+    no = None
+    if kind == "reel":  # episode counter shown as "DAY n"; test drafts don't advance it
+        no = state.get("episode_no", 4) + 1
+        if not item_id.startswith("test"):
+            state["episode_no"] = no
     try:
-        built = items.build(item_id, kind, ep, soft_idx=soft_idx)
+        built = items.build(item_id, kind, ep, soft_idx=soft_idx, no=no)
     except quota.QuotaExceeded as e:
+        if no and not item_id.startswith("test"):
+            state["episode_no"] = no - 1  # not made yet; give the number back
         reset = quota.next_reset()
         queue(state, item_id, kind, ep, slot, soft_idx, reset, str(e), tease)
         discord.send_text(f"⏳ Google's daily video limit is used up, so **{ep['title']}** "
@@ -41,7 +48,7 @@ def make(state: dict, item_id: str, kind: str, ep: dict, slot: str, soft_idx: in
         "kind": kind, "episode": ep["id"], "slot": slot, "status": "pending", "redos": 0,
         "message_id": msg_id, "run_id": os.environ.get("GITHUB_RUN_ID"),
         "relpath": str(path.relative_to(OUT)), "caption": built["caption"],
-        "title": built["title"], "soft_idx": soft_idx, "tease": tease}
+        "title": built["title"], "soft_idx": soft_idx, "tease": tease, "no": no}
 
 
 def send_script(built: dict, msg_id: str) -> None:
