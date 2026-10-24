@@ -9,19 +9,18 @@ VOICE_SOFT = "suddenly high-pitched, squeaky, sweet, baby-like voice"
 # (name, seconds, Rappit's voice in this shot: tough / soft / None)
 SHOTS = [
     ("THE DEMAND", 4, "tough"),
-    ("THE COUNTER", 6, None),
+    ("THE COUNTER", 4, None),
     ("THE MELT", 6, "soft"),
-    ("THE PAYOFF", 4, "soft"),
 ]
 # The reel opens with a flash of the melt (cut from shot 3) before shot 1: a cold open that
 # makes scrollers ask "how does this guy end up like THAT?". It is cut around his squeaky
 # "Carrots?" (found with word timestamps); these are the fallback (shot, start, length).
-COLD_OPEN = (2, 4.2, 1.2)
+COLD_OPEN = (2, 2.4, 1.4)
 COLD_OPEN_WORD = "carrot"
 
 RULES = f"""
 You are directing a short mafia-movie parody for Instagram Reels / YouTube Shorts, in exactly
-4 shots. Star: Lil Rappit, a gangster rabbit (sunglasses, bucket hat, orange puffer, gold
+3 shots (about 15 seconds in total). Star: Lil Rappit, a gangster rabbit (sunglasses, bucket hat, orange puffer, gold
 chain) who is dead serious and intimidating. His ONE weakness is carrots.
 The joke: a tense negotiation, then a bag of carrots appears, his tough face melts, and he
 happily accepts a TERRIBLE deal. Played completely straight until the melt.
@@ -39,9 +38,9 @@ SHOT 1 "THE DEMAND" (4 s): Rappit is ALREADY TALKING in the very first frame - n
   {VOICE_TOUGH} but without long pauses (it must fit in 4 seconds). Nobody else speaks.
   sound: low tense drone, one heavy bass hit on his last word.
 
-SHOT 2 "THE COUNTER" (6 s): reverse shot, medium close-up on the other character over
+SHOT 2 "THE COUNTER" (4 s): reverse shot, medium close-up on the other character over
   Rappit's blurred shoulder, a slow push-in. The other character says NOTHING - no dialogue at
-  all. Slowly, hesitantly, they slide a brown paper bag overflowing with fresh orange carrots
+  all. Hesitantly, they slide a brown paper bag overflowing with fresh orange carrots
   across the table toward Rappit while their eyes keep switching between Rappit's face and the
   floor: ashamed, embarrassed, not sure this ridiculous move will work. Awkward pause, a nervous
   swallow, a tiny unsure glance up at him.
@@ -51,18 +50,14 @@ SHOT 2 "THE COUNTER" (6 s): reverse shot, medium close-up on the other character
 SHOT 3 "THE MELT" (6 s): extreme close-up on Rappit, dead serious for half a second, then a
   HUGE over-the-top cartoon melt: sunglasses slide down his nose, eyes go enormous and sparkly
   and teary, ears shoot straight up then flop, nose twitches fast, cheeks blush, lower lip
-  trembles, paws clasp under his chin. The face must be at its most extreme from about
-  second 3.5 to second 5.5. At about second 3.5, at the peak of the melt, he squeaks
-  "Carrots?" and then accepts by saying the terrible deal himself so it is unmistakable,
-  in a {VOICE_SOFT}, max 9 words in total, and the line MUST start with the word "Carrots?"
-  (e.g. "Carrots? ...okay, the car is yours").
-  sound: a heavenly "aaah" choir swell and a sparkle chime.
-
-SHOT 4 "THE PAYOFF" (4 s): wide two-shot showing the terrible deal physically and clearly
-  (he pushes the cash across, hands over the keys, signs the paper) while hugging the carrot bag;
-  the other character looks smug. END on Rappit's blissed-out melted face pushing into a close-up
-  (so the end loops back into the opening flash). No dialogue, or max 3 words.
-  sound: a playful pizzicato sting.
+  trembles. The face is at its most extreme from about second 2 to second 4. At about second 2
+  he squeaks "Carrots?" and then accepts by saying the terrible deal himself so it is
+  unmistakable, in a {VOICE_SOFT}, max 9 words in total, and the line MUST start with the word
+  "Carrots?" (e.g. "Carrots? ...okay, the car is yours").
+  In the last 2 seconds he DOES the deal on screen without looking away from the carrots (slides
+  the keys / cash / signed paper across with one paw while hugging the bag with the other), and
+  the shot ENDS on his blissed-out melted face so the reel loops back into the opening flash.
+  sound: a heavenly "aaah" choir swell, a sparkle chime, a playful pizzicato sting at the end.
 
 Wording: never use words like violent, slap, smash, attack, threatening, blood or weapon in any
 field (the image and video models refuse them); say sudden, fast, dramatic, plops down instead.
@@ -89,7 +84,7 @@ Return JSON:
     "sound": "music, ambience and sound effects",
     "action": "what happens during the shot, beat by beat",
     "dialogue": [{"speaker": "Rappit or the other character's name", "voice": "voice description", "line": "..."}]}
-   ... exactly 4 shots in order ...
+   ... exactly 3 shots in order ...
  ],
  "relatable": "the everyday situation this parodies, e.g. asking your boss for a raise",
  "deal": "one sentence summary of the terrible deal, for the caption",
@@ -98,7 +93,7 @@ Return JSON:
     )
     script = gen.text_json(prompt, prefer_pro=True)
     if len(script.get("shots", [])) != len(SHOTS):
-        raise ValueError(f"writer returned {len(script.get('shots', []))} shots, expected 4")
+        raise ValueError(f"writer returned {len(script.get('shots', []))} shots, expected {len(SHOTS)}")
     log(f"script: {script.get('deal', '')}")
     return script
 
