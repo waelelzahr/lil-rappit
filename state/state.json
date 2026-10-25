@@ -160,7 +160,7 @@
       "kind": "soft",
       "episode": "job-interview",
       "slot": "2026-10-31T18:00:00+02:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1563810159690522624",
       "run_id": "40171152702",
@@ -188,7 +188,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1563810175637389368",
+  "discord_last": "1563817212152774777",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-10-25",
