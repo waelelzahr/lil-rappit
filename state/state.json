@@ -6,7 +6,9 @@
     "dealership",
     "poker-car",
     "tax-audit",
-    "salary"
+    "salary",
+    "job-interview",
+    "parking"
   ],
   "items": {
     "2026-10-18-soft": {
@@ -128,13 +130,54 @@
       "title": "Asking for a huge raise but caving for snacks",
       "soft_idx": 0,
       "tease": "New episode every Monday & Thursday 🥕"
+    },
+    "2026-10-25-mugshot": {
+      "kind": "mugshot",
+      "episode": "job-interview",
+      "slot": "2026-10-28T18:00:00+02:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1563810030128730176",
+      "run_id": "40171152702",
+      "relpath": "2026-10-25-mugshot/mugshot.png",
+      "caption": "POV: Your salary negotiation didn't go as planned funny rabbit 🥕🚔\nWhat should Rappit negotiate next?\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "When the job interview salary negotiation goes too far",
+      "soft_idx": 9,
+      "tease": "",
+      "no": null
+    },
+    "2026-10-25-reel2": {
+      "kind": "reel",
+      "episode": "parking",
+      "slot": "2026-10-29T18:00:00+02:00",
+      "status": "queued",
+      "not_before": "2026-10-28T10:15:00+02:00",
+      "redos": 0,
+      "soft_idx": 9,
+      "tease": "New episode every Monday & Thursday 🥕"
+    },
+    "2026-10-25-soft": {
+      "kind": "soft",
+      "episode": "job-interview",
+      "slot": "2026-10-31T18:00:00+02:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1563810159690522624",
+      "run_id": "40171152702",
+      "relpath": "2026-10-25-soft/soft.png",
+      "caption": "Tag the friend who acts tough until the salary negotiation includes snacks, just like this funny rabbit 🥕\nWhat should Rappit negotiate next?\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "Funny rabbit folds instantly during salary negotiation",
+      "soft_idx": 9,
+      "tease": "",
+      "no": null
     }
   },
   "tg_offset": 0,
   "discord_last": "1563205780533026949",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
-    "date": "2026-10-21",
-    "count": 4
-  }
+    "date": "2026-10-25",
+    "count": 0
+  },
+  "episode_no": 5
 }

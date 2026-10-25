@@ -1,19 +1,66 @@
-[12:24:56] episodes: “Pink Slips”
-[12:25:19] script: He willingly hands over his own car keys before the street race even starts just for a bag of carrots.
-[12:25:37] image ok (gemini-nano-banana-2.1) -> opponent.png
-[12:25:57] image ok (gemini-nano-banana-2.1) -> frame1.png
-[12:25:58] Veo rejected 1080p/4s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 4 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[12:26:39] video ok -> shot1.mp4 (4s, 41s)
-[12:26:57] image ok (gemini-nano-banana-2.1) -> frame2.png
-[12:26:58] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[12:27:49] video ok -> shot2.mp4 (6s, 51s)
-[12:28:10] image ok (gemini-nano-banana-2.1) -> frame3.png
-[12:28:11] Veo rejected 1080p/6s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 6 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[12:29:34] video ok -> shot3.mp4 (6s, 82s)
-[12:29:55] image ok (gemini-nano-banana-2.1) -> frame4.png
-[12:29:56] Veo rejected 1080p/4s: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': '1080p is not supported for a duration of 4 seconds.', 'status': 'INVALID_ARGUMENT'}}
-[12:30:37] video ok -> shot4.mp4 (4s, 41s)
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-[0;93m2026-10-20 09:31:17.902929856 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
-[12:31:19] captions: 21 words
-[12:31:59] built test2-2026-10-20-reel (reel)
+[09:01:09] episodes: “The Interview”, “The Parking Spot”
+[09:01:36] script: He trades his CEO demand for an unpaid internship making coffee just for one baby carrot.
+[09:01:56] image ok (gemini-nano-banana-2.1) -> opponent.png
+[09:02:16] image ok (gemini-nano-banana-2.1) -> frame1.png
+[09:02:16] Veo rejected 1080p/4s: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/veo-3.1-fast-generate-preview is no longer available. Please update your code to use models/gemini-omni-1.1-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}
+[09:02:17] Veo rejected 720p/4s: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/veo-3.1-fast-generate-preview is no longer available. Please update your code to use models/gemini-omni-1.1-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}
+[09:02:17] FAILED 2026-10-25-reel: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/veo-3.1-fast-generate-preview is no longer available. Please update your code to use models/gemini-omni-1.1-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}
+Traceback (most recent call last):
+  File "/home/runner/work/lil-rappit/lil-rappit/scripts/weekly.py", line 75, in main
+    pipeline.make(state, item_id, p["kind"], ep, slot, soft_idx, p["at"], tease)
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/pipeline.py", line 31, in make
+    built = items.build(item_id, kind, ep, soft_idx=soft_idx, no=no)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/items.py", line 83, in build
+    clips.append(gen.video(writer.shot_prompt(ep, script, i), f,
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/gen.py", line 206, in video
+    raise last_err
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/gen.py", line 187, in video
+    op = client().models.generate_videos(
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/models.py", line 6855, in generate_videos
+    return self._generate_videos(
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/models.py", line 6022, in _generate_videos
+    response = self._api_client.request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_api_client.py", line 2064, in request
+    response = self._request(http_request, http_options, stream=False)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_api_client.py", line 1840, in _request
+    return self._retry(self._request_once, http_request, stream)  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/tenacity/__init__.py", line 470, in __call__
+    do = self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/tenacity/__init__.py", line 371, in iter
+    result = action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/tenacity/__init__.py", line 413, in exc_check
+    raise retry_exc.reraise()
+          ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/tenacity/__init__.py", line 184, in reraise
+    raise self.last_attempt.result()
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/tenacity/__init__.py", line 473, in __call__
+    result = fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_api_client.py", line 1817, in _request_once
+    errors.APIError.raise_for_response(response)
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/errors.py", line 187, in raise_for_response
+    cls.raise_error(response.status_code, response_json, response)
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/errors.py", line 216, in raise_error
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'This model models/veo-3.1-fast-generate-preview is no longer available. Please update your code to use models/gemini-omni-1.1-flash for the latest features and improvements. We recommend you to use the Interactions API (https://ai.google.dev/gemini-api/docs/get-started).', 'status': 'NOT_FOUND'}}
+
+[09:02:37] image ok (gemini-nano-banana-2.1) -> mugshot.png
+[09:02:44] built 2026-10-25-mugshot (mugshot)
+[09:02:46] queued 2026-10-25-reel2 until 2026-10-28 10:15: scheduled
+[09:03:05] image ok (gemini-nano-banana-2.1) -> soft.png
+[09:03:15] built 2026-10-25-soft (soft)
