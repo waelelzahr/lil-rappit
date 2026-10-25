@@ -1,47 +1,47 @@
 {
-  "opponent_look": "A jittery grey squirrel wearing a slightly oversized baby-blue button-down shirt and a crooked red tie, with wide nervous brown eyes and twitchy ears, looking exactly the same across all shots.",
+  "opponent_look": "A jittery, skinny red squirrel wearing a slightly oversized, wrinkled light-blue button-down shirt and a crooked red tie. He has big, anxious, darting brown eyes, twitchy whiskers, and messy ear tufts, looking perpetually sweaty and completely out of his depth.",
   "shots": [
     {
-      "frame": "Close-up of Lil Rappit wearing sunglasses, a bucket hat, orange puffer, and gold chain. The squirrel's shoulder is blurred in the foreground. The bright startup office has bean bags in the back.",
-      "camera": "85mm lens, slightly low angle, a quick punchy push-in directly on Lil Rappit's face.",
-      "lighting": "One hard motivated window light creates a dramatic half-face shadow, giving a sharp glint on his sunglasses.",
-      "performance": "Rappit projects total absolute authority. He does not hesitate or blink, his face completely rigid and devoid of emotion while he speaks.",
-      "sound": "Low tense drone, finishing with one heavy bass hit exactly on his last word.",
-      "action": "Rappit is already speaking the very instant the frame begins, delivering his demands with unbroken eye contact.",
+      "frame": "Close-up on Lil Rappit (a gangster rabbit in an orange puffer jacket, bucket hat, gold chain, and sunglasses), with the squirrel's blurred light-blue shoulder in the foreground right. A desk is partially visible.",
+      "camera": "85mm lens, slightly low angle, a quick and punchy push-in on Rappit's face.",
+      "lighting": "Bright startup office background with out-of-focus neon signs, but a single hard motivated desk lamp casts deep dramatic shadows across half of Rappit's face, making his sunglasses glint sharply.",
+      "performance": "Rappit is deadpan, motionless, and radiating cold confidence. His jaw barely moves as he speaks, staring straight through the HR manager without a single blink.",
+      "sound": "Low tense drone, ending with one heavy bass hit right on his last word.",
+      "action": "Rappit delivers his unyielding terms immediately from the very first frame, shutting down any room for debate.",
       "dialogue": [
         {
           "speaker": "Lil Rappit",
-          "voice": "Deep, raspy, quiet, menacing Brooklyn accent",
+          "voice": "slow, deliberate, deep, raspy, quiet and menacing voice with a Brooklyn accent",
           "line": "Rappit don't do discounts. CEO and a corner office."
         }
       ]
     },
     {
-      "frame": "Medium close-up of the jittery squirrel HR manager across the desk, framed over Lil Rappit's blurred orange-puffer shoulder.",
-      "camera": "85mm lens, over-the-shoulder reverse shot, a slow creeping push-in on the squirrel.",
-      "lighting": "Bright overhead office lighting that feels exposing, capturing every bead of nervous sweat on the squirrel.",
-      "performance": "The squirrel looks deeply ashamed and embarrassed. Its eyes dart between Rappit's face and the floor. It swallows nervously, then offers a tiny, unsure glance up.",
-      "sound": "The tense drone music drops out completely. The only sounds are the metallic scrape of the plate and a loud, nervous gulp in the awkward silence.",
-      "action": "The silent squirrel hesitantly slides a big silver plate bearing one single tiny baby carrot slowly across the desk toward Rappit.",
+      "frame": "Medium close-up on the squirrel HR manager over Rappit's blurred orange puffer shoulder in the foreground left. The desk is in focus between them.",
+      "camera": "85mm lens, eye-level, a slow, creeping push-in on the squirrel's terrified face.",
+      "lighting": "Bright fluorescent startup lighting, flat and awkward, highlighting the squirrel's sweaty brow and the sterile office reality.",
+      "performance": "Extremely nervous and ashamed. The squirrel's shoulders are hunched. His eyes dart rapidly between Rappit's face and the desk, expecting this ridiculous move to fail. He does a prominent nervous swallow and offers a tiny, unsure glance up.",
+      "sound": "The tense drone music drops out completely. Only the scrape of metal on wood, a loud nervous gulp, and heavy awkward silence.",
+      "action": "The squirrel wordlessly, shakily slides a massive silver platter across the desk. Sitting exactly in the center is one single tiny baby carrot.",
       "dialogue": []
     },
     {
-      "frame": "Extreme close-up on Lil Rappit's stoic face, then pulling back to a wide two-shot showing both characters across the desk.",
-      "camera": "Holds tight on Rappit for half a second, stays for the facial melt, then does a fast pull-back out to a wide two-shot over the final two seconds.",
-      "lighting": "The harsh shadows immediately wash away, replaced by a soft, warm, glowing, angelic light on Rappit's face.",
-      "performance": "Dead serious for a split second, then a massive cartoon melt: sunglasses slide down, eyes go enormous and teary, ears shoot straight up then flop, nose twitches rapidly, cheeks blush, and lip trembles. The squirrel slowly turns to stare straight into the camera in stunned disbelief.",
-      "sound": "A heavenly 'aaah' choir swell starts abruptly, followed by a sparkle chime, ending with a playful pizzicato sting.",
-      "action": "Rappit melts instantly upon seeing the bait. He squeaks his line, rapidly signs the employment contract with one paw, and pushes it back across the desk while clutching the tiny carrot to his chest.",
+      "frame": "Extreme close-up on Rappit's stoic face, which dynamically pulls back to a wide two-shot showing both characters across the desk.",
+      "camera": "Starts as an extreme close-up, then a steady pull-out back to a medium two-shot revealing the desk, the bean bags in the background, and both characters.",
+      "lighting": "The hard shadow on Rappit's face miraculously lifts, replaced by a soft, glowing, even light that makes his eyes pop and sparkle.",
+      "performance": "Dead serious for half a second. Then a HUGE over-the-top cartoon melt: sunglasses slide down his nose, eyes go enormous, sparkly and teary, ears shoot straight up then flop down, nose twitches fast, cheeks blush, lower lip trembles (peak melt between seconds 2 and 4). The squirrel looks stunned.",
+      "sound": "A heavenly 'aaah' choir swell, a magical sparkle chime, and a playful pizzicato sting at the very end.",
+      "action": "Rappit gasps at second 2, clutching the tiny carrot with both paws. He eagerly slides a signed employment contract across the desk in the final two seconds. The squirrel slowly turns his head and stares directly into the camera in stunned disbelief.",
       "dialogue": [
         {
           "speaker": "Lil Rappit",
-          "voice": "Suddenly high-pitched, squeaky, sweet, baby-like",
-          "line": "Carrots? I'll be the unpaid coffee intern!"
+          "voice": "suddenly high-pitched, squeaky, sweet, baby-like voice",
+          "line": "Carrots? Unpaid intern making everyone's coffee!"
         }
       ]
     }
   ],
-  "relatable": "A high-stakes job interview and salary negotiation.",
-  "deal": "He trades his CEO demand for an unpaid internship making coffee just for one baby carrot.",
-  "hook": "THE TOUGHEST NEGOTIATOR IN CORPORATE"
+  "relatable": "A stressful job interview or salary negotiation",
+  "deal": "He accepts an unpaid internship making coffee for everyone.",
+  "hook": "THE MOST FEARSOME CORPORATE NEGOTIATOR"
 }

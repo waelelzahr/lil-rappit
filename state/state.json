@@ -170,6 +170,21 @@
       "soft_idx": 9,
       "tease": "",
       "no": null
+    },
+    "2026-10-25-reel": {
+      "kind": "reel",
+      "episode": "job-interview",
+      "slot": "2026-10-26T18:00:00+02:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1563812709177491466",
+      "run_id": "40171598535",
+      "relpath": "2026-10-25-reel/reel.mp4",
+      "caption": "Tag the friend who folded immediately during their salary negotiation funny rabbit style 🥕😭\nWhat should Rappit try to negotiate next?\nNew episode every Monday & Thursday 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "When you fold immediately in a salary negotiation",
+      "soft_idx": 9,
+      "tease": "New episode every Monday & Thursday 🥕",
+      "no": 5
     }
   },
   "tg_offset": 0,
@@ -177,7 +192,7 @@
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-10-25",
-    "count": 0
+    "count": 3
   },
-  "episode_no": 4
+  "episode_no": 5
 }
