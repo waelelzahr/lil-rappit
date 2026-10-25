@@ -82,24 +82,27 @@ def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: 
             frames.append(f)
             clips.append(gen.video(writer.shot_prompt(ep, script, i), f,
                                    d / f"shot{i + 1}.mp4", seconds=secs, style=gen.NOIR))
-        idx, start, length = writer.COLD_OPEN
-        try:  # start the reel on his squeaky "Carrots?" so the sound itself is the hook
-            words = captions.transcribe(clips[idx], "Carrots?")
-            hit = next((w for w in words if writer.COLD_OPEN_WORD in w["word"].lower()), None)
-            if hit:
-                start, length = max(0.0, hit["start"] - 0.15), max(1.2, hit["end"] - hit["start"] + 0.5)
-                log(f"cold open on '{hit['word']}' at {start:.2f}s for {length:.2f}s")
-        except Exception as e:
-            log(f"cold open word search failed, using default cut: {e}")
-        try:
-            cold = gen.cut(clips[idx], start, length, d / "cold_open.mp4")
-            clips = [cold, *clips]
-        except Exception as e:  # never lose a finished reel over the teaser
-            log(f"cold open failed, skipping: {e}")
+        rc = CFG.get("reel", {})
+        if rc.get("cold_open", True):
+            idx, start, length = writer.COLD_OPEN
+            try:  # start the reel on his squeaky "Carrots?" so the sound itself is the hook
+                words = captions.transcribe(clips[idx], "Carrots?")
+                hit = next((w for w in words if writer.COLD_OPEN_WORD in w["word"].lower()), None)
+                if hit:
+                    start, length = max(0.0, hit["start"] - 0.15), max(1.2, hit["end"] - hit["start"] + 0.5)
+                    log(f"cold open on '{hit['word']}' at {start:.2f}s for {length:.2f}s")
+            except Exception as e:
+                log(f"cold open word search failed, using default cut: {e}")
+            try:
+                cold = gen.cut(clips[idx], start, length, d / "cold_open.mp4")
+                clips = [cold, *clips]
+            except Exception as e:  # never lose a finished reel over the teaser
+                log(f"cold open failed, skipping: {e}")
         raw = gen.stitch(clips, d / "reel_raw.mp4")
         lines = [dl.get("line", "") for sh in script["shots"] for dl in sh.get("dialogue", [])]
-        media = captions.apply(raw, d / "reel.mp4", script.get("hook"), lines,
-                               sub=writer.HOOK_SUB, label=f"Day {no}" if no else None)
+        media = captions.apply(
+            raw, d / "reel.mp4", script.get("hook") if rc.get("hook_text", True) else None, lines,
+            sub=writer.HOOK_SUB, label=f"Day {no}" if no and rc.get("day_label", True) else None)
     elif kind == "mugshot":
         media = gen.image(
             "Police booking mugshot photo: Lil Rappit stands in front of a height chart, "

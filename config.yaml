@@ -17,6 +17,11 @@ video:
     shaky cam, subtitles, text, watermark,
     extra characters, deformed face, extra limbs, smoking, weapons
 
+reel:
+  cold_open: false   # flash of the melt before the negotiation
+  hook_text: false   # big on-screen hook text in the first seconds
+  day_label: false   # small 'DAY n' tag
+
 images:
   size: 2K          # start frames and photos (falls back to default if unsupported)
 
