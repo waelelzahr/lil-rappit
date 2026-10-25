@@ -175,7 +175,7 @@
       "kind": "reel",
       "episode": "job-interview",
       "slot": "2026-10-26T18:00:00+02:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1563821429433040997",
       "run_id": "40174014088",
@@ -188,7 +188,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1563817212152774777",
+  "discord_last": "1563824775414153277",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-10-25",
