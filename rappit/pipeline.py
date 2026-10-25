@@ -37,6 +37,10 @@ def make(state: dict, item_id: str, kind: str, ep: dict, slot: str, soft_idx: in
         discord.send_text(f"⏳ Google's daily video limit is used up, so **{ep['title']}** "
                           f"({kind}) will be made after {_when(reset)}.")
         return
+    except Exception:
+        if no and not item_id.startswith("test"):
+            state["episode_no"] = no - 1  # failed; the retry reuses this number
+        raise
     if tease:  # a reason to follow: what's next
         cap, _, tags = built["caption"].rpartition("\n\n")
         built["caption"] = f"{cap}\n{tease}\n\n{tags}" if cap else f"{built['caption']}\n{tease}"

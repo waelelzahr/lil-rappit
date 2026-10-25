@@ -175,10 +175,83 @@ def image(prompt: str, out: Path, extra_images: list | None = None,
     raise last_err
 
 
+def _duration(path: Path) -> float:
+    return float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                                 "-of", "csv=p=0", str(path)],
+                                capture_output=True, text=True, check=True).stdout.strip())
+
+
+def _quota_error(e: Exception):
+    if "RESOURCE_EXHAUSTED" in str(e) or "429" in str(e):
+        quota.exhausted()
+        raise quota.QuotaExceeded(f"Google's daily video limit reached: {e}") from e
+
+
+def _video_omni(full: str, start_frame: Path, out: Path, seconds: int) -> Path:
+    """Gemini Omni Flash (Interactions API): image-to-video with sound, from a first frame."""
+    import base64
+    v = CFG["video"]
+    avoid = v.get("negative_prompt")
+    text = (f"<FIRST_FRAME> {full}\n\nThe video is exactly {seconds} seconds long and starts "
+            "exactly on the given first frame." + (f"\nAvoid: {avoid}." if avoid else ""))
+    inputs = [{"type": "image", "data": base64.b64encode(start_frame.read_bytes()).decode(),
+               "mime_type": mime_of(start_frame)},
+              {"type": "text", "text": text}]
+    t0, last_err, inter = time.time(), None, None
+    for fmt in ({"duration": f"{seconds}s"}, {"duration": str(seconds)}, {}):
+        for delivery in ("uri", "inline"):
+            try:
+                inter = client().interactions.create(
+                    model=CFG["models"]["video"], input=inputs, timeout=900,
+                    response_format={"type": "video", "aspect_ratio": v["aspect_ratio"],
+                                     "resolution": v.get("resolution", "720p"),
+                                     "delivery": delivery, **fmt})
+                break
+            except Exception as e:
+                _quota_error(e)
+                last_err = e
+                log(f"Omni rejected {fmt or 'no duration'}/{delivery}: {str(e)[:300]}")
+        if inter is not None:
+            break
+    if inter is None:
+        raise last_err
+    quota.used()
+    vid = getattr(inter, "output_video", None)
+    if vid is None:
+        raise RuntimeError(f"video model returned no video (possibly blocked): {str(inter)[:400]}")
+    raw = out.with_name(out.stem + "_raw.mp4")
+    if getattr(vid, "data", None):
+        raw.write_bytes(base64.b64decode(vid.data))
+    else:
+        name = "files/" + vid.uri.split("files/")[-1].split(":")[0].split("?")[0]
+        for _ in range(90):
+            f = client().files.get(name=name)
+            state = str(getattr(f, "state", "")).upper()
+            if "ACTIVE" in state:
+                break
+            if "FAILED" in state:
+                raise RuntimeError(f"video file failed: {f}")
+            time.sleep(5)
+        raw.write_bytes(client().files.download(file=name))
+    # Trim to the planned length so the reel keeps its pacing.
+    if _duration(raw) > seconds + 0.3:
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(raw), "-t", str(seconds),
+                        "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt",
+                        "yuv420p", "-c:a", "aac", "-b:a", "160k", str(out)], check=True)
+    else:
+        raw.replace(out)
+    log(f"video ok -> {out.name} ({seconds}s, {time.time() - t0:.0f}s)")
+    return out
+
+
 def video(prompt: str, start_frame: Path, out: Path, seconds: int | None = None,
           style: str | None = None, rappit: bool = True) -> Path:
-    """Image-to-video with Veo, starting from start_frame."""
+    """Image-to-video starting from start_frame (Gemini Omni Flash, or Veo for older ids)."""
     v = CFG["video"]
+    if CFG["models"]["video"].startswith("gemini-omni"):
+        seconds = seconds or v["clip_seconds"]
+        full = (f"{LOOK}\n\n" if rappit else "") + f"{soften(prompt)}\n\n{style or STYLE}"
+        return _video_omni(full, start_frame, out, seconds)
     seconds = seconds or v["clip_seconds"]
     full = (f"{LOOK}\n\n" if rappit else "") + f"{soften(prompt)}\n\n{style or STYLE}"
     last_err = None

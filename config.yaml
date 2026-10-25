@@ -5,16 +5,16 @@ models:
   text_fallbacks: [gemini-2.5-flash, gemini-3-flash-preview, gemini-2.0-flash]
   image: gemini-nano-banana-2.1       # start frames and photo posts
   image_fallback: gemini-3.1-flash-image-preview
-  video: veo-3.1-fast-generate-preview
+  video: gemini-omni-1.1-flash   # Veo 3.1 preview models were shut down 2026-10-22
 
 video:
-  resolution: 1080p
+  resolution: 720p   # Omni: 720p native (1080p/4k are upscaled)
   aspect_ratio: "9:16"
   clip_seconds: 8
-  daily_limit: 10    # Veo requests/day on your Gemini API tier
+  daily_limit: 10    # video requests/day we allow ourselves
   negative_prompt: >-
     bright flat lighting, cartoon, 2D animation, low detail, washed out colors,
-    fast chaotic camera movement, shaky cam, jump cuts, subtitles, text, watermark,
+    shaky cam, subtitles, text, watermark,
     extra characters, deformed face, extra limbs, smoking, weapons
 
 images:
