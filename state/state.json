@@ -175,7 +175,7 @@
       "kind": "reel",
       "episode": "job-interview",
       "slot": "2026-10-26T18:00:00+02:00",
-      "status": "approved",
+      "status": "posted",
       "redos": 0,
       "message_id": "1563821429433040997",
       "run_id": "40174014088",
@@ -184,7 +184,10 @@
       "title": "When you fold immediately in a salary negotiation",
       "soft_idx": 9,
       "tease": "New episode every Monday & Thursday 🥕",
-      "no": 5
+      "no": 5,
+      "instagram": "https://www.instagram.com/reel/De9qnL-ClfE/",
+      "youtube": "https://youtube.com/shorts/hokiUdAhAOA (private until the YouTube API audit is approved)",
+      "posted_at": "2026-10-26T18:01:26.697635+02:00"
     }
   },
   "tg_offset": 0,
