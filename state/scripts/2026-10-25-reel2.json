@@ -1,0 +1,47 @@
+{
+  "opponent_look": "A tall, pushy flamingo with bright pink feathers, wearing a retro teal tracksuit jacket and a white sun visor, driving a comically tiny yellow convertible car. Large expressive beak and anxious, wide eyes.",
+  "shots": [
+    {
+      "frame": "Close-up, slightly low angle on Lil Rappit in his orange puffer, bucket hat, gold chain, and sunglasses. The flamingo's teal-jacketed shoulder is blurred in the foreground. Background is a hazy, out-of-focus busy city street with cars.",
+      "camera": "85mm lens, slightly low angle, a quick punchy push-in.",
+      "lighting": "One hard motivated streetlamp light, casting half of Rappit's face in deep shadow with a sharp glint on his sunglasses.",
+      "performance": "Rappit is already talking in the first frame, deadpan and unblinking. His face is completely motionless except for his mouth, projecting absolute, quiet menace.",
+      "sound": "Low tense drone, ending with one heavy bass hit on his last word.",
+      "action": "Rappit aggressively states his claim over the parking spot without a single moment of hesitation.",
+      "dialogue": [
+        {
+          "speaker": "Lil Rappit",
+          "voice": "slow, deliberate, deep, raspy, quiet and menacing voice with a Brooklyn accent",
+          "line": "Rappit don't do discounts. This spot is mine."
+        }
+      ]
+    },
+    {
+      "frame": "Medium close-up on the flamingo sitting in the tiny yellow car, framed over Rappit's blurred orange shoulder. A slice of carrot cake on a fancy dessert plate rests on the car's door frame.",
+      "camera": "A slow push-in over Rappit's blurred shoulder focusing on the flamingo's face.",
+      "lighting": "Hard street light highlighting the flamingo's sweating face and the fancy dessert plate, with deep shadows in the car interior.",
+      "performance": "The flamingo says absolutely nothing. They look deeply ashamed and embarrassed, eyes darting nervously between Rappit's face and the floor. A visible nervous swallow, followed by a tiny, unsure glance up.",
+      "sound": "The music drops out completely. The only sounds are the ceramic plate scraping slowly across the metal car hood, a nervous gulp, and an awkward silence.",
+      "action": "Hesitantly, the flamingo slides the slice of carrot cake on the fancy dessert plate across the car hood toward Rappit.",
+      "dialogue": []
+    },
+    {
+      "frame": "Extreme close-up on Rappit's face, which pulls back at second 4 into a wide two-shot showing Rappit, the flamingo, the tiny car, and the empty parking spot.",
+      "camera": "Starts static on the extreme close-up, then a fast, dramatic pull back to a two-shot.",
+      "lighting": "The harsh shadows suddenly vanish, replaced by bright, even, colorful lighting.",
+      "performance": "0-0.5s: Dead serious. 0.5s-4s: Huge cartoon melt; sunglasses slide down, eyes go enormous and sparkly, ears shoot straight up then flop, nose twitches fast, cheeks blush, lower lip trembles. 4s-6s: Rappit happily scrubs the car hood. The flamingo slowly turns to stare straight into the camera in stunned disbelief.",
+      "sound": "A heavenly 'aaah' choir swell, a sparkle chime, and a playful pizzicato sting at the end.",
+      "action": "Rappit melts at the sight of the cake. He grabs the plate with one paw, pulls out a soapy sponge with the other, and happily begins washing the tiny car to pay for the cake, surrendering the parking spot.",
+      "dialogue": [
+        {
+          "speaker": "Lil Rappit",
+          "voice": "suddenly high-pitched, squeaky, sweet, baby-like voice",
+          "line": "Carrots? Okay, I will wash your car!"
+        }
+      ]
+    }
+  ],
+  "relatable": "fighting for a parking spot in a crowded city",
+  "deal": "He gives up the only parking spot on the block AND washes the other driver's car.",
+  "hook": "THE MAFIA FEARS THIS RABBIT"
+}

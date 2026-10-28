@@ -153,11 +153,16 @@
       "kind": "reel",
       "episode": "parking",
       "slot": "2026-10-29T18:00:00+02:00",
-      "status": "queued",
-      "not_before": "2026-10-28T10:15:00+02:00",
+      "status": "pending",
       "redos": 0,
+      "message_id": "1564920666954932325",
+      "run_id": "40657264762",
+      "relpath": "2026-10-25-reel2/reel.mp4",
+      "caption": "Tag the friend who loses every negotiation the second food is offered 🥕💀\nWhat should Rappit negotiate next?\nNew episode every Monday & Thursday 🥕\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "Fighting For A Parking Spot In The City Be Like",
       "soft_idx": 9,
-      "tease": "New episode every Monday & Thursday 🥕"
+      "tease": "New episode every Monday & Thursday 🥕",
+      "no": 6
     },
     "2026-10-25-soft": {
       "kind": "soft",
@@ -194,11 +199,11 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1564655792706297908",
+  "discord_last": "1564920676404568115",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
-    "date": "2026-10-25",
+    "date": "2026-10-28",
     "count": 3
   },
-  "episode_no": 5
+  "episode_no": 6
 }
