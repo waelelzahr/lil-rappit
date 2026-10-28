@@ -153,7 +153,7 @@
       "kind": "reel",
       "episode": "parking",
       "slot": "2026-10-29T18:00:00+02:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1564920666954932325",
       "run_id": "40657264762",
@@ -199,7 +199,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1564920676404568115",
+  "discord_last": "1564927041852416184",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-10-28",

@@ -1,12 +1,1 @@
-[10:31:41] script: He gives up the only parking spot on the block AND washes the other driver's car.
-[10:32:01] image ok (gemini-nano-banana-2.1) -> opponent.png
-[10:32:24] image ok (gemini-nano-banana-2.1) -> frame1.png
-[10:32:55] video ok -> shot1.mp4 (4s, 31s)
-[10:33:15] image ok (gemini-nano-banana-2.1) -> frame2.png
-[10:33:49] video ok -> shot2.mp4 (4s, 35s)
-[10:34:18] image ok (gemini-nano-banana-2.1) -> frame3.png
-[10:34:50] video ok -> shot3.mp4 (6s, 32s)
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-[0;93m2026-10-28 08:35:23.009945192 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
-[10:35:26] captions: 14 words
-[10:36:00] built 2026-10-25-reel2 (reel)
+[11:01:21] approved 2026-10-25-reel2
