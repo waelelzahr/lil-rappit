@@ -153,7 +153,7 @@
       "kind": "reel",
       "episode": "parking",
       "slot": "2026-10-29T18:00:00+02:00",
-      "status": "approved",
+      "status": "posted",
       "redos": 0,
       "message_id": "1564920666954932325",
       "run_id": "40657264762",
@@ -162,7 +162,10 @@
       "title": "Fighting For A Parking Spot In The City Be Like",
       "soft_idx": 9,
       "tease": "New episode every Monday & Thursday 🥕",
-      "no": 6
+      "no": 6,
+      "instagram": "https://www.instagram.com/reel/DfFY8X6grRg/",
+      "youtube": "https://youtube.com/shorts/dsjnisK__uA (private until the YouTube API audit is approved)",
+      "posted_at": "2026-10-29T18:01:09.132081+02:00"
     },
     "2026-10-25-soft": {
       "kind": "soft",
