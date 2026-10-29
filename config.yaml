@@ -41,4 +41,4 @@ limits:
 hashtags: "#lilrappit #funnyanimals #comedy #aicomedy"
 
 youtube:
-  privacy: private   # switch to public once Google approves the API audit
+  privacy: public
