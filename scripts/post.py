@@ -26,7 +26,7 @@ def to_instagram(it: dict, path: Path) -> str:
 
 def to_youtube(it: dict, path: Path) -> str:
     res = youtube.upload_short(path, it.get("title") or "Lil Rappit", it["caption"])
-    note = " (private until the YouTube API audit is approved)" if res["privacy"] == "private" else ""
+    note = " (private: set youtube.privacy to public in config.yaml)" if res["privacy"] == "private" else ""
     return res["url"] + note
 
 
