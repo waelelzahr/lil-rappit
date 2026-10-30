@@ -23,7 +23,7 @@ def make(state: dict, item_id: str, kind: str, ep: dict, slot: str, soft_idx: in
          label_when: str, tease: str = "") -> None:
     """Build + send a draft. On QuotaExceeded, queue it for after Google's reset."""
     no = None
-    if kind == "reel":  # episode counter shown as "DAY n"; test drafts don't advance it
+    if kind == "reel" and not ep.get("concept"):  # episode counter shown as "DAY n"; test drafts don't advance it
         no = state.get("episode_no", 4) + 1
         if not item_id.startswith("test"):
             state["episode_no"] = no

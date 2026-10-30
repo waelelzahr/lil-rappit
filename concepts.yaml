@@ -1,0 +1,38 @@
+# Short format tests (one ~10 s clip each, ~$1). Made with the "Concept test" workflow.
+# Fields: title, look (extra characters), setting, frame (opening still), action (beat by
+# beat with timecodes), sound, caption_brief, style.
+- id: concept-dabke
+  title: Dabke Night
+  look: >-
+    Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur,
+    flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers
+  setting: >-
+    a Lebanese mountain village wedding at night: old stone house terrace, string lights and
+    lanterns overhead, cedar trees in the dark background, wedding guests (various animals in
+    festive clothes) clapping in a circle around the dance floor
+  frame: >-
+    Medium-wide shot, eye level. Lil Rappit and Abu Lakma stand side by side at the head of a
+    dabke line on the stone dance floor, holding hands at shoulder height, both with dead-serious
+    tough faces; a line of guests holds hands behind them; Rappit holds a white handkerchief
+    raised in his free paw like the dabke leader.
+  action: >-
+    [0-6s] Rappit and Abu Lakma lead the dabke line with perfect powerful synchronized stomps and
+    kicks, side by side, holding hands, faces completely serious and tough, Rappit twirling the
+    handkerchief, guests clapping in rhythm; the camera circles slowly around them.
+    [6-8s] at the edge of the dance floor a guest waves a single fresh carrot; Rappit's ears shoot
+    up and he freezes mid-kick.
+    [8-10s] Rappit drops Abu Lakma's hand and sprints off the dance floor toward the carrot;
+    Abu Lakma is left alone mid-step, stunned, then slowly turns and stares straight into the
+    camera.
+  sound: >-
+    loud energetic live Lebanese dabke music with a mijwiz (double-reed pipe) melody and a tabl
+    drum, guests clapping on the beat and cheering "yalla!"; at the carrot moment the music
+    scratches to a stop; no other dialogue.
+  caption_brief: >-
+    Lil Rappit, the toughest gangster rabbit, leads the dabke at a Lebanese wedding with his
+    friend Abu Lakma, until someone waves a carrot and he abandons the dance. For a Lebanese and
+    Arab audience; mix a little Lebanese Arabic (in Latin letters, like 'yalla') into English.
+  style: >-
+    Cinematic photoreal 3D, warm festive night lighting from string lights and lanterns, shallow
+    depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles,
+    no captions, no watermarks, no smoking, no weapons.

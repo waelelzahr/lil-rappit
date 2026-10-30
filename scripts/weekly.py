@@ -19,6 +19,7 @@ def pick_episode(state: dict, forced: str = "") -> dict:
     if not ep and state.get("idea_queue"):
         ep = next((e for e in eps if e["id"] == state["idea_queue"].pop(0)), None)
     if not ep:
+        eps = [e for e in eps if not e.get("concept")]
         unused = [e for e in eps if e["id"] not in state["used_episodes"]]
         if not unused:  # bank exhausted: start over
             state["used_episodes"] = []

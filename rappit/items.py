@@ -46,8 +46,43 @@ def caption_for(kind: str, ep: dict, note: str | None, deal: str | None = None,
     return {"caption": f"{data['caption'].strip()}\n\n{tags}", "title": data["title"].strip()}
 
 
+def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
+    """A single ~10 s format-test clip (see concepts.yaml)."""
+    d = OUT / item_id
+    d.mkdir(parents=True, exist_ok=True)
+    n = _note(note)
+    secs = int(c.get("seconds", 10))
+    quota.need(1)
+    extra = []
+    if c.get("look"):
+        ref = gen.image(f"Character reference portrait of {c['look']}. Full body and face clearly "
+                        "visible, neutral pose, plain backdrop.", d / "character.png",
+                        style=c["style"], with_rappit=False)
+        extra.append(("The other character - must look exactly like this", ref))
+    frame = gen.image(f"Setting: {c['setting']}. {c['frame']}" + n, d / "frame1.png",
+                      extra_images=extra, style=c["style"])
+    prompt = (f"Setting: {c['setting']}.\n"
+              + (f"Other character (looks exactly like this): {c['look']}.\n" if c.get("look") else "")
+              + f"Action, beat by beat: {c['action']}\nSound: {c['sound']}" + n)
+    media = gen.video(prompt, frame, d / "reel.mp4", seconds=secs, style=c["style"])
+    try:
+        data = gen.text_json(
+            "You write social captions for Lil Rappit, a tough gangster rabbit whose only weakness "
+            f"is carrots. Video: {c['caption_brief']}\nReturn JSON with keys: caption (line 1 = "
+            "funny, shareable, 1-2 emojis; line 2 = a short question that invites comments; no "
+            "hashtags), title (YouTube Shorts title, max 70 chars, no hashtags).")
+        cap = {"caption": f"{data['caption'].strip()}\n\n{CFG['hashtags']}", "title": data["title"].strip()}
+    except Exception as e:
+        log(f"caption failed, using fallback: {e}")
+        cap = {"caption": f"Lil Rappit: {c['title']} 🥕\n\n{CFG['hashtags']}", "title": f"Lil Rappit: {c['title']}"}
+    log(f"built {item_id} (concept {c['id']})")
+    return {"file": str(media), **cap}
+
+
 def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: int = 0,
           no: int | None = None) -> dict:
+    if ep.get("concept"):
+        return build_concept(item_id, ep, note)
     d = OUT / item_id
     d.mkdir(parents=True, exist_ok=True)
     n = _note(note)
