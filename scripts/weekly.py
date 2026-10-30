@@ -8,8 +8,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from rappit import concepts, discord, media, pipeline, quota  # noqa: E402
-from rappit.common import CFG, TZ, all_episodes, load_state, log, next_slot, save_state  # noqa: E402
+from rappit import brief, concepts, discord, media, pipeline, quota  # noqa: E402
+from rappit.common import CFG, ROOT, TZ, all_episodes, load_state, log, next_slot, save_state  # noqa: E402
 
 
 def pick_episode(state: dict, forced: str = "") -> dict:
@@ -68,6 +68,12 @@ def main():
         first_ep = pick_episode(state, forced)
     seed_abu(state)
     n_concepts = sum(p["kind"] == "concept" for p in plan)
+    if n_concepts:
+        b = brief.build(state)
+        (ROOT / "state" / "brief.md").write_text(
+            f"# Brief {b['date']}\n\n{b['text']}\n\n## Our stats\n\n{b['stats']}\n", encoding="utf-8")
+        save_state(state)
+        discord.send_text(f"🔎 **This week's research**\n{b['summary']}")
     titles = ", ".join(f"“{e['title']}”" for e in eps.values())
     log(f"week {week}: {n_concepts} clips {titles}")
     discord.send_text(f"🐰 **New week:** {n_concepts} new clips coming" + (f", plus {titles}" if titles else "") + "…")
@@ -80,20 +86,22 @@ def main():
         ep = eps.get(p["id"], first_ep)
         slot = next_slot(p["at"])
         kind = p["kind"]
+        tease = ""
         if kind == "concept":
             try:
                 ideas = state.setdefault("concept_ideas", [])
-                ep = concepts.write(state.setdefault("concepts_done", []),
-                                    hint=ideas.pop(0) if ideas else None)
+                ep = concepts.write(state, hint=ideas.pop(0) if ideas else None)
                 ep["id"] += f"-{week}"
                 state.setdefault("custom_episodes", []).append(ep)
-                state["concepts_done"].append(ep["title"])
+                concepts.remember(state, ep, slot[:10])
+                later = [q for q in plan[plan.index(p) + 1:] if q["kind"] == "concept"]
+                if ep.get("cliffhanger") and later:
+                    tease = f"Part 2 {later[0]['at'].split()[0]}: {ep['cliffhanger']} 👀 Follow so you don't miss it."
             except Exception as e:
                 log(f"FAILED writing {item_id}: {e}\n{traceback.format_exc()}")
                 errors.append(f"{p['id']}: {str(e)[:300]}")
                 continue
             kind = "reel"
-        tease = ""
         if p["kind"] == "reel":  # give people a reason to follow
             later = reel_plan[reel_plan.index(p) + 1:]
             if later:

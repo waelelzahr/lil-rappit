@@ -103,6 +103,22 @@ def text_json(prompt: str, prefer_pro: bool = False) -> dict:
     raise last_err
 
 
+def research(prompt: str) -> str:
+    """Answer with live Google Search grounding (for weekly trend research). Plain text."""
+    last_err = None
+    for model in [*CFG["models"].get("text_pro", []), CFG["models"]["text"]]:
+        try:
+            resp = client().models.generate_content(
+                model=model, contents=prompt,
+                config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())]))
+            if resp.text:
+                return resp.text
+        except Exception as e:
+            last_err = e
+            log(f"research with {model} failed: {e}")
+    raise last_err or RuntimeError("research returned nothing")
+
+
 _NO_SIZE: set[str] = set()  # models that rejected image_size
 
 

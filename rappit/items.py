@@ -56,15 +56,21 @@ def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
     from . import concepts
     import shutil
     extra = []
-    if c.get("with_abu") or c["id"] == "concept-dabke":
-        if not concepts.ABU_REF.exists():  # first time: draw Abu Lakma once and keep him
-            concepts.ABU_REF.parent.mkdir(parents=True, exist_ok=True)
-            ref = gen.image(f"Character reference portrait of {concepts.ABU_LAKMA}. Full body and "
+    cast = list(c.get("cast") or (["abu_lakma"] if c.get("with_abu") or c["id"] == "concept-dabke" else []))
+    for key in cast:  # each recurring character is drawn once and then reused
+        ref = concepts.ref_path(key)
+        if not ref.exists():
+            ref.parent.mkdir(parents=True, exist_ok=True)
+            img = gen.image(f"Character reference portrait of {concepts.CAST[key]}. Full body and "
                             "face clearly visible, neutral pose, plain backdrop.",
-                            d / "abu_lakma.png", style=c["style"], with_rappit=False)
-            shutil.copy(ref, concepts.ABU_REF)
-        extra.append(("Abu Lakma, the bulldog - must look exactly like this", concepts.ABU_REF))
-    others = (c.get("look") or "").replace(concepts.ABU_LAKMA, "").strip(" .")
+                            d / f"{key}.png", style=c["style"], with_rappit=False)
+            shutil.copy(img, ref)
+        name = concepts.CAST[key].split(",")[0].split(":")[0]
+        extra.append((f"{name} - must look exactly like this", ref))
+    others = c.get("look") or ""
+    for key in cast:
+        others = others.replace(concepts.CAST[key], "")
+    others = others.strip(" .")
     if others:
         ref = gen.image(f"Character reference sheet of: {others}. Full body and faces clearly "
                         "visible, neutral poses, plain backdrop.", d / "character.png",

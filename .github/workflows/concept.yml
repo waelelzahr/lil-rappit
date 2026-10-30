@@ -12,6 +12,10 @@ on:
         description: "Optional idea for a 'new' concept"
         required: false
         default: ""
+      research:
+        description: "Run fresh trend research first (yes/no)"
+        required: false
+        default: "no"
       slot:
         description: "When it posts if approved (Beirut time), e.g. Saturday 18:00"
         required: false
@@ -34,9 +38,15 @@ jobs:
       DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
       DISCORD_CHANNEL_ID: ${{ secrets.DISCORD_CHANNEL_ID }}
       OUT_DIR: ${{ github.workspace }}/out
+      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+      IG_USER_ID: ${{ secrets.IG_USER_ID }}
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
       CONCEPT: ${{ inputs.concept }}
       SLOT: ${{ inputs.slot }}
       HINT: ${{ inputs.hint }}
+      RESEARCH: ${{ inputs.research }}
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4

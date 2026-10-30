@@ -17,9 +17,12 @@ def main():
     quota.bind(state)
     cid = os.environ["CONCEPT"].strip()
     if cid in ("new", ""):  # let the writer invent one (optionally around HINT)
-        ep = concepts.write(state.setdefault("concepts_done", []),
-                            hint=os.environ.get("HINT", "").strip() or None)
-        state["concepts_done"].append(ep["title"])
+        if os.environ.get("RESEARCH", "").strip() == "yes" or not state.get("brief"):
+            from rappit import brief
+            brief.build(state)
+            save_state(state)
+        ep = concepts.write(state, hint=os.environ.get("HINT", "").strip() or None)
+        concepts.remember(state, ep, datetime.now(TZ).strftime("%Y-%m-%d"))
         cid = ep["id"]
     else:
         c = next(x for x in yaml.safe_load((ROOT / "concepts.yaml").read_text(encoding="utf-8"))
