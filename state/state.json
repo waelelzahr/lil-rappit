@@ -219,7 +219,7 @@
       "kind": "reel",
       "episode": "concept-dabke",
       "slot": "2026-10-31T18:00:00+02:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1565710305718309025",
       "run_id": "41058476262",
@@ -232,7 +232,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1565395449647472720",
+  "discord_last": "1565712198930665605",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-10-30",
