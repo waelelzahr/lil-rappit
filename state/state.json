@@ -234,7 +234,7 @@
       "kind": "reel",
       "episode": "concept-teta-warak-enab-standoff",
       "slot": "2026-11-01T18:00:00+02:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1565713224450572288",
       "run_id": "41059913770",
@@ -247,7 +247,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1565712198930665605",
+  "discord_last": "1565719922716315669",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-10-30",
