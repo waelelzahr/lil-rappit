@@ -229,6 +229,21 @@
       "soft_idx": 0,
       "tease": "",
       "no": null
+    },
+    "concept-teta-warak-enab-standoff-2026-10-30-1503": {
+      "kind": "reel",
+      "episode": "concept-teta-warak-enab-standoff",
+      "slot": "2026-11-01T18:00:00+02:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1565713224450572288",
+      "run_id": "41059913770",
+      "relpath": "concept-teta-warak-enab-standoff-2026-10-30-1503/reel.mp4",
+      "caption": "Surviving the streets was light work, but Teta sliding plate number four had this real boss tapping out 🥕💀\nWhat dish does your grandma force on you every single visit?\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "When Teta Refuses to Let a Real Gangsta Leave Full",
+      "soft_idx": 0,
+      "tease": "",
+      "no": null
     }
   },
   "tg_offset": 0,
@@ -236,7 +251,7 @@
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-10-30",
-    "count": 2
+    "count": 3
   },
   "episode_no": 6,
   "custom_episodes": [
@@ -254,6 +269,27 @@
       "demand": "",
       "bad_deal": "",
       "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers"
+    },
+    {
+      "id": "concept-teta-warak-enab-standoff",
+      "title": "Teta's Endless Feast",
+      "with_abu": true,
+      "look": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. Teta: a sweet older grandmother sheep with fluffy white wool, wearing a vintage floral house dress and gold-rimmed glasses.",
+      "setting": "Cozy Lebanese grandmother's living room, sunny afternoon, lace doilies on traditional wooden furniture, framed family photos in the background.",
+      "frame": "Medium-wide shot of a low wooden table. Center: a small plate with exactly ONE stuffed grape leaf (warak enab). Left: Lil Rappit holding a silver fork, leaning in. Right: Abu Lakma holding a large serving spoon, arms braced. Background: Teta sheep stands smiling, holding a massive, steaming metal cooking pot.",
+      "action": "[0-4s] Rappit and Abu Lakma engage in an intense, unblinking standoff over the single grape leaf, moving in slow motion like a mafia turf war. Rappit twitches his fork like a duelist. [4-7s] Rappit swiftly strikes his fork down to claim the leaf, but Teta cheerfully steps forward and tips the giant pot over the table. [7-10s] A massive avalanche of 50 stuffed grape leaves pours out, completely burying the plate and Rappit's entire arm. Rappit remains totally deadpan, staring at his trapped arm. Abu Lakma drops his spoon and stares helplessly into the lens.",
+      "sound": "Dramatic Western-style whistle and Arabic derbakke drum building tension. A sharp metal clink of the fork, followed by a heavy, wet 'SPLUMP' of the food mountain. Teta: \"Sahtein ya habibi!\"",
+      "caption_brief": "When you think you have finally finished eating at Teta's house, but she is just getting started.",
+      "uses_carrot": false,
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. Teta: a sweet older grandmother sheep with fluffy white wool, wearing a vintage floral house dress and gold-rimmed glasses."
     }
+  ],
+  "concepts_done": [
+    "Teta's Endless Feast"
   ]
 }
