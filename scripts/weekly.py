@@ -8,7 +8,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from rappit import discord, pipeline, quota  # noqa: E402
+from rappit import concepts, discord, media, pipeline, quota  # noqa: E402
 from rappit.common import CFG, TZ, all_episodes, load_state, log, next_slot, save_state  # noqa: E402
 
 
@@ -30,6 +30,22 @@ def pick_episode(state: dict, forced: str = "") -> dict:
     return ep
 
 
+def seed_abu(state: dict):
+    """Keep Abu Lakma looking like he did in the dabke test (copy that portrait once)."""
+    if concepts.ABU_REF.exists():
+        return
+    for k, it in state["items"].items():
+        if k.startswith("concept-dabke") and it.get("run_id") and it.get("relpath"):
+            try:
+                src = media.fetch(it["run_id"], f"{k}/character.png")
+                concepts.ABU_REF.parent.mkdir(parents=True, exist_ok=True)
+                concepts.ABU_REF.write_bytes(src.read_bytes())
+                log("Abu Lakma reference saved from the dabke test")
+                return
+            except Exception as e:
+                log(f"could not reuse dabke Abu Lakma: {e}")
+
+
 def main():
     state = load_state()
     quota.bind(state)
@@ -42,15 +58,19 @@ def main():
         log(f"drafts for {week} already exist; not making them twice")
         return
 
-    # One episode per reel; photos follow the first reel's episode.
+    # Mafia-format reels (old format) pick from the episode bank; concept clips are written fresh.
     eps = {}
     for p in plan:
         if p["kind"] == "reel":
             eps[p["id"]] = pick_episode(state, forced if not eps else "")
-    first_ep = next(iter(eps.values()), None) or pick_episode(state, forced)
-    titles = ", ".join(f"“{e['title']}”" for e in eps.values()) or f"“{first_ep['title']}”"
-    log(f"episodes: {titles}")
-    discord.send_text(f"🐰 **New week: {titles}**\nDrafts incoming…")
+    first_ep = next(iter(eps.values()), None)
+    if first_ep is None and any(p["kind"] in ("mugshot", "soft") for p in plan):
+        first_ep = pick_episode(state, forced)
+    seed_abu(state)
+    n_concepts = sum(p["kind"] == "concept" for p in plan)
+    titles = ", ".join(f"“{e['title']}”" for e in eps.values())
+    log(f"week {week}: {n_concepts} clips {titles}")
+    discord.send_text(f"🐰 **New week:** {n_concepts} new clips coming" + (f", plus {titles}" if titles else "") + "…")
 
     errors = []
     soft_idx = len(state["used_episodes"])
@@ -59,6 +79,20 @@ def main():
         item_id = f"{os.environ.get('ITEM_PREFIX', '')}{week}-{p['id']}"
         ep = eps.get(p["id"], first_ep)
         slot = next_slot(p["at"])
+        kind = p["kind"]
+        if kind == "concept":
+            try:
+                ideas = state.setdefault("concept_ideas", [])
+                ep = concepts.write(state.setdefault("concepts_done", []),
+                                    hint=ideas.pop(0) if ideas else None)
+                ep["id"] += f"-{week}"
+                state.setdefault("custom_episodes", []).append(ep)
+                state["concepts_done"].append(ep["title"])
+            except Exception as e:
+                log(f"FAILED writing {item_id}: {e}\n{traceback.format_exc()}")
+                errors.append(f"{p['id']}: {str(e)[:300]}")
+                continue
+            kind = "reel"
         tease = ""
         if p["kind"] == "reel":  # give people a reason to follow
             later = reel_plan[reel_plan.index(p) + 1:]
@@ -69,11 +103,11 @@ def main():
                 tease = "New episode every Monday & Thursday 🥕"
         try:
             if p.get("make") and not only:  # made later in the week (Veo daily limit)
-                pipeline.queue(state, item_id, p["kind"], ep, slot, soft_idx,
+                pipeline.queue(state, item_id, kind, ep, slot, soft_idx,
                                datetime.fromisoformat(next_slot(p["make"])), "scheduled", tease)
                 discord.send_text(f"🗓️ **{ep['title']}** ({p['id']}) will be made {p['make']}.")
             else:
-                pipeline.make(state, item_id, p["kind"], ep, slot, soft_idx, p["at"], tease)
+                pipeline.make(state, item_id, kind, ep, slot, soft_idx, p["at"], tease)
         except Exception as e:
             log(f"FAILED {item_id}: {e}\n{traceback.format_exc()}")
             errors.append(f"{p['id']}: {str(e)[:300]}")

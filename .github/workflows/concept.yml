@@ -5,9 +5,13 @@ on:
   workflow_dispatch:
     inputs:
       concept:
-        description: "Concept id from concepts.yaml"
+        description: "Concept id from concepts.yaml, or 'new' to have the writer invent one"
         required: true
         default: "concept-dabke"
+      hint:
+        description: "Optional idea for a 'new' concept"
+        required: false
+        default: ""
       slot:
         description: "When it posts if approved (Beirut time), e.g. Saturday 18:00"
         required: false
@@ -15,6 +19,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: rappit-state
@@ -31,6 +36,8 @@ jobs:
       OUT_DIR: ${{ github.workspace }}/out
       CONCEPT: ${{ inputs.concept }}
       SLOT: ${{ inputs.slot }}
+      HINT: ${{ inputs.hint }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

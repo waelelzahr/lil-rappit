@@ -53,12 +53,23 @@ def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
     n = _note(note)
     secs = int(c.get("seconds", 10))
     quota.need(1)
+    from . import concepts
+    import shutil
     extra = []
-    if c.get("look"):
-        ref = gen.image(f"Character reference portrait of {c['look']}. Full body and face clearly "
-                        "visible, neutral pose, plain backdrop.", d / "character.png",
+    if c.get("with_abu") or c["id"] == "concept-dabke":
+        if not concepts.ABU_REF.exists():  # first time: draw Abu Lakma once and keep him
+            concepts.ABU_REF.parent.mkdir(parents=True, exist_ok=True)
+            ref = gen.image(f"Character reference portrait of {concepts.ABU_LAKMA}. Full body and "
+                            "face clearly visible, neutral pose, plain backdrop.",
+                            d / "abu_lakma.png", style=c["style"], with_rappit=False)
+            shutil.copy(ref, concepts.ABU_REF)
+        extra.append(("Abu Lakma, the bulldog - must look exactly like this", concepts.ABU_REF))
+    others = (c.get("look") or "").replace(concepts.ABU_LAKMA, "").strip(" .")
+    if others:
+        ref = gen.image(f"Character reference sheet of: {others}. Full body and faces clearly "
+                        "visible, neutral poses, plain backdrop.", d / "character.png",
                         style=c["style"], with_rappit=False)
-        extra.append(("The other character - must look exactly like this", ref))
+        extra.append(("The other characters - must look exactly like this", ref))
     frame = gen.image(f"Setting: {c['setting']}. {c['frame']}" + n, d / "frame1.png",
                       extra_images=extra, style=c["style"])
     prompt = (f"Setting: {c['setting']}.\n"
@@ -76,7 +87,7 @@ def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
         log(f"caption failed, using fallback: {e}")
         cap = {"caption": f"Lil Rappit: {c['title']} 🥕\n\n{CFG['hashtags']}", "title": f"Lil Rappit: {c['title']}"}
     log(f"built {item_id} (concept {c['id']})")
-    return {"file": str(media), **cap}
+    return {"file": str(media), **cap, "script_text": concepts.script_text(c)}
 
 
 def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: int = 0,

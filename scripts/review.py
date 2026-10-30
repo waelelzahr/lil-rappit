@@ -10,8 +10,8 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from rappit import discord, gen, items, pipeline, quota  # noqa: E402
-from rappit.common import CFG, OUT, TZ, all_episodes, classify, episode, load_state, log, save_state  # noqa: E402
+from rappit import discord, items, pipeline, quota  # noqa: E402
+from rappit.common import CFG, OUT, TZ, classify, episode, load_state, log, save_state  # noqa: E402
 
 
 def approve(state: dict, item_id: str):
@@ -68,24 +68,9 @@ def redo(state: dict, item_id: str, note: str | None, from_queue: bool = False):
 
 
 def add_idea(state: dict, idea: str, reply_to: str):
-    """Turn a viewer's suggestion into an episode that the next weekly run picks first."""
-    ep = gen.text_json(
-        "Lil Rappit is a tough gangster rabbit who always loses negotiations the moment someone "
-        "offers him carrots. Turn this viewer suggestion into an episode.\n"
-        f"Suggestion: {idea}\n"
-        "Return JSON with keys: id (short kebab-case), title (2-4 words), setting (vivid, one "
-        "location), opponent (an animal character with a look), demand (what tough Rappit "
-        "wants, concrete), bad_deal (the terrible thing he accepts for the carrots, concrete and "
-        "visual). Family-friendly, no weapons.")
-    ep["id"] = "idea-" + str(ep.get("id", "x"))[:30]
-    if any(e["id"] == ep["id"] for e in all_episodes(state)):
-        ep["id"] += f"-{len(state.get('custom_episodes', []))}"
-    ep["relatable"] = True
-    ep["from_idea"] = idea
-    state.setdefault("custom_episodes", []).append(ep)
-    state.setdefault("idea_queue", []).append(ep["id"])
-    discord.send_text(f"💡 Added **{ep['title']}**: {ep['demand']} → {ep['bad_deal']}\n"
-                      "It will be one of next week's reels.", reply_to=reply_to)
+    """A viewer's suggestion becomes one of next week's clips (the writer builds around it)."""
+    state.setdefault("concept_ideas", []).append(idea)
+    discord.send_text(f"💡 Added: *{idea}*\nIt will be one of next week's clips.", reply_to=reply_to)
 
 
 def status(state: dict):

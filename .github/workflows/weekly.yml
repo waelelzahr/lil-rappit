@@ -19,6 +19,7 @@ on:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: rappit-state
@@ -36,6 +37,7 @@ jobs:
       ONLY: ${{ inputs.only }}
       EPISODE: ${{ inputs.episode }}
       ITEM_PREFIX: ${{ inputs.prefix }}
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

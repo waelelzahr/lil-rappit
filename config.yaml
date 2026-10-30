@@ -25,14 +25,13 @@ reel:
 images:
   size: 2K          # start frames and photos (falls back to default if unsupported)
 
-# Weekly plan (Beirut time). Each reel gets its own episode; the mugshot
-# follows the first reel's episode. `make` delays generation (spreads Veo's
-# 10-videos-a-day limit); otherwise items are made on Sunday.
+# Weekly plan (Beirut time), made on Sunday morning. kind "concept" = one fresh ~10 s clip
+# (Rappit & Abu Lakma, Lebanese everyday life). Old formats: reel (mafia), mugshot, soft.
 plan:
-  - {id: reel, kind: reel, at: Monday 18:00}
-  - {id: mugshot, kind: mugshot, at: Wednesday 18:00}
-  - {id: reel2, kind: reel, at: Thursday 18:00, make: Wednesday 10:15}
-  - {id: soft, kind: soft, at: Saturday 18:00}
+  - {id: clip1, kind: concept, at: Monday 18:00}
+  - {id: clip2, kind: concept, at: Wednesday 18:00}
+  - {id: clip3, kind: concept, at: Friday 18:00}
+  - {id: clip4, kind: concept, at: Saturday 18:00}
 
 # Safety caps
 limits:
