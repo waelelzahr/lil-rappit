@@ -253,12 +253,12 @@
       "episode": "concept-plastic-sofa-slide-2026-11-01",
       "slot": "2026-11-04T18:00:00+02:00",
       "status": "pending",
-      "redos": 0,
-      "message_id": "1566351815921111103",
-      "run_id": "41284031394",
-      "relpath": "2026-11-01-clip2/reel.mp4",
-      "caption": "Fur got stuck to Teta’s plastic wrap and instantly stripped away all my street cred. 🛋️💀\nWho else got humbled by grandma's plastic-wrapped sofa?\nNew clip every Mon, Wed, Fri & Sat 🐰 Follow for more.\n\n#lilrappit #funnyanimals #comedy #aicomedy",
-      "title": "Teta's Plastic Sofa Destroyed My Street Cred",
+      "redos": 1,
+      "message_id": "1566354225427128330",
+      "run_id": "41285043896",
+      "relpath": "2026-11-01-clip2-v2/reel.mp4",
+      "caption": "Street cred vanished the second my tail squeaked across Teta’s couch 🛋️💀\nWho else got stuck to Teta's plastic furniture as a kid?\nNew clip every Mon, Wed, Fri & Sat 🐰 Follow for more.\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "Lil Rappit Got Humbled by Teta's Plastic Couch",
       "soft_idx": 9,
       "tease": "New clip every Mon, Wed, Fri & Sat 🐰 Follow for more.",
       "no": null
@@ -297,7 +297,7 @@
       "kind": "reel",
       "episode": "concept-cookie-tin-betrayal-2026-11-01",
       "slot": "2026-11-02T18:00:00+02:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1566351166990852206",
       "run_id": "41284031394",
@@ -310,11 +310,11 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1566348779609788487",
+  "discord_last": "1566353905338683433",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-01",
-    "count": 7
+    "count": 8
   },
   "episode_no": 6,
   "custom_episodes": [
