@@ -247,13 +247,58 @@
       "soft_idx": 0,
       "tease": "",
       "no": null
+    },
+    "2026-11-01-clip2": {
+      "kind": "reel",
+      "episode": "concept-the-lola-negotiation-2026-11-01",
+      "slot": "2026-11-04T18:00:00+02:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1566347915297816676",
+      "run_id": "41283031471",
+      "relpath": "2026-11-01-clip2/reel.mp4",
+      "caption": "I was ready to run the underworld until she pulled out the baby carrots 🥕🕶️\nWhat snack makes you lose all your street cred instantly?\nPart 2 Friday: Will Lola share the stash? 👀 Follow so you don't miss it.\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "When the Toughest Mob Boss Has One Fatal Weakness",
+      "soft_idx": 9,
+      "tease": "Part 2 Friday: Will Lola share the stash? 👀 Follow so you don't miss it.",
+      "no": null
+    },
+    "2026-11-01-clip3": {
+      "kind": "reel",
+      "episode": "concept-the-pendant-exchange-2026-11-01",
+      "slot": "2026-11-06T18:00:00+02:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1566348294848778270",
+      "run_id": "41283031471",
+      "relpath": "2026-11-01-clip3/reel.mp4",
+      "caption": "Walked in demanding the stash, walked out signing over my turf for three baby carrots 🥕💀\nWhat snack makes you fold this fast?\nPart 2 Saturday: Will Rappit get it back? 👀 Follow so you don't miss it.\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "Lil Rappit Folded in 5 Seconds Flat",
+      "soft_idx": 9,
+      "tease": "Part 2 Saturday: Will Rappit get it back? 👀 Follow so you don't miss it.",
+      "no": null
+    },
+    "2026-11-01-clip4": {
+      "kind": "reel",
+      "episode": "concept-the-pendant-chaos-2026-11-01",
+      "slot": "2026-11-07T18:00:00+02:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1566348768876691506",
+      "run_id": "41283031471",
+      "relpath": "2026-11-01-clip4/reel.mp4",
+      "caption": "Ruined the fresh kicks and swallowed my own chain tryin' to look hard in the snow 🥶💀\nShould I hit the ER or just wash it down with a carrot?\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "When the aesthetic winter fit check goes horribly wrong",
+      "soft_idx": 9,
+      "tease": "",
+      "no": null
     }
   },
   "tg_offset": 0,
   "discord_last": "1566120184442257408",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
-    "date": "2026-10-30",
+    "date": "2026-11-01",
     "count": 3
   },
   "episode_no": 6,
@@ -290,15 +335,143 @@
       "demand": "",
       "bad_deal": "",
       "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. Teta: a sweet older grandmother sheep with fluffy white wool, wearing a vintage floral house dress and gold-rimmed glasses."
+    },
+    {
+      "id": "concept-briefcase-betrayal-2026-11-01",
+      "title": "The Celery Betrayal",
+      "cast": [
+        "abu_lakma"
+      ],
+      "look": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. The Supplier: a sly, scrawny red fox wearing an oversized, cheap brown suit, thin vintage tie, and slicked-back fur.",
+      "setting": "Dimly lit underground Beirut parking garage at night. One flickering fluorescent overhead light casts dramatic shadows. A rusted oil drum sits in the center as a makeshift table.",
+      "frame": "Medium shot. Rappit and Abu Lakma stand left, The Fox stands right. Rappit's paws rest on a black briefcase on the oil drum. The Fox's paws rest on a silver briefcase. Abu Lakma stands just behind Rappit, a half-eaten golden carrot already gripped tightly in his paw.",
+      "action": "[0-4s] Rappit pushes the black briefcase across the drum with deadpan mafia seriousness. The Fox nods slowly, pulls it close, and slides the silver briefcase over to Rappit. \n[4-7s] Rappit dramatically unlatches and opens the silver briefcase. He looks inside. His deadpan expression doesn't change, but his left eye twitches. Inside is just a bunch of pale green celery. \n[7-10s] Snap zoom past Rappit's shoulder directly onto Abu Lakma, who is loudly chewing the golden carrot. Abu Lakma stops mid-chew and stares blankly into the lens. Bold text flashes over the screen: 'PART 2 TOMORROW'.",
+      "sound": "Heavy, tense bass drone. A sharp click of briefcase latches. A dramatic orchestral swell cuts abruptly to a vinyl scratch, followed by loud, awkward crunching sounds. The Fox (whispering): \"Tfaddal.\"",
+      "caption_brief": "Lil Rappit's high-stakes street negotiation ends in ultimate betrayal, and his right-hand dog is looking real guilty.",
+      "uses_carrot": true,
+      "trend_used": "AI Animal Soap Cliffhangers",
+      "story_summary": "Rappit completes a tense briefcase exchange only to discover a stash of celery, while Abu Lakma is caught chewing the real merchandise.",
+      "cliffhanger": "Who swapped the stash?",
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "with_abu": true,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. The Supplier: a sly, scrawny red fox wearing an oversized, cheap brown suit, thin vintage tie, and slicked-back fur."
+    },
+    {
+      "id": "concept-the-lola-negotiation-2026-11-01",
+      "title": "The Interrogation Fold",
+      "cast": [
+        "abu_lakma",
+        "lola"
+      ],
+      "look": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. Lola, Rappit's glamorous girlfriend: an original white rabbit with long lashes, glossy pink lipstick, gold hoop earrings, a fluffy pink faux-fur coat and a tiny designer handbag",
+      "setting": "Dimly lit Lebanese mouneh (basement pantry), a single dangling yellow lightbulb casting harsh dramatic shadows over an open Tawleh (backgammon) board on a wooden barrel.",
+      "frame": "Medium wide shot across the Tawleh board. Rappit sits left, hands folded over a stick of celery. Abu Lakma stands behind him, arms crossed in his red tracksuit. Lola sits right in her pink faux-fur coat, a glowing golden-wrapped carrot visibly poking out of her tiny pink handbag on the board.",
+      "action": "[0-4s] Rappit slides the celery stick across the Tawleh board toward Lola, tapping it with one finger like a serious mafia boss demanding a trade. Abu Lakma glares stoically. [4-7s] Lola rolls her eyes dramatically, pulls the golden-wrapped carrot from her handbag, and waves it tauntingly. [7-10s] Rappit's tough-guy posture instantly collapses; he drops to his knees with desperate, begging paws. Snap zoom to Abu Lakma staring blankly into the camera. Flash text: 'PART 3 TOMORROW'.",
+      "sound": "Tense, slow oud and double bass music (mafia negotiation style). A dramatic soap-opera gasp sound effect plays when the carrot is drawn. Lola: \"Ya habibi...\"",
+      "caption_brief": "Lil Rappit tries to act like a tough mob boss during the stash negotiation, but Lola knows exactly how to make him fold.",
+      "uses_carrot": true,
+      "trend_used": "AI Animal Soap Cliffhangers and High-stakes Mafia negotiations",
+      "story_summary": "Lola reveals she is the mastermind who took the real stash, causing Rappit's tough negotiation tactics to instantly crumble.",
+      "cliffhanger": "Will Lola share the stash?",
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "with_abu": true,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. Lola, Rappit's glamorous girlfriend: an original white rabbit with long lashes, glossy pink lipstick, gold hoop earrings, a fluffy pink faux-fur coat and a tiny designer handbag"
+    },
+    {
+      "id": "concept-the-pendant-exchange-2026-11-01",
+      "title": "The Pendant Exchange",
+      "cast": [],
+      "look": "",
+      "setting": "Dimly lit traditional Lebanese cafe at night, stained glass lamps, a backgammon board pushed aside on a small round wooden table.",
+      "frame": "Medium shot of the cafe table. Rappit and Lola sit opposite each other. Abu Lakma stands behind Rappit, arms crossed. Rappit wears his gold chain with the carrot pendant. A thick stack of cash sits in front of Rappit. Lola has her tiny designer handbag resting on the table.",
+      "action": "[0-4s] Rappit deadpans, sliding the heavy stack of cash across the table to Lola. Lola pushes it back with one manicured paw and points directly at Rappit's gold carrot pendant. [4-7s] Snap zoom on Rappit's shocked face. He hesitates, but reluctantly unclasps the gold chain and slides it to her. [7-10s] Lola smirks, opens her tiny handbag, and hands him a single, microscopic baby carrot. Rappit freezes in despair while Abu Lakma gives a slow, deadpan stare into the camera. Flash text: 'PART 4 TOMORROW'.",
+      "sound": "Tense, dramatic soap-opera Arabic string music that builds up, abruptly stopping with a comedic record scratch when the microscopic carrot is revealed. Rappit: \"Ya habibi...\"",
+      "caption_brief": "Rappit negotiates for the stash, but Lola drives a very hard bargain.",
+      "uses_carrot": true,
+      "trend_used": "AI Animal Soap Cliffhangers",
+      "story_summary": "Lola rejects Rappit's cash and demands his prized gold pendant in exchange for a single baby carrot.",
+      "cliffhanger": "Will Rappit get it back?",
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "with_abu": false,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": ""
+    },
+    {
+      "id": "concept-the-pendant-chaos-2026-11-01",
+      "title": "The Muddy Sneaker Chaos",
+      "cast": [
+        "abu_lakma",
+        "lola",
+        "teta"
+      ],
+      "look": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. Lola, Rappit's glamorous girlfriend: an original white rabbit with long lashes, glossy pink lipstick, gold hoop earrings, a fluffy pink faux-fur coat and a tiny designer handbag. Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit with round glasses on a chain, hair in a neat bun, floral house dress, beige cardigan and slippers",
+      "setting": "A cozy Lebanese living room with a pristine vintage Persian rug. A large window shows heavy, moody winter rain. Cool, cinematic lighting.",
+      "frame": "Lil Rappit sits by the window holding a tiny espresso cup. Lola sits on the sofa, proudly wearing the gold carrot pendant. Abu Lakma stands on the rug wearing muddy white sneakers. Teta stands at the doorway holding a wooden spoon.",
+      "action": "[0-4s] Slow cinematic push-in. Lil Rappit takes a dramatic, melancholic sip of espresso while staring out at the rain. Lola smugly adjusts the gold pendant on her neck, admiring it.\n[4-7s] Teta marches in rapidly, pointing her wooden spoon strictly at Abu Lakma's muddy sneakers on her clean rug. Abu Lakma scrambles backward away from her.\n[7-10s] Abu Lakma bumps the sofa, causing the pendant to unhook from Lola's neck and fly into the air. He accidentally catches it in his mouth, freezing and staring deadpan into the camera while Lil Rappit takes another completely unfazed sip.",
+      "sound": "Melancholic Fairouz-style acoustic oud and gentle rain sounds, which abruptly cut with a record scratch at 4s to silence, followed by chaotic frantic percussion. Teta: \"Ya habibi!\"",
+      "caption_brief": "The aesthetic winter vibes are instantly ruined by muddy sneakers and a swallowed pendant.",
+      "uses_carrot": false,
+      "trend_used": "Aesthetic Winter Chaos",
+      "story_summary": "Teta chases Abu Lakma for tracking mud on the rug, causing him to accidentally swallow the gold pendant Lola just extorted from Rappit.",
+      "cliffhanger": "Will Abu Lakma cough it up?",
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "with_abu": true,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. Lola, Rappit's glamorous girlfriend: an original white rabbit with long lashes, glossy pink lipstick, gold hoop earrings, a fluffy pink faux-fur coat and a tiny designer handbag. Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit with round glasses on a chain, hair in a neat bun, floral house dress, beige cardigan and slippers"
     }
   ],
   "concepts_done": [
-    "Teta's Endless Feast"
+    "Teta's Endless Feast",
+    "The Celery Betrayal",
+    "The Interrogation Fold",
+    "The Pendant Exchange",
+    "The Muddy Sneaker Chaos"
   ],
   "brief": {
-    "date": "2026-10-30",
-    "text": "(a) TRENDS TO USE:\n- 'Skull Cap' Glow-Up: Clumsy Bulldog gets a skull cap from deadpan Rabbit and turns into a hyper-serious Chad.\n- Zaytoun Survival: Rabbit and Bulldog drop the gangster act, sweating to harvest olives under strict Grandmother's glare.\n- CCTV Pet Heist: Grainy AI night-vision of Bulldog salsa dancing while Rabbit repels from the ceiling to steal Grandmother's pie.\n- Face Ranking: Girlfriend silently ranks Rabbit's dating habits with dramatic facial expressions; Rabbit ignores her.\n- Arab Reality Lip-Sync: Girlfriend demands luxury cars via viral audio; Rabbit offers a half-eaten carrot as a counter-offer.\n\n(b) WHAT WORKS & FLOPS:\n- WORKS: The 'gangster folding for snacks' dynamic. The Oct 26 'salary negotiation' (1,818 views) and Oct 22 'Zero taxes' (1,446 views) drove our best 10-12s average watch times.\n- FLOPS: Generic situations like 'Parking spot' (Oct 29, 274 views) and short audio-focused rap themes ('The burrow sent me', Oct 12, low 3s watch time) fail to retain viewers.\n\n(c) AVOID:\n- Static image posts (analytics show near-zero reach).\n- Generic everyday setups lacking the tough/soft gangster contrast.\n- Audio-reliant skits without immediate physical/visual comedy.",
-    "summary": "1. Double down on the 'gangster folding for mundane things/snacks' dynamic, it drives peak retention.\n2. Cease static image posts entirely and stick to 10-12s hyper-visual, deadpan video skits.\n3. Hijack seasonal MENA trends (Zaytoun harvest, reality TV drama) mixed with AI-generated aesthetics.",
-    "stats": "INSTAGRAM (newest first):\n- 2026-10-29 VIDEO: views=274 reach=213 likes=3 comments=0 shares=1 saves=0 avg_watch_ms=5549 | Tag the friend who loses every negotiation the second food is offered 🥕💀\n- 2026-10-27 VIDEO: views=482 reach=354 likes=1 comments=0 shares=0 saves=0 avg_watch_ms=11876 | POV: You demand a massive salary raise but fold for free snacks (funny rabbit negotiation) 🥕💼\n- 2026-10-26 VIDEO: views=1818 reach=1189 likes=12 comments=0 shares=0 saves=0 avg_watch_ms=10125 | Tag the friend who folded immediately during their salary negotiation funny rabbit style 🥕😭\n- 2026-10-23 IMAGE: views=? reach=2 likes=3 comments=0 shares=2 saves=0 avg_watch_ms=? | Cold on the block, soft for the crop.\n- 2026-10-22 VIDEO: views=1446 reach=1049 likes=15 comments=0 shares=2 saves=0 avg_watch_ms=12631 | Told the feds zero taxes.\n- 2026-10-21 IMAGE: views=? reach=2 likes=0 comments=0 shares=0 saves=0 avg_watch_ms=? | Got caught slipping on the lot.\n- 2026-10-19 VIDEO: views=201 reach=173 likes=3 comments=0 shares=2 saves=0 avg_watch_ms=8210 | Horsepower is temporary.\n- 2026-10-18 VIDEO: views=176 reach=149 likes=3 comments=0 shares=2 saves=0 avg_watch_ms=8672 | Came for the sports car.\n- 2026-10-16 VIDEO: views=138 reach=118 likes=2 comments=0 shares=0 saves=0 avg_watch_ms=3324 | Street certified. Hawk terrified. 🐇🦅\n- 2026-10-16 IMAGE: views=? reach=3 likes=2 comments=2 shares=0 saves=0 avg_watch_ms=? | Me after saying I don't get scared. 👻🥗\n- 2026-10-13 IMAGE: views=? reach=2 likes=1 comments=2 shares=0 saves=0 avg_watch_ms=? | King of the patch. Every pumpkin pays rent here. 👑🎃\n- 2026-10-12 VIDEO: views=127 reach=113 likes=2 comments=0 shares=1 saves=0 avg_watch_ms=3075 | The burrow sent me. 🐇🎤 First verse of many.\n\nYOUTUBE (newest first):\n- 2026-10-29: views=1 likes=1 comments=0 | Fighting For A Parking Spot In The City Be Like #Shorts\n- 2026-10-27: views=1 likes=0 comments=0 | Asking for a huge raise but caving for snacks #Shorts\n- 2026-10-26: views=4 likes=1 comments=1 | When you fold immediately in a salary negotiation #Shorts\n- 2026-10-22: views=10 likes=1 comments=0 | Mafia Rabbit Refuses Taxes Until Carrots Enter The Room #Shorts\n- 2026-10-19: views=7 likes=2 comments=0 | Lil Rappit Makes an Offer He Can't Refuse #Shorts\n- 2026-10-19: views=10 likes=1 comments=1 | Lil Rappit Closes The Worst Deal In Mafia History #Shorts"
-  }
+    "date": "2026-11-01",
+    "text": "• TRENDS TO USE:\n- AI Animal Soap Cliffhangers: Lil Rappit opens his carrot briefcase to find celery. Snap zoom to Abu Lakma chewing. Flash text: 'PART 2 TOMORROW'.\n- 'Then I Walk In': Setup: 'Rivals took the carrot supply.' Bass drop, Rappit & Abu Lakma strut in with deadpan confidence.\n- Aesthetic Winter Chaos: Aesthetic Levantine rain/Fairouz audio abruptly cuts to Grandma chasing Abu Lakma with a wooden spoon while Rappit sips espresso.\n- Intentional Character Drift: Rappit negotiates a deadly serious Mafia deal while his suit glitches between a tuxedo, clown suit, and scuba gear.\n\n• ANALYTICS (WHAT WORKS & FLOPS):\n- Works: High-stakes Mafia/business negotiations where Rappit folds for carrots. Oct 26 (Salary fold) hit 1.8k views & 10s avg watch time. Oct 22 (Zero taxes) hit 1.4k views & 12s watch time. The serious vs. silly contrast retains viewers.\n- Flops: Generic cultural dances (Dabke, Oct 31) and pure car/street flexes (Oct 18-19) dropped below 200 views.\n\n• AVOID:\n- Static images (they get zero reach).\n- Niche cultural references without a universal comedic punchline.\n- Basic street/car flexes that lack the 'animal mafia' twist.",
+    "summary": "1. Double down on Mafia/negotiation video setups for maximum watch time.\n2. Adopt AI-specific trends (soap opera cliffhangers, glitching clothes) to hack the algorithm.\n3. Eliminate static images and generic car flexes from the content calendar immediately.",
+    "stats": "INSTAGRAM (newest first):\n- 2026-10-31 VIDEO: views=157 reach=114 likes=1 comments=0 shares=2 saves=0 avg_watch_ms=5952 | Me and Abu Lakma were destroying the dabke until someone flashed that jazar, yalla khallas 🥕🕺\n- 2026-10-29 VIDEO: views=276 reach=216 likes=3 comments=0 shares=1 saves=0 avg_watch_ms=5523 | Tag the friend who loses every negotiation the second food is offered 🥕💀\n- 2026-10-27 VIDEO: views=482 reach=354 likes=1 comments=0 shares=0 saves=0 avg_watch_ms=11848 | POV: You demand a massive salary raise but fold for free snacks (funny rabbit negotiation) 🥕💼\n- 2026-10-26 VIDEO: views=1818 reach=1189 likes=12 comments=0 shares=0 saves=0 avg_watch_ms=10130 | Tag the friend who folded immediately during their salary negotiation funny rabbit style 🥕😭\n- 2026-10-23 IMAGE: views=? reach=2 likes=3 comments=0 shares=2 saves=0 avg_watch_ms=? | Cold on the block, soft for the crop.\n- 2026-10-22 VIDEO: views=1446 reach=1049 likes=15 comments=0 shares=2 saves=0 avg_watch_ms=12621 | Told the feds zero taxes.\n- 2026-10-21 IMAGE: views=? reach=2 likes=0 comments=0 shares=0 saves=0 avg_watch_ms=? | Got caught slipping on the lot.\n- 2026-10-19 VIDEO: views=201 reach=173 likes=3 comments=0 shares=2 saves=0 avg_watch_ms=8174 | Horsepower is temporary.\n- 2026-10-18 VIDEO: views=176 reach=149 likes=3 comments=0 shares=2 saves=0 avg_watch_ms=8632 | Came for the sports car.\n- 2026-10-16 VIDEO: views=138 reach=119 likes=2 comments=0 shares=0 saves=0 avg_watch_ms=3324 | Street certified. Hawk terrified. 🐇🦅\n- 2026-10-16 IMAGE: views=? reach=3 likes=2 comments=2 shares=0 saves=0 avg_watch_ms=? | Me after saying I don't get scared. 👻🥗\n- 2026-10-13 IMAGE: views=? reach=2 likes=1 comments=2 shares=0 saves=0 avg_watch_ms=? | King of the patch. Every pumpkin pays rent here. 👑🎃\n- 2026-10-12 VIDEO: views=127 reach=113 likes=2 comments=0 shares=1 saves=0 avg_watch_ms=3075 | The burrow sent me. 🐇🎤 First verse of many.\n\nYOUTUBE (newest first):\n- 2026-10-31: views=11 likes=1 comments=0 | Lil Rappit Ruins the Dabke for a Carrot #Shorts\n- 2026-10-29: views=1 likes=1 comments=0 | Fighting For A Parking Spot In The City Be Like #Shorts\n- 2026-10-27: views=1 likes=0 comments=0 | Asking for a huge raise but caving for snacks #Shorts\n- 2026-10-26: views=4 likes=1 comments=1 | When you fold immediately in a salary negotiation #Shorts\n- 2026-10-22: views=10 likes=1 comments=0 | Mafia Rabbit Refuses Taxes Until Carrots Enter The Room #Shorts\n- 2026-10-19: views=7 likes=2 comments=0 | Lil Rappit Makes an Offer He Can't Refuse #Shorts\n- 2026-10-19: views=10 likes=1 comments=1 | Lil Rappit Closes The Worst Deal In Mafia History #Shorts"
+  },
+  "concept_ideas": [],
+  "story_log": [
+    {
+      "date": "2026-11-02",
+      "title": "The Celery Betrayal",
+      "summary": "Rappit completes a tense briefcase exchange only to discover a stash of celery, while Abu Lakma is caught chewing the real merchandise.",
+      "cliffhanger": "Who swapped the stash?"
+    },
+    {
+      "date": "2026-11-04",
+      "title": "The Interrogation Fold",
+      "summary": "Lola reveals she is the mastermind who took the real stash, causing Rappit's tough negotiation tactics to instantly crumble.",
+      "cliffhanger": "Will Lola share the stash?"
+    },
+    {
+      "date": "2026-11-06",
+      "title": "The Pendant Exchange",
+      "summary": "Lola rejects Rappit's cash and demands his prized gold pendant in exchange for a single baby carrot.",
+      "cliffhanger": "Will Rappit get it back?"
+    },
+    {
+      "date": "2026-11-07",
+      "title": "The Muddy Sneaker Chaos",
+      "summary": "Teta chases Abu Lakma for tracking mud on the rug, causing him to accidentally swallow the gold pendant Lola just extorted from Rappit.",
+      "cliffhanger": "Will Abu Lakma cough it up?"
+    }
+  ]
 }
