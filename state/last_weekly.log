@@ -1,71 +1,28 @@
-[09:02:18] brief: 1. Double down on Mafia/negotiation video setups for maximum watch time.
-2. Adopt AI-specific trends (soap opera cliffhangers, glitching clothes) to hack the algorithm.
-3. Eliminate static images and generic car flexes from the content calendar immediately.
-[09:02:19] week 2026-11-01: 4 clips 
-[09:02:35] concept: The Celery Betrayal [abu_lakma; trend: AI Animal Soap Cliffhangers] - Lil Rappit's high-stakes street negotiation ends in ultimate betrayal, and his right-hand dog is looking real guilty.
-[09:02:54] image ok (gemini-nano-banana-2.1) -> character.png
-[09:03:19] image ok (gemini-nano-banana-2.1) -> frame1.png
-[09:03:57] Omni rejected {'duration': '10s'}/uri: Error code: 400 - {'error': {'message': 'Request blocked due to prohibited content guidelines. Please modify your input and retry.', 'code': 'prohibited_content'}}
-[09:04:32] Omni rejected {'duration': '10s'}/inline: Error code: 400 - {'error': {'message': 'Request blocked due to prohibited content guidelines. Please modify your input and retry.', 'code': 'prohibited_content'}}
-[09:04:32] Omni rejected {'duration': '10'}/uri: Error code: 400 - {'error': {'message': "Invalid input at 'response_format'.", 'code': 'invalid_request'}}
-[09:04:33] Omni rejected {'duration': '10'}/inline: Error code: 400 - {'error': {'message': "Invalid input at 'response_format'.", 'code': 'invalid_request'}}
-[09:05:06] Omni rejected no duration/uri: Error code: 400 - {'error': {'message': 'Request blocked due to prohibited content guidelines. Please modify your input and retry.', 'code': 'prohibited_content'}}
-[09:05:42] Omni rejected no duration/inline: Error code: 400 - {'error': {'message': 'Request blocked due to prohibited content guidelines. Please modify your input and retry.', 'code': 'prohibited_content'}}
-[09:05:42] FAILED 2026-11-01-clip1: Error code: 400 - {'error': {'message': 'Request blocked due to prohibited content guidelines. Please modify your input and retry.', 'code': 'prohibited_content'}}
-Traceback (most recent call last):
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_gaos/interactions.py", line 646, in create
-    return _speakeasy_parse_response(http_res)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_gaos/interactions.py", line 562, in _speakeasy_parse_response
-    raise errors.CreateInteractionClientError(
-google.genai._gaos.errors.createinteraction.CreateInteractionClientError: Request blocked due to prohibited content guidelines. Please modify your input and retry.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/runner/work/lil-rappit/lil-rappit/scripts/weekly.py", line 118, in main
-    pipeline.make(state, item_id, kind, ep, slot, soft_idx, p["at"], tease)
-  File "/home/runner/work/lil-rappit/lil-rappit/rappit/pipeline.py", line 31, in make
-    built = items.build(item_id, kind, ep, soft_idx=soft_idx, no=no)
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/lil-rappit/lil-rappit/rappit/items.py", line 102, in build
-    return build_concept(item_id, ep, note)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/lil-rappit/lil-rappit/rappit/items.py", line 84, in build_concept
-    media = gen.video(prompt, frame, d / "reel.mp4", seconds=secs, style=c["style"])
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/lil-rappit/lil-rappit/rappit/gen.py", line 270, in video
-    return _video_omni(full, start_frame, out, seconds)
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/runner/work/lil-rappit/lil-rappit/rappit/gen.py", line 233, in _video_omni
-    raise last_err
-  File "/home/runner/work/lil-rappit/lil-rappit/rappit/gen.py", line 220, in _video_omni
-    inter = client().interactions.create(
-            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_gaos/google_genai.py", line 376, in create
-    response = send_once()
-               ^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_gaos/google_genai.py", line 431, in _send_create_once
-    return wrap_sdk_call(
-           ^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_gaos/lib/compat_errors.py", line 369, in wrap_sdk_call
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_gaos/interactions.py", line 648, in create
-    response_helpers.raise_parse_error(
-  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_gaos/utils/response_helpers.py", line 94, in raise_parse_error
-    raise parse_error from exc
-google.genai._gaos.lib.compat_errors.BadRequestError: Error code: 400 - {'error': {'message': 'Request blocked due to prohibited content guidelines. Please modify your input and retry.', 'code': 'prohibited_content'}}
-
-[09:06:05] concept: The Interrogation Fold [abu_lakma, lola; trend: AI Animal Soap Cliffhangers and High-stakes Mafia negotiations] - Lil Rappit tries to act like a tough mob boss during the stash negotiation, but Lola knows exactly how to make him fold.
-[09:06:29] image ok (gemini-nano-banana-2.1) -> frame1.png
-[09:07:16] video ok -> reel.mp4 (10s, 47s)
-[09:07:23] built 2026-11-01-clip2 (concept concept-the-lola-negotiation-2026-11-01)
-[09:07:47] concept: The Pendant Exchange [no cast; trend: AI Animal Soap Cliffhangers] - Rappit negotiates for the stash, but Lola drives a very hard bargain.
-[09:08:01] image ok (gemini-nano-banana-2.1) -> frame1.png
-[09:08:46] video ok -> reel.mp4 (10s, 45s)
-[09:08:54] built 2026-11-01-clip3 (concept concept-the-pendant-exchange-2026-11-01)
-[09:09:26] concept: The Muddy Sneaker Chaos [abu_lakma, lola, teta; trend: Aesthetic Winter Chaos] - The aesthetic winter vibes are instantly ruined by muddy sneakers and a swallowed pendant.
-[09:09:54] image ok (gemini-nano-banana-2.1) -> frame1.png
-[09:10:37] video ok -> reel.mp4 (10s, 42s)
-[09:10:46] built 2026-11-01-clip4 (concept concept-the-pendant-chaos-2026-11-01)
+[09:17:21] brief: 1. Focus strictly on 10-second Lebanese cultural visual jokes.
+2. Completely abandon mafia themes and static image posts.
+3. Use trending AI physics breaks and local Arabic audio.
+[09:17:22] week 2026-11-01: 4 clips 
+[09:18:16] idea picked: Rappit intensely guards and dramatically opens a premium blue butter cookie tin expecting a feast, but finds it full of thread and needles; Teta casually walks by, takes a spool, and leaves him staring in disbelief.
+[09:18:40] editor: {'relatable': 10, 'funny': 8, 'clear': 9, 'feasible': 5} rewrite
+[09:18:55] concept: The Cookie Tin [abu_lakma, teta] - Rappit treats a butter cookie tin like a heavily guarded treasure, but when he dramatically opens it to find sewing supplies, his tough-guy persona instantly crumbles into deadpan disappointment.
+[09:19:18] image ok (gemini-nano-banana-2.1) -> frame1.png
+[09:20:02] video ok -> reel.mp4 (10s, 44s)
+[09:20:09] built 2026-11-01-clip1 (concept concept-cookie-tin-betrayal-2026-11-01)
+[09:21:07] idea picked: Rappit does a highly stylized, slow-motion gangster drop onto Teta's plastic-covered fancy sofa, but instantly slides straight off the slick surface and out of frame.
+[09:21:31] editor: {'relatable': 10, 'funny': 8, 'clear': 9, 'feasible': 5} rewrite
+[09:21:40] concept: The Plastic Sofa [abu_lakma, teta] - Rappit confidently sits on the couch with exaggerated swagger, but the frictionless plastic wrap instantly slides him off the edge and out of frame.
+[09:22:01] image ok (gemini-nano-banana-2.1) -> frame1.png
+[09:22:45] video ok -> reel.mp4 (10s, 44s)
+[09:22:52] built 2026-11-01-clip2 (concept concept-plastic-sofa-slide-2026-11-01)
+[09:23:50] idea picked: When the bill arrives, Rappit and Abu Lakma lock hands over it in a dramatic arm-wrestling grip to see who pays, but Teta calmly reaches under their arms and takes the paper, leaving the two tough guys passionately holding hands.
+[09:24:10] editor: {'relatable': 10, 'funny': 9, 'clear': 9, 'feasible': 4} rewrite
+[09:24:20] concept: The Restaurant Bill [abu_lakma, teta] - Rappit and Abu Lakma intensely stack their hands on the bill to claim it, but Teta slides it out from under them, leaving the tough guys with their hands awkwardly stacked.
+[09:24:41] image ok (gemini-nano-banana-2.1) -> frame1.png
+[09:25:28] video ok -> reel.mp4 (10s, 48s)
+[09:25:36] built 2026-11-01-clip3 (concept concept-the-bill-standoff-2026-11-01)
+[09:26:20] idea picked: Rappit and Abu Lakma intensely guard a boiling rakweh on the stove like VIP bodyguards, but the instant Rappit turns his head to coolly adjust his sunglasses, it erupts into a massive foam volcano, making him jump back in pure terror.
+[09:26:43] editor: {'relatable': 10, 'funny': 8, 'clear': 9, 'feasible': 5} rewrite
+[09:26:54] concept: The Rakweh Volcano [abu_lakma] - Rappit intensely guards the coffee like a VIP bodyguard, but the split second he looks away, it instantly boils over and leaves him in deadpan shock.
+[09:27:14] image ok (gemini-nano-banana-2.1) -> frame1.png
+[09:28:03] video ok -> reel.mp4 (10s, 49s)
+[09:28:09] built 2026-11-01-clip4 (concept concept-the-rakweh-volcano-2026-11-01)

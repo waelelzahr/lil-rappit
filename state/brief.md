@@ -1,19 +1,20 @@
 # Brief 2026-11-01
 
-• TRENDS TO USE:
-- AI Animal Soap Cliffhangers: Lil Rappit opens his carrot briefcase to find celery. Snap zoom to Abu Lakma chewing. Flash text: 'PART 2 TOMORROW'.
-- 'Then I Walk In': Setup: 'Rivals took the carrot supply.' Bass drop, Rappit & Abu Lakma strut in with deadpan confidence.
-- Aesthetic Winter Chaos: Aesthetic Levantine rain/Fairouz audio abruptly cuts to Grandma chasing Abu Lakma with a wooden spoon while Rappit sips espresso.
-- Intentional Character Drift: Rappit negotiates a deadly serious Mafia deal while his suit glitches between a tuxedo, clown suit, and scuba gear.
+• IDEAS:
+- Olive Harvest: Grandma orders olive smashing; Rappit fails a tough-guy chop, deadpans while bulldog eats them.
+- Independence Day (Nov 22): Rappit films stoic cedar tree tribute; bulldog ruins it by chewing branches.
+- Slowed+Reverb Arabic Walk: Epic slow-mo hallway walk shattered by Grandma smacking Rappit with a newspaper.
+- AI Rakweh Mess: Bulldog boils Arabic coffee, breaking AI physics into a tsunami while Rappit casually sips a finjan.
+- "Loading..." Trend: 0% to 100% Lebanese wedding guest glow-up; bulldog provides leaf-blower wind effects.
 
-• ANALYTICS (WHAT WORKS & FLOPS):
-- Works: High-stakes Mafia/business negotiations where Rappit folds for carrots. Oct 26 (Salary fold) hit 1.8k views & 10s avg watch time. Oct 22 (Zero taxes) hit 1.4k views & 12s watch time. The serious vs. silly contrast retains viewers.
-- Flops: Generic cultural dances (Dabke, Oct 31) and pure car/street flexes (Oct 18-19) dropped below 200 views.
+• METRICS (Works vs Flops):
+- Works: High-retention 10s visual punchlines. Oct 26 (1.8k views, 10s watch) and Oct 22 (1.4k views) drove highest traffic, but relied on axed mafia themes. Oct 31 Dabke sets our new cultural visual joke benchmark despite lower initial reach.
+- Flops: Static images (Oct 21/23 got ~2 reach) and vague tough-guy lore (Oct 12, 127 views) completely fail to engage.
 
 • AVOID:
-- Static images (they get zero reach).
-- Niche cultural references without a universal comedic punchline.
-- Basic street/car flexes that lack the 'animal mafia' twist.
+- Mafia, tax, or business negotiation tropes.
+- Serialized melodrama or cliffhangers.
+- Static image posts.
 
 ## Our stats
 

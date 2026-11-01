@@ -250,47 +250,62 @@
     },
     "2026-11-01-clip2": {
       "kind": "reel",
-      "episode": "concept-the-lola-negotiation-2026-11-01",
+      "episode": "concept-plastic-sofa-slide-2026-11-01",
       "slot": "2026-11-04T18:00:00+02:00",
-      "status": "skipped",
+      "status": "pending",
       "redos": 0,
-      "message_id": "1566347915297816676",
-      "run_id": "41283031471",
+      "message_id": "1566351815921111103",
+      "run_id": "41284031394",
       "relpath": "2026-11-01-clip2/reel.mp4",
-      "caption": "I was ready to run the underworld until she pulled out the baby carrots 🥕🕶️\nWhat snack makes you lose all your street cred instantly?\nPart 2 Friday: Will Lola share the stash? 👀 Follow so you don't miss it.\n\n#lilrappit #funnyanimals #comedy #aicomedy",
-      "title": "When the Toughest Mob Boss Has One Fatal Weakness",
+      "caption": "Fur got stuck to Teta’s plastic wrap and instantly stripped away all my street cred. 🛋️💀\nWho else got humbled by grandma's plastic-wrapped sofa?\nNew clip every Mon, Wed, Fri & Sat 🐰 Follow for more.\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "Teta's Plastic Sofa Destroyed My Street Cred",
       "soft_idx": 9,
-      "tease": "Part 2 Friday: Will Lola share the stash? 👀 Follow so you don't miss it.",
+      "tease": "New clip every Mon, Wed, Fri & Sat 🐰 Follow for more.",
       "no": null
     },
     "2026-11-01-clip3": {
       "kind": "reel",
-      "episode": "concept-the-pendant-exchange-2026-11-01",
+      "episode": "concept-the-bill-standoff-2026-11-01",
       "slot": "2026-11-06T18:00:00+02:00",
-      "status": "skipped",
+      "status": "pending",
       "redos": 0,
-      "message_id": "1566348294848778270",
-      "run_id": "41283031471",
+      "message_id": "1566352498300555304",
+      "run_id": "41284031394",
       "relpath": "2026-11-01-clip3/reel.mp4",
-      "caption": "Walked in demanding the stash, walked out signing over my turf for three baby carrots 🥕💀\nWhat snack makes you fold this fast?\nPart 2 Saturday: Will Rappit get it back? 👀 Follow so you don't miss it.\n\n#lilrappit #funnyanimals #comedy #aicomedy",
-      "title": "Lil Rappit Folded in 5 Seconds Flat",
+      "caption": "Streets made me ruthless, but Lebanese uncles fighting over the check had me clutching my carrots for dear life 🥕💀\nWho in your crew always turns paying the bill into a heavyweight championship?\nNew clip every Mon, Wed, Fri & Sat 🐰 Follow for more.\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "Lebanese Bill Fights Are More Dangerous Than The Mob",
       "soft_idx": 9,
-      "tease": "Part 2 Saturday: Will Rappit get it back? 👀 Follow so you don't miss it.",
+      "tease": "New clip every Mon, Wed, Fri & Sat 🐰 Follow for more.",
       "no": null
     },
     "2026-11-01-clip4": {
       "kind": "reel",
-      "episode": "concept-the-pendant-chaos-2026-11-01",
+      "episode": "concept-the-rakweh-volcano-2026-11-01",
       "slot": "2026-11-07T18:00:00+02:00",
-      "status": "skipped",
+      "status": "pending",
       "redos": 0,
-      "message_id": "1566348768876691506",
-      "run_id": "41283031471",
+      "message_id": "1566353144059920414",
+      "run_id": "41284031394",
       "relpath": "2026-11-01-clip4/reel.mp4",
-      "caption": "Ruined the fresh kicks and swallowed my own chain tryin' to look hard in the snow 🥶💀\nShould I hit the ER or just wash it down with a carrot?\n\n#lilrappit #funnyanimals #comedy #aicomedy",
-      "title": "When the aesthetic winter fit check goes horribly wrong",
+      "caption": "I run the streets, but one glance at that boiling rakweh and I folded instantly ☕👀\nWhat household item instantly ruins your tough act?\nNew clip every Mon, Wed, Fri & Sat 🐰 Follow for more.\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "Even gangsters fear the Lebanese rakweh",
       "soft_idx": 9,
-      "tease": "",
+      "tease": "New clip every Mon, Wed, Fri & Sat 🐰 Follow for more.",
+      "no": null
+    },
+    "2026-11-01-clip1": {
+      "kind": "reel",
+      "episode": "concept-cookie-tin-betrayal-2026-11-01",
+      "slot": "2026-11-02T18:00:00+02:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1566351166990852206",
+      "run_id": "41284031394",
+      "relpath": "2026-11-01-clip1/reel.mp4",
+      "caption": "Ran a whole heist for carrot shortbread just to get ambushed by sewing needles. 🪡😤\nHow old were you when you found out that tin was a lie?\nNew clip every Mon, Wed, Fri & Sat 🐰 Follow for more.\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "Lil Rappit Got Traumatized by the Blue Cookie Tin",
+      "soft_idx": 9,
+      "tease": "New clip every Mon, Wed, Fri & Sat 🐰 Follow for more.",
       "no": null
     }
   },
@@ -299,7 +314,7 @@
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-01",
-    "count": 3
+    "count": 7
   },
   "episode_no": 6,
   "custom_episodes": [
@@ -335,17 +350,149 @@
       "demand": "",
       "bad_deal": "",
       "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. Teta: a sweet older grandmother sheep with fluffy white wool, wearing a vintage floral house dress and gold-rimmed glasses."
+    },
+    {
+      "id": "concept-cookie-tin-betrayal-2026-11-01",
+      "title": "The Cookie Tin",
+      "relatable_truth": "The universal Arab disappointment of opening a premium butter cookie tin only to find grandmother's sewing supplies.",
+      "joke": "Rappit treats a butter cookie tin like a heavily guarded treasure, but when he dramatically opens it to find sewing supplies, his tough-guy persona instantly crumbles into deadpan disappointment.",
+      "cast": [
+        "abu_lakma",
+        "teta"
+      ],
+      "look": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit with round glasses on a chain, hair in a neat bun, floral house dress, beige cardigan and slippers",
+      "setting": "A cozy Lebanese living room, warm afternoon sunlight. A classic blue butter cookie tin sits perfectly centered on a white floral lace doily on a low wooden coffee table.",
+      "frame": "Medium shot: Rappit and Abu Lakma stand behind the coffee table glaring intensely at the blue tin. Teta is visible in the background armchair, quietly rocking.",
+      "action": "[0-3s] SETUP: Rappit and Abu Lakma guard the blue cookie tin like it is a priceless artifact, arms crossed and staring deadly serious into the camera. [3-7s] ESCALATION: Rappit cracks his knuckles, leans in, and yanks the lid off with extreme, slow-motion tough-guy dramatic flair, tilting the open base directly toward the camera. [7-10s] PAYOFF: The tilted tin is entirely full of colorful spools of thread and a tomato pincushion; Rappit and Abu Lakma's fierce expressions instantly drop into sheer, crushed deadpan disappointment as they stare blankly into the lens.",
+      "sound": "Tense, heavy cinematic bass drum hits that abruptly cut to absolute silence the moment the lid is removed. A metal squeak for the lid.",
+      "caption_brief": "Every Arab kid knows the heartbreak of the blue cookie tin.",
+      "uses_carrot": false,
+      "story_summary": "Rappit intensely opens a premium cookie tin expecting a treat, only to find Teta's sewing supplies, instantly dropping his tough-guy act.",
+      "cliffhanger": "",
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "with_abu": true,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit with round glasses on a chain, hair in a neat bun, floral house dress, beige cardigan and slippers"
+    },
+    {
+      "id": "concept-plastic-sofa-slide-2026-11-01",
+      "title": "The Plastic Sofa",
+      "relatable_truth": "Arab grandmas keep their formal salon furniture permanently wrapped in thick, slippery protective plastic.",
+      "joke": "Rappit confidently sits on the couch with exaggerated swagger, but the frictionless plastic wrap instantly slides him off the edge and out of frame.",
+      "cast": [
+        "abu_lakma",
+        "teta"
+      ],
+      "look": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit with round glasses on a chain, hair in a neat bun, floral house dress, beige cardigan and slippers",
+      "setting": "Teta's formal Lebanese salon (guest room), daytime with bright sunlight hitting a highly ornate, vintage velvet sofa that is completely encased in thick, squeaky, shiny clear plastic wrap, with a crystal chandelier above and a small wooden coffee table in front.",
+      "frame": "Wide continuous shot showing Abu Lakma standing stoically on the left, Teta standing behind the plastic-covered sofa on the right holding a feather duster, and Rappit standing center-right in front of the sofa adjusting his gold sunglasses.",
+      "action": "[0-3s] SETUP: Teta happily dusts the top of her shiny plastic-wrapped sofa while Abu Lakma stands guard. Rappit stands in front of the sofa, projecting heavy, exaggerated gangster swagger. [3-7s] ESCALATION: Rappit confidently crosses his arms and simply drops his weight backward to sit down on the cushions in a boss pose. [7-10s] PAYOFF: The second his orange puffer jacket hits the shiny plastic, he unstoppably slides forward like a hockey puck, dropping straight off the slick cushion and disappearing below the bottom of the frame while Teta calmly continues dusting and Abu Lakma stares deadpan directly into the camera.",
+      "sound": "Heavy Arabic hip-hop beat plays during the swagger, which abruptly cuts out with a loud, high-pitched rubbery 'SQUEAK-SWOOSH' as Rappit slides off, followed by a muffled off-screen thud and silence except for Teta's light dusting.",
+      "caption_brief": "Trying to look tough in the Arab salon but Teta's plastic sofa wrap humbled him. 🛋️💨",
+      "uses_carrot": false,
+      "story_summary": "Rappit tries to sit on Teta's plastic-covered fancy couch with tough-guy swagger, but the slippery surface causes him to slide completely off the seat and out of frame.",
+      "cliffhanger": "",
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "with_abu": true,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit with round glasses on a chain, hair in a neat bun, floral house dress, beige cardigan and slippers"
+    },
+    {
+      "id": "concept-the-bill-standoff-2026-11-01",
+      "title": "The Restaurant Bill",
+      "relatable_truth": "Lebanese men will fiercely fight over who gets the honor of paying the restaurant bill.",
+      "joke": "Rappit and Abu Lakma intensely stack their hands on the bill to claim it, but Teta slides it out from under them, leaving the tough guys with their hands awkwardly stacked.",
+      "cast": [
+        "abu_lakma",
+        "teta"
+      ],
+      "look": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit with round glasses on a chain, hair in a neat bun, floral house dress, beige cardigan and slippers",
+      "setting": "A brightly lit traditional Lebanese restaurant. A wooden table covered in half-eaten mezze plates (hommos, tabbouleh) and a woven bread basket.",
+      "frame": "Medium shot of the table. Rappit (left) and Abu Lakma (right) sit opposite each other. Teta sits between them in the background. A black leather bill folder sits precisely in the center of the table.",
+      "action": "[0-3s] SETUP: Rappit and Abu Lakma stare menacingly at the bill folder, then simultaneously slam their paws flat on top of it. [3-7s] ESCALATION: Their paws stack awkwardly flat on top of each other over the bill. They glare at each other, vibrating with tough-guy tension, both pressing down hard, refusing to yield. [7-10s] PAYOFF: Teta casually reaches under their stacked paws, slides the bill folder away smoothly, and puts on her reading glasses. Rappit and Abu Lakma, left with their paws intimately stacked on the empty table, slowly turn to stare deadpan into the camera.",
+      "sound": "A tense, dramatic cinematic drum roll that builds up, abruptly cutting to absolute silence and the gentle rustle of paper when Teta takes the bill.",
+      "caption_brief": "The ultimate Lebanese showdown over the restaurant bill always ends one way.",
+      "uses_carrot": false,
+      "story_summary": "Rappit and Abu Lakma's macho standoff to pay the bill ends in humiliation when Teta takes the check, leaving their hands awkwardly stacked.",
+      "cliffhanger": "",
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "with_abu": true,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers. Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit with round glasses on a chain, hair in a neat bun, floral house dress, beige cardigan and slippers"
+    },
+    {
+      "id": "concept-the-rakweh-volcano-2026-11-01",
+      "title": "The Rakweh Volcano",
+      "relatable_truth": "Arabic coffee patiently waits to boil over until the exact millisecond you look away.",
+      "joke": "Rappit intensely guards the coffee like a VIP bodyguard, but the split second he looks away, it instantly boils over and leaves him in deadpan shock.",
+      "cast": [
+        "abu_lakma"
+      ],
+      "look": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers",
+      "setting": "A typical Lebanese kitchen, bright morning light. White tile backsplash, gas stove in the center, and a small wooden tray with two small finjan (coffee cups) resting on the counter beside it.",
+      "frame": "Medium shot. A silver rakweh (Arabic coffee pot) sits on a lit stove burner. Rappit and Abu Lakma stand motionless on either side, leaning in and staring fiercely at the pot. Rappit has his arms crossed toughly; Abu Lakma holds a folded kitchen towel like a bouncer.",
+      "action": "[0-3s] SETUP: Rappit and Abu Lakma stand rigidly beside the stove, glaring down at the rakweh with intense, unblinking tough-guy concentration to make sure it doesn't overflow. [3-7s] ESCALATION: The dark coffee inside slowly rises, bubbling ominously. Confident he has it under control, Rappit turns his head away for a split second, coolly lifting a hand to adjust his gold sunglasses. [7-10s] PAYOFF: The exact millisecond his paw touches his sunglasses, the coffee instantly boils over the edge, spilling heavily onto the stove. Both Rappit and Abu Lakma freeze completely in defeated shock, then slowly turn their heads to stare deadpan into the camera.",
+      "sound": "Tense, slow tabla heartbeat rhythm. Soft bubbling sounds that instantly turn into a sharp sizzling hiss as the coffee hits the burner, followed by dead silence and the tabla stopping abruptly.",
+      "caption_brief": "The tough-guy stare is no match for the ultimate Lebanese betrayal: the rakweh.",
+      "uses_carrot": false,
+      "story_summary": "Rappit fiercely guards a boiling coffee pot, but the second he looks away to adjust his shades, it spills over and leaves him completely defeated.",
+      "cliffhanger": "",
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "with_abu": true,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers"
     }
   ],
   "concepts_done": [
-    "Teta's Endless Feast"
+    "Teta's Endless Feast",
+    "The Cookie Tin: Rappit treats a butter cookie tin like a heavily guarded treasure, but when he dramatically opens it to find sewing supplies, his tough-guy pers",
+    "The Plastic Sofa: Rappit confidently sits on the couch with exaggerated swagger, but the frictionless plastic wrap instantly slides him off the edge and out of ",
+    "The Restaurant Bill: Rappit and Abu Lakma intensely stack their hands on the bill to claim it, but Teta slides it out from under them, leaving the tough guys wi",
+    "The Rakweh Volcano: Rappit intensely guards the coffee like a VIP bodyguard, but the split second he looks away, it instantly boils over and leaves him in deadp"
   ],
   "brief": {
     "date": "2026-11-01",
-    "text": "• TRENDS TO USE:\n- AI Animal Soap Cliffhangers: Lil Rappit opens his carrot briefcase to find celery. Snap zoom to Abu Lakma chewing. Flash text: 'PART 2 TOMORROW'.\n- 'Then I Walk In': Setup: 'Rivals took the carrot supply.' Bass drop, Rappit & Abu Lakma strut in with deadpan confidence.\n- Aesthetic Winter Chaos: Aesthetic Levantine rain/Fairouz audio abruptly cuts to Grandma chasing Abu Lakma with a wooden spoon while Rappit sips espresso.\n- Intentional Character Drift: Rappit negotiates a deadly serious Mafia deal while his suit glitches between a tuxedo, clown suit, and scuba gear.\n\n• ANALYTICS (WHAT WORKS & FLOPS):\n- Works: High-stakes Mafia/business negotiations where Rappit folds for carrots. Oct 26 (Salary fold) hit 1.8k views & 10s avg watch time. Oct 22 (Zero taxes) hit 1.4k views & 12s watch time. The serious vs. silly contrast retains viewers.\n- Flops: Generic cultural dances (Dabke, Oct 31) and pure car/street flexes (Oct 18-19) dropped below 200 views.\n\n• AVOID:\n- Static images (they get zero reach).\n- Niche cultural references without a universal comedic punchline.\n- Basic street/car flexes that lack the 'animal mafia' twist.",
-    "summary": "1. Double down on Mafia/negotiation video setups for maximum watch time.\n2. Adopt AI-specific trends (soap opera cliffhangers, glitching clothes) to hack the algorithm.\n3. Eliminate static images and generic car flexes from the content calendar immediately.",
+    "text": "• IDEAS:\n- Olive Harvest: Grandma orders olive smashing; Rappit fails a tough-guy chop, deadpans while bulldog eats them.\n- Independence Day (Nov 22): Rappit films stoic cedar tree tribute; bulldog ruins it by chewing branches.\n- Slowed+Reverb Arabic Walk: Epic slow-mo hallway walk shattered by Grandma smacking Rappit with a newspaper.\n- AI Rakweh Mess: Bulldog boils Arabic coffee, breaking AI physics into a tsunami while Rappit casually sips a finjan.\n- \"Loading...\" Trend: 0% to 100% Lebanese wedding guest glow-up; bulldog provides leaf-blower wind effects.\n\n• METRICS (Works vs Flops):\n- Works: High-retention 10s visual punchlines. Oct 26 (1.8k views, 10s watch) and Oct 22 (1.4k views) drove highest traffic, but relied on axed mafia themes. Oct 31 Dabke sets our new cultural visual joke benchmark despite lower initial reach.\n- Flops: Static images (Oct 21/23 got ~2 reach) and vague tough-guy lore (Oct 12, 127 views) completely fail to engage.\n\n• AVOID:\n- Mafia, tax, or business negotiation tropes.\n- Serialized melodrama or cliffhangers.\n- Static image posts.",
+    "summary": "1. Focus strictly on 10-second Lebanese cultural visual jokes.\n2. Completely abandon mafia themes and static image posts.\n3. Use trending AI physics breaks and local Arabic audio.",
     "stats": "INSTAGRAM (newest first):\n- 2026-10-31 VIDEO: views=157 reach=114 likes=1 comments=0 shares=2 saves=0 avg_watch_ms=5952 | Me and Abu Lakma were destroying the dabke until someone flashed that jazar, yalla khallas 🥕🕺\n- 2026-10-29 VIDEO: views=276 reach=216 likes=3 comments=0 shares=1 saves=0 avg_watch_ms=5523 | Tag the friend who loses every negotiation the second food is offered 🥕💀\n- 2026-10-27 VIDEO: views=482 reach=354 likes=1 comments=0 shares=0 saves=0 avg_watch_ms=11848 | POV: You demand a massive salary raise but fold for free snacks (funny rabbit negotiation) 🥕💼\n- 2026-10-26 VIDEO: views=1818 reach=1189 likes=12 comments=0 shares=0 saves=0 avg_watch_ms=10130 | Tag the friend who folded immediately during their salary negotiation funny rabbit style 🥕😭\n- 2026-10-23 IMAGE: views=? reach=2 likes=3 comments=0 shares=2 saves=0 avg_watch_ms=? | Cold on the block, soft for the crop.\n- 2026-10-22 VIDEO: views=1446 reach=1049 likes=15 comments=0 shares=2 saves=0 avg_watch_ms=12621 | Told the feds zero taxes.\n- 2026-10-21 IMAGE: views=? reach=2 likes=0 comments=0 shares=0 saves=0 avg_watch_ms=? | Got caught slipping on the lot.\n- 2026-10-19 VIDEO: views=201 reach=173 likes=3 comments=0 shares=2 saves=0 avg_watch_ms=8174 | Horsepower is temporary.\n- 2026-10-18 VIDEO: views=176 reach=149 likes=3 comments=0 shares=2 saves=0 avg_watch_ms=8632 | Came for the sports car.\n- 2026-10-16 VIDEO: views=138 reach=119 likes=2 comments=0 shares=0 saves=0 avg_watch_ms=3324 | Street certified. Hawk terrified. 🐇🦅\n- 2026-10-16 IMAGE: views=? reach=3 likes=2 comments=2 shares=0 saves=0 avg_watch_ms=? | Me after saying I don't get scared. 👻🥗\n- 2026-10-13 IMAGE: views=? reach=2 likes=1 comments=2 shares=0 saves=0 avg_watch_ms=? | King of the patch. Every pumpkin pays rent here. 👑🎃\n- 2026-10-12 VIDEO: views=127 reach=113 likes=2 comments=0 shares=1 saves=0 avg_watch_ms=3075 | The burrow sent me. 🐇🎤 First verse of many.\n\nYOUTUBE (newest first):\n- 2026-10-31: views=11 likes=1 comments=0 | Lil Rappit Ruins the Dabke for a Carrot #Shorts\n- 2026-10-29: views=1 likes=1 comments=0 | Fighting For A Parking Spot In The City Be Like #Shorts\n- 2026-10-27: views=1 likes=0 comments=0 | Asking for a huge raise but caving for snacks #Shorts\n- 2026-10-26: views=4 likes=1 comments=1 | When you fold immediately in a salary negotiation #Shorts\n- 2026-10-22: views=10 likes=1 comments=0 | Mafia Rabbit Refuses Taxes Until Carrots Enter The Room #Shorts\n- 2026-10-19: views=7 likes=2 comments=0 | Lil Rappit Makes an Offer He Can't Refuse #Shorts\n- 2026-10-19: views=10 likes=1 comments=1 | Lil Rappit Closes The Worst Deal In Mafia History #Shorts"
   },
   "concept_ideas": [],
-  "story_log": []
+  "story_log": [
+    {
+      "date": "2026-11-02",
+      "title": "The Cookie Tin",
+      "summary": "Rappit intensely opens a premium cookie tin expecting a treat, only to find Teta's sewing supplies, instantly dropping his tough-guy act.",
+      "cliffhanger": ""
+    },
+    {
+      "date": "2026-11-04",
+      "title": "The Plastic Sofa",
+      "summary": "Rappit tries to sit on Teta's plastic-covered fancy couch with tough-guy swagger, but the slippery surface causes him to slide completely off the seat and out of frame.",
+      "cliffhanger": ""
+    },
+    {
+      "date": "2026-11-06",
+      "title": "The Restaurant Bill",
+      "summary": "Rappit and Abu Lakma's macho standoff to pay the bill ends in humiliation when Teta takes the check, leaving their hands awkwardly stacked.",
+      "cliffhanger": ""
+    },
+    {
+      "date": "2026-11-07",
+      "title": "The Rakweh Volcano",
+      "summary": "Rappit fiercely guards a boiling coffee pot, but the second he looks away to adjust his shades, it spills over and leaves him completely defeated.",
+      "cliffhanger": ""
+    }
+  ]
 }
