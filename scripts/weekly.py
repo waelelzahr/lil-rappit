@@ -8,7 +8,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from rappit import brief, concepts, discord, media, pipeline, quota  # noqa: E402
+from rappit import brief, concepts, discord, gen, media, pipeline, quota  # noqa: E402
 from rappit.common import CFG, ROOT, TZ, all_episodes, load_state, log, next_slot, save_state  # noqa: E402
 
 
@@ -97,6 +97,8 @@ def main():
                 later = [q for q in plan[plan.index(p) + 1:] if q["kind"] == "concept"]
                 if ep.get("cliffhanger") and later:
                     tease = f"Part 2 {later[0]['at'].split()[0]}: {ep['cliffhanger']} 👀 Follow so you don't miss it."
+                else:
+                    tease = "New clip every Mon, Wed, Fri & Sat 🐰 Follow for more."
             except Exception as e:
                 log(f"FAILED writing {item_id}: {e}\n{traceback.format_exc()}")
                 errors.append(f"{p['id']}: {str(e)[:300]}")
@@ -110,7 +112,20 @@ def main():
             else:
                 tease = "New episode every Monday & Thursday 🥕"
         try:
-            if p.get("make") and not only:  # made later in the week (Veo daily limit)
+            if kind == "reel" and ep.get("concept") and not p.get("make"):
+                try:
+                    pipeline.make(state, item_id, kind, ep, slot, soft_idx, p["at"], tease)
+                except gen.ContentBlocked as e:  # rewrite the idea once, safer
+                    log(f"blocked by the video filter, rewriting: {e}")
+                    state["custom_episodes"].remove(ep)
+                    ep = concepts.write(state, note="The previous idea was blocked by the video "
+                                        f"model's safety filter ({ep.get('title')}: {ep.get('joke')}). "
+                                        "Write a completely different, clearly harmless idea.")
+                    ep["id"] += f"-{week}-b"
+                    state["custom_episodes"].append(ep)
+                    concepts.remember(state, ep, slot[:10])
+                    pipeline.make(state, item_id, kind, ep, slot, soft_idx, p["at"], tease)
+            elif p.get("make") and not only:  # made later in the week (Veo daily limit)
                 pipeline.queue(state, item_id, kind, ep, slot, soft_idx,
                                datetime.fromisoformat(next_slot(p["make"])), "scheduled", tease)
                 discord.send_text(f"🗓️ **{ep['title']}** ({p['id']}) will be made {p['make']}.")

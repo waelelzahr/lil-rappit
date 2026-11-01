@@ -24,8 +24,13 @@ WEB RESEARCH:
 OUR OWN POSTS (newest first; views, shares, saves and watch time tell us what sticks):
 {stats}
 
+Our direction: standalone 10-second clips of Lil Rappit (a deadpan tough gangster rabbit) and his
+bulldog sidekick in instantly recognisable Lebanese / Arab everyday moments, one clear visual
+joke each (our best clip: an extreme dabke at a village wedding). Not mafia deals, not serials.
+
 Write a compact brief (max 250 words) as JSON with key "text": a bullet list covering
-(a) 4-6 specific trends / formats / occasions to use this week and how,
+(a) 4-6 specific relatable moments, occasions (next 2 weeks in Lebanon) or trending comedy
+    formats that fit this direction, each with a one-line clip idea,
 (b) what our numbers say works and what flops (be concrete: which clips and why),
 (c) 2-3 things to avoid. Then key "summary": 3 short lines for the account owner."""
 

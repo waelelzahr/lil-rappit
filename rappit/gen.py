@@ -203,6 +203,10 @@ def _quota_error(e: Exception):
         raise quota.QuotaExceeded(f"Google's daily video limit reached: {e}") from e
 
 
+class ContentBlocked(RuntimeError):
+    """The video model refused the prompt (safety filter). Rewrite the idea, don't retry it."""
+
+
 def _video_omni(full: str, start_frame: Path, out: Path, seconds: int) -> Path:
     """Gemini Omni Flash (Interactions API): image-to-video with sound, from a first frame."""
     import base64
@@ -214,7 +218,7 @@ def _video_omni(full: str, start_frame: Path, out: Path, seconds: int) -> Path:
                "mime_type": mime_of(start_frame)},
               {"type": "text", "text": text}]
     t0, last_err, inter = time.time(), None, None
-    for fmt in ({"duration": f"{seconds}s"}, {"duration": str(seconds)}, {}):
+    for fmt in ({"duration": f"{seconds}s"}, {}):
         for delivery in ("uri", "inline"):
             try:
                 inter = client().interactions.create(
@@ -225,6 +229,8 @@ def _video_omni(full: str, start_frame: Path, out: Path, seconds: int) -> Path:
                 break
             except Exception as e:
                 _quota_error(e)
+                if "prohibited" in str(e).lower() or "blocked" in str(e).lower():
+                    raise ContentBlocked(str(e)[:300]) from e
                 last_err = e
                 log(f"Omni rejected {fmt or 'no duration'}/{delivery}: {str(e)[:300]}")
         if inter is not None:
