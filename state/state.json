@@ -237,7 +237,7 @@
       "kind": "reel",
       "episode": "concept-teta-warak-enab-standoff",
       "slot": "2026-11-01T18:00:00+02:00",
-      "status": "approved",
+      "status": "posted",
       "redos": 0,
       "message_id": "1565713224450572288",
       "run_id": "41059913770",
@@ -246,7 +246,10 @@
       "title": "When Teta Refuses to Let a Real Gangsta Leave Full",
       "soft_idx": 0,
       "tease": "",
-      "no": null
+      "no": null,
+      "instagram": "https://www.instagram.com/reel/DfNHawUHdyL/",
+      "youtube": "https://youtube.com/shorts/ea93kiVv4fk",
+      "posted_at": "2026-11-01T18:02:06.340298+02:00"
     },
     "2026-11-01-clip2": {
       "kind": "reel",
