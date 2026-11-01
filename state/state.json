@@ -267,7 +267,7 @@
       "kind": "reel",
       "episode": "concept-the-bill-standoff-2026-11-01",
       "slot": "2026-11-06T18:00:00+02:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1566352498300555304",
       "run_id": "41284031394",
@@ -282,7 +282,7 @@
       "kind": "reel",
       "episode": "concept-the-rakweh-volcano-2026-11-01",
       "slot": "2026-11-07T18:00:00+02:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1566353144059920414",
       "run_id": "41284031394",
@@ -310,7 +310,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1566353905338683433",
+  "discord_last": "1566361473444221009",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-01",
