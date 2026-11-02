@@ -310,14 +310,29 @@
       "soft_idx": 9,
       "tease": "New clip every Mon, Wed, Fri & Sat 🐰 Follow for more.",
       "no": null
+    },
+    "concept-the-shibshib-shadowbox-2026-11-02-1739": {
+      "kind": "reel",
+      "episode": "concept-the-shibshib-shadowbox",
+      "slot": "2026-11-03T18:00:00+02:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1566839958008897542",
+      "run_id": "41473407980",
+      "relpath": "concept-the-shibshib-shadowbox-2026-11-02-1739/reel_v2.mp4",
+      "caption": "Ain’t no street gang scarier than Teta reaching for that shibshib 🩴💀\nDid your grandma have sniper aim too?\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "Lil Rappit was tough until Teta grabbed the shibshib",
+      "soft_idx": 0,
+      "tease": "",
+      "no": null
     }
   },
   "tg_offset": 0,
   "discord_last": "1566482836209405986",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
-    "date": "2026-11-01",
-    "count": 8
+    "date": "2026-11-02",
+    "count": 2
   },
   "episode_no": 6,
   "custom_episodes": [
@@ -456,6 +471,31 @@
       "demand": "",
       "bad_deal": "",
       "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers"
+    },
+    {
+      "id": "concept-the-shibshib-shadowbox",
+      "title": "The Shibshib Shadowbox",
+      "relatable_truth": "The universal Arab fear of the grandmother's house slipper (shibshib) instantly humbling anyone.",
+      "joke": "Rappit acts tough by shadowboxing aggressively into the camera, unaware that Teta is standing right behind him holding a real slipper.",
+      "cast": [
+        "teta"
+      ],
+      "look": "Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit wearing ONE pair of round gold glasses on her nose, hair in a neat bun, floral house dress, beige cardigan and slippers",
+      "setting": "A cozy traditional Lebanese living room in the afternoon, featuring floral wallpaper, a wooden side table with a crocheted doily, and warm sunlight filtering through lace curtains.",
+      "frame": "Medium shot. Lil Rappit stands in the foreground, facing the camera with his fists raised. In the slightly out-of-focus background doorway directly behind Rappit, Teta stands perfectly still holding one beige slipper raised above her head.",
+      "action": "[0-3s] Lil Rappit intensely shadowboxes directly into the lens, throwing fast, aggressive punches to show off his tough-guy persona. [3-7s] He performs a dramatic, exaggerated duck-and-weave move to dodge an imaginary hit, which causes him to glance back over his shoulder. [7-10s] He spots Teta, who steps sharply into focus with the beige slipper raised high; Rappit freezes mid-punch, slowly turns back to the camera, and instantly shrinks into a cowering posture.",
+      "sound": "A heavy, tough Arabic trap beat plays, abruptly cutting off with a loud record scratch when Teta steps into focus, followed by total silence and a loud gulp sound from Rappit.",
+      "caption_brief": "Acting tough until Teta's shibshib makes a guest appearance.",
+      "uses_carrot": false,
+      "story_summary": "Rappit shadowboxes aggressively into the camera but instantly cowers when he spots Teta holding a real slipper right behind him.",
+      "cliffhanger": "",
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "with_abu": false,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit wearing ONE pair of round gold glasses on her nose, hair in a neat bun, floral house dress, beige cardigan and slippers"
     }
   ],
   "concepts_done": [
@@ -463,7 +503,8 @@
     "The Cookie Tin: Rappit treats a butter cookie tin like a heavily guarded treasure, but when he dramatically opens it to find sewing supplies, his tough-guy pers",
     "The Plastic Sofa: Rappit confidently sits on the couch with exaggerated swagger, but the frictionless plastic wrap instantly slides him off the edge and out of ",
     "The Restaurant Bill: Rappit and Abu Lakma intensely stack their hands on the bill to claim it, but Teta slides it out from under them, leaving the tough guys wi",
-    "The Rakweh Volcano: Rappit intensely guards the coffee like a VIP bodyguard, but the split second he looks away, it instantly boils over and leaves him in deadp"
+    "The Rakweh Volcano: Rappit intensely guards the coffee like a VIP bodyguard, but the split second he looks away, it instantly boils over and leaves him in deadp",
+    "The Shibshib Shadowbox: Rappit acts tough by shadowboxing aggressively into the camera, unaware that Teta is standing right behind him holding a real slipper."
   ],
   "brief": {
     "date": "2026-11-01",
@@ -495,6 +536,12 @@
       "date": "2026-11-07",
       "title": "The Rakweh Volcano",
       "summary": "Rappit fiercely guards a boiling coffee pot, but the second he looks away to adjust his shades, it spills over and leaves him completely defeated.",
+      "cliffhanger": ""
+    },
+    {
+      "date": "2026-11-02",
+      "title": "The Shibshib Shadowbox",
+      "summary": "Rappit shadowboxes aggressively into the camera but instantly cowers when he spots Teta holding a real slipper right behind him.",
       "cliffhanger": ""
     }
   ]
