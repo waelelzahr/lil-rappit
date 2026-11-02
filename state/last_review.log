@@ -1,0 +1,65 @@
+[18:46:30] idea picked: Abu Fahd presents a single carrot to Lola like a long-stemmed rose while twirling his moustache; Rappit dramatically intercepts, threatens him with 'Wlak ba33id idak 3an Lola...', and crunches it loudly while maintaining intense eye contact.
+[18:47:05] editor: {'relatable': 9, 'funny': 8, 'clear': 7, 'feasible': 4, 'premise': 10} rewrite
+[18:47:27] concept: The Flirting Fox [lola, abu_fahd] - Rappit delivers a serious threat to his rival, but instantly ruins his tough-guy image by snatching and eating the 'romantic gift' in one bite.
+[18:48:01] image ok (gemini-nano-banana-2.1) -> frame1_v1.png
+[18:48:10] frame check: ["Missing Abu Fahd's prayer beads", "Missing Abu Fahd's mustache", 'Sign contains text/letters (NO NO)']
+[18:48:35] image ok (gemini-nano-banana-2.1) -> frame1_v2.png
+[18:48:54] frame check: ['Abu Fahd has sunglasses on his eyes instead of on his head.', 'A Coca-Cola style logo is visible on the red sign in the background.']
+[18:49:27] image ok (gemini-nano-banana-2.1) -> frame1_v3.png
+[18:49:35] frame check: ok
+[18:52:08] message 1566855179347824671 failed: Error code: 400 - {'error': {'message': 'Request blocked due to prohibited content guidelines. Please modify your input and retry.', 'code': 'prohibited_content'}}
+Traceback (most recent call last):
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_gaos/interactions.py", line 646, in create
+    return _speakeasy_parse_response(http_res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_gaos/interactions.py", line 562, in _speakeasy_parse_response
+    raise errors.CreateInteractionClientError(
+google.genai._gaos.errors.createinteraction.CreateInteractionClientError: Request blocked due to prohibited content guidelines. Please modify your input and retry.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/gen.py", line 248, in _omni_call
+    inter = client().interactions.create(
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_gaos/google_genai.py", line 376, in create
+    response = send_once()
+               ^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_gaos/google_genai.py", line 431, in _send_create_once
+    return wrap_sdk_call(
+           ^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_gaos/lib/compat_errors.py", line 369, in wrap_sdk_call
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_gaos/interactions.py", line 648, in create
+    response_helpers.raise_parse_error(
+  File "/opt/hostedtoolcache/Python/3.12.15/x64/lib/python3.12/site-packages/google/genai/_gaos/utils/response_helpers.py", line 94, in raise_parse_error
+    raise parse_error from exc
+google.genai._gaos.lib.compat_errors.BadRequestError: Error code: 400 - {'error': {'message': 'Request blocked due to prohibited content guidelines. Please modify your input and retry.', 'code': 'prohibited_content'}}
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/runner/work/lil-rappit/lil-rappit/scripts/review.py", line 199, in main
+    make_from_pitch(state, int(text.strip()), m["id"])
+  File "/home/runner/work/lil-rappit/lil-rappit/scripts/review.py", line 100, in make_from_pitch
+    pipeline.make(state, ep["id"], "reel", ep, next_slot(at), 0, at)
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/pipeline.py", line 31, in make
+    built = items.build(item_id, kind, ep, soft_idx=soft_idx, no=no)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/items.py", line 163, in build
+    return build_concept(item_id, ep, note)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/items.py", line 124, in build_concept
+    media = make_video("", d / "reel.mp4")
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/items.py", line 121, in make_video
+    return gen.video_two_part(p1 + extra_note, p2 + extra_note, frame, out, style=c["style"])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/gen.py", line 325, in video_two_part
+    inter2 = _omni_call([{"type": "text", "text": full2}], seconds, prev_id=inter.id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/runner/work/lil-rappit/lil-rappit/rappit/gen.py", line 258, in _omni_call
+    raise ContentBlocked(str(e)[:300]) from e
+rappit.gen.ContentBlocked: Error code: 400 - {'error': {'message': 'Request blocked due to prohibited content guidelines. Please modify your input and retry.', 'code': 'prohibited_content'}}
+
