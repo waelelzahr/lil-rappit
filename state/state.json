@@ -340,6 +340,21 @@
       "soft_idx": 0,
       "tease": "",
       "no": null
+    },
+    "concept-the-flirting-fox-2026-11-02-1902": {
+      "kind": "reel",
+      "episode": "concept-the-flirting-fox-2026-11-02-1902",
+      "slot": "2026-11-03T18:00:00+02:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1566862404883849306",
+      "run_id": "41486309373",
+      "relpath": "concept-the-flirting-fox-2026-11-02-1902/reel_cap.mp4",
+      "caption": "Bro brought romance to the block, so I turned his gift into an appetizer 🥕😤\nWhat's the fastest way to ruin a romantic moment?\nTo be continued: Will Abu Fahd try again? 👀 Follow so you don't miss it.\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "Abu Fahd Thought He Was Smooth Until I Ate His Gift",
+      "soft_idx": 0,
+      "tease": "To be continued: Will Abu Fahd try again? 👀 Follow so you don't miss it.",
+      "no": null
     }
   },
   "tg_offset": 0,
@@ -347,7 +362,7 @@
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-02",
-    "count": 4
+    "count": 8
   },
   "episode_no": 6,
   "custom_episodes": [
@@ -537,6 +552,72 @@
       "bad_deal": "",
       "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers",
       "qa": []
+    },
+    {
+      "id": "concept-the-flirting-fox-2026-11-02-1902",
+      "title": "The Flirting Fox",
+      "relatable_truth": "The smooth village charmer instantly loses his cool when confronted by the local tough guy.",
+      "joke": "Abu Fahd tries to seduce Lola with a romantic carrot, but Rappit intercepts the gift and eats it himself while maintaining eye contact.",
+      "cast": [
+        "lola",
+        "abu_fahd"
+      ],
+      "look": "Lola, Rappit's glamorous girlfriend: an original white rabbit with long lashes, glossy pink lipstick, gold hoop earrings, a fluffy pink faux-fur coat and a tiny designer handbag. Abu Fahd, an original sly middle-aged red fox (realistic fur, not cartoon): a bit chubby, a big bushy grey-flecked moustache, sunglasses pushed up on his head, an unbuttoned burgundy paisley silk shirt, a gold medallion, black trousers, shiny pointed loafers, twirling a set of car keys on one finger",
+      "setting": "Outside the village dekkene (minimarket) on a sunny afternoon, with a faded Pepsi sign and stacked plastic crates in the background.",
+      "frame": "Abu Fahd stands on the left holding 1 single carrot out like a rose. Lola stands on the right holding 1 tiny designer handbag. Rappit stands right behind Lola, staring sternly.",
+      "action_1": "Abu Fahd twirls his moustache and leans in to offer the carrot to Lola. Lola bats her long lashes. Rappit quickly steps right between them, shielding Lola, and points firmly at Abu Fahd.",
+      "action_2": "Abu Fahd freezes in shock. Rappit leans forward, bites the carrot directly out of Abu Fahd's hand, and chews loudly while maintaining an unblinking deadpan stare.",
+      "sound": "Upbeat acoustic Lebanese dabke rhythm that abruptly stops with a record scratch when Rappit steps in, followed by comically loud crunching sounds.",
+      "dialogue": [
+        {
+          "speaker": "Abu Fahd",
+          "arabic": "تفضلي يا قمر، أحلى جزرة لأحلى لولا.",
+          "arabizi": "Tfaddali ya amar, ahla jazra la ahla Lola.",
+          "english": "Here beautiful, the best carrot for Lola.",
+          "part": 1,
+          "at": "0-3s"
+        },
+        {
+          "speaker": "Lola",
+          "arabic": "يا ريت الكل متلك يا أبو فهد.",
+          "arabizi": "Ya reyt el kel metlak ya Abu Fahd.",
+          "english": "I wish everyone was like you Abu Fahd.",
+          "part": 1,
+          "at": "3-6s"
+        },
+        {
+          "speaker": "Rappit",
+          "arabic": "ولك بعد عن لولا، الضيعة كلها بتعرفني!",
+          "arabizi": "Wlak ba33id 3an Lola, el day3a kella bta3rifni!",
+          "english": "Back off Lola, the whole village knows me!",
+          "part": 1,
+          "at": "6-10s"
+        },
+        {
+          "speaker": "Abu Fahd",
+          "arabic": "ولو يا معلم، عم نمزح!",
+          "arabizi": "Walaw ya m3allem, 3am nemzah!",
+          "english": "Come on boss, just joking!",
+          "part": 2,
+          "at": "10-13s"
+        }
+      ],
+      "caption_brief": "Abu Fahd thought he was smooth, until Rappit ate his romantic gift in one bite.",
+      "uses_carrot": true,
+      "story_summary": "Abu Fahd flirts with Lola by offering her a carrot, but Rappit intercepts and eats it to assert dominance.",
+      "cliffhanger": "Will Abu Fahd try again?",
+      "concept": true,
+      "seconds": 20,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "action": "[0-10s] Abu Fahd twirls his moustache and leans in to offer the carrot to Lola. Lola bats her long lashes. Rappit quickly steps right between them, shielding Lola, and points firmly at Abu Fahd. [10-20s] Abu Fahd freezes in shock. Rappit leans forward, bites the carrot directly out of Abu Fahd's hand, and chews loudly while maintaining an unblinking deadpan stare.",
+      "with_abu": false,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Lola, Rappit's glamorous girlfriend: an original white rabbit with long lashes, glossy pink lipstick, gold hoop earrings, a fluffy pink faux-fur coat and a tiny designer handbag. Abu Fahd, an original sly middle-aged red fox (realistic fur, not cartoon): a bit chubby, a big bushy grey-flecked moustache, sunglasses pushed up on his head, an unbuttoned burgundy paisley silk shirt, a gold medallion, black trousers, shiny pointed loafers, twirling a set of car keys on one finger",
+      "qa": [
+        "Abu Fahd transforms from an anthropomorphic fox in the first frame into a human man in the last frame.",
+        "Lil Rappit holds the carrot with his own paw instead of biting it out of Abu Fahd's hand as described."
+      ]
     }
   ],
   "concepts_done": [
@@ -547,7 +628,8 @@
     "The Rakweh Volcano: Rappit intensely guards the coffee like a VIP bodyguard, but the split second he looks away, it instantly boils over and leaves him in deadp",
     "The Shibshib Shadowbox: Rappit acts tough by shadowboxing aggressively into the camera, unaware that Teta is standing right behind him holding a real slipper.",
     "The Heavy Laugher: Rappit delivers a joke with dead-serious intensity, but Abu Lakma finds it so funny that his enthusiastic back-pat flattens the tiny rabbit f",
-    "The Flirting Fox: Rappit delivers a serious threat to his rival, but instantly ruins his tough-guy image by snatching and eating the 'romantic gift' in one bite"
+    "The Flirting Fox: Rappit delivers a serious threat to his rival, but instantly ruins his tough-guy image by snatching and eating the 'romantic gift' in one bite",
+    "The Flirting Fox: Abu Fahd tries to seduce Lola with a romantic carrot, but Rappit intercepts the gift and eats it himself while maintaining eye contact."
   ],
   "brief": {
     "date": "2026-11-01",
@@ -598,6 +680,12 @@
       "title": "The Flirting Fox",
       "summary": "Abu Fahd tries to flirt with Lola by gifting her a carrot, prompting Rappit to threaten him and devour the carrot himself.",
       "cliffhanger": "Abu Fahd's next move?"
+    },
+    {
+      "date": "2026-11-02",
+      "title": "The Flirting Fox",
+      "summary": "Abu Fahd flirts with Lola by offering her a carrot, but Rappit intercepts and eats it to assert dominance.",
+      "cliffhanger": "Will Abu Fahd try again?"
     }
   ],
   "auto_pitch_at": "2026-11-02T18:40:52.701532+02:00"
