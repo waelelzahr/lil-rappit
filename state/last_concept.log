@@ -1,10 +1,8 @@
-[17:38:55] idea picked: Rappit intensely mimes taking off an imaginary house slipper and waving it to act out a physical joke for Abu Lakma, but Teta is standing right behind him silently raising one real beige slipper.
-[17:39:20] editor: {'relatable': 10, 'funny': 8, 'clear': 6, 'feasible': 3} rewrite
-[17:39:38] concept: The Shibshib Shadowbox [teta] - Rappit acts tough by shadowboxing aggressively into the camera, unaware that Teta is standing right behind him holding a real slipper.
-[17:40:02] image ok (gemini-nano-banana-2.1) -> frame1_v1.png
-[17:40:08] frame check: ok
-[17:40:59] video ok -> reel.mp4 (10s, 51s)
-[17:41:24] video check: ["Teta's right ear has a chunk missing in the last frame, incorrectly adopting a trait from Lil Rappit's design.", "Lil Rappit's sunglasses change from opaque black to transparent in the final frame, revealing his eyes."] punchline_visible=True
-[17:42:10] video ok -> reel_v2.mp4 (10s, 46s)
-[17:42:28] video check: ['In the final frame, Teta is no longer holding the slipper; her right arm is resting down at her side.', "The slipper is floating in mid-air behind Lil Rappit's ear in the last frame."] punchline_visible=False
-[17:42:35] built concept-the-shibshib-shadowbox-2026-11-02-1739 (concept concept-the-shibshib-shadowbox)
+[17:45:40] idea picked: Setup (0-3s): Rappit and Abu Lakma sit on one wicker sofa, where Rappit deadpans a serious story with intense hand gestures. Escalation (3-7s): Rappit delivers the visual punchline of his joke with cold-blooded gravity, pausing for the reaction. Payoff (7-10s): Abu Lakma bursts into silent, shaking laughter and enthusiastically pats Rappit's back, sending the tiny rabbit sliding entirely out of the frame while the bulldog stares into the camera.
+[17:46:11] editor: {'relatable': 9, 'funny': 9, 'clear': 10, 'feasible': 6, 'premise': 10} rewrite
+[17:46:26] concept: The Heavy Laugher [abu_lakma] - Rappit delivers a joke with dead-serious intensity, but Abu Lakma finds it so funny that his enthusiastic back-pat flattens the tiny rabbit face-down into the sofa.
+[17:46:48] image ok (gemini-nano-banana-2.1) -> frame1_v1.png
+[17:46:58] frame check: ok
+[17:47:48] video ok -> reel.mp4 (10s, 50s)
+[17:48:11] video check: ok punchline_visible=True
+[17:48:18] built concept-the-heavy-laugher-2026-11-02-1746 (concept concept-the-heavy-laugher)

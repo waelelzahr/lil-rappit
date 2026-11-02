@@ -325,6 +325,21 @@
       "soft_idx": 0,
       "tease": "",
       "no": null
+    },
+    "concept-the-heavy-laugher-2026-11-02-1746": {
+      "kind": "reel",
+      "episode": "concept-the-heavy-laugher",
+      "slot": "2026-11-03T18:00:00+02:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1566841398651519126",
+      "run_id": "41474435533",
+      "relpath": "concept-the-heavy-laugher-2026-11-02-1746/reel.mp4",
+      "caption": "I run these streets, but one joke got bro slapping me across the whole room 😭\nWho in your crew laughs like an absolute wrecking ball?\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "Surviving My Best Friend's Aggressive Laugh",
+      "soft_idx": 0,
+      "tease": "",
+      "no": null
     }
   },
   "tg_offset": 0,
@@ -332,7 +347,7 @@
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-02",
-    "count": 2
+    "count": 3
   },
   "episode_no": 6,
   "custom_episodes": [
@@ -496,6 +511,32 @@
       "demand": "",
       "bad_deal": "",
       "opponent": "Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit wearing ONE pair of round gold glasses on her nose, hair in a neat bun, floral house dress, beige cardigan and slippers"
+    },
+    {
+      "id": "concept-the-heavy-laugher",
+      "title": "The Heavy Laugher",
+      "relatable_truth": "That one friend who gets way too physical when they laugh at a joke.",
+      "joke": "Rappit delivers a joke with dead-serious intensity, but Abu Lakma finds it so funny that his enthusiastic back-pat flattens the tiny rabbit face-down into the sofa.",
+      "cast": [
+        "abu_lakma"
+      ],
+      "look": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers",
+      "setting": "A sunlit Lebanese balcony in the late afternoon, featuring cracked white tiles, a peeling green wrought-iron railing, and a blooming purple bougainvillea plant in the background.",
+      "frame": "Medium-wide shot of Rappit and Abu Lakma sitting side-by-side on one beige wicker sofa with thick cushions. Rappit is on the left, hands raised mid-gesture. Abu Lakma is on the right, leaning in closely. One small round glass table sits in front of them with one empty white coffee cup on it.",
+      "action": "[0-3s] SETUP: Rappit tells a story with intense, deliberate hand gestures, maintaining a completely deadpan and serious tough-guy expression. Abu Lakma leans in, listening intently with a furrowed brow. [3-7s] ESCALATION: Rappit delivers the final punchline with a cold, dramatic point of his finger, freezing in his intimidating pose to wait for the reaction. [7-10s] PAYOFF: Abu Lakma suddenly bursts into silent, shaking laughter and enthusiastically pats Rappit on the back. The heavy bulldog paw instantly flattens the tiny rabbit face-down into the deep sofa cushions. Abu Lakma stops laughing, looks down at his flattened friend, and stares blankly into the camera.",
+      "sound": "Low hum of distant Beirut street traffic. A dramatic, slow oud sting builds during the story, abruptly interrupted by a heavy 'THUD' of Abu Lakma's paw and a muffled squeak, ending in dead silence.",
+      "caption_brief": "When your best friend is an aggressive laugher and you are built like a tiny rabbit.",
+      "uses_carrot": false,
+      "story_summary": "Rappit delivers a dead-serious joke to Abu Lakma, whose aggressive laughter results in him patting Rappit face-down into the sofa cushions.",
+      "cliffhanger": "",
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "with_abu": true,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers",
+      "qa": []
     }
   ],
   "concepts_done": [
@@ -504,7 +545,8 @@
     "The Plastic Sofa: Rappit confidently sits on the couch with exaggerated swagger, but the frictionless plastic wrap instantly slides him off the edge and out of ",
     "The Restaurant Bill: Rappit and Abu Lakma intensely stack their hands on the bill to claim it, but Teta slides it out from under them, leaving the tough guys wi",
     "The Rakweh Volcano: Rappit intensely guards the coffee like a VIP bodyguard, but the split second he looks away, it instantly boils over and leaves him in deadp",
-    "The Shibshib Shadowbox: Rappit acts tough by shadowboxing aggressively into the camera, unaware that Teta is standing right behind him holding a real slipper."
+    "The Shibshib Shadowbox: Rappit acts tough by shadowboxing aggressively into the camera, unaware that Teta is standing right behind him holding a real slipper.",
+    "The Heavy Laugher: Rappit delivers a joke with dead-serious intensity, but Abu Lakma finds it so funny that his enthusiastic back-pat flattens the tiny rabbit f"
   ],
   "brief": {
     "date": "2026-11-01",
@@ -542,6 +584,12 @@
       "date": "2026-11-02",
       "title": "The Shibshib Shadowbox",
       "summary": "Rappit shadowboxes aggressively into the camera but instantly cowers when he spots Teta holding a real slipper right behind him.",
+      "cliffhanger": ""
+    },
+    {
+      "date": "2026-11-02",
+      "title": "The Heavy Laugher",
+      "summary": "Rappit delivers a dead-serious joke to Abu Lakma, whose aggressive laughter results in him patting Rappit face-down into the sofa cushions.",
       "cliffhanger": ""
     }
   ]
