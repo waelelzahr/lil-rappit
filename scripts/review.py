@@ -97,8 +97,8 @@ def make_from_pitch(state: dict, n: int, reply_to: str):
     day = now + timedelta(days=1) if now.hour >= 16 else now
     at = f"{day:%A} 18:00"
     from rappit.common import next_slot
-    pipeline.make(state, ep["id"], "reel", ep, next_slot(at), 0, at)
     state.pop("pitch", None)
+    pipeline.make_concept_safely(state, ep, next_slot(at), at)
 
 
 def add_idea(state: dict, idea: str, reply_to: str):

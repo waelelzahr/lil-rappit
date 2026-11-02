@@ -75,6 +75,28 @@ def send_script(built: dict, msg_id: str) -> None:
         log(f"could not post script: {e}")
 
 
+def make_concept_safely(state: dict, ep: dict, slot: str, label_when: str) -> dict:
+    """Make a concept clip; if the video filter blocks it, rewrite the same idea in clearly
+    harmless wording once and try again."""
+    from . import concepts, gen
+    try:
+        make(state, ep["id"], "reel", ep, slot, 0, label_when)
+        return ep
+    except gen.ContentBlocked as e:
+        log(f"blocked by the video filter, rewriting gently: {e}")
+        discord.send_text(f"🛡️ Google's video filter refused **{ep.get('title')}**; rewriting it "
+                          "in gentler wording and trying again…")
+        state["custom_episodes"] = [x for x in state.get("custom_episodes", []) if x is not ep]
+        ep2 = concepts.write(state, hint=f"{ep.get('title')}: {ep.get('joke')}", note=(
+            "The video model's safety filter blocked the previous version. Keep the same joke but "
+            "make every action gentle and friendly (no aggression, no threats, no grabbing, no "
+            "religious items), and keep the dialogue playful."))
+        ep2["id"] = ep["id"] + "-b"
+        state.setdefault("custom_episodes", []).append(ep2)
+        make(state, ep2["id"], "reel", ep2, slot, 0, label_when)
+        return ep2
+
+
 def run_queued(state: dict, save) -> None:
     """Build queued items whose time has come (called by the 30-min job)."""
     now = datetime.now(TZ)

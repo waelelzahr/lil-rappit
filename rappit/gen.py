@@ -162,7 +162,12 @@ def _image_config(aspect: str, model: str):
 
 _SOFTEN = {"violently": "suddenly", "violent": "sudden", "slaps": "plops", "slap": "plop",
            "smash": "drop", "smashes": "drops", "attack": "move", "kill": "end", "punch": "push",
-           "threatening": "serious", "blood": "red"}
+           "threatening": "serious", "blood": "red", "aggressively": "firmly",
+           "aggressive": "stern", "threatens": "warns", "threaten": "warn", "threat": "warning",
+           "glaring": "staring", "glares": "stares", "snatches": "grabs", "snatch": "grab",
+           "shoves": "pops", "shove": "pop", "fight": "argument", "fighting": "arguing",
+           "punches": "pushes", "kills": "ends", "dies": "faints", "dead": "totally",
+           "prayer beads": "worry beads", "masbaha": "worry beads"}
 
 
 def soften(text: str) -> str:

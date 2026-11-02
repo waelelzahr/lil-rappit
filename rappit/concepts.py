@@ -20,7 +20,7 @@ TETA = ("Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit weari
 ABU_FAHD = ("Abu Fahd, an original sly middle-aged red fox (realistic fur, not cartoon): a bit "
             "chubby, a big bushy grey-flecked moustache, sunglasses pushed up on his head, an "
             "unbuttoned burgundy paisley silk shirt, a gold medallion, black trousers, shiny "
-            "pointed loafers, amber prayer beads (masbaha) in one paw")
+            "pointed loafers, twirling a set of car keys on one finger")
 UMM_LAKMA = ("Umm Lakma, Abu Lakma's wife: a stout no-nonsense bulldog with curlers in her hair, "
              "a purple house robe and pink fluffy slippers")
 ABU_SLEIMAN = ("Abu Sleiman, the village mukhtar: an old white-bearded goat with a red tarboush, "
@@ -85,7 +85,9 @@ WHAT MAKES IT FUNNY:
 NEVER: crime coding (stashes, deals, money exchanges, weapons, police); text on screen or
 "Part X" in the video; smoking or argileh; alcohol; religion; politics; real people or
 celebrities; real songs (describe the music style); romance beyond PG flirting and jealousy;
-words like violent, slap, smash, attack, threatening, blood. Carrots in at most 1 of 3 clips.
+words like violent, aggressive, threaten, glare, snatch, shove, fight, slap, smash, attack,
+blood, dead (the video filter blocks them; say firmly, warns, stares, grabs, pops, argues).
+Carrots in at most 1 of 3 clips.
 """
 
 IDEAS = """

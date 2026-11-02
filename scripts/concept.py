@@ -34,7 +34,8 @@ def main():
     seed_abu(state)
     at = os.environ.get("SLOT", "").strip() or "Saturday 18:00"
     item_id = f"{cid}-{datetime.now(TZ):%Y-%m-%d-%H%M}"
-    pipeline.make(state, item_id, "reel", ep, next_slot(at), 0, at)
+    ep["id"] = item_id
+    pipeline.make_concept_safely(state, ep, next_slot(at), at)
     save_state(state)
 
 
