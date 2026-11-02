@@ -343,7 +343,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1566841560132493383",
+  "discord_last": "1566854801499750433",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-02",
@@ -592,5 +592,51 @@
       "summary": "Rappit delivers a dead-serious joke to Abu Lakma, whose aggressive laughter results in him patting Rappit face-down into the sofa cushions.",
       "cliffhanger": ""
     }
-  ]
+  ],
+  "pitch": {
+    "message_id": "1566854801499750433",
+    "ideas": [
+      {
+        "title": "The Shared Water Tank",
+        "cast": "Lil Rappit, Abu Lakma, Abu Sleiman",
+        "setup": "On the roof, Rappit stands guard over one tin water tank like a VIP bouncer, boasting to Abu Sleiman that he controls the village water supply.",
+        "punchline": "Abu Lakma waddles out from behind the tank with a massive water-filled belly and burps loudly just as the tap runs dry, leaving Rappit staring silently into the camera.",
+        "rappit_line": "Ana l mas2oul 3an el may hon ya mukhtar, ma hada byeshrab bala 2emdayti!",
+        "english": "I am in charge of the water here Mukhtar, nobody drinks without my signature!"
+      },
+      {
+        "title": "The Olive Harvest",
+        "cast": "Lil Rappit, Teta, Abu Lakma",
+        "setup": "Sitting by one plastic tarp, Rappit tries to impress Teta by aggressively karate-chopping a pile of green olives, while Abu Lakma quietly eats them whole.",
+        "punchline": "Teta calmly raises one plastic slipper in the air, and Rappit instantly drops his tough-guy act to frantically sort the olives with his tiny paws.",
+        "rappit_line": "Ya Teta, hal zaytounat baddon 2ouweh w haybeh, msh 7ayalla shoghol!",
+        "english": "Teta, these olives need strength and prestige, not just any work!"
+      },
+      {
+        "title": "The Flirting Fox",
+        "cast": "Lil Rappit, Lola, Abu Fahd",
+        "setup": "At the dekkene, Abu Fahd slyly offers one fresh carrot to Lola while twisting his moustache, prompting Rappit to step between them to defend his territory.",
+        "punchline": "Rappit delivers a very serious warning to Abu Fahd, but instinctively snatches the offered carrot from the fox's paw and eats it in one bite, maintaining a deadpan stare while chewing.",
+        "rappit_line": "Wlak ba33id idak 3an Lola ya Abu Fahd, el day3a kella bta3rifni!",
+        "english": "Keep your hand away from Lola, Abu Fahd, the whole village knows me!"
+      },
+      {
+        "title": "The Moteur Cord",
+        "cast": "Lil Rappit, Abu Lakma, Umm Lakma",
+        "setup": "During a village power cut, Rappit confidently commands Abu Lakma to pull the cord on one red generator to save the evening football match.",
+        "punchline": "Abu Lakma pulls so hard that the entire cord rips out of the machine; when Umm Lakma yells angrily from the window, Rappit silently points right at Abu Lakma and slowly backs away.",
+        "rappit_line": "Es7ab el 7ableh w dawweh el moteur, khalli el jiran tshouf el m3allem!",
+        "english": "Pull the rope and start the generator, let the neighbors see the boss!"
+      },
+      {
+        "title": "The Wasta Parking",
+        "cast": "Lil Rappit, Lola, Umm Lakma",
+        "setup": "In the village square, Rappit fiercely guards one white plastic chair, using it to reserve a prime parking spot for Lola while acting like he owns the streets.",
+        "punchline": "Umm Lakma waddles over, completely ignores Rappit's shouting, and comfortably sits on the plastic chair; Rappit instantly pretends he was just keeping the seat warm for her.",
+        "rappit_line": "Wlak mamnou3 el w2ouf hon, hal mahal ma7jouz la sayaret Lola!",
+        "english": "Parking is forbidden here, this spot is reserved for Lola's car!"
+      }
+    ]
+  },
+  "auto_pitch_at": "2026-11-02T18:40:52.701532+02:00"
 }
