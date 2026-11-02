@@ -21,7 +21,27 @@ def discord(path: str, params: dict | None = None):
         return json.loads(r.read() or b"null")
 
 
+def other_runs_busy() -> bool:
+    """True if another workflow run of this repo is running or waiting (then we step aside, so
+    we never bump a waiting video job out of the queue)."""
+    repo, me = os.environ.get("GITHUB_REPOSITORY"), os.environ.get("GITHUB_RUN_ID")
+    if not repo:
+        return False
+    for status in ("in_progress", "queued", "waiting", "pending"):
+        req = urllib.request.Request(
+            f"https://api.github.com/repos/{repo}/actions/runs?status={status}&per_page=20",
+            headers={"Authorization": f"Bearer {os.environ['GITHUB_TOKEN']}",
+                     "Accept": "application/vnd.github+json", "User-Agent": "rappit"})
+        with urllib.request.urlopen(req, timeout=30) as r:
+            runs = json.loads(r.read()).get("workflow_runs", [])
+        if any(str(x["id"]) != me for x in runs):
+            return True
+    return False
+
+
 def reasons() -> list[str]:
+    if other_runs_busy():
+        return []  # try again in 5 minutes
     state = json.loads((ROOT / "state" / "state.json").read_text(encoding="utf-8"))
     now = datetime.now(timezone.utc)
     if now.hour == 9 and now.minute < 5:  # one full run a day (token reminders, housekeeping)
