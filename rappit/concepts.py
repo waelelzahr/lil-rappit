@@ -17,8 +17,10 @@ LOLA = ("Lola, Rappit's glamorous girlfriend: an original white rabbit with long
 TETA = ("Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit wearing ONE pair of "
         "round gold glasses on her nose, hair in a neat bun, floral house dress, beige cardigan "
         "and slippers")
-ABU_FAHD = ("Abu Fahd, a sly smooth-talking red fox: slicked-back fur, thin moustache, open-collar "
-            "white shirt with a gold medallion, beige linen trousers, prayer beads (masbaha) in one paw")
+ABU_FAHD = ("Abu Fahd, an original sly middle-aged red fox (realistic fur, not cartoon): a bit "
+            "chubby, a big bushy grey-flecked moustache, sunglasses pushed up on his head, an "
+            "unbuttoned burgundy paisley silk shirt, a gold medallion, black trousers, shiny "
+            "pointed loafers, amber prayer beads (masbaha) in one paw")
 UMM_LAKMA = ("Umm Lakma, Abu Lakma's wife: a stout no-nonsense bulldog with curlers in her hair, "
              "a purple house robe and pink fluffy slippers")
 ABU_SLEIMAN = ("Abu Sleiman, the village mukhtar: an old white-bearded goat with a red tarboush, "
