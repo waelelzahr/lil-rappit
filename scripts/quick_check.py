@@ -34,8 +34,10 @@ def other_runs_busy() -> bool:
                      "Accept": "application/vnd.github+json", "User-Agent": "rappit"})
         with urllib.request.urlopen(req, timeout=30) as r:
             runs = json.loads(r.read()).get("workflow_runs", [])
-        if any(str(x["id"]) != me for x in runs):
-            return True
+        now = datetime.now(timezone.utc)
+        if any(str(x["id"]) != me and (now - datetime.fromisoformat(
+                x["created_at"].replace("Z", "+00:00"))).total_seconds() < 2 * 3600 for x in runs):
+            return True  # ignore stale runs stuck for hours
     return False
 
 
