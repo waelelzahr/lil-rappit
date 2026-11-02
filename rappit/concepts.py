@@ -44,9 +44,8 @@ STYLE = ("Cinematic photoreal 3D, natural motivated lighting that fits the setti
          "subtitles, no captions, no watermarks, no smoking, no weapons.")
 
 RULES = f"""
-You are the head writer of "Lil Rappit", a comedy series of short clips (about 20 seconds: two
-10-second halves in one continuous scene) for Instagram Reels and YouTube Shorts, for a Lebanese
-audience first. Think of the hit Iraqi AI series "Abu Saber & Abu Sarhan" (farm animals bickering
+You are the head writer of "Lil Rappit", a comedy series of short clips (exactly 10 seconds, one
+continuous shot) for Instagram Reels and YouTube Shorts, for a Lebanese audience first. Think of the hit Iraqi AI series "Abu Saber & Abu Sarhan" (farm animals bickering
 in heavy Iraqi dialect about village gossip, jealousy and small disasters), but Lebanese: a
 village in the Bekaa (vineyards, a farm, stone houses, the village square, the dekkene, the
 church/municipality steps, Sunday lunch at Teta's).
@@ -61,13 +60,16 @@ THE VILLAGE CAST (exact names; keep looks consistent):
 - Abu Fahd: {ABU_FAHD}. The sly charmer who keeps flirting with Lola: Rappit's rival.
 - Teta: {TETA}. Rappit's grandmother; the only one he fears; she always wins.
 - Abu Sleiman: {ABU_SLEIMAN}. The village mukhtar; knows everybody's business, spreads gossip.
-Use 2-3 of them per clip.
+EXACTLY TWO characters on screen per clip (Rappit + one other), no extras, no background crowd.
+Drama continues across clips by pairing different characters (Rappit vs Abu Fahd today, Lola vs
+Rappit next time).
 
 LANGUAGE: everyone speaks natural Lebanese Arabic dialect (village/Bekaa flavour), never formal
 Arabic, never English. Rappit always has lines.
 
 WHAT MAKES IT FUNNY:
-- BICKERING DIALOGUE: 4-6 short lines going back and forth (max ~8 words each): insults with
+- QUICK BACK-AND-FORTH: 2-3 short lines total (max ~8 words each, it must fit in 10 seconds),
+  ending on the punchline line or a reaction: insults with
   love, gossip, accusations, overreactions, threats that are obviously empty, Teta/mom logic,
   "inshallah" meaning no, "wlak", "ya 7aram", "walla", swearing on your mother, wasta, the
   cousin who knows a guy, everybody knows everybody's business.
@@ -79,8 +81,9 @@ WHAT MAKES IT FUNNY:
   someone staring into the camera, or Teta/Umm Lakma shutting everyone up).
 - Drama arcs are welcome (Abu Fahd vs Rappit over Lola, Abu Lakma in trouble at home, a feud
   with the mukhtar): each clip must be funny on its own; it may end with the story open.
-- Simple physical action, one location, max 3 characters on screen, every prop visible from
-  the first frame and named once with its count; each character wears only their own outfit.
+- Simple physical action (mostly two characters talking, like a sitcom two-shot), one location,
+  every prop visible from the first frame and named once with its count; each character wears
+  only their own outfit.
 
 NEVER: crime coding (stashes, deals, money exchanges, weapons, police); text on screen or
 "Part X" in the video; smoking or argileh; alcohol; religion; politics; real people or
@@ -107,10 +110,9 @@ Write the chosen idea as the clip. Return JSON:
  "look": "visual description of any NEW one-off characters (animal characters, clothes, colors), or empty string",
  "setting": "one vivid Lebanese location, time of day, lighting, background details",
  "frame": "the opening still: framing, who stands where, what each holds (every prop that will be used must already be visible)",
- "action_1": "first half [0-10s]: setup and the argument starting; concrete actions and camera",
- "action_2": "second half [10-20s]: escalation and the punchline/reaction at the end; concrete actions",
+ "action": "[0-3s] SETUP ... [3-7s] the exchange ... [7-10s] PUNCHLINE + reaction; concrete actions and camera (mostly a steady two-shot)",
  "sound": "music style (instruments), ambience and sound effects only (dialogue goes in 'dialogue')",
- "dialogue": [{"speaker": "Rappit", "arabic": "the line in Lebanese Arabic, Arabic script", "arabizi": "the same line as Lebanese people write it in Latin letters", "english": "short English translation", "part": 1 or 2, "at": "e.g. 1-3s within that half"}],
+ "dialogue": [{"speaker": "Rappit", "arabic": "the line in Lebanese Arabic, Arabic script", "arabizi": "the same line as Lebanese people write it in Latin letters", "english": "short English translation", "at": "e.g. 1-3s"}],
  "caption_brief": "one sentence: the relatable truth and the joke, for the caption writer",
  "uses_carrot": true or false,
  "story_summary": "one sentence: what happened",
@@ -164,9 +166,10 @@ def write(state: dict, hint: str | None = None, note: str | None = None) -> dict
         log(f"editor pass skipped: {e}")
     c["id"] = "concept-" + re.sub(r"[^a-z0-9-]", "", str(c.get("id", "clip")).lower())[:30]
     c["concept"] = True
-    c["seconds"] = 20
+    c["seconds"] = 10
     c["style"] = STYLE
-    c["action"] = f"[0-10s] {c.get('action_1', '')} [10-20s] {c.get('action_2', '')}".strip()
+    c.pop("action_1", None)
+    c.pop("action_2", None)
     c["cast"] = [k for k in (c.get("cast") or []) if k in CAST]
     c["with_abu"] = "abu_lakma" in c["cast"]
     names = ". ".join(CAST[k] for k in c["cast"])
@@ -178,9 +181,10 @@ def write(state: dict, hint: str | None = None, note: str | None = None) -> dict
     return c
 
 
-PITCH = """Pitch {n} different 20-second village clip ideas. Each needs bickering Lebanese
-dialogue and a real punchline that would make a Lebanese viewer laugh and send it to a friend.
-Vary situations and cast; at least one should continue or start a drama arc.
+PITCH = """Pitch {n} different 10-second village clip ideas, each with exactly two characters
+(Rappit + one other), a quick 2-3 line Lebanese exchange and a real punchline that would make a
+Lebanese viewer laugh and send it to a friend. Vary situations and partners; one may continue
+or start a drama arc.
 Return JSON: {{"ideas": [{{"title": "2-4 words", "cast": "who is in it",
 "setup": "one sentence: the situation", "punchline": "one sentence: what is said/happens",
 "rappit_line": "Rappit's key line in Lebanese (Latin letters)", "english": "its translation"}}]}}"""

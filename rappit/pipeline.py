@@ -82,6 +82,12 @@ def make_concept_safely(state: dict, ep: dict, slot: str, label_when: str) -> di
     try:
         make(state, ep["id"], "reel", ep, slot, 0, label_when)
         return ep
+    except items.QualityFailed as e:
+        log(f"quality check failed, not sending: {e}")
+        discord.send_text(f"🚫 **{ep.get('title')}** didn't pass the quality check twice "
+                          f"({str(e)[:300]}), so I didn't send it. New ideas are on the way.")
+        state.pop("auto_pitch_at", None)  # let the next ideas come right away
+        return ep
     except gen.ContentBlocked as e:
         log(f"blocked by the video filter, rewriting gently: {e}")
         discord.send_text(f"🛡️ Google's video filter refused **{ep.get('title')}**; rewriting it "
@@ -93,7 +99,12 @@ def make_concept_safely(state: dict, ep: dict, slot: str, label_when: str) -> di
             "religious items), and keep the dialogue playful."))
         ep2["id"] = ep["id"] + "-b"
         state.setdefault("custom_episodes", []).append(ep2)
-        make(state, ep2["id"], "reel", ep2, slot, 0, label_when)
+        try:
+            make(state, ep2["id"], "reel", ep2, slot, 0, label_when)
+        except (items.QualityFailed, gen.ContentBlocked) as e2:
+            discord.send_text(f"🚫 **{ep2.get('title')}** still didn't work ({str(e2)[:200]}); "
+                              "skipping it. New ideas are on the way.")
+            state.pop("auto_pitch_at", None)
         return ep2
 
 

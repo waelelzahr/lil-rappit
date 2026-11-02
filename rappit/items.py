@@ -47,6 +47,10 @@ def caption_for(kind: str, ep: dict, note: str | None, deal: str | None = None,
     return {"caption": f"{data['caption'].strip()}\n\n{tags}", "title": data["title"].strip()}
 
 
+class QualityFailed(RuntimeError):
+    """Both video takes failed the checker; don't send a bad draft."""
+
+
 def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
     """A single ~10 s format-test clip (see concepts.yaml)."""
     d = OUT / item_id
@@ -133,6 +137,9 @@ def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
             media, r = v2, r2
         log(f"kept {media.name}")
     c["qa"] = r.get("problems") or []
+    good = r.get("punchline_visible") is not False and (r.get("ok") or len(c["qa"]) <= 1)
+    if not good:
+        raise QualityFailed("; ".join(c["qa"]) or "punchline not visible")
     if c.get("dialogue"):  # Lebanese lines + English, so it works with the sound off
         try:
             media = captions.apply_dialogue(media, media.with_name("reel_cap.mp4"), c["dialogue"])
