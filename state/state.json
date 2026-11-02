@@ -537,52 +537,6 @@
       "bad_deal": "",
       "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers",
       "qa": []
-    },
-    {
-      "id": "concept-the-flirting-fox-2026-11-02-1847",
-      "title": "The Flirting Fox",
-      "relatable_truth": "The hilariously cheap village charmer who treats a basic grocery item like a luxury romantic gift.",
-      "joke": "Rappit delivers a serious threat to his rival, but instantly ruins his tough-guy image by snatching and eating the 'romantic gift' in one bite.",
-      "cast": [
-        "lola",
-        "abu_fahd"
-      ],
-      "look": "Lola, Rappit's glamorous girlfriend: an original white rabbit with long lashes, glossy pink lipstick, gold hoop earrings, a fluffy pink faux-fur coat and a tiny designer handbag. Abu Fahd, an original sly middle-aged red fox (realistic fur, not cartoon): a bit chubby, a big bushy grey-flecked moustache, sunglasses pushed up on his head, an unbuttoned burgundy paisley silk shirt, a gold medallion, black trousers, shiny pointed loafers, amber prayer beads (masbaha) in one paw",
-      "setting": "Outside the village dekkene on a sunny day. Stacks of wooden vegetable crates, a faded Coca-Cola sign, and a plastic bead curtain in the background.",
-      "frame": "Abu Fahd stands on the left, holding ONE fresh carrot out like a long-stemmed rose. Lola is in the middle, clutching her tiny designer handbag. Rappit stands on the right, glaring from behind his gold sunglasses.",
-      "action_1": "Abu Fahd leans in smoothly, offering the carrot to Lola while slyly twirling his moustache with his masbaha hand. Lola blinks her long lashes in flattered drama. Rappit aggressively steps directly in front of Lola, blocking Abu Fahd.",
-      "action_2": "Wide shot: Rappit aggressively points his finger, delivers his warning, and lightning-fast snatches the carrot from Abu Fahd's paw. Cut to a separate close-up shot: Rappit shoves the carrot entirely into his mouth, chewing loudly with an unblinking, deadpan stare.",
-      "sound": "Bustling village ambience. A cheesy, slow Arabic pop synth melody plays briefly when Abu Fahd flirts, abruptly cutting to silence, followed by loud, rapid crunching sounds.",
-      "dialogue": [
-        {
-          "speaker": "Abu Fahd",
-          "arabic": "يا قمر، هالجزر لأحلى عيون.",
-          "arabizi": "Ya amar, hal jazar la a7la 3youn.",
-          "english": "Beautiful, this carrot is for the prettiest eyes.",
-          "part": 1,
-          "at": "2-5s"
-        },
-        {
-          "speaker": "Rappit",
-          "arabic": "ولك بعد ايدك عن لولا يا أبو فهد، الضيعة كلها بتعرفني!",
-          "arabizi": "Wlak ba33id idak 3an Lola ya Abu Fahd, el day3a kella bta3rifni!",
-          "english": "Keep your hand away from Lola, Abu Fahd, the whole village knows me!",
-          "part": 2,
-          "at": "0-4s"
-        }
-      ],
-      "caption_brief": "When the village Romeo tries to charm your girl with a single carrot, but you are a tough guy with a snacking problem.",
-      "uses_carrot": true,
-      "story_summary": "Abu Fahd tries to flirt with Lola by gifting her a carrot, prompting Rappit to threaten him and devour the carrot himself.",
-      "cliffhanger": "Abu Fahd's next move?",
-      "concept": true,
-      "seconds": 20,
-      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
-      "action": "[0-10s] Abu Fahd leans in smoothly, offering the carrot to Lola while slyly twirling his moustache with his masbaha hand. Lola blinks her long lashes in flattered drama. Rappit aggressively steps directly in front of Lola, blocking Abu Fahd. [10-20s] Wide shot: Rappit aggressively points his finger, delivers his warning, and lightning-fast snatches the carrot from Abu Fahd's paw. Cut to a separate close-up shot: Rappit shoves the carrot entirely into his mouth, chewing loudly with an unblinking, deadpan stare.",
-      "with_abu": false,
-      "demand": "",
-      "bad_deal": "",
-      "opponent": "Lola, Rappit's glamorous girlfriend: an original white rabbit with long lashes, glossy pink lipstick, gold hoop earrings, a fluffy pink faux-fur coat and a tiny designer handbag. Abu Fahd, an original sly middle-aged red fox (realistic fur, not cartoon): a bit chubby, a big bushy grey-flecked moustache, sunglasses pushed up on his head, an unbuttoned burgundy paisley silk shirt, a gold medallion, black trousers, shiny pointed loafers, amber prayer beads (masbaha) in one paw"
     }
   ],
   "concepts_done": [
@@ -646,50 +600,5 @@
       "cliffhanger": "Abu Fahd's next move?"
     }
   ],
-  "pitch": {
-    "message_id": "1566854801499750433",
-    "ideas": [
-      {
-        "title": "The Shared Water Tank",
-        "cast": "Lil Rappit, Abu Lakma, Abu Sleiman",
-        "setup": "On the roof, Rappit stands guard over one tin water tank like a VIP bouncer, boasting to Abu Sleiman that he controls the village water supply.",
-        "punchline": "Abu Lakma waddles out from behind the tank with a massive water-filled belly and burps loudly just as the tap runs dry, leaving Rappit staring silently into the camera.",
-        "rappit_line": "Ana l mas2oul 3an el may hon ya mukhtar, ma hada byeshrab bala 2emdayti!",
-        "english": "I am in charge of the water here Mukhtar, nobody drinks without my signature!"
-      },
-      {
-        "title": "The Olive Harvest",
-        "cast": "Lil Rappit, Teta, Abu Lakma",
-        "setup": "Sitting by one plastic tarp, Rappit tries to impress Teta by aggressively karate-chopping a pile of green olives, while Abu Lakma quietly eats them whole.",
-        "punchline": "Teta calmly raises one plastic slipper in the air, and Rappit instantly drops his tough-guy act to frantically sort the olives with his tiny paws.",
-        "rappit_line": "Ya Teta, hal zaytounat baddon 2ouweh w haybeh, msh 7ayalla shoghol!",
-        "english": "Teta, these olives need strength and prestige, not just any work!"
-      },
-      {
-        "title": "The Flirting Fox",
-        "cast": "Lil Rappit, Lola, Abu Fahd",
-        "setup": "At the dekkene, Abu Fahd slyly offers one fresh carrot to Lola while twisting his moustache, prompting Rappit to step between them to defend his territory.",
-        "punchline": "Rappit delivers a very serious warning to Abu Fahd, but instinctively snatches the offered carrot from the fox's paw and eats it in one bite, maintaining a deadpan stare while chewing.",
-        "rappit_line": "Wlak ba33id idak 3an Lola ya Abu Fahd, el day3a kella bta3rifni!",
-        "english": "Keep your hand away from Lola, Abu Fahd, the whole village knows me!"
-      },
-      {
-        "title": "The Moteur Cord",
-        "cast": "Lil Rappit, Abu Lakma, Umm Lakma",
-        "setup": "During a village power cut, Rappit confidently commands Abu Lakma to pull the cord on one red generator to save the evening football match.",
-        "punchline": "Abu Lakma pulls so hard that the entire cord rips out of the machine; when Umm Lakma yells angrily from the window, Rappit silently points right at Abu Lakma and slowly backs away.",
-        "rappit_line": "Es7ab el 7ableh w dawweh el moteur, khalli el jiran tshouf el m3allem!",
-        "english": "Pull the rope and start the generator, let the neighbors see the boss!"
-      },
-      {
-        "title": "The Wasta Parking",
-        "cast": "Lil Rappit, Lola, Umm Lakma",
-        "setup": "In the village square, Rappit fiercely guards one white plastic chair, using it to reserve a prime parking spot for Lola while acting like he owns the streets.",
-        "punchline": "Umm Lakma waddles over, completely ignores Rappit's shouting, and comfortably sits on the plastic chair; Rappit instantly pretends he was just keeping the seat warm for her.",
-        "rappit_line": "Wlak mamnou3 el w2ouf hon, hal mahal ma7jouz la sayaret Lola!",
-        "english": "Parking is forbidden here, this spot is reserved for Lola's car!"
-      }
-    ]
-  },
   "auto_pitch_at": "2026-11-02T18:40:52.701532+02:00"
 }
