@@ -53,7 +53,8 @@ def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
     d.mkdir(parents=True, exist_ok=True)
     n = _note(note)
     secs = int(c.get("seconds", 10))
-    quota.need(1)
+    two_part = secs > 10 and c.get("action_1") and c.get("action_2")
+    quota.need(2 if two_part else 1)
     from . import concepts
     import shutil
     extra = []
@@ -91,27 +92,42 @@ def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
         if r.get("ok"):
             break
         fix = " FIX THESE PROBLEMS FROM THE LAST ATTEMPT: " + "; ".join(r.get("problems", []))
-    speech = ""
-    for dl in c.get("dialogue") or []:
-        voice = (" in a deep, slow, raspy, intimidating gangster voice"
-                 if str(dl.get("speaker", "")).lower().startswith(("rappit", "lil")) else "")
-        speech += (f"\n{dl.get('speaker', '')} says{voice}, in Lebanese Arabic dialect, at "
-                   f"{dl.get('at', '')}: \"{dl.get('arabic') or dl.get('arabizi', '')}\"")
-    prompt = (f"Setting: {c['setting']}.\n"
-              + (f"Other character (looks exactly like this): {c['look']}.\n" if c.get("look") else "")
-              + f"{rules}\nAction, beat by beat: {c['action']}\nSound: {c['sound']}"
-              + (f"\nDialogue (spoken in Lebanese Arabic, lip-synced, only these lines):{speech}" if speech else "")
-              + n)
+    def speech(part=None):
+        out = ""
+        for dl in c.get("dialogue") or []:
+            if part and int(dl.get("part") or 1) != part:
+                continue
+            voice = (" in a deep, slow, raspy, intimidating gangster voice"
+                     if str(dl.get("speaker", "")).lower().startswith(("rappit", "lil")) else "")
+            out += (f"\n{dl.get('speaker', '')} says{voice}, in Lebanese Arabic dialect, at "
+                    f"{dl.get('at', '')}: \"{dl.get('arabic') or dl.get('arabizi', '')}\"")
+        return (f"\nDialogue (spoken in Lebanese Arabic, lip-synced, only these lines):{out}"
+                if out else "\nNo dialogue in this part.")
+
+    head = (f"Setting: {c['setting']}.\n"
+            + (f"Characters (look exactly like this): {c['look']}.\n" if c.get("look") else "")
+            + f"{rules}\nSound: {c['sound']}")
+    if two_part:
+        p1 = f"{head}\nAction, beat by beat: {c['action_1']}{speech(1)}{n}"
+        p2 = f"Action, beat by beat: {c['action_2']}{speech(2)}\nSound: {c['sound']}{n}"
+        prompt = p1 + "\n" + p2
+    else:
+        prompt = f"{head}\nAction, beat by beat: {c['action']}{speech()}{n}"
     def score(r):  # punchline on screen matters most, then a clean check, then fewer problems
         return (r.get("punchline_visible") is not False, bool(r.get("ok")), -len(r.get("problems") or []))
 
-    media = gen.video(prompt, frame, d / "reel.mp4", seconds=secs, style=c["style"])
+    def make_video(extra_note: str, out):
+        if two_part:
+            return gen.video_two_part(p1 + extra_note, p2 + extra_note, frame, out, style=c["style"])
+        return gen.video(prompt + extra_note, frame, out, seconds=secs, style=c["style"])
+
+    media = make_video("", d / "reel.mp4")
     r = qa.check_video(media, refs, c, who)
     if not r.get("ok") or r.get("punchline_visible") is False:  # one more try, problems listed
-        quota.need(1)
-        v2 = gen.video(prompt + "\nAVOID THESE PROBLEMS SEEN IN THE LAST ATTEMPT: "
-                       + "; ".join(r.get("problems", []) or ["the punchline was not visible at the end"]),
-                       frame, d / "reel_v2.mp4", seconds=secs, style=c["style"])
+        quota.need(2 if two_part else 1)
+        v2 = make_video("\nAVOID THESE PROBLEMS SEEN IN THE LAST ATTEMPT: "
+                        + "; ".join(r.get("problems", []) or ["the punchline was not visible at the end"]),
+                        d / "reel_v2.mp4")
         r2 = qa.check_video(v2, refs, c, who)
         if score(r2) > score(r):
             media, r = v2, r2

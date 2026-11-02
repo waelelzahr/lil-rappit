@@ -41,6 +41,8 @@ def make(state: dict, item_id: str, kind: str, ep: dict, slot: str, soft_idx: in
         if no and not item_id.startswith("test"):
             state["episode_no"] = no - 1  # failed; the retry reuses this number
         raise
+    if not tease and ep.get("concept") and ep.get("cliffhanger"):
+        tease = f"To be continued: {ep['cliffhanger']} 👀 Follow so you don't miss it."
     if tease:  # a reason to follow: what's next
         cap, _, tags = built["caption"].rpartition("\n\n")
         built["caption"] = f"{cap}\n{tease}\n\n{tags}" if cap else f"{built['caption']}\n{tease}"

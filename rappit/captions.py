@@ -74,7 +74,9 @@ def apply_dialogue(video: Path, out: Path, dialogue: list[dict]) -> Path:
         log(f"speech timing failed: {e}")
         win = []
     if not win:
-        win = [(0.5, 9.5)]
+        dur = float(subprocess.run(["ffprobe", "-v", "error", "-show_entries", "format=duration",
+                                    "-of", "csv=p=0", str(video)], capture_output=True, text=True).stdout or 10)
+        win = [(0.5, dur - 0.5)]
     start, end = win[0][0], win[-1][1]
     if len(win) >= len(lines):  # one line per speech window, in order (extra windows merge)
         per = len(win) / len(lines)

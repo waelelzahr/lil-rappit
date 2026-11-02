@@ -238,41 +238,34 @@ class ContentBlocked(RuntimeError):
     """The video model refused the prompt (safety filter). Rewrite the idea, don't retry it."""
 
 
-def _video_omni(full: str, start_frame: Path, out: Path, seconds: int) -> Path:
-    """Gemini Omni Flash (Interactions API): image-to-video with sound, from a first frame."""
-    import base64
+def _omni_call(inputs: list, seconds: int, prev_id: str | None = None):
     v = CFG["video"]
-    avoid = v.get("negative_prompt")
-    text = (f"<FIRST_FRAME> {full}\n\nThe video is exactly {seconds} seconds long and starts "
-            "exactly on the given first frame." + (f"\nAvoid: {avoid}." if avoid else ""))
-    inputs = [{"type": "image", "data": base64.b64encode(start_frame.read_bytes()).decode(),
-               "mime_type": mime_of(start_frame)},
-              {"type": "text", "text": text}]
-    t0, last_err, inter = time.time(), None, None
+    last_err = None
     for fmt in ({"duration": f"{seconds}s"}, {}):
         for delivery in ("uri", "inline"):
             try:
+                kw = {"previous_interaction_id": prev_id} if prev_id else {}
                 inter = client().interactions.create(
                     model=CFG["models"]["video"], input=inputs, timeout=900,
                     response_format={"type": "video", "aspect_ratio": v["aspect_ratio"],
                                      "resolution": v.get("resolution", "720p"),
-                                     "delivery": delivery, **fmt})
-                break
+                                     "delivery": delivery, **fmt}, **kw)
+                quota.used()
+                return inter
             except Exception as e:
                 _quota_error(e)
                 if "prohibited" in str(e).lower() or "blocked" in str(e).lower():
                     raise ContentBlocked(str(e)[:300]) from e
                 last_err = e
                 log(f"Omni rejected {fmt or 'no duration'}/{delivery}: {str(e)[:300]}")
-        if inter is not None:
-            break
-    if inter is None:
-        raise last_err
-    quota.used()
+    raise last_err
+
+
+def _omni_save(inter, raw: Path) -> Path:
+    import base64
     vid = getattr(inter, "output_video", None)
     if vid is None:
         raise RuntimeError(f"video model returned no video (possibly blocked): {str(inter)[:400]}")
-    raw = out.with_name(out.stem + "_raw.mp4")
     if getattr(vid, "data", None):
         raw.write_bytes(base64.b64decode(vid.data))
     else:
@@ -286,14 +279,61 @@ def _video_omni(full: str, start_frame: Path, out: Path, seconds: int) -> Path:
                 raise RuntimeError(f"video file failed: {f}")
             time.sleep(5)
         raw.write_bytes(client().files.download(file=name))
-    # Trim to the planned length so the reel keeps its pacing.
+    return raw
+
+
+def _trim(raw: Path, out: Path, seconds: float) -> Path:
     if _duration(raw) > seconds + 0.3:
         subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(raw), "-t", str(seconds),
                         "-c:v", "libx264", "-preset", "medium", "-crf", "18", "-pix_fmt",
                         "yuv420p", "-c:a", "aac", "-b:a", "160k", str(out)], check=True)
     else:
         raw.replace(out)
+    return out
+
+
+def _first_inputs(full: str, start_frame: Path, seconds: int) -> list:
+    import base64
+    avoid = CFG["video"].get("negative_prompt")
+    text = (f"<FIRST_FRAME> {full}\n\nThe video is exactly {seconds} seconds long and starts "
+            "exactly on the given first frame." + (f"\nAvoid: {avoid}." if avoid else ""))
+    return [{"type": "image", "data": base64.b64encode(start_frame.read_bytes()).decode(),
+             "mime_type": mime_of(start_frame)},
+            {"type": "text", "text": text}]
+
+
+def _video_omni(full: str, start_frame: Path, out: Path, seconds: int) -> Path:
+    """Gemini Omni Flash (Interactions API): image-to-video with sound, from a first frame."""
+    t0 = time.time()
+    inter = _omni_call(_first_inputs(full, start_frame, seconds), seconds)
+    _trim(_omni_save(inter, out.with_name(out.stem + "_raw.mp4")), out, seconds)
     log(f"video ok -> {out.name} ({seconds}s, {time.time() - t0:.0f}s)")
+    return out
+
+
+def video_two_part(part1: str, part2: str, start_frame: Path, out: Path, style: str | None = None,
+                   seconds: int = 10) -> Path:
+    """~20 s clip: generate 10 s, then extend it by 10 s (speech continues) in the same
+    interaction so characters, set and voices stay consistent."""
+    t0 = time.time()
+    full1 = f"{LOOK}\n\n{soften(part1)}\n\n{style or STYLE}"
+    inter = _omni_call(_first_inputs(full1, start_frame, seconds), seconds)
+    a = _omni_save(inter, out.with_name(out.stem + "_p1.mp4"))
+    full2 = (f"Continue this exact video for {seconds} more seconds: same characters, same "
+             f"place, same voices, same lighting, no cut.\n{soften(part2)}")
+    try:
+        inter2 = _omni_call([{"type": "text", "text": full2}], seconds, prev_id=inter.id)
+        b = _omni_save(inter2, out.with_name(out.stem + "_p2.mp4"))
+    except ContentBlocked:
+        raise
+    except Exception as e:  # extension failed: keep part 1 alone rather than nothing
+        log(f"extension failed, using the first 10 s only: {e}")
+        return _trim(a, out, seconds)
+    if _duration(b) >= _duration(a) + seconds - 1.5:  # the extension returned the full video
+        _trim(b, out, 2 * seconds)
+    else:  # it returned only the new part: join them
+        stitch([a, b], out)
+    log(f"video ok -> {out.name} ({_duration(out):.1f}s, two parts, {time.time() - t0:.0f}s)")
     return out
 
 

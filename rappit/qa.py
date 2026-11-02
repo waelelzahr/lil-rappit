@@ -21,7 +21,7 @@ Return JSON: {{"ok": true/false, "problems": ["short concrete description", ...]
 Only report real, visible problems; minor style differences are fine."""
 
 VIDEO_CHECK = """You are a strict continuity supervisor. Above: character references, then
-frames taken from the start, middle and end of a 10-second clip.
+frames taken from the start, middle and end of the clip.
 Intended clip: {action}
 Characters: {who}
 Check: characters stay consistent with their references and with each other across frames;
@@ -43,10 +43,12 @@ def check_frame(frame: Path, refs: list, frame_desc: str, who: str) -> dict:
 
 def check_video(video: Path, refs: list, c: dict, who: str) -> dict:
     try:
-        shots = gen.frames_at(video, [1.0, 5.0, 9.3], video.parent)
+        dur = gen._duration(video)
+        times = [round(dur * x, 1) for x in (0.1, 0.5, 0.93)]
+        shots = gen.frames_at(video, times, video.parent)
         r = gen.vision_json(VIDEO_CHECK.format(action=c.get("action", ""), who=who,
                                                joke=c.get("joke", "")),
-                            [*refs, *[(f"CLIP FRAME at {t}s", p) for t, p in zip((1, 5, 9.3), shots)]])
+                            [*refs, *[(f"CLIP FRAME at {t}s", p) for t, p in zip(times, shots)]])
         log(f"video check: {'ok' if r.get('ok') else r.get('problems')} "
             f"punchline_visible={r.get('punchline_visible')}")
         return r

@@ -17,8 +17,15 @@ LOLA = ("Lola, Rappit's glamorous girlfriend: an original white rabbit with long
 TETA = ("Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit wearing ONE pair of "
         "round gold glasses on her nose, hair in a neat bun, floral house dress, beige cardigan "
         "and slippers")
+ABU_FAHD = ("Abu Fahd, a sly smooth-talking red fox: slicked-back fur, thin moustache, open-collar "
+            "white shirt with a gold medallion, beige linen trousers, prayer beads (masbaha) in one paw")
+UMM_LAKMA = ("Umm Lakma, Abu Lakma's wife: a stout no-nonsense bulldog with curlers in her hair, "
+             "a purple house robe and pink fluffy slippers")
+ABU_SLEIMAN = ("Abu Sleiman, the village mukhtar: an old white-bearded goat with a red tarboush, "
+               "a grey wool vest over a white shirt and a wooden walking cane")
 # Recurring cast (Rappit himself always uses the refs/ photos). Each keeps one reference image.
-CAST = {"abu_lakma": ABU_LAKMA, "lola": LOLA, "teta": TETA}
+CAST = {"abu_lakma": ABU_LAKMA, "lola": LOLA, "teta": TETA, "abu_fahd": ABU_FAHD,
+        "umm_lakma": UMM_LAKMA, "abu_sleiman": ABU_SLEIMAN}
 
 
 def ref_path(key: str):
@@ -35,66 +42,48 @@ STYLE = ("Cinematic photoreal 3D, natural motivated lighting that fits the setti
          "subtitles, no captions, no watermarks, no smoking, no weapons.")
 
 RULES = f"""
-You are the head comedy writer of "Lil Rappit", a series of short clips (exactly 10 seconds,
-one continuous shot) for Instagram Reels and YouTube Shorts. Audience: Lebanese and Arab viewers
-first, but anyone should get it. Goal: people laugh, SEND it to a friend ("this is literally my
-family") and follow.
+You are the head writer of "Lil Rappit", a comedy series of short clips (about 20 seconds: two
+10-second halves in one continuous scene) for Instagram Reels and YouTube Shorts, for a Lebanese
+audience first. Think of the hit Iraqi AI series "Abu Saber & Abu Sarhan" (farm animals bickering
+in heavy Iraqi dialect about village gossip, jealousy and small disasters), but Lebanese: a
+village in the Bekaa (vineyards, a farm, stone houses, the village square, the dekkene, the
+church/municipality steps, Sunday lunch at Teta's).
 
-CAST (exact names, consistent looks):
-- Lil Rappit: a tough gangster rabbit (black bucket hat, gold sunglasses, orange puffer jacket,
-  gold chain with a carrot pendant). Always dead serious and intimidating. The comedy engine is
-  his deadpan tough-guy attitude colliding with ordinary Lebanese life. Secret weakness: carrots.
-- Abu Lakma: {ABU_LAKMA}. His loyal sidekick, the straight man who stares into the camera.
-- Lola: {LOLA}. His dramatic, glamorous girlfriend, jealous of carrots. Occasional.
-- Teta: {TETA}. His grandmother, the only one he fears; she always wins. Occasional.
+THE VILLAGE CAST (exact names; keep looks consistent):
+- Lil Rappit: a gangster rabbit (black bucket hat, gold sunglasses, orange puffer jacket, gold
+  chain with a carrot pendant). The village tough guy: dead serious, slow, raspy, intimidating,
+  thinks he runs the village. Secret weakness: carrots.
+- Abu Lakma: {ABU_LAKMA}. His loyal sidekick; big, simple, terrified of his wife.
+- Umm Lakma: {UMM_LAKMA}. Abu Lakma's wife; she runs him (and sometimes Rappit).
+- Lola: {LOLA}. Rappit's dramatic, glamorous girlfriend; jealous of carrots.
+- Abu Fahd: {ABU_FAHD}. The sly charmer who keeps flirting with Lola: Rappit's rival.
+- Teta: {TETA}. Rappit's grandmother; the only one he fears; she always wins.
+- Abu Sleiman: {ABU_SLEIMAN}. The village mukhtar; knows everybody's business, spreads gossip.
+Use 2-3 of them per clip.
 
-OUR BEST CLIP (the model to follow): Rappit and Abu Lakma lead a dabke line at a village wedding
-to mijwiz music, deadly serious; Rappit does extreme dabke squats; a grandma at the edge of the
-dance floor waves a carrot she is holding; Rappit abandons the dance mid-step and runs to her;
-Abu Lakma is left alone mid-step and stares into the camera.
-Why it works: (1) everyone recognises the situation, (2) Rappit treats it with absurd mafia
-seriousness, (3) ONE clear, visible punchline at the end, (4) no words needed.
+LANGUAGE: everyone speaks natural Lebanese Arabic dialect (village/Bekaa flavour), never formal
+Arabic, never English. Rappit always has lines.
 
-LANGUAGE: Rappit ALWAYS speaks Lebanese Arabic (Beiruti / mountain dialect, natural street
-Lebanese, never formal Arabic, never English). Other characters speak Lebanese Arabic too.
-Every clip has at least one Rappit line. Keep lines short (max ~8 words each, max 3 lines total)
-so they fit in 10 seconds.
+WHAT MAKES IT FUNNY:
+- BICKERING DIALOGUE: 4-6 short lines going back and forth (max ~8 words each): insults with
+  love, gossip, accusations, overreactions, threats that are obviously empty, Teta/mom logic,
+  "inshallah" meaning no, "wlak", "ya 7aram", "walla", swearing on your mother, wasta, the
+  cousin who knows a guy, everybody knows everybody's business.
+- A recognisable village/family situation: who ate the last manoushe, the neighbour's chicken
+  in your garden, Abu Fahd winking at Lola at the dekkene, the mukhtar announcing gossip,
+  Umm Lakma catching Abu Lakma, the power cut during the match, the grape harvest, the wedding,
+  the zaytoun, Sunday lunch, the shared water tank, parking a tractor.
+- Rappit's mafia seriousness about petty things, and an ending punchline (a line + a reaction,
+  someone staring into the camera, or Teta/Umm Lakma shutting everyone up).
+- Drama arcs are welcome (Abu Fahd vs Rappit over Lola, Abu Lakma in trouble at home, a feud
+  with the mukhtar): each clip must be funny on its own; it may end with the story open.
+- Simple physical action, one location, max 3 characters on screen, every prop visible from
+  the first frame and named once with its count; each character wears only their own outfit.
 
-WHAT MAKES IT FUNNY (Lebanese comedy, not generic AI comedy):
-- The PUNCHLINE IS A LINE or a line + reaction: Lebanese wit, absurd logic said with total
-  confidence, a sharp comeback, a "Lebanese mom/Teta logic" twist, or a deadpan understatement.
-- Real Lebanese expressions and attitudes: "ya3ne", "walla", "shu ya3ne", "khalas", "yalla",
-  "ma fi kahraba", "inshallah" (meaning no), "3ayb", "ya 7aram", "wlak", exaggeration ("I swear
-  on my mother"), wasta, everybody knows everybody, the cousin who "knows a guy", hospitality
-  taken to war, comparing everything to how it was "ayyem zamen".
-- Tough mafia delivery + something petty and domestic = the laugh. Rappit's voice: deep, slow,
-  raspy, intimidating, even when the words are ridiculous.
-- Visual gags support the line; they don't replace it. No slapstick for its own sake.
-
-EVERY CLIP MUST HAVE:
-- A RELATABLE TRUTH: a specific, universally recognised Lebanese / Arab moment (the Lebanese
-  goodbye that lasts an hour, Teta forcing food, the power cut mid-something, the generator guy,
-  service taxis that keep stopping, haggling at the souk, Sunday lunch, wedding dabke, the coffee
-  cup reading, the mom who knows everything, tawleh trash talk, the zaytoun harvest, the
-  neighbour who hears everything, the Arab mom's 'ma fi akl bel bayt'...).
-- ONE JOKE you can say in one sentence, built as SETUP (0-3s: the recognisable situation is clear
-  immediately) -> ESCALATION (3-7s: Rappit's tough-guy approach makes it bigger) -> PAYOFF
-  (7-10s: one clear, visible, surprising punchline + a reaction, often a stare into the camera).
-- It works with the sound off (captions are added) and for someone who never saw another episode.
-- Simple physical action, one location, max 3 characters, every prop visible from the first
-  frame (nothing appears out of nowhere). In "frame", name every object ONCE with its count
-  ("one coffee cup on the table") and never put two of the same thing in the scene unless the
-  joke needs it. Each character wears only their own outfit and accessories.
-
-NEVER:
-- Random chains of events, plot twists for their own sake, or "lore" (stashes, swaps, heists,
-  betrayals). No crime coding: no briefcases of money, deals, stashes, drugs, cash exchanges,
-  police, weapons, or anything that looks like a crime (the video model blocks it).
-- Text on screen, "Part X" in the video, subtitles (captions are added later automatically).
-- Smoking or argileh, alcohol, religion, politics, real people or celebrities, real songs
-  (describe the music style), romance beyond PG.
-- Words like violent, slap, smash, attack, threatening, blood.
-- Carrots in more than 1 of 3 clips.
+NEVER: crime coding (stashes, deals, money exchanges, weapons, police); text on screen or
+"Part X" in the video; smoking or argileh; alcohol; religion; politics; real people or
+celebrities; real songs (describe the music style); romance beyond PG flirting and jealousy;
+words like violent, slap, smash, attack, threatening, blood. Carrots in at most 1 of 3 clips.
 """
 
 IDEAS = """
@@ -114,13 +103,14 @@ Write the chosen idea as the clip. Return JSON:
  "look": "visual description of any NEW one-off characters (animal characters, clothes, colors), or empty string",
  "setting": "one vivid Lebanese location, time of day, lighting, background details",
  "frame": "the opening still: framing, who stands where, what each holds (every prop that will be used must already be visible)",
- "action": "[0-3s] SETUP ... [3-7s] ESCALATION ... [7-10s] PAYOFF ... concrete physical actions and camera moves",
+ "action_1": "first half [0-10s]: setup and the argument starting; concrete actions and camera",
+ "action_2": "second half [10-20s]: escalation and the punchline/reaction at the end; concrete actions",
  "sound": "music style (instruments), ambience and sound effects only (dialogue goes in 'dialogue')",
- "dialogue": [{"speaker": "Rappit", "arabic": "the line in Lebanese Arabic, Arabic script", "arabizi": "the same line as Lebanese people write it in Latin letters", "english": "short English translation", "at": "e.g. 1-3s"}],
+ "dialogue": [{"speaker": "Rappit", "arabic": "the line in Lebanese Arabic, Arabic script", "arabizi": "the same line as Lebanese people write it in Latin letters", "english": "short English translation", "part": 1 or 2, "at": "e.g. 1-3s within that half"}],
  "caption_brief": "one sentence: the relatable truth and the joke, for the caption writer",
  "uses_carrot": true or false,
  "story_summary": "one sentence: what happened",
- "cliffhanger": ""
+ "cliffhanger": "if a drama arc stays open, a 3-6 word teaser for next time, else empty"
 }"""
 
 CRITIC = """You are a tough comedy editor. Rate this 10-second clip script for Instagram Reels:
@@ -140,6 +130,7 @@ def write(state: dict, hint: str | None = None, note: str | None = None) -> dict
     context = (RULES
                + (f"\nTHIS WEEK'S TREND BRIEF (inspiration only; the rules above win):\n{brief}\n"
                   if brief else "")
+               + f"\nRECENT EPISODES (you MAY continue an open drama arc):\n{recent_story(state)}\n"
                + (f"\nAlready made (never repeat these ideas): {', '.join(done[-40:])}\n" if done else "")
                + (f"\nMANDATORY PREMISE (from the show's owner; every idea, draft and rewrite must "
                   f"be exactly this situation with these characters): {hint}\n" if hint else "")
@@ -169,9 +160,9 @@ def write(state: dict, hint: str | None = None, note: str | None = None) -> dict
         log(f"editor pass skipped: {e}")
     c["id"] = "concept-" + re.sub(r"[^a-z0-9-]", "", str(c.get("id", "clip")).lower())[:30]
     c["concept"] = True
-    c["seconds"] = 10
+    c["seconds"] = 20
     c["style"] = STYLE
-    c["cliffhanger"] = ""  # standalone clips; no "Part 2" chains
+    c["action"] = f"[0-10s] {c.get('action_1', '')} [10-20s] {c.get('action_2', '')}".strip()
     c["cast"] = [k for k in (c.get("cast") or []) if k in CAST]
     c["with_abu"] = "abu_lakma" in c["cast"]
     names = ". ".join(CAST[k] for k in c["cast"])
@@ -183,9 +174,9 @@ def write(state: dict, hint: str | None = None, note: str | None = None) -> dict
     return c
 
 
-PITCH = """Pitch {n} different clip ideas for the series. Each must have a real Lebanese
-punchline (a line in Lebanese Arabic, or a line + reaction) that would make a Lebanese viewer
-laugh out loud and send it to a friend. Vary the situations and the cast.
+PITCH = """Pitch {n} different 20-second village clip ideas. Each needs bickering Lebanese
+dialogue and a real punchline that would make a Lebanese viewer laugh and send it to a friend.
+Vary situations and cast; at least one should continue or start a drama arc.
 Return JSON: {{"ideas": [{{"title": "2-4 words", "cast": "who is in it",
 "setup": "one sentence: the situation", "punchline": "one sentence: what is said/happens",
 "rappit_line": "Rappit's key line in Lebanese (Latin letters)", "english": "its translation"}}]}}"""
@@ -206,7 +197,7 @@ def remember(state: dict, c: dict, when: str):
     state.setdefault("concepts_done", []).append(f"{c.get('title', '')}: {c.get('joke', '')}"[:160])
     state.setdefault("story_log", []).append({
         "date": when, "title": c.get("title", ""), "summary": c.get("story_summary", ""),
-        "cliffhanger": ""})
+        "cliffhanger": c.get("cliffhanger", "")})
     state["story_log"] = state["story_log"][-30:]
 
 
