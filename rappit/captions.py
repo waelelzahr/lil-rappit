@@ -51,6 +51,58 @@ def _wrap(text: str, width: int = 18) -> str:
     return r"\N".join(lines)
 
 
+def speech_windows(video: Path) -> list[tuple[float, float]]:
+    """When someone is speaking (any language), via multilingual Whisper segments."""
+    import numpy as np
+    from faster_whisper import WhisperModel
+    pcm = subprocess.run(["ffmpeg", "-loglevel", "error", "-i", str(video), "-f", "s16le",
+                          "-ac", "1", "-ar", "16000", "-"], capture_output=True, check=True).stdout
+    audio = np.frombuffer(pcm, np.int16).astype(np.float32) / 32768.0
+    model = WhisperModel("small", device="cpu", compute_type="int8")
+    segments, _ = model.transcribe(audio, vad_filter=True, language="ar")
+    return [(seg.start, seg.end) for seg in segments if seg.end - seg.start > 0.2]
+
+
+def apply_dialogue(video: Path, out: Path, dialogue: list[dict]) -> Path:
+    """Burn the scripted lines (Lebanese in Latin letters + small English) timed to the speech."""
+    lines = [d for d in dialogue if (d.get("arabizi") or d.get("english"))]
+    if not lines:
+        return video
+    try:
+        win = speech_windows(video)
+    except Exception as e:
+        log(f"speech timing failed: {e}")
+        win = []
+    if not win:
+        win = [(0.5, 9.5)]
+    start, end = win[0][0], win[-1][1]
+    if len(win) >= len(lines):  # one line per speech window, in order (extra windows merge)
+        per = len(win) / len(lines)
+        spans = [(win[int(i * per)][0], win[min(len(win) - 1, int((i + 1) * per) - 1)][1])
+                 for i in range(len(lines))]
+    else:  # fewer windows than lines: split the speaking time by line length
+        total = sum(len(d.get("arabizi", "")) or 1 for d in lines)
+        spans, t = [], start
+        for d in lines:
+            dur = (end - start) * (len(d.get("arabizi", "")) or 1) / total
+            spans.append((t, t + dur))
+            t += dur
+    events = []
+    for d, (a, b) in zip(lines, spans):
+        text = _wrap(_esc(d.get("arabizi", "")), 22)
+        if d.get("english"):
+            text += f"\\N{{\\fs46\\c&HDDDDDD&}}{_wrap(_esc(d['english']), 30)}"
+        events.append(f"Dialogue: 0,{_t(a)},{_t(max(b, a + 1.2))},Cap,,0,0,0,,{text}")
+    ass = out.with_suffix(".ass")
+    ass.write_text(ASS_HEADER + "\n".join(events) + "\n", encoding="utf-8")
+    subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-i", str(video), "-vf",
+                    f"ass={ass}:fontsdir={FONT_DIR}", "-c:v", "libx264", "-preset", "medium",
+                    "-crf", "20", "-pix_fmt", "yuv420p", "-c:a", "copy",
+                    "-movflags", "+faststart", str(out)], check=True)
+    log(f"dialogue captions: {len(lines)} lines over {len(win)} speech windows")
+    return out
+
+
 def transcribe(video: Path, hint: str) -> list[dict]:
     """Word timestamps via faster-whisper (CPU). Returns [{start, end, word}]."""
     import numpy as np

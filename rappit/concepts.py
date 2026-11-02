@@ -55,6 +55,22 @@ Abu Lakma is left alone mid-step and stares into the camera.
 Why it works: (1) everyone recognises the situation, (2) Rappit treats it with absurd mafia
 seriousness, (3) ONE clear, visible punchline at the end, (4) no words needed.
 
+LANGUAGE: Rappit ALWAYS speaks Lebanese Arabic (Beiruti / mountain dialect, natural street
+Lebanese, never formal Arabic, never English). Other characters speak Lebanese Arabic too.
+Every clip has at least one Rappit line. Keep lines short (max ~8 words each, max 3 lines total)
+so they fit in 10 seconds.
+
+WHAT MAKES IT FUNNY (Lebanese comedy, not generic AI comedy):
+- The PUNCHLINE IS A LINE or a line + reaction: Lebanese wit, absurd logic said with total
+  confidence, a sharp comeback, a "Lebanese mom/Teta logic" twist, or a deadpan understatement.
+- Real Lebanese expressions and attitudes: "ya3ne", "walla", "shu ya3ne", "khalas", "yalla",
+  "ma fi kahraba", "inshallah" (meaning no), "3ayb", "ya 7aram", "wlak", exaggeration ("I swear
+  on my mother"), wasta, everybody knows everybody, the cousin who "knows a guy", hospitality
+  taken to war, comparing everything to how it was "ayyem zamen".
+- Tough mafia delivery + something petty and domestic = the laugh. Rappit's voice: deep, slow,
+  raspy, intimidating, even when the words are ridiculous.
+- Visual gags support the line; they don't replace it. No slapstick for its own sake.
+
 EVERY CLIP MUST HAVE:
 - A RELATABLE TRUTH: a specific, universally recognised Lebanese / Arab moment (the Lebanese
   goodbye that lasts an hour, Teta forcing food, the power cut mid-something, the generator guy,
@@ -64,7 +80,7 @@ EVERY CLIP MUST HAVE:
 - ONE JOKE you can say in one sentence, built as SETUP (0-3s: the recognisable situation is clear
   immediately) -> ESCALATION (3-7s: Rappit's tough-guy approach makes it bigger) -> PAYOFF
   (7-10s: one clear, visible, surprising punchline + a reaction, often a stare into the camera).
-- It is funny with the sound off and for someone who never saw another episode.
+- It works with the sound off (captions are added) and for someone who never saw another episode.
 - Simple physical action, one location, max 3 characters, every prop visible from the first
   frame (nothing appears out of nowhere). In "frame", name every object ONCE with its count
   ("one coffee cup on the table") and never put two of the same thing in the scene unless the
@@ -74,7 +90,7 @@ NEVER:
 - Random chains of events, plot twists for their own sake, or "lore" (stashes, swaps, heists,
   betrayals). No crime coding: no briefcases of money, deals, stashes, drugs, cash exchanges,
   police, weapons, or anything that looks like a crime (the video model blocks it).
-- Text on screen, "Part X" in the video, subtitles.
+- Text on screen, "Part X" in the video, subtitles (captions are added later automatically).
 - Smoking or argileh, alcohol, religion, politics, real people or celebrities, real songs
   (describe the music style), romance beyond PG.
 - Words like violent, slap, smash, attack, threatening, blood.
@@ -99,7 +115,8 @@ Write the chosen idea as the clip. Return JSON:
  "setting": "one vivid Lebanese location, time of day, lighting, background details",
  "frame": "the opening still: framing, who stands where, what each holds (every prop that will be used must already be visible)",
  "action": "[0-3s] SETUP ... [3-7s] ESCALATION ... [7-10s] PAYOFF ... concrete physical actions and camera moves",
- "sound": "music style (instruments), ambience, effects, and at most one or two tiny lines as Speaker: \"line\" (Lebanese Arabic in Latin letters welcome)",
+ "sound": "music style (instruments), ambience and sound effects only (dialogue goes in 'dialogue')",
+ "dialogue": [{"speaker": "Rappit", "arabic": "the line in Lebanese Arabic, Arabic script", "arabizi": "the same line as Lebanese people write it in Latin letters", "english": "short English translation", "at": "e.g. 1-3s"}],
  "caption_brief": "one sentence: the relatable truth and the joke, for the caption writer",
  "uses_carrot": true or false,
  "story_summary": "one sentence: what happened",
@@ -166,6 +183,24 @@ def write(state: dict, hint: str | None = None, note: str | None = None) -> dict
     return c
 
 
+PITCH = """Pitch {n} different clip ideas for the series. Each must have a real Lebanese
+punchline (a line in Lebanese Arabic, or a line + reaction) that would make a Lebanese viewer
+laugh out loud and send it to a friend. Vary the situations and the cast.
+Return JSON: {{"ideas": [{{"title": "2-4 words", "cast": "who is in it",
+"setup": "one sentence: the situation", "punchline": "one sentence: what is said/happens",
+"rappit_line": "Rappit's key line in Lebanese (Latin letters)", "english": "its translation"}}]}}"""
+
+
+def pitch(state: dict, theme: str | None = None, n: int = 5) -> list[dict]:
+    done = state.get("concepts_done", [])
+    brief = state.get("brief", {}).get("text", "")
+    prompt = (RULES + (f"\nTREND BRIEF (inspiration only):\n{brief}\n" if brief else "")
+              + (f"\nAlready made (never repeat): {', '.join(done[-40:])}\n" if done else "")
+              + (f"\nTheme requested by the owner: {theme}\n" if theme else "")
+              + PITCH.format(n=n))
+    return gen.text_json(prompt, prefer_pro=True).get("ideas", [])[:n]
+
+
 def remember(state: dict, c: dict, when: str):
     """Add a made clip to the log so the writer never repeats an idea."""
     state.setdefault("concepts_done", []).append(f"{c.get('title', '')}: {c.get('joke', '')}"[:160])
@@ -178,4 +213,6 @@ def remember(state: dict, c: dict, when: str):
 def script_text(c: dict) -> str:
     return (f"📜 **{c.get('title', '')}**\n**The joke:** {c.get('joke', '')}\n"
             f"**Setting:** {c.get('setting', '')}\n"
-            f"**What happens:** {c.get('action', '')}\n**Sound:** {c.get('sound', '')}")[:1900]
+            + "".join(f"> **{d.get('speaker', '')}:** {d.get('arabizi', '')} — *{d.get('english', '')}*\n"
+                      for d in c.get("dialogue") or [])
+            + f"**What happens:** {c.get('action', '')}\n**Sound:** {c.get('sound', '')}")[:1900]

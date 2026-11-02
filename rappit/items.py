@@ -91,9 +91,17 @@ def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
         if r.get("ok"):
             break
         fix = " FIX THESE PROBLEMS FROM THE LAST ATTEMPT: " + "; ".join(r.get("problems", []))
+    speech = ""
+    for dl in c.get("dialogue") or []:
+        voice = (" in a deep, slow, raspy, intimidating gangster voice"
+                 if str(dl.get("speaker", "")).lower().startswith(("rappit", "lil")) else "")
+        speech += (f"\n{dl.get('speaker', '')} says{voice}, in Lebanese Arabic dialect, at "
+                   f"{dl.get('at', '')}: \"{dl.get('arabic') or dl.get('arabizi', '')}\"")
     prompt = (f"Setting: {c['setting']}.\n"
               + (f"Other character (looks exactly like this): {c['look']}.\n" if c.get("look") else "")
-              + f"{rules}\nAction, beat by beat: {c['action']}\nSound: {c['sound']}" + n)
+              + f"{rules}\nAction, beat by beat: {c['action']}\nSound: {c['sound']}"
+              + (f"\nDialogue (spoken in Lebanese Arabic, lip-synced, only these lines):{speech}" if speech else "")
+              + n)
     def score(r):  # punchline on screen matters most, then a clean check, then fewer problems
         return (r.get("punchline_visible") is not False, bool(r.get("ok")), -len(r.get("problems") or []))
 
@@ -109,9 +117,15 @@ def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
             media, r = v2, r2
         log(f"kept {media.name}")
     c["qa"] = r.get("problems") or []
-    lines = re.findall(r'"([^"]{2,120})"', c.get("sound", ""))
-    if lines:  # dialogue: burn word-by-word captions so it works with the sound off
-        media = captions.apply(media, media.with_name("reel_cap.mp4"), None, lines)
+    if c.get("dialogue"):  # Lebanese lines + English, so it works with the sound off
+        try:
+            media = captions.apply_dialogue(media, media.with_name("reel_cap.mp4"), c["dialogue"])
+        except Exception as e:
+            log(f"dialogue captions failed: {e}")
+    else:
+        lines = re.findall(r'"([^"]{2,120})"', c.get("sound", ""))
+        if lines:
+            media = captions.apply(media, media.with_name("reel_cap.mp4"), None, lines)
     try:
         data = gen.text_json(
             "You write social captions for Lil Rappit, a tough gangster rabbit whose only weakness "

@@ -10,7 +10,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-from rappit import discord, items, pipeline, quota  # noqa: E402
+from rappit import concepts, discord, items, pipeline, quota  # noqa: E402
 from rappit.common import CFG, OUT, TZ, classify, episode, load_state, log, save_state  # noqa: E402
 
 
@@ -65,6 +65,40 @@ def redo(state: dict, item_id: str, note: str | None, from_queue: bool = False):
     pipeline.send_script(built, it["message_id"])
     it.update(run_id=os.environ.get("GITHUB_RUN_ID"), relpath=str(path.relative_to(OUT)),
               caption=built["caption"], title=built["title"])
+
+
+def send_pitch(state: dict, theme: str | None, reply_to: str):
+    ideas = concepts.pitch(state, theme)
+    lines = [f"**{i + 1}. {x.get('title', '')}** ({x.get('cast', '')})\n{x.get('setup', '')} → "
+             f"{x.get('punchline', '')}\n> {x.get('rappit_line', '')} — *{x.get('english', '')}*"
+             for i, x in enumerate(ideas)]
+    msg = discord.send_text("🎤 **Pitch**" + (f" · {theme}" if theme else "") + "\n\n"
+                            + "\n\n".join(lines)
+                            + "\n\nReply with a number to make that clip (e.g. `2`), or `pitch` again.",
+                            reply_to=reply_to)
+    state["pitch"] = {"message_id": msg.get("id") if isinstance(msg, dict) else None, "ideas": ideas}
+
+
+def make_from_pitch(state: dict, n: int, reply_to: str):
+    from datetime import timedelta
+    ideas = (state.get("pitch") or {}).get("ideas") or []
+    if not 1 <= n <= len(ideas):
+        discord.send_text("No pitch with that number. Type `pitch` for new ideas.", reply_to=reply_to)
+        return
+    x = ideas[n - 1]
+    discord.send_text(f"🎬 Making **{x.get('title', '')}**… (about 5 minutes)", reply_to=reply_to)
+    hint = (f"{x.get('title', '')}: {x.get('setup', '')} Punchline: {x.get('punchline', '')} "
+            f"Rappit's key line: {x.get('rappit_line', '')} ({x.get('english', '')}). Cast: {x.get('cast', '')}")
+    ep = concepts.write(state, hint=hint)
+    now = datetime.now(TZ)
+    ep["id"] += f"-{now:%Y-%m-%d-%H%M}"
+    state.setdefault("custom_episodes", []).append(ep)
+    concepts.remember(state, ep, now.strftime("%Y-%m-%d"))
+    day = now + timedelta(days=1) if now.hour >= 16 else now
+    at = f"{day:%A} 18:00"
+    from rappit.common import next_slot
+    pipeline.make(state, ep["id"], "reel", ep, next_slot(at), 0, at)
+    state.pop("pitch", None)
 
 
 def add_idea(state: dict, idea: str, reply_to: str):
@@ -146,6 +180,10 @@ def main():
                 state.pop("ig_token_warned", None)
                 state.pop("ig_token_seen", None)
                 discord.send_text("👍 Thanks, I'll remind you again in 50 days.")
+            elif text.lower().startswith("pitch"):
+                send_pitch(state, text[5:].strip(" :-") or None, m["id"])
+            elif text.strip().isdigit() and state.get("pitch"):
+                make_from_pitch(state, int(text.strip()), m["id"])
             elif text.lower().startswith("idea"):
                 idea = text[4:].strip(" :-")
                 if idea:
@@ -157,7 +195,7 @@ def main():
             elif text:
                 discord.send_text("To change a draft, **reply** to it with your note "
                                   "(long-press → Reply), or reply `post now` to publish it right away. "
-                                  "Type `status` to see the queue, or `idea ...` to add an episode idea.")
+                                  "Type `pitch` (or `pitch weddings`) for clip ideas, `status` for the queue.")
         except Exception as e:
             log(f"message {m['id']} failed: {e}\n{traceback.format_exc()}")
             discord.send_text(f"⚠️ Something failed: {e}")
