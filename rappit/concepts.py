@@ -14,8 +14,9 @@ ABU_REF = ROOT / "state" / "refs" / "abu_lakma.png"  # same as ref_path("abu_lak
 LOLA = ("Lola, Rappit's glamorous girlfriend: an original white rabbit with long lashes, glossy "
         "pink lipstick, gold hoop earrings, a fluffy pink faux-fur coat and a tiny designer "
         "handbag")
-TETA = ("Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit with round glasses "
-        "on a chain, hair in a neat bun, floral house dress, beige cardigan and slippers")
+TETA = ("Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit wearing ONE pair of "
+        "round gold glasses on her nose, hair in a neat bun, floral house dress, beige cardigan "
+        "and slippers")
 # Recurring cast (Rappit himself always uses the refs/ photos). Each keeps one reference image.
 CAST = {"abu_lakma": ABU_LAKMA, "lola": LOLA, "teta": TETA}
 
@@ -64,8 +65,10 @@ EVERY CLIP MUST HAVE:
   immediately) -> ESCALATION (3-7s: Rappit's tough-guy approach makes it bigger) -> PAYOFF
   (7-10s: one clear, visible, surprising punchline + a reaction, often a stare into the camera).
 - It is funny with the sound off and for someone who never saw another episode.
-- Simple physical action, one location, max 4 characters, every prop visible from the first
-  frame (nothing appears out of nowhere).
+- Simple physical action, one location, max 3 characters, every prop visible from the first
+  frame (nothing appears out of nowhere). In "frame", name every object ONCE with its count
+  ("one coffee cup on the table") and never put two of the same thing in the scene unless the
+  joke needs it. Each character wears only their own outfit and accessories.
 
 NEVER:
 - Random chains of events, plot twists for their own sake, or "lore" (stashes, swaps, heists,

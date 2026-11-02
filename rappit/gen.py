@@ -103,6 +103,37 @@ def text_json(prompt: str, prefer_pro: bool = False) -> dict:
     raise last_err
 
 
+def vision_json(prompt: str, images: list) -> dict:
+    """Ask a text model about images. images: list of (label, Path). Returns parsed JSON."""
+    parts = []
+    for label, path in images:
+        parts.append(f"{label}:")
+        parts.append(types.Part.from_bytes(data=Path(path).read_bytes(), mime_type=mime_of(Path(path))))
+    parts.append(prompt)
+    last_err = None
+    for model in [*CFG["models"].get("text_pro", []), CFG["models"]["text"]]:
+        try:
+            resp = client().models.generate_content(
+                model=model, contents=parts,
+                config=types.GenerateContentConfig(response_mime_type="application/json"))
+            data = json.loads(resp.text)
+            return data[0] if isinstance(data, list) else data
+        except Exception as e:
+            last_err = e
+            log(f"vision with {model} failed: {e}")
+    raise last_err
+
+
+def frames_at(video: Path, seconds: list[float], out_dir: Path) -> list[Path]:
+    out = []
+    for t in seconds:
+        f = out_dir / f"{video.stem}_t{t:g}.jpg"
+        subprocess.run(["ffmpeg", "-loglevel", "error", "-y", "-ss", str(t), "-i", str(video),
+                        "-frames:v", "1", "-vf", "scale=540:-1", str(f)], check=True)
+        out.append(f)
+    return out
+
+
 def research(prompt: str) -> str:
     """Answer with live Google Search grounding (for weekly trend research). Plain text."""
     last_err = None

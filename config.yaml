@@ -27,11 +27,8 @@ images:
 
 # Weekly plan (Beirut time), made on Sunday morning. kind "concept" = one fresh ~10 s clip
 # (Rappit & Abu Lakma, Lebanese everyday life). Old formats: reel (mafia), mugshot, soft.
-plan:
-  - {id: clip1, kind: concept, at: Monday 18:00}
-  - {id: clip2, kind: concept, at: Wednesday 18:00}
-  - {id: clip3, kind: concept, at: Friday 18:00}
-  - {id: clip4, kind: concept, at: Saturday 18:00}
+plan: []   # one clip at a time for now: made by hand with the "Concept test" workflow
+  # - {id: clip1, kind: concept, at: Monday 18:00}
 
 # Safety caps
 limits:

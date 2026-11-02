@@ -4,6 +4,7 @@ from pathlib import Path
 
 from . import captions, gen, quota, writer
 from .common import CFG, OUT, ROOT, log
+import re
 
 SOFT_IDEAS = (
     "secretly tending a tiny carrot garden at sunrise, watering can in paw",
@@ -76,12 +77,34 @@ def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
                         "visible, neutral poses, plain backdrop.", d / "character.png",
                         style=c["style"], with_rappit=False)
         extra.append(("The other characters - must look exactly like this", ref))
-    frame = gen.image(f"Setting: {c['setting']}. {c['frame']}" + n, d / "frame1.png",
-                      extra_images=extra, style=c["style"])
+    from . import qa
+    who = ", ".join(["Lil Rappit", *[concepts.CAST[k].split(",")[0].split(":")[0] for k in cast]])
+    rules = ("Exactly these characters, each appearing once: " + who + ". Every prop appears "
+             "exactly once unless stated otherwise; each character wears only their own "
+             "accessories (one pair of glasses at most, one hat at most). No text anywhere.")
+    refs = [("Lil Rappit - must look exactly like this", ROOT / "refs" / "turnaround.jpg"), *extra]
+    fix = ""
+    for attempt in range(3):  # draw the opening frame, check it, redraw with the problems listed
+        frame = gen.image(f"Setting: {c['setting']}. {c['frame']} {rules}" + fix + n,
+                          d / f"frame1_v{attempt + 1}.png", extra_images=extra, style=c["style"])
+        r = qa.check_frame(frame, refs, c["frame"], who)
+        if r.get("ok"):
+            break
+        fix = " FIX THESE PROBLEMS FROM THE LAST ATTEMPT: " + "; ".join(r.get("problems", []))
     prompt = (f"Setting: {c['setting']}.\n"
               + (f"Other character (looks exactly like this): {c['look']}.\n" if c.get("look") else "")
-              + f"Action, beat by beat: {c['action']}\nSound: {c['sound']}" + n)
+              + f"{rules}\nAction, beat by beat: {c['action']}\nSound: {c['sound']}" + n)
     media = gen.video(prompt, frame, d / "reel.mp4", seconds=secs, style=c["style"])
+    r = qa.check_video(media, refs, c, who)
+    if not r.get("ok") or r.get("punchline_visible") is False:  # one more try, problems listed
+        quota.need(1)
+        media = gen.video(prompt + "\nAVOID THESE PROBLEMS SEEN IN THE LAST ATTEMPT: "
+                          + "; ".join(r.get("problems", []) or ["the punchline was not visible at the end"]),
+                          frame, d / "reel_v2.mp4", seconds=secs, style=c["style"])
+        qa.check_video(media, refs, c, who)
+    lines = re.findall(r'"([^"]{2,120})"', c.get("sound", ""))
+    if lines:  # dialogue: burn word-by-word captions so it works with the sound off
+        media = captions.apply(media, media.with_name("reel_cap.mp4"), None, lines)
     try:
         data = gen.text_json(
             "You write social captions for Lil Rappit, a tough gangster rabbit whose only weakness "

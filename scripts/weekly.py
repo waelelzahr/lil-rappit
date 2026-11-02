@@ -54,6 +54,9 @@ def main():
     forced = os.environ.get("EPISODE", "").strip()
     plan = [p for p in CFG["plan"] if not only or p["id"] in only]
     prefix = os.environ.get("ITEM_PREFIX", "")
+    if not plan:
+        log("weekly plan is empty (clips are made one at a time); nothing to do")
+        return
     if not only and not prefix and any(k.startswith(week) for k in state["items"]):
         log(f"drafts for {week} already exist; not making them twice")
         return
