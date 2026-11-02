@@ -358,7 +358,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1566855179347824671",
+  "discord_last": "1566869500052119595",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-02",
@@ -687,5 +687,51 @@
       "summary": "Abu Fahd flirts with Lola by offering her a carrot, but Rappit intercepts and eats it to assert dominance.",
       "cliffhanger": "Will Abu Fahd try again?"
     }
-  ]
+  ],
+  "pitch": {
+    "message_id": "1566869500052119595",
+    "ideas": [
+      {
+        "title": "The Olive Harvest",
+        "cast": "Lil Rappit, Abu Lakma",
+        "setup": "Rappit prepares a dramatic martial-arts chop to knock olives off a branch, acting like a master.",
+        "punchline": "Before Rappit can chop, Abu Lakma casually shakes the trunk, burying the tiny rabbit under a sudden rain of falling olives.",
+        "rappit_line": "Wlak fawwar l zaytoun, chouf w t3allam!",
+        "english": "The olives are ready, watch and learn!"
+      },
+      {
+        "title": "The Tractor Parking",
+        "cast": "Lil Rappit, Abu Sleiman",
+        "setup": "Rappit tries to assert dominance over the best spot in the village square for his imaginary tractor.",
+        "punchline": "The Mukhtar completely ignores the threat and casually reminds Rappit that he used to wet the bed.",
+        "rappit_line": "Saffet l tractor la ele hon ya mukhtar.",
+        "english": "The tractor parking is mine here, mukhtar."
+      },
+      {
+        "title": "The Stoic Walk",
+        "cast": "Lil Rappit, Teta",
+        "setup": "Rappit attempts an epic, slow-motion tough-guy walk down the municipality steps for Independence Day.",
+        "punchline": "Teta instantly ruins the cinematic moment by stepping into frame and firmly scrubbing his nose with a tissue.",
+        "rappit_line": "Zaha2toune, wayn l e7tifal?",
+        "english": "You bored me, where is the celebration?"
+      },
+      {
+        "title": "The Water Tank",
+        "cast": "Lil Rappit, Umm Lakma",
+        "setup": "Rappit furiously marches to the rooftop water tanks to complain about the village water being cut.",
+        "punchline": "Umm Lakma silences him instantly by tossing Abu Lakma's soaking wet red tracksuit directly onto his head.",
+        "rappit_line": "Mafi no2tet may, shu 3am tesba7i fo2?",
+        "english": "Not a drop of water, are you swimming up there?"
+      },
+      {
+        "title": "The Designer Bag",
+        "cast": "Lil Rappit, Lola",
+        "setup": "Lola dramatically poses with her new tiny designer handbag, waiting for her tough boyfriend to compliment her.",
+        "punchline": "Rappit stares deeply into her eyes, completely ignores the bag, and asks for the carrot sticking out of her groceries.",
+        "rappit_line": "Wlek chou hal jamal... a3tine l jazar.",
+        "english": "Oh what beauty... give me the carrot."
+      }
+    ]
+  },
+  "auto_pitch_at": "2026-11-02T19:39:34.522071+02:00"
 }
