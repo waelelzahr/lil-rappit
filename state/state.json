@@ -355,10 +355,20 @@
       "soft_idx": 0,
       "tease": "To be continued: Will Abu Fahd try again? 👀 Follow so you don't miss it.",
       "no": null
+    },
+    "concept-the-stolen-tupperware-2026-11-02-2022": {
+      "kind": "reel",
+      "episode": "concept-the-stolen-tupperware-2026-11-02-2022",
+      "slot": "2026-11-03T18:00:00+02:00",
+      "status": "queued",
+      "not_before": "2026-11-03T10:05:00+02:00",
+      "redos": 0,
+      "soft_idx": 0,
+      "tease": ""
     }
   },
   "tg_offset": 0,
-  "discord_last": "1566873903572189198",
+  "discord_last": "1566878956156747878",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-02",
@@ -662,6 +672,47 @@
       "qa": [
         "The olives form a neat pile on the ground in front of the rabbit, rather than being dumped onto his head or reaching his waist."
       ]
+    },
+    {
+      "id": "concept-the-stolen-tupperware-2026-11-02-2022",
+      "title": "The Stolen Tupperware",
+      "relatable_truth": "Lebanese aunties will give you any random lid and expect you to accept it as the truth.",
+      "joke": "A tough guy fails to fit a round pink lid onto a square container while pretending everything is totally normal under a strict stare.",
+      "cast": [
+        "umm_lakma"
+      ],
+      "look": "Umm Lakma, Abu Lakma's wife: a stout no-nonsense bulldog with curlers in her hair, a purple house robe and pink fluffy slippers",
+      "setting": "Outside Umm Lakma's traditional stone house, late afternoon, warm sunlight, a plastic chair and a potted geranium in the background.",
+      "frame": "Medium two-shot. Rappit (left) holds the open bottom half of a square plastic container. Umm Lakma (right) stands firmly, holding a round pink plastic lid suspended directly over his container.",
+      "action": "[0-3s] Rappit adjusts his gold sunglasses, puffs out his orange jacket, and gestures to his square container with serious gangster attitude. [3-6s] Umm Lakma doesn't blink; she aggressively drops the round pink lid directly into his open square container. [6-10s] Cut to a close-up of Rappit. Intimidated, he breaks eye contact and awkwardly tries to press the round edges down onto the square rim.",
+      "sound": "Oud background music stops abruptly at 4s. Crickets chirp. A squeaky plastic scraping sound as he awkwardly forces the lid down.",
+      "dialogue": [
+        {
+          "speaker": "Lil Rappit",
+          "arabic": "إم لقمة، تيتا بدها غطا التوبروير الأصلي.",
+          "arabizi": "Umm Lakma, Teta bedda ghata el tupperware el asle.",
+          "english": "Umm Lakma, Teta wants the original Tupperware lid.",
+          "at": "0-3s"
+        },
+        {
+          "speaker": "Umm Lakma",
+          "arabic": "هيدا الموجود.",
+          "arabizi": "Hayda el mawjoud.",
+          "english": "This is what we have.",
+          "at": "4-5s"
+        }
+      ],
+      "caption_brief": "When Teta sends you to get the Tupperware lid back but Umm Lakma makes the rules.",
+      "uses_carrot": false,
+      "story_summary": "Rappit demands the original square Tupperware lid from Umm Lakma, but meekly accepts a mismatched round pink one under her intimidating stare.",
+      "cliffhanger": "",
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "with_abu": false,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Umm Lakma, Abu Lakma's wife: a stout no-nonsense bulldog with curlers in her hair, a purple house robe and pink fluffy slippers"
     }
   ],
   "concepts_done": [
@@ -674,7 +725,8 @@
     "The Heavy Laugher: Rappit delivers a joke with dead-serious intensity, but Abu Lakma finds it so funny that his enthusiastic back-pat flattens the tiny rabbit f",
     "The Flirting Fox: Rappit delivers a serious threat to his rival, but instantly ruins his tough-guy image by snatching and eating the 'romantic gift' in one bite",
     "The Flirting Fox: Abu Fahd tries to seduce Lola with a romantic carrot, but Rappit intercepts the gift and eats it himself while maintaining eye contact.",
-    "The Olive Harvest: Rappit hypes up an epic martial-arts chop to harvest the tree, but Abu Lakma simply kicks the trunk, dropping a pile of olives right onto the"
+    "The Olive Harvest: Rappit hypes up an epic martial-arts chop to harvest the tree, but Abu Lakma simply kicks the trunk, dropping a pile of olives right onto the",
+    "The Stolen Tupperware: A tough guy fails to fit a round pink lid onto a square container while pretending everything is totally normal under a strict stare."
   ],
   "brief": {
     "date": "2026-11-01",
@@ -737,52 +789,13 @@
       "title": "The Olive Harvest",
       "summary": "Rappit prepares an epic karate chop to harvest an olive branch, but Abu Lakma simply kicks the trunk and drops a pile of olives directly onto his head.",
       "cliffhanger": ""
+    },
+    {
+      "date": "2026-11-02",
+      "title": "The Stolen Tupperware",
+      "summary": "Rappit demands the original square Tupperware lid from Umm Lakma, but meekly accepts a mismatched round pink one under her intimidating stare.",
+      "cliffhanger": ""
     }
   ],
-  "pitch": {
-    "message_id": "1566873903572189198",
-    "ideas": [
-      {
-        "title": "The Empty Khazzan",
-        "cast": "Lil Rappit and Abu Sleiman",
-        "setup": "Rappit intensely knocks on an empty plastic roof water tank like a professional inspector, demanding answers.",
-        "punchline": "Abu Sleiman casually reveals he used the village water to wash his tractor, leaving Rappit staring silently into the camera.",
-        "rappit_line": "Wlak min fadha el khazzan ya mukhtar? Badde esm!",
-        "english": "Who emptied the tank, Mukhtar? I want a name!"
-      },
-      {
-        "title": "The Stolen Tupperware",
-        "cast": "Lil Rappit and Umm Lakma",
-        "setup": "Rappit approaches Umm Lakma with his gangster swagger, holding a plastic food container, demanding his grandmother's lid back.",
-        "punchline": "Umm Lakma firmly hands him a completely mismatched pink lid and stares him down until he meekly accepts it.",
-        "rappit_line": "Umm Lakma, Teta bedda ghata el tupperware el asle.",
-        "english": "Umm Lakma, Teta wants the original Tupperware lid."
-      },
-      {
-        "title": "The Tractor Flex",
-        "cast": "Lil Rappit and Abu Fahd",
-        "setup": "Abu Fahd slyly twirls his car keys, bragging about his luxury ride to steal Rappit's spotlight.",
-        "punchline": "Rappit points out that Abu Fahd's 'luxury ride' is actually just a rusty farm tractor parked behind them.",
-        "rappit_line": "Mabrouk el Porsche ya Abu Fahd, bas layko m3alla2 bil wa7el.",
-        "english": "Congratulations on the Porsche, Abu Fahd, but it's stuck in the mud."
-      },
-      {
-        "title": "The Winter Carpet",
-        "cast": "Lil Rappit and Teta",
-        "setup": "Rappit poses tough in his puffer jacket, but Teta makes him hold the heavy living room carpet while she beats the dust out of it.",
-        "punchline": "With every smack of Teta's stick on the carpet, Rappit bounces completely off the ground but tries to maintain his serious face.",
-        "rappit_line": "Teta, ana mudeer el day3a, mesh stand lel sijedeh!",
-        "english": "Teta, I am the boss of the village, not a carpet stand!"
-      },
-      {
-        "title": "The Jealous Carrot",
-        "cast": "Lil Rappit and Lola",
-        "setup": "Lola dramatically crosses her arms, demanding to know who Rappit loves more, her or his precious carrot.",
-        "punchline": "Rappit slowly takes a bite out of a real carrot he was hiding, chewing loudly while refusing to break eye contact with her.",
-        "rappit_line": "Lola, ente el amar... bas el jazar bi awwe el nazar.",
-        "english": "Lola, you are the moon... but carrots improve the eyesight."
-      }
-    ]
-  },
   "auto_pitch_at": "2026-11-02T19:57:10.479198+02:00"
 }
