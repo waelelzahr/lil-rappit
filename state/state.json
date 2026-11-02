@@ -358,7 +358,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1566869970153902144",
+  "discord_last": "1566873903572189198",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-02",
@@ -738,5 +738,51 @@
       "summary": "Rappit prepares an epic karate chop to harvest an olive branch, but Abu Lakma simply kicks the trunk and drops a pile of olives directly onto his head.",
       "cliffhanger": ""
     }
-  ]
+  ],
+  "pitch": {
+    "message_id": "1566873903572189198",
+    "ideas": [
+      {
+        "title": "The Empty Khazzan",
+        "cast": "Lil Rappit and Abu Sleiman",
+        "setup": "Rappit intensely knocks on an empty plastic roof water tank like a professional inspector, demanding answers.",
+        "punchline": "Abu Sleiman casually reveals he used the village water to wash his tractor, leaving Rappit staring silently into the camera.",
+        "rappit_line": "Wlak min fadha el khazzan ya mukhtar? Badde esm!",
+        "english": "Who emptied the tank, Mukhtar? I want a name!"
+      },
+      {
+        "title": "The Stolen Tupperware",
+        "cast": "Lil Rappit and Umm Lakma",
+        "setup": "Rappit approaches Umm Lakma with his gangster swagger, holding a plastic food container, demanding his grandmother's lid back.",
+        "punchline": "Umm Lakma firmly hands him a completely mismatched pink lid and stares him down until he meekly accepts it.",
+        "rappit_line": "Umm Lakma, Teta bedda ghata el tupperware el asle.",
+        "english": "Umm Lakma, Teta wants the original Tupperware lid."
+      },
+      {
+        "title": "The Tractor Flex",
+        "cast": "Lil Rappit and Abu Fahd",
+        "setup": "Abu Fahd slyly twirls his car keys, bragging about his luxury ride to steal Rappit's spotlight.",
+        "punchline": "Rappit points out that Abu Fahd's 'luxury ride' is actually just a rusty farm tractor parked behind them.",
+        "rappit_line": "Mabrouk el Porsche ya Abu Fahd, bas layko m3alla2 bil wa7el.",
+        "english": "Congratulations on the Porsche, Abu Fahd, but it's stuck in the mud."
+      },
+      {
+        "title": "The Winter Carpet",
+        "cast": "Lil Rappit and Teta",
+        "setup": "Rappit poses tough in his puffer jacket, but Teta makes him hold the heavy living room carpet while she beats the dust out of it.",
+        "punchline": "With every smack of Teta's stick on the carpet, Rappit bounces completely off the ground but tries to maintain his serious face.",
+        "rappit_line": "Teta, ana mudeer el day3a, mesh stand lel sijedeh!",
+        "english": "Teta, I am the boss of the village, not a carpet stand!"
+      },
+      {
+        "title": "The Jealous Carrot",
+        "cast": "Lil Rappit and Lola",
+        "setup": "Lola dramatically crosses her arms, demanding to know who Rappit loves more, her or his precious carrot.",
+        "punchline": "Rappit slowly takes a bite out of a real carrot he was hiding, chewing loudly while refusing to break eye contact with her.",
+        "rappit_line": "Lola, ente el amar... bas el jazar bi awwe el nazar.",
+        "english": "Lola, you are the moon... but carrots improve the eyesight."
+      }
+    ]
+  },
+  "auto_pitch_at": "2026-11-02T19:57:10.479198+02:00"
 }
