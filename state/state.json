@@ -358,11 +358,11 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1566869500052119595",
+  "discord_last": "1566869970153902144",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-02",
-    "count": 8
+    "count": 10
   },
   "episode_no": 6,
   "custom_episodes": [
@@ -618,6 +618,50 @@
         "Abu Fahd transforms from an anthropomorphic fox in the first frame into a human man in the last frame.",
         "Lil Rappit holds the carrot with his own paw instead of biting it out of Abu Fahd's hand as described."
       ]
+    },
+    {
+      "id": "concept-the-olive-harvest-2026-11-02-1947",
+      "title": "The Olive Harvest",
+      "relatable_truth": "The city-minded guy who overcomplicates a simple village chore versus the practical local who just gets it done with brute force.",
+      "joke": "Rappit hypes up an epic martial-arts chop to harvest the tree, but Abu Lakma simply kicks the trunk, dropping a pile of olives right onto the boastful rabbit's head.",
+      "cast": [
+        "abu_lakma"
+      ],
+      "look": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers",
+      "setting": "A Bekaa village olive orchard during golden hour. Golden sunlight filters through the silver-green leaves of a large olive tree. A wide green plastic tarp is spread on the dirt ground.",
+      "frame": "Steady two-shot. Lil Rappit stands center-left on the green tarp, facing a low-hanging olive branch, hands raised in a martial-arts stance. Abu Lakma stands center-right, hands on his hips, right next to the thick tree trunk.",
+      "action": "[0-3s] SETUP: Rappit performs exaggerated, slow-motion ninja hand warm-ups in front of the branch. Abu Lakma watches with a flat, unimpressed expression. [3-6s] EXCHANGE: Rappit delivers his line with intense seriousness, winding up his tiny arm for an epic chop. Abu Lakma sighs and shakes his head. [6-10s] PUNCHLINE: Before Rappit can chop, Abu Lakma casually kicks the thick trunk once with his white sneaker. A single, comedically large barrage of olives drops directly onto Rappit's head, leaving the rabbit completely dazed and frozen, standing waist-deep in a static pile of olives.",
+      "sound": "Traditional Mijwiz (Lebanese flute) playing a slow, dramatic tune that abruptly stops with a solid 'thud' of a kick, followed by a cartoonish cascade of dropping olives and awkward silence.",
+      "dialogue": [
+        {
+          "speaker": "Rappit",
+          "arabic": "ولك فوّر الزيتون، شوف وتعلّم!",
+          "arabizi": "Wlak fawwar l zaytoun, chouf w t3allam!",
+          "english": "The olives are ready, watch and learn!",
+          "at": "1-3s"
+        },
+        {
+          "speaker": "Abu Lakma",
+          "arabic": "يا معلّم، مش هيك...",
+          "arabizi": "Ya m3allem, mesh hek...",
+          "english": "Boss, not like that...",
+          "at": "4-6s"
+        }
+      ],
+      "caption_brief": "When you try to be a ninja at the olive harvest but your buddy just gets the job done with brute force.",
+      "uses_carrot": false,
+      "story_summary": "Rappit prepares an epic karate chop to harvest an olive branch, but Abu Lakma simply kicks the trunk and drops a pile of olives directly onto his head.",
+      "cliffhanger": "",
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "with_abu": true,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Abu Lakma, an original huge tough boxer bulldog: broad muscular chest, short brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick gold chain, white sneakers",
+      "qa": [
+        "The olives form a neat pile on the ground in front of the rabbit, rather than being dumped onto his head or reaching his waist."
+      ]
     }
   ],
   "concepts_done": [
@@ -629,7 +673,8 @@
     "The Shibshib Shadowbox: Rappit acts tough by shadowboxing aggressively into the camera, unaware that Teta is standing right behind him holding a real slipper.",
     "The Heavy Laugher: Rappit delivers a joke with dead-serious intensity, but Abu Lakma finds it so funny that his enthusiastic back-pat flattens the tiny rabbit f",
     "The Flirting Fox: Rappit delivers a serious threat to his rival, but instantly ruins his tough-guy image by snatching and eating the 'romantic gift' in one bite",
-    "The Flirting Fox: Abu Fahd tries to seduce Lola with a romantic carrot, but Rappit intercepts the gift and eats it himself while maintaining eye contact."
+    "The Flirting Fox: Abu Fahd tries to seduce Lola with a romantic carrot, but Rappit intercepts the gift and eats it himself while maintaining eye contact.",
+    "The Olive Harvest: Rappit hypes up an epic martial-arts chop to harvest the tree, but Abu Lakma simply kicks the trunk, dropping a pile of olives right onto the"
   ],
   "brief": {
     "date": "2026-11-01",
@@ -686,52 +731,12 @@
       "title": "The Flirting Fox",
       "summary": "Abu Fahd flirts with Lola by offering her a carrot, but Rappit intercepts and eats it to assert dominance.",
       "cliffhanger": "Will Abu Fahd try again?"
+    },
+    {
+      "date": "2026-11-02",
+      "title": "The Olive Harvest",
+      "summary": "Rappit prepares an epic karate chop to harvest an olive branch, but Abu Lakma simply kicks the trunk and drops a pile of olives directly onto his head.",
+      "cliffhanger": ""
     }
-  ],
-  "pitch": {
-    "message_id": "1566869500052119595",
-    "ideas": [
-      {
-        "title": "The Olive Harvest",
-        "cast": "Lil Rappit, Abu Lakma",
-        "setup": "Rappit prepares a dramatic martial-arts chop to knock olives off a branch, acting like a master.",
-        "punchline": "Before Rappit can chop, Abu Lakma casually shakes the trunk, burying the tiny rabbit under a sudden rain of falling olives.",
-        "rappit_line": "Wlak fawwar l zaytoun, chouf w t3allam!",
-        "english": "The olives are ready, watch and learn!"
-      },
-      {
-        "title": "The Tractor Parking",
-        "cast": "Lil Rappit, Abu Sleiman",
-        "setup": "Rappit tries to assert dominance over the best spot in the village square for his imaginary tractor.",
-        "punchline": "The Mukhtar completely ignores the threat and casually reminds Rappit that he used to wet the bed.",
-        "rappit_line": "Saffet l tractor la ele hon ya mukhtar.",
-        "english": "The tractor parking is mine here, mukhtar."
-      },
-      {
-        "title": "The Stoic Walk",
-        "cast": "Lil Rappit, Teta",
-        "setup": "Rappit attempts an epic, slow-motion tough-guy walk down the municipality steps for Independence Day.",
-        "punchline": "Teta instantly ruins the cinematic moment by stepping into frame and firmly scrubbing his nose with a tissue.",
-        "rappit_line": "Zaha2toune, wayn l e7tifal?",
-        "english": "You bored me, where is the celebration?"
-      },
-      {
-        "title": "The Water Tank",
-        "cast": "Lil Rappit, Umm Lakma",
-        "setup": "Rappit furiously marches to the rooftop water tanks to complain about the village water being cut.",
-        "punchline": "Umm Lakma silences him instantly by tossing Abu Lakma's soaking wet red tracksuit directly onto his head.",
-        "rappit_line": "Mafi no2tet may, shu 3am tesba7i fo2?",
-        "english": "Not a drop of water, are you swimming up there?"
-      },
-      {
-        "title": "The Designer Bag",
-        "cast": "Lil Rappit, Lola",
-        "setup": "Lola dramatically poses with her new tiny designer handbag, waiting for her tough boyfriend to compliment her.",
-        "punchline": "Rappit stares deeply into her eyes, completely ignores the bag, and asks for the carrot sticking out of her groceries.",
-        "rappit_line": "Wlek chou hal jamal... a3tine l jazar.",
-        "english": "Oh what beauty... give me the carrot."
-      }
-    ]
-  },
-  "auto_pitch_at": "2026-11-02T19:39:34.522071+02:00"
+  ]
 }
