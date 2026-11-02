@@ -1,20 +1,20 @@
-# Stats 2026-11-02 16:59
+# Stats 2026-11-02 17:29
+
+PROFILE:
+- username: lilrappit
+- name: Lil Rappit - Lebanese comedy
+- biography: Lebanon's toughest rabbit 🐰🕶️
+Scared of nothing… except Teta 👵
+New clip Mon · Wed · Fri · Sat 🥕
+- followers_count: 3
+- follows_count: 0
+- media_count: 4
 
 INSTAGRAM (newest first):
-- 2026-11-01 VIDEO: views=8001 reach=4315 likes=45 comments=1 shares=1 saves=4 avg_watch_ms=12311 | Surviving the streets was light work, but Teta sliding plate number four had this real boss tapping out 🥕💀
+- 2026-11-01 VIDEO: views=8127 reach=4357 likes=45 comments=1 shares=1 saves=4 avg_watch_ms=12316 | Surviving the streets was light work, but Teta sliding plate number four had this real boss tapping out 🥕💀
 - 2026-10-31 VIDEO: views=158 reach=115 likes=1 comments=0 shares=2 saves=0 avg_watch_ms=6115 | Me and Abu Lakma were destroying the dabke until someone flashed that jazar, yalla khallas 🥕🕺
-- 2026-10-29 VIDEO: views=276 reach=217 likes=3 comments=0 shares=1 saves=0 avg_watch_ms=5544 | Tag the friend who loses every negotiation the second food is offered 🥕💀
-- 2026-10-27 VIDEO: views=482 reach=354 likes=1 comments=0 shares=0 saves=0 avg_watch_ms=11790 | POV: You demand a massive salary raise but fold for free snacks (funny rabbit negotiation) 🥕💼
 - 2026-10-26 VIDEO: views=1818 reach=1189 likes=12 comments=0 shares=0 saves=0 avg_watch_ms=10124 | Tag the friend who folded immediately during their salary negotiation funny rabbit style 🥕😭
-- 2026-10-23 IMAGE: views=? reach=3 likes=3 comments=0 shares=2 saves=0 avg_watch_ms=? | Cold on the block, soft for the crop.
 - 2026-10-22 VIDEO: views=1446 reach=1049 likes=15 comments=0 shares=2 saves=0 avg_watch_ms=12624 | Told the feds zero taxes.
-- 2026-10-21 IMAGE: views=? reach=3 likes=0 comments=0 shares=0 saves=0 avg_watch_ms=? | Got caught slipping on the lot.
-- 2026-10-19 VIDEO: views=201 reach=173 likes=3 comments=0 shares=2 saves=0 avg_watch_ms=8174 | Horsepower is temporary.
-- 2026-10-18 VIDEO: views=176 reach=149 likes=3 comments=0 shares=2 saves=0 avg_watch_ms=8632 | Came for the sports car.
-- 2026-10-16 VIDEO: views=138 reach=119 likes=2 comments=0 shares=0 saves=0 avg_watch_ms=3324 | Street certified. Hawk terrified. 🐇🦅
-- 2026-10-16 IMAGE: views=? reach=3 likes=2 comments=2 shares=0 saves=0 avg_watch_ms=? | Me after saying I don't get scared. 👻🥗
-- 2026-10-13 IMAGE: views=? reach=2 likes=1 comments=2 shares=0 saves=0 avg_watch_ms=? | King of the patch. Every pumpkin pays rent here. 👑🎃
-- 2026-10-12 VIDEO: views=127 reach=113 likes=2 comments=0 shares=1 saves=0 avg_watch_ms=3075 | The burrow sent me. 🐇🎤 First verse of many.
 
 YOUTUBE (newest first):
 - 2026-11-01: views=9 likes=1 comments=0 | When Teta Refuses to Let a Real Gangsta Leave Full #Shorts
