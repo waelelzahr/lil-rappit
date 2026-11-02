@@ -36,6 +36,12 @@ def reasons() -> list[str]:
         q = it.get("redo_queued")
         if st == "pending" and q and datetime.fromisoformat(q["not_before"]) <= now:
             out.append(f"{k} redo due")
+    busy = any(v.get("status") in ("pending", "approved", "queued") for v in state.get("items", {}).values())
+    last = state.get("auto_pitch_at")
+    local_hour = (now.hour + 2) % 24  # Beirut (close enough for a daytime window)
+    if not busy and not state.get("pitch") and 9 <= local_hour < 22 and (
+            not last or (now - datetime.fromisoformat(last)).total_seconds() > 20 * 3600):
+        out.append("time for an automatic pitch")
     ch = os.environ["DISCORD_CHANNEL_ID"]
     params = {"limit": 50}
     if state.get("discord_last"):

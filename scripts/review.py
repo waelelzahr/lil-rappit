@@ -153,6 +153,19 @@ def main():
             discord.send_text(f"⚠️ Something failed on `{item_id}`: {e}")
         save_state(state)
 
+    # 1b) Nothing in the pipeline? Pitch the next ideas automatically (max once a day, daytime)
+    try:
+        busy = any(v["status"] in ("pending", "approved", "queued") for v in state["items"].values())
+        last = state.get("auto_pitch_at")
+        now = datetime.now(TZ)
+        recent = last and (now - datetime.fromisoformat(last)).total_seconds() < 20 * 3600
+        if not busy and not state.get("pitch") and not recent and 9 <= now.hour < 22:
+            send_pitch(state, None, None)
+            state["auto_pitch_at"] = now.isoformat()
+            save_state(state)
+    except Exception as e:
+        log(f"auto pitch failed: {e}")
+
     # 2) Text messages: replies to drafts, or commands
     msg_to_item = {it.get("message_id"): k for k, it in state["items"].items()}
     for m in discord.new_replies(state.get("discord_last")):
