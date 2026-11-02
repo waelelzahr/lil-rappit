@@ -110,10 +110,11 @@ CRITIC = """You are a tough comedy editor. Rate this 10-second clip script for I
 {script}
 Score 1-10: relatable (instantly recognisable Lebanese/Arab moment), funny (would a Lebanese
 viewer laugh and send it to a friend?), clear (understood with sound off, single joke, nothing
-random), feasible (a video model can render it: simple actions, props visible, no crime coding).
-Return JSON: {{"scores": {{"relatable": n, "funny": n, "clear": n, "feasible": n}},
+random), feasible (a video model can render it: simple actions, props visible, no crime coding){premise}.
+Return JSON: {{"scores": {{"relatable": n, "funny": n, "clear": n, "feasible": n, "premise": n}},
 "verdict": "pass" if every score >= 7 else "rewrite", "fix": "one concrete instruction to make it
-funnier and clearer"}}"""
+funnier, clearer and easier to render, keeping the premise"}}
+(Leave "premise" out if no premise was given.)"""
 
 
 def write(state: dict, hint: str | None = None, note: str | None = None) -> dict:
@@ -123,7 +124,8 @@ def write(state: dict, hint: str | None = None, note: str | None = None) -> dict
                + (f"\nTHIS WEEK'S TREND BRIEF (inspiration only; the rules above win):\n{brief}\n"
                   if brief else "")
                + (f"\nAlready made (never repeat these ideas): {', '.join(done[-40:])}\n" if done else "")
-               + (f"\nBuild the clip around this idea: {hint}\n" if hint else "")
+               + (f"\nMANDATORY PREMISE (from the show's owner; every idea, draft and rewrite must "
+                  f"be exactly this situation with these characters): {hint}\n" if hint else "")
                + (f"\nDirector's note (must follow): {note}\n" if note else ""))
     # 1) brainstorm and pick the strongest joke
     try:
@@ -138,7 +140,10 @@ def write(state: dict, hint: str | None = None, note: str | None = None) -> dict
     # 2) write it, then 3) let an editor push back once
     c = gen.text_json(context + pick + FORMAT, prefer_pro=True)
     try:
-        review = gen.text_json(CRITIC.format(script=json.dumps(c, ensure_ascii=False)), prefer_pro=True)
+        review = gen.text_json(CRITIC.format(
+            script=json.dumps(c, ensure_ascii=False),
+            premise=(f", premise (it must be exactly this: {hint}; score 1 if not)" if hint else "")),
+            prefer_pro=True)
         log(f"editor: {review.get('scores')} {review.get('verdict')}")
         if review.get("verdict") != "pass":
             c = gen.text_json(context + pick + f"\nEDITOR'S NOTE ON YOUR DRAFT {json.dumps(c, ensure_ascii=False)}: "

@@ -94,14 +94,21 @@ def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
     prompt = (f"Setting: {c['setting']}.\n"
               + (f"Other character (looks exactly like this): {c['look']}.\n" if c.get("look") else "")
               + f"{rules}\nAction, beat by beat: {c['action']}\nSound: {c['sound']}" + n)
+    def score(r):  # punchline on screen matters most, then a clean check, then fewer problems
+        return (r.get("punchline_visible") is not False, bool(r.get("ok")), -len(r.get("problems") or []))
+
     media = gen.video(prompt, frame, d / "reel.mp4", seconds=secs, style=c["style"])
     r = qa.check_video(media, refs, c, who)
     if not r.get("ok") or r.get("punchline_visible") is False:  # one more try, problems listed
         quota.need(1)
-        media = gen.video(prompt + "\nAVOID THESE PROBLEMS SEEN IN THE LAST ATTEMPT: "
-                          + "; ".join(r.get("problems", []) or ["the punchline was not visible at the end"]),
-                          frame, d / "reel_v2.mp4", seconds=secs, style=c["style"])
-        qa.check_video(media, refs, c, who)
+        v2 = gen.video(prompt + "\nAVOID THESE PROBLEMS SEEN IN THE LAST ATTEMPT: "
+                       + "; ".join(r.get("problems", []) or ["the punchline was not visible at the end"]),
+                       frame, d / "reel_v2.mp4", seconds=secs, style=c["style"])
+        r2 = qa.check_video(v2, refs, c, who)
+        if score(r2) > score(r):
+            media, r = v2, r2
+        log(f"kept {media.name}")
+    c["qa"] = r.get("problems") or []
     lines = re.findall(r'"([^"]{2,120})"', c.get("sound", ""))
     if lines:  # dialogue: burn word-by-word captions so it works with the sound off
         media = captions.apply(media, media.with_name("reel_cap.mp4"), None, lines)
@@ -116,7 +123,8 @@ def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
         log(f"caption failed, using fallback: {e}")
         cap = {"caption": f"Lil Rappit: {c['title']} 🥕\n\n{CFG['hashtags']}", "title": f"Lil Rappit: {c['title']}"}
     log(f"built {item_id} (concept {c['id']})")
-    return {"file": str(media), **cap, "script_text": concepts.script_text(c)}
+    qa_note = ("\n🔍 **Checker notes:** " + "; ".join(c["qa"])) if c.get("qa") else "\n🔍 Checker: no problems found."
+    return {"file": str(media), **cap, "script_text": concepts.script_text(c) + qa_note}
 
 
 def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: int = 0,
