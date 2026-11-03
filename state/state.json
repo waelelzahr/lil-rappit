@@ -376,7 +376,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1567097622785957962",
+  "discord_last": "1567208413706850345",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-03",
@@ -806,5 +806,50 @@
       "cliffhanger": ""
     }
   ],
-  "auto_pitch_at": "2026-11-02T19:57:10.479198+02:00"
+  "auto_pitch_at": "2026-11-03T18:06:13.479847+02:00",
+  "pitch": {
+    "message_id": "1567208413706850345",
+    "ideas": [
+      {
+        "title": "The Power Cut",
+        "cast": "Lil Rappit, Abu Lakma",
+        "setup": "The village power cuts mid-match, and Abu Lakma nervously holds up a phone flashlight in the dark room.",
+        "punchline": "A loud electrical spark pops off-screen, and Abu Lakma stares blankly as Rappit's sunglasses slowly slide down his nose in defeat.",
+        "rappit_line": "Ana ma btfe shi, khalli el kahraba tkhaf menne.",
+        "english": "I don't turn off anything, let the electricity fear me."
+      },
+      {
+        "title": "The Manoushe Betrayal",
+        "cast": "Lil Rappit, Abu Fahd",
+        "setup": "Rappit corners Abu Fahd on the municipality steps, intensely demanding a tough-guy bite of his zaatar manoushe.",
+        "punchline": "Abu Fahd smirks and casually twirls his keys, revealing that Lola already ate the best piece, leaving Rappit completely frozen in betrayal.",
+        "rappit_line": "Wen 7ossote mnel man2oushe ya Abu Fahd?",
+        "english": "Where is my share of the manoushe Abu Fahd?"
+      },
+      {
+        "title": "The Wasta Roadblock",
+        "cast": "Lil Rappit, Abu Sleiman",
+        "setup": "Rappit tries to act like the mafia boss by ordering the mukhtar to move his wooden cart from blocking the narrow stone street.",
+        "punchline": "The mukhtar savagely reminds Rappit that his grandfather rode a donkey, causing the tough rabbit to instantly bow his head and yield the road.",
+        "rappit_line": "Zei7 el 3arabeyye ya mukhtar, tari2eh halla2.",
+        "english": "Move the cart mukhtar, it's my road now."
+      },
+      {
+        "title": "The Mopped Floor",
+        "cast": "Lil Rappit, Teta",
+        "setup": "Rappit attempts a serious, slow-motion tough-guy walk down the village alley for a video, but Teta is mopping.",
+        "punchline": "Teta completely ignores his gangster aesthetic and aggressively sweeps the wet mop over his sneakers, forcing him to hop away awkwardly.",
+        "rappit_line": "Ya Teta wa2fe l mase7, 3am ba3mel video haybe!",
+        "english": "Teta stop mopping, I'm making a prestige video!"
+      },
+      {
+        "title": "The Ultimatum",
+        "cast": "Lil Rappit, Lola",
+        "setup": "Lola poses glamorously in the vineyard and demands Rappit choose between admiring her outfit or polishing a giant carrot.",
+        "punchline": "Lola dramatically gasps and drops her tiny designer bag in shock as Rappit delivers his deadpan logic and takes a loud, unapologetic crunch.",
+        "rappit_line": "El jazarah ma btet2akhar se3ten 3al maw3ad ya Lola.",
+        "english": "The carrot doesn't run two hours late to the date, Lola."
+      }
+    ]
+  }
 }
