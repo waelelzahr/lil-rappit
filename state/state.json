@@ -360,7 +360,7 @@
       "kind": "reel",
       "episode": "concept-the-stolen-tupperware-2026-11-02-2022",
       "slot": "2026-11-03T18:00:00+02:00",
-      "status": "approved",
+      "status": "posted",
       "redos": 0,
       "message_id": "1567088155453030560",
       "run_id": "41600672545",
@@ -369,7 +369,10 @@
       "title": "Retrieving Teta's Tupperware Is A Suicide Mission",
       "soft_idx": 0,
       "tease": "",
-      "no": null
+      "no": null,
+      "instagram": "https://www.instagram.com/reel/DfSQ6g4iOHB/",
+      "youtube": "https://youtube.com/shorts/R9jDMdleqPY",
+      "posted_at": "2026-11-03T18:01:26.886739+02:00"
     }
   },
   "tg_offset": 0,
