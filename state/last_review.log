@@ -1,11 +1,1 @@
-[10:06:23] image ok (gemini-nano-banana-2.1) -> frame1_v1.png
-[10:06:36] frame check: ok
-[10:07:18] video ok -> reel.mp4 (10s, 42s)
-[10:07:31] video check: ["In the 5.0s frame, the pink round lid is duplicated; Umm Lakma is holding one while another identical lid is already resting on Lil Rappit's square container."] punchline_visible=True
-[10:08:14] video ok -> reel_v2.mp4 (10s, 44s)
-[10:08:30] video check: ok punchline_visible=True
-[10:08:30] kept reel_v2.mp4
-Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
-[0;93m2026-11-03 08:08:35.667216511 [W:onnxruntime:Default, device_discovery.cc:95 GetPciBusId] Skipping pci_bus_id for PCI path at "/sys/devices/LNXSYSTM:00/LNXSYBUS:00/ACPI0004:00/MSFT1000:00/5620e0c7-8062-4dce-aeb7-520c7ef76171" because filename "5620e0c7-8062-4dce-aeb7-520c7ef76171" did not match expected pattern of [0-9a-f]+:[0-9a-f]+:[0-9a-f]+[.][0-9a-f]+[m
-[10:08:42] dialogue captions: 2 lines over 2 speech windows
-[10:08:50] built concept-the-stolen-tupperware-2026-11-02-2022 (concept concept-the-stolen-tupperware-2026-11-02-2022)
+[10:46:28] approved concept-the-stolen-tupperware-2026-11-02-2022

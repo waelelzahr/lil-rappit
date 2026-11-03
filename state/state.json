@@ -360,7 +360,7 @@
       "kind": "reel",
       "episode": "concept-the-stolen-tupperware-2026-11-02-2022",
       "slot": "2026-11-03T18:00:00+02:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1567088155453030560",
       "run_id": "41600672545",
@@ -373,7 +373,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1567088166454951967",
+  "discord_last": "1567097622785957962",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-03",
