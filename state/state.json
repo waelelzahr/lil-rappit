@@ -360,19 +360,24 @@
       "kind": "reel",
       "episode": "concept-the-stolen-tupperware-2026-11-02-2022",
       "slot": "2026-11-03T18:00:00+02:00",
-      "status": "queued",
-      "not_before": "2026-11-03T10:05:00+02:00",
+      "status": "pending",
       "redos": 0,
+      "message_id": "1567088155453030560",
+      "run_id": "41600672545",
+      "relpath": "concept-the-stolen-tupperware-2026-11-02-2022/reel_cap.mp4",
+      "caption": "I run these streets, but stepping to Umm Lakma for Teta’s Tupperware is a suicide mission 💀🥕\nWho is the final boss auntie in your family?\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "Retrieving Teta's Tupperware Is A Suicide Mission",
       "soft_idx": 0,
-      "tease": ""
+      "tease": "",
+      "no": null
     }
   },
   "tg_offset": 0,
-  "discord_last": "1566878956156747878",
+  "discord_last": "1567088166454951967",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
-    "date": "2026-11-02",
-    "count": 10
+    "date": "2026-11-03",
+    "count": 2
   },
   "episode_no": 6,
   "custom_episodes": [
@@ -712,7 +717,8 @@
       "with_abu": false,
       "demand": "",
       "bad_deal": "",
-      "opponent": "Umm Lakma, Abu Lakma's wife: a stout no-nonsense bulldog with curlers in her hair, a purple house robe and pink fluffy slippers"
+      "opponent": "Umm Lakma, Abu Lakma's wife: a stout no-nonsense bulldog with curlers in her hair, a purple house robe and pink fluffy slippers",
+      "qa": []
     }
   ],
   "concepts_done": [
