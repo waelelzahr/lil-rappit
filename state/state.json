@@ -376,10 +376,10 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1567208413706850345",
+  "discord_last": "1567981639261225053",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
-    "date": "2026-11-03",
+    "date": "2026-11-05",
     "count": 2
   },
   "episode_no": 6,
@@ -722,6 +722,51 @@
       "bad_deal": "",
       "opponent": "Umm Lakma, Abu Lakma's wife: a stout no-nonsense bulldog with curlers in her hair, a purple house robe and pink fluffy slippers",
       "qa": []
+    },
+    {
+      "id": "concept-the-carrot-ultimatum-2026-11-05-2121",
+      "title": "The Carrot Ultimatum",
+      "relatable_truth": "The fastest decision ever made when given an impossible ultimatum.",
+      "joke": "Lola demands he choose between her and a carrot, and he flawlessly justifies choosing the vegetable before crunching it.",
+      "cast": [
+        "lola"
+      ],
+      "look": "Lola, Rappit's glamorous girlfriend: an original white rabbit with long lashes, glossy pink lipstick, gold hoop earrings, a fluffy pink faux-fur coat and a tiny designer handbag",
+      "setting": "A sunlit Bekaa Valley vineyard. Lush green grapevines climb over a rustic wooden trellis, casting dappled shadows on the dry, dusty earth.",
+      "frame": "Medium two-shot. Lola stands on the left in her fluffy pink faux-fur coat, clutching a tiny designer handbag. Rappit stands on the right in his orange puffer jacket and gold shades, holding a giant orange carrot and a small polishing cloth.",
+      "action": "[0-3s] Lola strikes a glamorous pose, then points sharply from her outfit to the carrot in Rappit's hand, demanding a choice. [3-7s] Rappit stops polishing, slowly raises his head, and delivers his logic with deadpan seriousness. [7-10s] Lola gasps dramatically and drops her tiny designer bag to the dirt in pure shock, while Rappit maintains unblinking eye contact and takes a loud, unapologetic crunch of the carrot.",
+      "sound": "Dramatic Lebanese soap-opera style oud music builds up, cutting off abruptly with a shocked gasp and a very loud, crisp 'CRUNCH' sound effect.",
+      "dialogue": [
+        {
+          "speaker": "Lola",
+          "arabic": "أنا ولا هالجزرة يا رابيت؟",
+          "arabizi": "Ana walla hal jazarah ya Rappit?",
+          "english": "Me or this carrot, Rappit?",
+          "at": "0-3s"
+        },
+        {
+          "speaker": "Rappit",
+          "arabic": "الجزرة ما بتتأخر ساعتين عالموعد يا لولا.",
+          "arabizi": "El jazarah ma btet2akhar se3ten 3al maw3ad ya Lola.",
+          "english": "The carrot doesn't run two hours late to the date, Lola.",
+          "at": "3-7s"
+        }
+      ],
+      "caption_brief": "The fastest decision ever made when given an impossible ultimatum: choosing a vegetable over the girlfriend because it's always on time.",
+      "uses_carrot": true,
+      "story_summary": "Lola gives Rappit an ultimatum between admiring her or his carrot, and he brutally chooses the punctual vegetable.",
+      "cliffhanger": "Will Lola forgive Rappit?",
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "with_abu": false,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Lola, Rappit's glamorous girlfriend: an original white rabbit with long lashes, glossy pink lipstick, gold hoop earrings, a fluffy pink faux-fur coat and a tiny designer handbag",
+      "qa": [
+        "Lola's gold hoop earrings detach from her ear and float mid-air in the 5.0s and 9.3s frames.",
+        "Lil Rappit's large carrot disappears entirely in the 5.0s frame before reappearing in the 9.3s frame."
+      ]
     }
   ],
   "concepts_done": [
@@ -735,7 +780,8 @@
     "The Flirting Fox: Rappit delivers a serious threat to his rival, but instantly ruins his tough-guy image by snatching and eating the 'romantic gift' in one bite",
     "The Flirting Fox: Abu Fahd tries to seduce Lola with a romantic carrot, but Rappit intercepts the gift and eats it himself while maintaining eye contact.",
     "The Olive Harvest: Rappit hypes up an epic martial-arts chop to harvest the tree, but Abu Lakma simply kicks the trunk, dropping a pile of olives right onto the",
-    "The Stolen Tupperware: A tough guy fails to fit a round pink lid onto a square container while pretending everything is totally normal under a strict stare."
+    "The Stolen Tupperware: A tough guy fails to fit a round pink lid onto a square container while pretending everything is totally normal under a strict stare.",
+    "The Carrot Ultimatum: Lola demands he choose between her and a carrot, and he flawlessly justifies choosing the vegetable before crunching it."
   ],
   "brief": {
     "date": "2026-11-01",
@@ -804,52 +850,12 @@
       "title": "The Stolen Tupperware",
       "summary": "Rappit demands the original square Tupperware lid from Umm Lakma, but meekly accepts a mismatched round pink one under her intimidating stare.",
       "cliffhanger": ""
+    },
+    {
+      "date": "2026-11-05",
+      "title": "The Carrot Ultimatum",
+      "summary": "Lola gives Rappit an ultimatum between admiring her or his carrot, and he brutally chooses the punctual vegetable.",
+      "cliffhanger": "Will Lola forgive Rappit?"
     }
-  ],
-  "auto_pitch_at": "2026-11-03T18:06:13.479847+02:00",
-  "pitch": {
-    "message_id": "1567208413706850345",
-    "ideas": [
-      {
-        "title": "The Power Cut",
-        "cast": "Lil Rappit, Abu Lakma",
-        "setup": "The village power cuts mid-match, and Abu Lakma nervously holds up a phone flashlight in the dark room.",
-        "punchline": "A loud electrical spark pops off-screen, and Abu Lakma stares blankly as Rappit's sunglasses slowly slide down his nose in defeat.",
-        "rappit_line": "Ana ma btfe shi, khalli el kahraba tkhaf menne.",
-        "english": "I don't turn off anything, let the electricity fear me."
-      },
-      {
-        "title": "The Manoushe Betrayal",
-        "cast": "Lil Rappit, Abu Fahd",
-        "setup": "Rappit corners Abu Fahd on the municipality steps, intensely demanding a tough-guy bite of his zaatar manoushe.",
-        "punchline": "Abu Fahd smirks and casually twirls his keys, revealing that Lola already ate the best piece, leaving Rappit completely frozen in betrayal.",
-        "rappit_line": "Wen 7ossote mnel man2oushe ya Abu Fahd?",
-        "english": "Where is my share of the manoushe Abu Fahd?"
-      },
-      {
-        "title": "The Wasta Roadblock",
-        "cast": "Lil Rappit, Abu Sleiman",
-        "setup": "Rappit tries to act like the mafia boss by ordering the mukhtar to move his wooden cart from blocking the narrow stone street.",
-        "punchline": "The mukhtar savagely reminds Rappit that his grandfather rode a donkey, causing the tough rabbit to instantly bow his head and yield the road.",
-        "rappit_line": "Zei7 el 3arabeyye ya mukhtar, tari2eh halla2.",
-        "english": "Move the cart mukhtar, it's my road now."
-      },
-      {
-        "title": "The Mopped Floor",
-        "cast": "Lil Rappit, Teta",
-        "setup": "Rappit attempts a serious, slow-motion tough-guy walk down the village alley for a video, but Teta is mopping.",
-        "punchline": "Teta completely ignores his gangster aesthetic and aggressively sweeps the wet mop over his sneakers, forcing him to hop away awkwardly.",
-        "rappit_line": "Ya Teta wa2fe l mase7, 3am ba3mel video haybe!",
-        "english": "Teta stop mopping, I'm making a prestige video!"
-      },
-      {
-        "title": "The Ultimatum",
-        "cast": "Lil Rappit, Lola",
-        "setup": "Lola poses glamorously in the vineyard and demands Rappit choose between admiring her outfit or polishing a giant carrot.",
-        "punchline": "Lola dramatically gasps and drops her tiny designer bag in shock as Rappit delivers his deadpan logic and takes a loud, unapologetic crunch.",
-        "rappit_line": "El jazarah ma btet2akhar se3ten 3al maw3ad ya Lola.",
-        "english": "The carrot doesn't run two hours late to the date, Lola."
-      }
-    ]
-  }
+  ]
 }
