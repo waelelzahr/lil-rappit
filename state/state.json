@@ -376,7 +376,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1567981639261225053",
+  "discord_last": "1567988204039184405",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-05",
@@ -857,5 +857,51 @@
       "summary": "Lola gives Rappit an ultimatum between admiring her or his carrot, and he brutally chooses the punctual vegetable.",
       "cliffhanger": "Will Lola forgive Rappit?"
     }
-  ]
+  ],
+  "pitch": {
+    "message_id": "1567988204039184405",
+    "ideas": [
+      {
+        "title": "The Blocked Dekkene",
+        "cast": "Rappit and Abu Fahd",
+        "setup": "Abu Fahd smugly blocks the dekkene entrance by twirling his car keys on one finger, refusing to let Rappit pass.",
+        "punchline": "Rappit deadpans and smoothly pockets the twirling keys mid-spin, leaving Abu Fahd staring in shock at his empty finger.",
+        "rappit_line": "Shil l sayyara min hon, msakkar l tariq wlak.",
+        "english": "Move the car from here, you're blocking the road wlak."
+      },
+      {
+        "title": "The Generator Wasta",
+        "cast": "Rappit and Abu Sleiman",
+        "setup": "The village power cuts to extreme dimness, and the Mukhtar leans in closely with a tiny flashlight demanding subscription money.",
+        "punchline": "Rappit completely ignores the demand and slowly puts on his dark gold sunglasses in the pitch black room to maintain his tough-guy image.",
+        "rappit_line": "Dawwi l moteur ya mukhtar, bala wasta bi sharafak.",
+        "english": "Turn on the generator mukhtar, without favors on your honor."
+      },
+      {
+        "title": "The Diet Intervention",
+        "cast": "Rappit and Umm Lakma",
+        "setup": "Rappit tries to stealthily walk away with a massive plate of Teta's maamoul, but the formidable Umm Lakma blocks his path.",
+        "punchline": "Umm Lakma firmly confiscates the entire plate for herself and starts chewing, while Rappit respectfully backs away from the terrifying pink slippers.",
+        "rappit_line": "Hayda diet nabati ya Umm Lakma, kello festo2 7alabi.",
+        "english": "This is a vegan diet Umm Lakma, it is all pistachios."
+      },
+      {
+        "title": "The 24-Karat Gift",
+        "cast": "Rappit and Lola",
+        "setup": "Lola dramatically crosses her arms in her pink faux-fur coat, annoyed and demanding to see her expensive romantic apology gift.",
+        "punchline": "Rappit proudly presents a massive carrot on a velvet pillow, then immediately takes a loud crunching bite out of it himself while maintaining intense romantic eye contact.",
+        "rappit_line": "Jibtellik dahab khales ya hayeti, jazar 24 karat.",
+        "english": "I brought you pure gold my life, a 24 karat carrot."
+      },
+      {
+        "title": "The Fried Eggplant",
+        "cast": "Rappit and Abu Lakma",
+        "setup": "Abu Lakma proudly puffs out his broad chest while wearing Rappit's signature gold sunglasses, thinking he looks like the new village boss.",
+        "punchline": "Abu Lakma instantly deflates in panic, quickly takes the sunglasses off, and nervously polishes them on his red tracksuit before handing them back.",
+        "rappit_line": "Nazzil l 3waynat wlak, shaklak metel l batenjen l ma2li.",
+        "english": "Take off the glasses wlak, you look like a fried eggplant."
+      }
+    ]
+  },
+  "auto_pitch_at": "2026-11-05T21:44:42.583020+02:00"
 }
