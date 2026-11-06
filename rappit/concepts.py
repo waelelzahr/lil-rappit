@@ -11,9 +11,9 @@ ABU_LAKMA = ("Abu Lakma, an original huge tough boxer bulldog: broad muscular ch
              "brindle fur, flat nose, small scar over one eyebrow, red velvet tracksuit, thick "
              "gold chain, white sneakers")
 ABU_REF = ROOT / "state" / "refs" / "abu_lakma.png"  # same as ref_path("abu_lakma")
-LOLA = ("Lola, Rappit's glamorous girlfriend: an original white rabbit with long lashes, glossy "
-        "pink lipstick, gold hoop earrings, a fluffy pink faux-fur coat and a tiny designer "
-        "handbag")
+LOLA = ("Lola, Rappit's glamorous girlfriend: an original white rabbit (realistic fur, same "
+        "photoreal style as the other characters) with long lashes, glossy pink lipstick, a "
+        "fluffy pink faux-fur coat and a pearl necklace; no earrings, no handbag")
 TETA = ("Teta, Rappit's tiny strict grandmother: an old silver-grey rabbit wearing ONE pair of "
         "round gold glasses on her nose, hair in a neat bun, floral house dress, beige cardigan "
         "and slippers")
