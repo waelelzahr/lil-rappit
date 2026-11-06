@@ -96,9 +96,29 @@ def make_from_pitch(state: dict, n: int, reply_to: str):
     concepts.remember(state, ep, now.strftime("%Y-%m-%d"))
     day = now + timedelta(days=1) if now.hour >= 16 else now
     at = f"{day:%A} 18:00"
-    from rappit.common import next_slot
     state.pop("pitch", None)
-    pipeline.make_concept_safely(state, ep, next_slot(at), at)
+    build_pick(state, ep, at)
+
+
+def build_pick(state: dict, ep: dict, at: str):
+    """Make the picked clip; on a temporary error, keep the pick and retry on the next runs."""
+    from rappit.common import next_slot
+    try:
+        pipeline.make_concept_safely(state, ep, next_slot(at), at)
+        state.pop("retry_pick", None)
+    except quota.QuotaExceeded:
+        raise
+    except Exception as e:
+        tries = (state.get("retry_pick") or {}).get("tries", 0) + 1
+        if tries <= 3:
+            state["retry_pick"] = {"ep": ep, "at": at, "tries": tries}
+            discord.send_text(f"⏳ Temporary problem making **{ep.get('title')}** ({str(e)[:150]}). "
+                              f"I'll try again in a few minutes (attempt {tries}/3).")
+        else:
+            state.pop("retry_pick", None)
+            discord.send_text(f"⚠️ **{ep.get('title')}** failed 3 times ({str(e)[:200]}). "
+                              "I've stopped trying; type `pitch` for new ideas.")
+        log(f"pick failed (try {tries}): {e}")
 
 
 def add_idea(state: dict, idea: str, reply_to: str):
@@ -111,13 +131,17 @@ def status(state: dict):
     pending = {k: v for k, v in state["items"].items()
                if v["status"] in ("pending", "approved", "queued")}
     if not pending:
-        discord.send_text("Nothing in the queue right now. New drafts arrive Sunday morning.")
+        month = datetime.now(TZ).strftime("%Y-%m")
+        discord.send_text("Nothing in the queue right now. Type `pitch` for new ideas.\n"
+                          f"Spent this month (estimate): ${state.get('spend', {}).get(month, 0):.2f}")
         return
     icon = {"pending": "👀", "approved": "✅", "queued": "🗓️"}
     lines = [f"{icon[v['status']]} `{k}` · {v['status']} · {v['slot'][:16].replace('T', ' ')}"
              for k, v in sorted(pending.items())]
+    month = datetime.now(TZ).strftime("%Y-%m")
     discord.send_text("**Queue**\n" + "\n".join(lines)
-                      + f"\nVeo videos left today: {quota.left()}")
+                      + f"\nVideos left today: {quota.left()}"
+                      + f"\nSpent this month (estimate): ${state.get('spend', {}).get(month, 0):.2f}")
 
 
 def main():
@@ -151,6 +175,12 @@ def main():
         except Exception as e:
             log(f"{item_id} failed: {e}\n{traceback.format_exc()}")
             discord.send_text(f"⚠️ Something failed on `{item_id}`: {e}")
+        save_state(state)
+
+    # 1a) A picked clip that hit a temporary error: try again
+    if state.get("retry_pick"):
+        rp = state["retry_pick"]
+        build_pick(state, rp["ep"], rp["at"])
         save_state(state)
 
     # 1b) Nothing in the pipeline? Pitch the next ideas automatically (max once a day, daytime)

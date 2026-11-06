@@ -20,14 +20,18 @@ Check for ANY of these errors:
 Return JSON: {{"ok": true/false, "problems": ["short concrete description", ...]}}
 Only report real, visible problems; minor style differences are fine."""
 
-VIDEO_CHECK = """You are a strict continuity supervisor. Above: character references, then
-frames taken from the start, middle and end of the clip.
+VIDEO_CHECK = """You are a continuity supervisor for a comedy series. Above: character
+references, then frames taken from the start, middle and end of the clip.
 Intended clip: {action}
 Characters: {who}
-Check: characters stay consistent with their references and with each other across frames;
-no duplicated characters or props (e.g. two coffees, a second pair of glasses); no text on
-screen; the punchline at the end ({joke}) is actually visible in the last frame.
-Return JSON: {{"ok": true/false, "problems": ["...", ...], "punchline_visible": true/false}}"""
+List problems and rate each one:
+- "severe": a main character changes species/identity or turns human, a main character is
+  duplicated or vanishes, extra heads/limbs, readable text or logos on screen, or the ending
+  ({joke}) is clearly not happening at all.
+- "minor": small prop or accessory glitches (an earring, a prop missing for a moment),
+  positions or blocking that differ from the script, small style differences.
+Return JSON: {{"problems": [{{"text": "...", "severity": "severe" or "minor"}}],
+"punchline_visible": true/false}}"""
 
 
 def check_frame(frame: Path, refs: list, frame_desc: str, who: str) -> dict:
@@ -49,9 +53,18 @@ def check_video(video: Path, refs: list, c: dict, who: str) -> dict:
         r = gen.vision_json(VIDEO_CHECK.format(action=c.get("action", ""), who=who,
                                                joke=c.get("joke", "")),
                             [*refs, *[(f"CLIP FRAME at {t}s", p) for t, p in zip(times, shots)]])
-        log(f"video check: {'ok' if r.get('ok') else r.get('problems')} "
+        probs = []
+        for x in r.get("problems") or []:
+            if isinstance(x, dict):
+                probs.append({"text": str(x.get("text", "")), "severity": x.get("severity", "minor")})
+            else:
+                probs.append({"text": str(x), "severity": "minor"})
+        r["problems"] = probs
+        r["severe"] = [x["text"] for x in probs if x["severity"] == "severe"]
+        r["minor"] = [x["text"] for x in probs if x["severity"] != "severe"]
+        log(f"video check: severe={r['severe']} minor={r['minor']} "
             f"punchline_visible={r.get('punchline_visible')}")
         return r
     except Exception as e:
         log(f"video check skipped: {e}")
-        return {"ok": True, "problems": []}
+        return {"problems": [], "severe": [], "minor": []}

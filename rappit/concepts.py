@@ -81,6 +81,11 @@ WHAT MAKES IT FUNNY:
   someone staring into the camera, or Teta/Umm Lakma shutting everyone up).
 - Drama arcs are welcome (Abu Fahd vs Rappit over Lola, Abu Lakma in trouble at home, a feud
   with the mukhtar): each clip must be funny on its own; it may end with the story open.
+- The PUNCHLINE must land through a LINE and a FACE (a reaction, a look into the camera, a
+  pause), never through precise physics the video model can't control (objects landing on
+  heads, catching, throwing, biting things out of hands, liquids, crowds of small objects).
+- At most ONE important prop, held in a character's hands from the first frame, big and
+  simple (a cup, a phone, a plate). No tiny accessories doing anything.
 - Simple physical action (mostly two characters talking, like a sitcom two-shot), one location,
   every prop visible from the first frame and named once with its count; each character wears
   only their own outfit.

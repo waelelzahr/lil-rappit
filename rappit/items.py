@@ -117,8 +117,9 @@ def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
         prompt = p1 + "\n" + p2
     else:
         prompt = f"{head}\nAction, beat by beat: {c['action']}{speech()}{n}"
-    def score(r):  # punchline on screen matters most, then a clean check, then fewer problems
-        return (r.get("punchline_visible") is not False, bool(r.get("ok")), -len(r.get("problems") or []))
+    def score(r):  # fewest severe problems, then punchline on screen, then fewest minor ones
+        return (-len(r.get("severe") or []), r.get("punchline_visible") is not False,
+                -len(r.get("minor") or []))
 
     def make_video(extra_note: str, out):
         if two_part:
@@ -126,20 +127,23 @@ def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
         return gen.video(prompt + extra_note, frame, out, seconds=secs, style=c["style"])
 
     media = make_video("", d / "reel.mp4")
+    c["takes"] = 1
     r = qa.check_video(media, refs, c, who)
-    if not r.get("ok") or r.get("punchline_visible") is False:  # one more try, problems listed
+    # Only a SEVERE problem is worth paying for a second take; minor glitches go to you to judge.
+    if r.get("severe"):
         quota.need(2 if two_part else 1)
-        v2 = make_video("\nAVOID THESE PROBLEMS SEEN IN THE LAST ATTEMPT: "
-                        + "; ".join(r.get("problems", []) or ["the punchline was not visible at the end"]),
+        v2 = make_video("\nAVOID THESE PROBLEMS SEEN IN THE LAST ATTEMPT: " + "; ".join(r["severe"]),
                         d / "reel_v2.mp4")
+        c["takes"] = 2
         r2 = qa.check_video(v2, refs, c, who)
         if score(r2) > score(r):
             media, r = v2, r2
         log(f"kept {media.name}")
-    c["qa"] = r.get("problems") or []
-    good = r.get("punchline_visible") is not False and (r.get("ok") or len(c["qa"]) <= 1)
-    if not good:
-        raise QualityFailed("; ".join(c["qa"]) or "punchline not visible")
+    c["qa_severe"] = r.get("severe") or []
+    c["qa"] = [*(r.get("severe") or []), *(r.get("minor") or [])]
+    if r.get("punchline_visible") is False and not c["qa_severe"]:
+        c["qa_severe"] = ["the ending/punchline may not be visible"]
+    # Never throw a paid clip away: it always comes to you, with the checker's notes.
     if c.get("dialogue"):  # Lebanese lines + English, so it works with the sound off
         try:
             media = captions.apply_dialogue(media, media.with_name("reel_cap.mp4"), c["dialogue"])
@@ -160,8 +164,15 @@ def build_concept(item_id: str, c: dict, note: str | None = None) -> dict:
         log(f"caption failed, using fallback: {e}")
         cap = {"caption": f"Lil Rappit: {c['title']} 🥕\n\n{CFG['hashtags']}", "title": f"Lil Rappit: {c['title']}"}
     log(f"built {item_id} (concept {c['id']})")
-    qa_note = ("\n🔍 **Checker notes:** " + "; ".join(c["qa"])) if c.get("qa") else "\n🔍 Checker: no problems found."
-    return {"file": str(media), **cap, "script_text": concepts.script_text(c) + qa_note}
+    cost = round(0.1 + 1.0 * c.get("takes", 1), 2)
+    if c.get("qa_severe"):
+        qa_note = "\n⚠️ **Checker found serious problems:** " + "; ".join(c["qa_severe"])
+    elif c.get("qa"):
+        qa_note = "\n🔍 Minor checker notes: " + "; ".join(c["qa"])
+    else:
+        qa_note = "\n🔍 Checker: no problems found."
+    qa_note += f"\n💵 Cost: about ${cost:.2f} ({c.get('takes', 1)} take{'s' if c.get('takes', 1) > 1 else ''})"
+    return {"file": str(media), **cap, "script_text": concepts.script_text(c) + qa_note, "cost": cost}
 
 
 def build(item_id: str, kind: str, ep: dict, note: str | None = None, soft_idx: int = 0,

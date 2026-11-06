@@ -48,7 +48,7 @@ def reasons() -> list[str]:
     now = datetime.now(timezone.utc)
     if now.hour == 9 and now.minute < 5:  # one full run a day (token reminders, housekeeping)
         return ["daily full run"]
-    out = []
+    out = ["retry a picked clip"] if state.get("retry_pick") else []
     for k, it in state.get("items", {}).items():
         st = it.get("status")
         if st == "queued" and datetime.fromisoformat(it["not_before"]) <= now:

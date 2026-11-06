@@ -11,6 +11,15 @@ def _when(dt) -> str:
     return dt.strftime("%a %H:%M")
 
 
+def add_spend(state: dict, cost) -> None:
+    """Running estimate of Google spend per month (videos + images + text)."""
+    if not cost:
+        return
+    month = datetime.now(TZ).strftime("%Y-%m")
+    sp = state.setdefault("spend", {})
+    sp[month] = round(sp.get(month, 0) + float(cost), 2)
+
+
 def queue(state: dict, item_id: str, kind: str, ep: dict, slot: str, soft_idx: int,
           not_before: datetime, reason: str, tease: str = ""):
     state["items"][item_id] = {
@@ -54,7 +63,9 @@ def make(state: dict, item_id: str, kind: str, ep: dict, slot: str, soft_idx: in
         "kind": kind, "episode": ep["id"], "slot": slot, "status": "pending", "redos": 0,
         "message_id": msg_id, "run_id": os.environ.get("GITHUB_RUN_ID"),
         "relpath": str(path.relative_to(OUT)), "caption": built["caption"],
-        "title": built["title"], "soft_idx": soft_idx, "tease": tease, "no": no}
+        "title": built["title"], "soft_idx": soft_idx, "tease": tease, "no": no,
+        "cost": built.get("cost")}
+    add_spend(state, built.get("cost"))
 
 
 def send_script(built: dict, msg_id: str) -> None:
