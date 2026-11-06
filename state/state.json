@@ -378,7 +378,7 @@
       "kind": "reel",
       "episode": "concept-the-24-karat-gift-2026-11-06-2007",
       "slot": "2026-11-07T18:00:00+02:00",
-      "status": "pending",
+      "status": "approved",
       "redos": 0,
       "message_id": "1568326761362489435",
       "run_id": "42267545857",
@@ -392,7 +392,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1568139367208321035",
+  "discord_last": "1568338189448511540",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-06",
@@ -931,5 +931,11 @@
   "auto_pitch_at": "2026-11-05T21:44:42.583020+02:00",
   "spend": {
     "2026-11": 10.1
+  },
+  "health_date": "2026-11-06",
+  "models_in_use": {
+    "pro": "FAILED: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio",
+    "flash": "FAILED: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio",
+    "image": "gemini-nano-banana-2.1"
   }
 }
