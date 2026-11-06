@@ -149,6 +149,26 @@ def main():
     quota.bind(state)
     me = discord.bot_id()
 
+    # Daily health check: are Google's models still there? Tell the owner when something changed.
+    today = datetime.now(TZ).strftime("%Y-%m-%d")
+    if state.get("health_date") != today:
+        try:
+            from rappit import models
+            rep = models.health()
+            prev = state.get("models_in_use", {})
+            state["health_date"] = today
+            state["models_in_use"] = rep
+            failed = [k for k, v in rep.items() if str(v).startswith("FAILED")]
+            if failed:
+                discord.send_text("🩺 **Health check:** Google's text models are not responding "
+                                  f"({', '.join(failed)}). Clips may fail until this clears.")
+            elif prev and any(prev.get(k) != v for k, v in rep.items()):
+                discord.send_text("🩺 Google changed its models; I switched automatically: "
+                                  + ", ".join(f"{k} → `{v}`" for k, v in rep.items()))
+        except Exception as e:
+            log(f"health check failed: {e}")
+        save_state(state)
+
     # 0) Work that was waiting for a scheduled time or Google's daily reset
     try:
         pipeline.run_queued(state, save_state)

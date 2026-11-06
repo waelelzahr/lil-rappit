@@ -1,11 +1,13 @@
 # Models (Gemini API). Change here if Google renames a model.
 models:
-  text: gemini-flash-latest          # captions and prompt writing
-  text_pro: [gemini-pro-latest, gemini-2.5-pro]   # script writing
-  text_fallbacks: [gemini-2.5-flash, gemini-3-flash-preview, gemini-2.0-flash]
-  image: gemini-nano-banana-2.1       # start frames and photo posts
+  # Starting points only: if Google retires one, the bot finds the newest available model
+  # itself (rappit/models.py) and tells you in Discord.
+  text: gemini-3.8-flash                # captions, checks
+  text_pro: [gemini-3.1-pro-preview]    # writing
+  text_fallbacks: []
+  image: gemini-nano-banana-2.1         # frames and reference images
   image_fallback: gemini-3.1-flash-image-preview
-  video: gemini-omni-1.1-flash   # Veo 3.1 preview models were shut down 2026-10-22
+  video: gemini-omni-1.1-flash
 
 video:
   resolution: 720p   # Omni: 720p native (1080p/4k are upscaled)

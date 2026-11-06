@@ -82,25 +82,15 @@ def _ref_parts():
 
 
 def text_json(prompt: str, prefer_pro: bool = False) -> dict:
-    last_err = None
-    models = [CFG["models"]["text"], *CFG["models"].get("text_fallbacks", [])]
-    if prefer_pro:
-        models = [*CFG["models"].get("text_pro", []), *models]
-    for model in models:
-        try:
-            resp = client().models.generate_content(
-                model=model,
-                contents=prompt,
-                config=types.GenerateContentConfig(response_mime_type="application/json"),
-            )
-            data = json.loads(resp.text)
-            if isinstance(data, list):
-                data = data[0]
-            return data
-        except Exception as e:
-            last_err = e
-            log(f"text model {model} failed: {e}")
-    raise last_err
+    from . import models
+
+    def run(model):
+        resp = client().models.generate_content(
+            model=model, contents=prompt,
+            config=types.GenerateContentConfig(response_mime_type="application/json"))
+        data = json.loads(resp.text)
+        return data[0] if isinstance(data, list) else data
+    return models.call("pro" if prefer_pro else "flash", run)
 
 
 def vision_json(prompt: str, images: list) -> dict:
@@ -110,18 +100,15 @@ def vision_json(prompt: str, images: list) -> dict:
         parts.append(f"{label}:")
         parts.append(types.Part.from_bytes(data=Path(path).read_bytes(), mime_type=mime_of(Path(path))))
     parts.append(prompt)
-    last_err = None
-    for model in [*CFG["models"].get("text_pro", []), CFG["models"]["text"]]:
-        try:
-            resp = client().models.generate_content(
-                model=model, contents=parts,
-                config=types.GenerateContentConfig(response_mime_type="application/json"))
-            data = json.loads(resp.text)
-            return data[0] if isinstance(data, list) else data
-        except Exception as e:
-            last_err = e
-            log(f"vision with {model} failed: {e}")
-    raise last_err
+    from . import models
+
+    def run(model):
+        resp = client().models.generate_content(
+            model=model, contents=parts,
+            config=types.GenerateContentConfig(response_mime_type="application/json"))
+        data = json.loads(resp.text)
+        return data[0] if isinstance(data, list) else data
+    return models.call("pro", run)
 
 
 def frames_at(video: Path, seconds: list[float], out_dir: Path) -> list[Path]:
@@ -136,18 +123,16 @@ def frames_at(video: Path, seconds: list[float], out_dir: Path) -> list[Path]:
 
 def research(prompt: str) -> str:
     """Answer with live Google Search grounding (for weekly trend research). Plain text."""
-    last_err = None
-    for model in [*CFG["models"].get("text_pro", []), CFG["models"]["text"]]:
-        try:
-            resp = client().models.generate_content(
-                model=model, contents=prompt,
-                config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())]))
-            if resp.text:
-                return resp.text
-        except Exception as e:
-            last_err = e
-            log(f"research with {model} failed: {e}")
-    raise last_err or RuntimeError("research returned nothing")
+    from . import models
+
+    def run(model):
+        resp = client().models.generate_content(
+            model=model, contents=prompt,
+            config=types.GenerateContentConfig(tools=[types.Tool(google_search=types.GoogleSearch())]))
+        if not resp.text:
+            raise RuntimeError("research returned nothing")
+        return resp.text
+    return models.call("pro", run)
 
 
 _NO_SIZE: set[str] = set()  # models that rejected image_size
@@ -195,7 +180,13 @@ def image(prompt: str, out: Path, extra_images: list | None = None,
         + f"Create this image. {prompt}\n\n{(style or STYLE).replace('9:16', aspect)}"
     )
     last_err = None
-    for model in (CFG["models"]["image"], CFG["models"]["image_fallback"]):
+    from . import models as _m
+    queue, tried = _m.candidates("image")[:5], set()
+    while queue:
+        model = queue.pop(0)
+        if model in tried:
+            continue
+        tried.add(model)
         try:
             resp = client().models.generate_content(
                 model=model,
@@ -224,6 +215,9 @@ def image(prompt: str, out: Path, extra_images: list | None = None,
                 return image(prompt, out, extra_images, style, with_rappit, aspect, _softened)
             last_err = e
             log(f"image model {model} failed: {e}")
+            hint = _m.SUGGEST.search(str(e))
+            if hint:
+                queue.insert(0, hint.group(1))
     raise last_err
 
 
