@@ -373,14 +373,30 @@
       "instagram": "https://www.instagram.com/reel/DfSQ6g4iOHB/",
       "youtube": "https://youtube.com/shorts/R9jDMdleqPY",
       "posted_at": "2026-11-03T18:01:26.886739+02:00"
+    },
+    "concept-the-24-karat-gift-2026-11-06-2007": {
+      "kind": "reel",
+      "episode": "concept-the-24-karat-gift-2026-11-06-2007",
+      "slot": "2026-11-07T18:00:00+02:00",
+      "status": "pending",
+      "redos": 0,
+      "message_id": "1568326761362489435",
+      "run_id": "42267545857",
+      "relpath": "concept-the-24-karat-gift-2026-11-06-2007/reel_cap.mp4",
+      "caption": "Bought her a 24-karat apology, but real gangsters gotta eat. 🥕\nWould you forgive me after this?\nTo be continued: Will Lola seek revenge? 👀 Follow so you don't miss it.\n\n#lilrappit #funnyanimals #comedy #aicomedy",
+      "title": "Lil Rappit Ruins His Own Romantic Apology",
+      "soft_idx": 0,
+      "tease": "To be continued: Will Lola seek revenge? 👀 Follow so you don't miss it.",
+      "no": null,
+      "cost": 1.1
     }
   },
   "tg_offset": 0,
   "discord_last": "1568139367208321035",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
-    "date": "2026-11-05",
-    "count": 2
+    "date": "2026-11-06",
+    "count": 1
   },
   "episode_no": 6,
   "custom_episodes": [
@@ -767,6 +783,53 @@
         "Lola's gold hoop earrings detach from her ear and float mid-air in the 5.0s and 9.3s frames.",
         "Lil Rappit's large carrot disappears entirely in the 5.0s frame before reappearing in the 9.3s frame."
       ]
+    },
+    {
+      "id": "concept-the-24-karat-gift-2026-11-06-2007",
+      "title": "The 24-Karat Gift",
+      "relatable_truth": "When a romantic apology gift turns out to be entirely for the person apologizing.",
+      "joke": "Rappit presents a '24-karat' carrot as a romantic apology, but instantly eats it himself.",
+      "cast": [
+        "lola"
+      ],
+      "look": "Lola, Rappit's glamorous girlfriend: an original white rabbit with long lashes, glossy pink lipstick, gold hoop earrings, a fluffy pink faux-fur coat and a tiny designer handbag",
+      "setting": "The stone steps of the village municipality in the Bekaa, golden hour sunlight hitting the yellow stones, a rustic wooden door in the background.",
+      "frame": "Medium two-shot. Lola stands on the left in her pink faux-fur coat, arms tightly crossed, looking visibly annoyed. Rappit stands on the right in his orange puffer jacket and gold sunglasses, holding one large orange carrot directly in his right hand.",
+      "action": "[0-3s] Lola glares impatiently with her arms crossed, demanding her apology gift. Rappit slowly raises the carrot toward her. [3-7s] Rappit delivers his smooth romantic line with total sincerity. [7-10s] Without breaking eye contact, Rappit takes a loud, crunching bite out of the carrot. Lola's annoyed expression drops into an absolutely furious, flat glare as he chews slowly.",
+      "sound": "A slow, romantic acoustic guitar melody that abruptly stops with a crisp, loud crunching sound, followed by tense, awkward silence.",
+      "dialogue": [
+        {
+          "speaker": "Lola",
+          "arabic": "يلا، فرجيني هدية المصالحة!",
+          "arabizi": "Yalla, farjini hdiyyet l msalaha!",
+          "english": "Come on, show me the apology gift!",
+          "at": "0-2s"
+        },
+        {
+          "speaker": "Rappit",
+          "arabic": "جبتلك دهب خالص يا حياتي، جزر ٢٤ قيراط.",
+          "arabizi": "Jibtellik dahab khales ya hayeti, jazar 24 karat.",
+          "english": "I brought you pure gold, my life: a 24-karat carrot.",
+          "at": "3-6s"
+        }
+      ],
+      "caption_brief": "When his idea of a romantic apology is a 24-karat vegetable that he eats himself.",
+      "uses_carrot": true,
+      "story_summary": "Rappit attempts to apologize to Lola with a 24-karat carrot, but immediately ruins it by eating the gift himself.",
+      "cliffhanger": "Will Lola seek revenge?",
+      "concept": true,
+      "seconds": 10,
+      "style": "Cinematic photoreal 3D, natural motivated lighting that fits the setting, shallow depth of field, vertical 9:16, characters fully in frame. Family-safe comedy. No subtitles, no captions, no watermarks, no smoking, no weapons.",
+      "with_abu": false,
+      "demand": "",
+      "bad_deal": "",
+      "opponent": "Lola, Rappit's glamorous girlfriend: an original white rabbit with long lashes, glossy pink lipstick, gold hoop earrings, a fluffy pink faux-fur coat and a tiny designer handbag",
+      "takes": 1,
+      "qa_severe": [],
+      "qa": [
+        "Lola's gold hoop earrings are floating in the air, completely detached from her ear in all frames.",
+        "The carrot Rappit is holding changes orientation and structure abruptly between frames (held by the leafy top pointing down, then up, then held by the orange root with leaves pointing down)."
+      ]
     }
   ],
   "concepts_done": [
@@ -781,7 +844,8 @@
     "The Flirting Fox: Abu Fahd tries to seduce Lola with a romantic carrot, but Rappit intercepts the gift and eats it himself while maintaining eye contact.",
     "The Olive Harvest: Rappit hypes up an epic martial-arts chop to harvest the tree, but Abu Lakma simply kicks the trunk, dropping a pile of olives right onto the",
     "The Stolen Tupperware: A tough guy fails to fit a round pink lid onto a square container while pretending everything is totally normal under a strict stare.",
-    "The Carrot Ultimatum: Lola demands he choose between her and a carrot, and he flawlessly justifies choosing the vegetable before crunching it."
+    "The Carrot Ultimatum: Lola demands he choose between her and a carrot, and he flawlessly justifies choosing the vegetable before crunching it.",
+    "The 24-Karat Gift: Rappit presents a '24-karat' carrot as a romantic apology, but instantly eats it himself."
   ],
   "brief": {
     "date": "2026-11-01",
@@ -856,10 +920,16 @@
       "title": "The Carrot Ultimatum",
       "summary": "Lola gives Rappit an ultimatum between admiring her or his carrot, and he brutally chooses the punctual vegetable.",
       "cliffhanger": "Will Lola forgive Rappit?"
+    },
+    {
+      "date": "2026-11-06",
+      "title": "The 24-Karat Gift",
+      "summary": "Rappit attempts to apologize to Lola with a 24-karat carrot, but immediately ruins it by eating the gift himself.",
+      "cliffhanger": "Will Lola seek revenge?"
     }
   ],
   "auto_pitch_at": "2026-11-05T21:44:42.583020+02:00",
   "spend": {
-    "2026-11": 9.0
+    "2026-11": 10.1
   }
 }
