@@ -378,7 +378,7 @@
       "kind": "reel",
       "episode": "concept-the-24-karat-gift-2026-11-06-2007",
       "slot": "2026-11-07T18:00:00+02:00",
-      "status": "approved",
+      "status": "posted",
       "redos": 0,
       "message_id": "1568326761362489435",
       "run_id": "42267545857",
@@ -388,7 +388,10 @@
       "soft_idx": 0,
       "tease": "To be continued: Will Lola seek revenge? 👀 Follow so you don't miss it.",
       "no": null,
-      "cost": 1.1
+      "cost": 1.1,
+      "instagram": "https://www.instagram.com/reel/DfckC0dnLeL/",
+      "youtube": "https://youtube.com/shorts/VYPXW0Eu9s0",
+      "posted_at": "2026-11-07T18:01:09.774748+02:00"
     }
   },
   "tg_offset": 0,
