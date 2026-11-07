@@ -392,7 +392,7 @@
     }
   },
   "tg_offset": 0,
-  "discord_last": "1568338189448511540",
+  "discord_last": "1568550898370748469",
   "ig_token_seen": "2026-10-18T13:59:41.240847+03:00",
   "veo_usage": {
     "date": "2026-11-06",
@@ -932,7 +932,7 @@
   "spend": {
     "2026-11": 10.1
   },
-  "health_date": "2026-11-06",
+  "health_date": "2026-11-07",
   "models_in_use": {
     "pro": "FAILED: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio",
     "flash": "FAILED: 402 RESOURCE_EXHAUSTED. {'error': {'code': 402, 'message': 'Your prepayment credits are depleted. Please go to AI Studio",
